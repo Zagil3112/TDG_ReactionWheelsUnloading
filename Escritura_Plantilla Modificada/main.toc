@@ -1,0 +1,28 @@
+\thispagestyle {empty}
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {} RESUMEN}{8}{Doc-Start}%
+\contentsline {section}{\numberline {} ABSTRACT}{9}{Doc-Start}%
+\contentsline {section}{\numberline {I}INTRODUCCIÓN}{10}{section.1}%
+\contentsline {section}{\numberline {II}PLANTEAMIENTO DEL PROBLEMA}{12}{section.2}%
+\contentsline {subsection}{\numberline {A}Antecedentes}{12}{subsection.2.1}%
+\contentsline {section}{\numberline {III}JUSTIFICACIÓN}{13}{section.3}%
+\contentsline {section}{\numberline {IV}OBJETIVOS}{14}{section.4}%
+\contentsline {subsection}{\numberline {A}Objetivo general}{14}{subsection.4.1}%
+\contentsline {subsection}{\numberline {B}Objetivos específicos}{14}{subsection.4.2}%
+\contentsline {section}{\numberline {V}PROBLEMA DE INVESTIGACIÓN}{15}{section.5}%
+\contentsline {section}{\numberline {VI}HIPÓTESIS}{16}{section.6}%
+\contentsline {subsection}{\numberline {A}Hipótesis de trabajo}{16}{subsection.6.1}%
+\contentsline {subsection}{\numberline {B}Hipótesis estadística}{16}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {1}Hipótesis nula:}{16}{subsubsection.6.2.1}%
+\contentsline {paragraph}{\numberline {a}Hipótesis alternativa:}{16}{paragraph.6.2.1.1}%
+\contentsline {section}{\numberline {VII}MARCO TEÓRICO}{17}{section.7}%
+\contentsline {section}{\numberline {VIII}METODOLOGÍA}{22}{section.8}%
+\contentsline {section}{\numberline {IX}RESULTADOS}{23}{section.9}%
+\contentsline {section}{\numberline {X}DISCUSIÓN}{28}{section.10}%
+\contentsline {section}{\numberline {XI}CONCLUSIONES}{29}{section.11}%
+\contentsline {section}{\numberline {XII}RECOMENDACIONES}{30}{section.12}%
+\contentsline {section}{\numberline {XII} REFERENCIAS}{31}{section.12}%
+\contentsline {subsection}{\numberline {} Anexo A. Autoarchivo en Repositorio y documentos de interés}{32}{section*.7}%
+\contentsline {subsection}{\numberline {} Anexo B. Recortar y abreviar direcciones web largas}{33}{section*.7}%
+\contentsline {subsection}{\numberline {} Anexo C. Incluir imágenes}{33}{section*.7}%
+\contentsfinish 

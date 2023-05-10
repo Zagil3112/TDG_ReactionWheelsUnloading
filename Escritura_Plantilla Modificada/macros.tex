@@ -1,0 +1,81 @@
+\usepackage[hmargin={2.5 cm,2.5cm}, top=2.5cm, marginpar=2.5cm]{geometry}
+\usepackage[spanish,activeacute]{babel} %-----tildes  [spanish,activeacute,es-tabla]
+\usepackage[pdftex]{graphicx}
+\usepackage{amsmath, amssymb}%-----estructuras matemáticas
+%
+\usepackage{textcase}
+\usepackage{caption}
+\DeclareCaptionTextFormat{up}{\MakeTextUppercase{#1}}
+\captionsetup[table]{labelformat={default}, font=footnotesize, justification=centering, labelsep=newline, name={TABLA }, textformat=up} %-----formato del caption table
+\renewcommand{\thetable}{\Roman{table}}
+\captionsetup[figure]{labelformat={default}, font=footnotesize, labelsep=period,  name={Fig. }, justification=centering,singlelinecheck=false} %-----formato del caption figure
+\renewcommand{\thefigure}{\arabic{figure}}
+%
+\usepackage{hyperref}
+   \hypersetup{colorlinks, linkcolor=blue, urlcolor=blue, citecolor={red}}
+\usepackage{pstricks-add}
+\usepackage{longtable}
+\usepackage{pst-all}
+\usepackage{verbatim}%-----para mostrar comnados 
+\usepackage{hhline, colortbl}
+\usepackage{color}
+\usepackage{array}
+\usepackage{enumitem}
+
+
+
+\usepackage[numbers]{natbib}
+
+\setlength{\parindent}{1.25cm}%sangria
+\renewcommand{\baselinestretch}{1.5}%interlineado
+\setlength{\parskip}{0.1em}%espacio entre parrafos
+
+
+\renewcommand{\labelitemi}{$\bullet $}
+\setlist[itemize]{leftmargin=*, parsep=-5px}
+\renewcommand\descriptionlabel[1]{$\bullet$\hspace{0.5em} \textbf{#1}}
+\setlist[description]{parsep=-5px}
+
+\usepackage{tocloft}
+\renewcommand{\cftfigfont}{Fig. }
+\renewcommand{\cfttabfont}{Tabla }
+\tocloftpagestyle{empty}
+
+\usepackage{titletoc}
+\titlecontents{section}[0.1em]{\smallskip}{\enspace\thecontentslabel.\hspace{1em}} {\hspace*{}} {\titlerule*[1pc]{.}\contentspage}
+\titlecontents{subsection}[0.1em]{\smallskip}{\hspace{0.5cm}\enspace\thecontentslabel.\hspace{1em}} {\hspace*{}} {\titlerule*[1pc]{.}\contentspage}
+\titlecontents{subsubsection}[0.1em]{\smallskip}{\hspace{1cm}\enspace\thecontentslabel)\hspace{1em}} {\hspace*{}} {\titlerule*[1pc]{.}\contentspage}
+\titlecontents{paragraph}[0.1em]{\smallskip}{\hspace{1.5cm}\enspace\thecontentslabel)\hspace{1em}} {\hspace*{}} {\titlerule*[1pc]{.}\contentspage}
+
+
+
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{4}%define el contador para los 4 niveles de titulo
+
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\Alph{subsection}}   
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}}
+\renewcommand{\theparagraph}{\alph{paragraph}}
+
+
+
+\usepackage{titlesec}
+\titleformat{\section}{\centering\normalfont\normalsize\MakeUppercase}{\thesection.}{0.2em}{}
+\titleformat{\subsection}{\normalfont\normalsize\it}{\thesubsection.}{0.2em}{}
+\titleformat{\subsubsection}[runin]{\itshape\normalsize\it}{\hspace{0.5cm}\thesubsubsection)}{0.2em}{}
+\titleformat{\paragraph}[runin]{\normalfont\normalsize\it}{\hspace{1cm}\theparagraph)}{0.2em}{}
+%\titleformat{\subparagraph}[runin]{\itshape\normalsize\bfseries}{\thesubparagraph}{1em}{}
+
+
+\usepackage{fancyhdr}
+
+\definecolor{verdeUdeA}{rgb}{0.325,0.506,0.208} %rgb=83,129,53
+
+\setlength{\headheight}{25pt}
+\renewcommand{\headrule}{{\color{verdeUdeA}\rule{\textwidth}{1pt}}}
+\renewcommand{\headrulewidth}{2pt}
+\lhead{\footnotesize\MakeUppercase{\smalltitulo }}\chead{}\rhead{{\color{white}Rufino}\thepage} %borrar los encabezados
+\cfoot{}
+
+

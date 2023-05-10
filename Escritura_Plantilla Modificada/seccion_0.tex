@@ -1,0 +1,158 @@
+% tipo de fuente:
+%Aunque las normas APA permiten el uso de diferentes tipos de fuente, esta plantilla de \LaTeX usa exclusivamente Times New Roman pues en modo matemático (formulas, ecuaciones,...) es la única fuente que se puede usar y asi no se mesclan tipos de fuentes en el documento
+
+\thispagestyle{empty}
+
+%-----Si desea usar el archivo Campos_Plantilla_UdeA_LaTex_IEEE_2022_ para llenar la información, seleccione o digite los datos en el documento de Word cuyo texto está coloreado, luego selecciones todo el contenido y ejecute la acción copiar; finalmente ejecutando pegar, reemplace los comandos de este archivo desde la línea 8 hasta la línea 83
+
+%--------------------reemplase desde aqui------------------
+%TÍTULO
+\newcommand{\mititulo}{ Análisis y comparación de estrategias de control para la desaturación de ruedas de reacción en satélites tipo CubeSat}%---- elimine "Título y/o subtítulo del trabajo de grado" e ingrese aquí el título del documento
+
+%TÍTULO "CORTO" (que aparece en los encabezados de página)
+\newcommand{\smalltitulo}{ Desaturación de ruedas de reacción en CubeSat.}%---- Reemplaza con las primeras palabras de tu título o palabras significativas del mismo, seguido de puntos suspensivos. No permitas que título y número de página pasen a una segunda línea o más. Si no es tan extenso escriba el título completo en el campo anterior sin puntos suspensivos
+
+
+\begin{center}
+	
+	\includegraphics[scale=0.72]{imagenes/escudo_udea.png}
+	
+	\vspace{2cm}
+	\textbf{\mititulo} \\[2cm]%-----(en minúscula, y mayúscula cuando lo amerite: nombres propios, siglas, etc.). Título en negrita.
+	
+	%-----Ejemplo de autores (en minúsculas; no omitir ningún nombre o apellido; no abreviar ni dejar solo iniciales; marcar las tildes correspondientes).
+	Sebastian Augusto Zapata Gil\\
+	
+	
+	\vspace{2cm}
+	Trabajo de grado presentado para optar al título de Ingeniero Aeroespacial  
+	
+	\vspace{2cm}
+	Tutor\\
+	Felipe Andrés Obando Vega, Título académico más alto en Ejemplo Ciencia de la Información
+	\vspace{1cm}
+	
+	Universidad de Antioquia\\
+	Facultad de Ingeniería\\
+	Ingeniería Aeroespacial\\
+	El Carmen de Viboral, Antioquia, Colombia\\
+	2023  	\\
+	\newpage
+	
+	%--------------------------------------------------
+	
+	\thispagestyle{empty}
+	{\arrayrulecolor{verdeUdeA}
+		\footnotesize{\begin{tabular}{cm{10cm}} 
+				\noalign{\color{verdeUdeA}\hrule height 3pt}
+				\textbf{Cita} & \hspace{2cm}Sebastián Zapata, 2023 [1] \\ \hline
+				%
+				\parbox[c][1.6\height]{5cm}{\centerline{\textbf{Referencia}} 
+					\vspace*{0.5cm}\centerline{Estilo IEEE (2020)}}
+				& \hspace{-0.5cm}[1] Sebastián Zapata \textquotedblleft\mititulo '', [Trabajo de grado profesional]. Universidad de Antioquia, El Carmen de Viboral, Colombia, 2023.\\
+				\noalign{\color{verdeUdeA}\hrule height 3pt}
+			\end{tabular}}
+		
+	}
+	\arrayrulecolor{black}
+	
+\end{center}
+\vspace{-1.1cm}\includegraphics{imagenes/CC.jpg}\quad
+\includegraphics{imagenes/CCima.png}
+
+\vspace{1cm}
+%   
+\includegraphics[scale=0.35]{imagenes/escudo_udea_vice.png}\quad
+\includegraphics{imagenes/sis_biblo.png}\\
+%
+Seleccione biblioteca, CRAI o centro de documentación UdeA (A-Z) ) \\[1cm]
+%
+\textbf{Repositorio Institucional:} http://bibliotecadigital.udea.edu.co\\[1cm]
+%
+Universidad de Antioquia - www.udea.edu.co\\[0.5cm]
+\textbf{Rector:} John Jairo Arboleda Céspedes.\\
+\textbf{Decano/Director} Julio César Saldarriaga.\\
+\textbf{Jefe departamento:} Pedro León Simanca.\\[1cm]
+%
+El contenido de esta obra corresponde al derecho de expresión de los autores y no compromete el pensamiento institucional de la Universidad de Antioquia ni desata su responsabilidad frente a terceros. Los autores asumen la responsabilidad por los derechos de autor y conexos.
+
+%--------------------reemplase hasta aqui------------------
+
+
+\newpage
+    %--------------------------------------------------
+    \thispagestyle{empty}
+    
+%---Si estás presentando un artículo de investigación, reflexión o de revisión, debes conservar las primeras 2 páginas (portada y página legal). NO INCLURI: tabla de contenido, lista de figuras ni tablas, abreviaturas, dedicatoria, agradecimiento, anexos.
+
+%---Los títulos comunes de un artículo: resumen, abstract, introducción, metodología, resultados, conclusiones, referencias (capítulos y subcapítulos en páginas continuas).
+
+\begin{center}
+    \textbf{Dedicatoria}%---Opcional
+
+%---Procura que texto de dedicatoria y agradecimientos no exceda una página. Puedes reducir a tamaño 10 puntos, es decir \footnotesize{}.
+
+    
+    Texto de dedicatoria centrado.\\[2cm]
+    
+    \textbf{Agradecimientos}%---Opcional
+    
+    Texto de agradecimientos centrado.    
+\end{center} 
+
+
+
+
+%\newpage
+    %--------------------------------------------------
+    %\thispagestyle{empty}
+\pagestyle{empty}
+\renewcommand{\contentsname}{\centerline{\normalfont\normalsize TABLA DE CONTENIDO}}
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+    \tableofcontents 
+    
+    
+    
+\newpage
+    %--------------------------------------------------
+   % \thispagestyle{empty}
+     \pagestyle{empty}
+    %LO Tablas
+    \renewcommand{\listtablename}{\centerline{\normalfont\normalsize LISTA DE TABLAS}}
+    \listoftables
+    
+    
+    
+    
+\newpage
+    %--------------------------------------------------
+    \thispagestyle{empty}
+    
+    %LO Figuras
+    \renewcommand{\listfigurename}{\centerline{\normalfont\normalsize LISTA DE FIGURAS}}
+    \listoffigures 
+    
+    
+    
+    
+\newpage
+    %--------------------------------------------------
+    \thispagestyle{empty}
+    
+\begin{center}
+    \textbf{Siglas, acrónimos y abreviaturas}    %--- escribirlas en orden alfabético
+\end{center}
+
+\begin{tabular}{m{2cm}p{10cm}}
+    \textbf{Cms.}	    &	Centímetros\\
+    \textbf{ERIC}	    &	Education Resources Information Center\\
+    \textbf{Esp.}	    &	Especialista\\
+    \textbf{IEEE}		&	Institute of Electrical and Electronics Engineers \\
+    \textbf{MP}		    &	Magistrado Ponente\\
+    \textbf{MSc}		&	Magister Scientiae\\
+    \textbf{Párr.}	    &	Párrafo\\
+    \textbf{PhD}		&	Philosophiae Doctor\\
+    \textbf{PBQ-SF} 	&	Personality Belief Questionnaire Short Form\\
+    \textbf{PostDoc}	&	PostDoctor\\
+    \textbf{UdeA}	    &	Universidad de Antioquia
+\end{tabular}
