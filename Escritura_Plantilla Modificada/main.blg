@@ -30,48 +30,49 @@ Database file #1: refe.bib
 Reallocating 'glb_str_end' (item size: 4) to 20 items.
 Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
 Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Warning--empty journal in Venturini2018
 Warning--edition ordinal word "e*" may be too high (or improper) for conversion in man:manual
 
 Done.
-You've used 21 entries,
+You've used 23 entries,
             4853 wiz_defined-function locations,
-            1069 strings with 11396 characters,
-and the built_in function-call counts, 12824 in all, are:
-= -- 1247
-> -- 210
-< -- 45
-+ -- 106
-- -- 54
-* -- 614
-:= -- 2193
-add.period$ -- 42
-call.type$ -- 21
-change.case$ -- 37
-chr.to.int$ -- 63
-cite$ -- 22
-duplicate$ -- 968
-empty$ -- 1057
-format.name$ -- 82
-if$ -- 2856
+            1083 strings with 11802 characters,
+and the built_in function-call counts, 14331 in all, are:
+= -- 1382
+> -- 254
+< -- 55
++ -- 129
+- -- 64
+* -- 695
+:= -- 2428
+add.period$ -- 46
+call.type$ -- 23
+change.case$ -- 39
+chr.to.int$ -- 86
+cite$ -- 25
+duplicate$ -- 1073
+empty$ -- 1163
+format.name$ -- 95
+if$ -- 3194
 int.to.chr$ -- 1
-int.to.str$ -- 22
-missing$ -- 165
-newline$ -- 87
-num.names$ -- 64
-pop$ -- 405
+int.to.str$ -- 24
+missing$ -- 180
+newline$ -- 93
+num.names$ -- 70
+pop$ -- 445
 preamble$ -- 1
-purify$ -- 21
+purify$ -- 23
 quote$ -- 4
-skip$ -- 1009
+skip$ -- 1120
 stack$ -- 0
-substring$ -- 205
-swap$ -- 603
-text.length$ -- 11
+substring$ -- 260
+swap$ -- 676
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 294
-warning$ -- 1
-while$ -- 51
+type$ -- 326
+warning$ -- 2
+while$ -- 58
 width$ -- 0
-write$ -- 257
+write$ -- 278
 (There was 1 error message)

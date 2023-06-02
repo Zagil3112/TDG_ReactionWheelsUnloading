@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.6.1)  2 JUN 2023 12:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.6.1)  2 JUN 2023 13:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1310,42 +1310,50 @@ LaTeX Info: Redefining \% on input line 1.
 
 
 
-] [11] [12] [13]
-[14] [15] [16] [17]
-Underfull \hbox (badness 1122) in paragraph at lines 118--119
+] [11]
+<imagenes/modelo_dinamico/diagrama_problema.PNG, id=213, 599.23875pt x 415.5525
+pt>
+File: imagenes/modelo_dinamico/diagrama_problema.PNG Graphic file (type png)
+<use imagenes/modelo_dinamico/diagrama_problema.PNG>
+Package pdftex.def Info: imagenes/modelo_dinamico/diagrama_problema.PNG  used o
+n input line 23.
+(pdftex.def)             Requested size: 299.61864pt x 207.77574pt.
+ [12 <./imagenes/modelo_dinamico/diagrama_problema.PNG>] [13] [14] [15] [16] [1
+7]
+Underfull \hbox (badness 1122) in paragraph at lines 128--129
 []\OT1/cmr/m/n/12 A con-ti-nua-ci^^Son se mues-tra una de las re-fe-ren-cias de
 l ar-chi-vo \OT1/cmr/m/it/12 re-fe.bib\OT1/cmr/m/n/12 , don-de
  []
 
 [18] [19] [20] [21]
-<imagenes/grafica.png, id=332, 501.37312pt x 505.13719pt>
+<imagenes/grafica.png, id=343, 501.37312pt x 505.13719pt>
 File: imagenes/grafica.png Graphic file (type png)
 <use imagenes/grafica.png>
-Package pdftex.def Info: imagenes/grafica.png  used on input line 198.
+Package pdftex.def Info: imagenes/grafica.png  used on input line 208.
 (pdftex.def)             Requested size: 250.68594pt x 252.56798pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 233--233
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
 []|\OT1/cmr/m/n/12 Vietnam y
  []
 
 
-Underfull \hbox (badness 1708) in paragraph at lines 243--244
+Underfull \hbox (badness 1708) in paragraph at lines 253--254
 []|\OT1/cmr/m/n/12 Escuela Po-lit^^Secni-ca Fe-de-ral de
  []
 
 [22 <./imagenes/grafica.png>] [23] [24]
-<imagenes/ieee_logo.jpg, id=346, 593.21625pt x 332.74312pt>
+<imagenes/ieee_logo.jpg, id=357, 593.21625pt x 332.74312pt>
 File: imagenes/ieee_logo.jpg Graphic file (type jpg)
 <use imagenes/ieee_logo.jpg>
-Package pdftex.def Info: imagenes/ieee_logo.jpg  used on input line 275.
+Package pdftex.def Info: imagenes/ieee_logo.jpg  used on input line 285.
 (pdftex.def)             Requested size: 296.60739pt x 166.37114pt.
  [25
 
  <./imagenes/ieee_logo.jpg>]
-<imagenes/escudo_udea_solo.png, id=354, 147.55125pt x 193.47281pt>
+<imagenes/escudo_udea_solo.png, id=364, 147.55125pt x 193.47281pt>
 File: imagenes/escudo_udea_solo.png Graphic file (type png)
 <use imagenes/escudo_udea_solo.png>
-Package pdftex.def Info: imagenes/escudo_udea_solo.png  used on input line 286.
+Package pdftex.def Info: imagenes/escudo_udea_solo.png  used on input line 296.
 
 (pdftex.def)             Requested size: 147.55087pt x 193.47234pt.
 
@@ -1358,13 +1366,13 @@ Package pdftex.def Info: imagenes/escudo_udea_solo.png  used on input line 286.
 
  (referencias.tex
 (main.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 56--62
+Underfull \hbox (badness 10000) in paragraph at lines 66--72
 \OT1/cmr/m/it/12 Ap-pro-ved Draft Re-vi-sion for IEEE Stan-dard for In-for-ma-t
 ion technology-
  []
 
 
-Underfull \hbox (badness 1377) in paragraph at lines 56--62
+Underfull \hbox (badness 1377) in paragraph at lines 66--72
 \OT1/cmr/m/it/12 area networks-Specific requirements-Part 15.4b: Wi-re-less Me-
 dium Ac-cess Con-trol\OT1/cmr/m/n/12 .
  []
@@ -1404,10 +1412,10 @@ Package rerunfilecheck Info: File `main.hd' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30232 strings out of 476315
- 580996 string characters out of 5785781
+ 30253 strings out of 476315
+ 581560 string characters out of 5785781
  1867068 words of memory out of 5000000
- 50046 multiletter control sequences out of 15000+600000
+ 50061 multiletter control sequences out of 15000+600000
  522250 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  103i,13n,111p,1380b,1121s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1433,9 +1441,9 @@ sfonts/cm/cmti10.pfb><C:/Users/Personal/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/amsfonts/cm/cmti12.pfb><C:/Users/Personal/AppData/Local/Programs/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Personal/AppData/Local/P
 rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (36 pages, 490410 bytes).
+Output written on main.pdf (36 pages, 537650 bytes).
 PDF statistics:
- 536 PDF objects out of 1000 (max. 8388607)
- 93 named destinations out of 1000 (max. 500000)
- 217 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 546 PDF objects out of 1000 (max. 8388607)
+ 96 named destinations out of 1000 (max. 500000)
+ 222 words of extra memory for PDF output out of 10000 (max. 10000000)
 
