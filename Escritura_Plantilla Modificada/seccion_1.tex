@@ -1,7 +1,7 @@
 %\stepcounter{contsubsec} 
 \section{INTRODUCCIÓN}
 
-La determinación y el control de actitud en satélites son esenciales para el éxito de una misión espacial. Existen diferentes métodos de control de actitud, los cuales pueden clasificarse como pasivos y activos. El control pasivo recurre principalmente al diseño geométrico y magnético del satélite, buscando aprovechar los principios físicos y fuerzas naturales que actúan sobre el satélite, aumentando los efectos de una mientras se minimizan los de otras. Por otro lado, el control activo emplea actuadores como propulsores, magnetorquers (barra de torsión) o ruedas de reacción (Reaction Wheels, RW)  para modificar la actitud del satélite mediante la generación de torques correctivos [1]. Durante una misión espacial, se pueden utilizar diferentes modos de control de actitud para sus diferentes fases y tareas del satélite.
+La determinación y el control de actitud en satélites son esenciales para el éxito de una misión espacial. Existen diferentes métodos de control de actitud, los cuales pueden clasificarse como pasivos y activos. El control pasivo recurre principalmente al diseño geométrico y magnético del satélite, buscando aprovechar los principios físicos y fuerzas naturales que actúan sobre el satélite, aumentando los efectos de una mientras se minimizan los de otras. Por otro lado, el control activo emplea actuadores como propulsores, magnetorquers (barra de torsión) o ruedas de reacción (Reaction Wheels, RW)  para modificar la actitud del satélite mediante la generación de torques correctivos \cite{Wertz1999}. Durante una misión espacial, se pueden utilizar diferentes modos de control de actitud para sus diferentes fases y tareas del satélite.
 En los últimos años, se ha presentado un aumento de misiones espaciales que involucran CubeSats, el cual es un tipo de nanosatélite formado a partir de unidades cúbicas (U) de 10 cm de lado, y que cada vez presentan una mayor complejidad. Por lo tanto, ha sido de gran interés el incremento de la vida útil y el rendimiento de las misiones, donde el sistema de determinación y control de actitud (Attitude Determination and Control System, ADCS)  juegan un papel fundamental para garantizar la probabilidad de éxito [2]. En este sentido, el control de actitud de un CubeSat es fundamental para cumplir el perfil de misión, normalmente situado en órbita baja (Low Earth Orbit, LEO),  donde se busca tener precisión de apuntamiento y estabilidad para las cargas útiles, antenas y paneles solares, que son componentes críticos para el funcionamiento de la nave espacial y del éxito de la misión.
 El control de actitud en CubeSats es normalmente provisto por RW, las cuales intercambian momento con la nave sin consumir propelente. No obstante, una desventaja de este tipo de dispositivos electromecánicos es que acumulan el momento para mantener una actitud deseada y, en consecuencia, las RW se saturan cuando alcanzan su velocidad máxima de rotación lo cual impiden que estas puedan intercambiar momentos que garanticen a la estabilidad del satélite. Por tal motivo, surge un desafío en el área de control de actitud que busca la desaturación de dichas ruedas de reacción mientras se conserva la actitud del satélite.
 Algunos de los desafíos que se presentan frente a este fenómeno se deben a que comúnmente el control de actitud y la desaturación de RW son tratados por separado, y a pesar de que existen numerosos estudios sobre el control de actitud con torques magnéticos, hay pocos artículos que involucran la desaturación del momento de las RW mediante magnetorques [3]. Por otro lado, se requieren controladores que garanticen la estabilidad del satélite anticipando y actuando ante perturbaciones presentes en el ambiente espacial como por ejemplo torques externos debido a gradientes gravitacionales, torques aerodinámicos o torques de radiación solar [4].
@@ -48,22 +48,21 @@ Prefiera las comillas “inglesas” y ‘sencillas’ por sobre las «latinas»
 
 \subsection{Objetivo general}
 
-El objetivo general y los objetivos específicos describen lo que se pretende con la investigación, cuál es el alcance y cuál es el problema que se desea resolver. Deben iniciarse con verbos que describan claramente lo que se lleva a cabo.
+
+
+%El objetivo general y los objetivos específicos describen lo que se pretende con la investigación, cuál es el alcance y cuál es el problema que se desea resolver. Deben iniciarse con verbos que describan claramente lo que se lleva a cabo.
+Validar computacionalmente una estrategia de control de actitud para el picosatélite CubeSat EyasSat que integre la desaturación de sus ruedas de reacción mediante magnetorquers a partir de su modelo dinámico.
 
 \subsection{Objetivos específicos}
 
-Se describen algunos ejemplos de verbos comunes que se utilizan en el planteamiento de objetivos, los cuales cambiarán dependiendo de su investigación.
-
+%Se describen algunos ejemplos de verbos comunes que se utilizan en el planteamiento de objetivos, los cuales cambiarán dependiendo de su investigación.
 \begin{itemize}
-    \item Describir.
-    \item Analizar.
-    \item Demostrar.
-    \item Probar.
-    \item Comparar.
-    \item Definir.
-    \item Establecer.
-    \item Interpretar.
+\item Simular el comportamiento dinámico del nanosatélite EyasSat a partir del desarrollo de un modelo fenomenológico de este.
+\item Determinar una estrategia de control de actitud para el nanosatélite EyasSat que integre la desaturación de las ruedas de reacción empleando magnetorquers a partir de simulaciones computacionales basadas en su modelo dinámico. 
+\item Identificar aquellas órbitas donde la estrategia de control presente el mejor desempeño al utilizar los magnetorquers como elementos de desaturación de las ruedas de reacción.
+
 \end{itemize}
+
 
 \newpage
 %--------------------------
@@ -71,25 +70,8 @@ Se describen algunos ejemplos de verbos comunes que se utilizan en el planteamie
 
 El problema de investigación es el enunciado de lo que puede ser demostrado o encontrado, y de lo cual se requieren pruebas y evidencias.
 
-\newpage
-%--------------------------
-\section{HIPÓTESIS}
 
-La hipótesis es la creencia, la suposición o la conjetura de un fenómeno posible, es decir, independiente de si es verdadero o no. En la hipótesis se reúnen datos, se comparan y se escogen las explicaciones más probables. Dicho de otra forma, la hipótesis es la explicación probable de la relación entre dos o más variables.
 
-    \subsection{Hipótesis de trabajo}
-
-    Texto descriptivo.
-
-    \subsection{Hipótesis estadística}
-
-    Texto descriptivo.
-    
-        \subsubsection{Hipótesis nula:}
-texto descriptivo inicia en la misma línea y continúa como párrafo normal IEEE.
-
-        \paragraph{Hipótesis alternativa:}
-texto descriptivo inicia en la misma línea y continúa como párrafo normal IEEE.
         
 
 \newpage
@@ -180,6 +162,25 @@ y a su vez
 \section{METODOLOGÍA}
 
 En la metodología se establecen los enfoques de investigación, esto es, cuantitativo, cualitativo o mixto.
+
+\subsection{Modelo dinámico}
+
+Por otro lado, para citar ecuaciones e información semejante dentro del texto use $\backslash ref\{\}$, por ejemplo (\ref{eq:maxwell}) o (\ref{eq:maxwell3})
+
+\begin{equation}\label{eq:maxwell}
+	\oint_C \vec{B}\cdot d \vec{l}=\mu_0\int_S \vec{J}\cdot d \vec{s}+\mu_0\epsilon_0\dfrac{d }{d t}\int_S \vec{E}\cdot d \vec{s}
+\end{equation}
+
+y a su vez
+
+\begin{gather}
+	\vec{\nabla}\cdot \vec{E}= \dfrac{\rho}{\epsilon_0}\\
+	\vec{\nabla}\cdot \vec{B}= 0\\
+	\vec{\nabla}\times\vec{E}=-\dfrac{\partial\vec{B}}{\partial t}\\
+	c^2\vec{\nabla}\times\vec{B} =\dfrac{\vec{J}}{\epsilon_0}+\dfrac{\partial
+		\vec{E}}{\partial t}\label{eq:maxwell3}\\
+	\vec{\nabla}\times \vec{B}=\mu_0\vec{J}+\mu_0 \epsilon_0 \dfrac{\partial \vec{E}}{\partial t}
+\end{gather}
 
 \newpage
 %--------------------------

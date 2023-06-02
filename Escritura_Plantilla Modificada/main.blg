@@ -1,0 +1,77 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+A level-1 auxiliary file: seccion_0.aux
+Reallocating 'name_of_file' (item size: 1) to 20 items.
+A level-1 auxiliary file: seccion_resumen.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+A level-1 auxiliary file: seccion_1.aux
+Reallocating 'name_of_file' (item size: 1) to 16 items.
+A level-1 auxiliary file: referencias.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: ieeeudea.bst
+Reallocating 'name_of_file' (item size: 1) to 5 items.
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+A level-1 auxiliary file: anexos.aux
+original is an illegal style-file command---line 7 of file ieeeudea.bst
+ :  original
+ :           starting code base and algorithms obtained from the output of Patrick W. Daly's makebst package as well as from prior versions of
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: refe.bib
+-- IEEEtranN.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+** Natbib version - not for normal IEEE work.
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Warning--edition ordinal word "e*" may be too high (or improper) for conversion in man:manual
+
+Done.
+You've used 21 entries,
+            4853 wiz_defined-function locations,
+            1069 strings with 11396 characters,
+and the built_in function-call counts, 12824 in all, are:
+= -- 1247
+> -- 210
+< -- 45
++ -- 106
+- -- 54
+* -- 614
+:= -- 2193
+add.period$ -- 42
+call.type$ -- 21
+change.case$ -- 37
+chr.to.int$ -- 63
+cite$ -- 22
+duplicate$ -- 968
+empty$ -- 1057
+format.name$ -- 82
+if$ -- 2856
+int.to.chr$ -- 1
+int.to.str$ -- 22
+missing$ -- 165
+newline$ -- 87
+num.names$ -- 64
+pop$ -- 405
+preamble$ -- 1
+purify$ -- 21
+quote$ -- 4
+skip$ -- 1009
+stack$ -- 0
+substring$ -- 205
+swap$ -- 603
+text.length$ -- 11
+text.prefix$ -- 0
+top$ -- 6
+type$ -- 294
+warning$ -- 1
+while$ -- 51
+width$ -- 0
+write$ -- 257
+(There was 1 error message)

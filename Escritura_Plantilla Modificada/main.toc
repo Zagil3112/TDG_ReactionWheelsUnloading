@@ -10,19 +10,15 @@
 \contentsline {subsection}{\numberline {A}Objetivo general}{14}{subsection.4.1}%
 \contentsline {subsection}{\numberline {B}Objetivos específicos}{14}{subsection.4.2}%
 \contentsline {section}{\numberline {V}PROBLEMA DE INVESTIGACIÓN}{15}{section.5}%
-\contentsline {section}{\numberline {VI}HIPÓTESIS}{16}{section.6}%
-\contentsline {subsection}{\numberline {A}Hipótesis de trabajo}{16}{subsection.6.1}%
-\contentsline {subsection}{\numberline {B}Hipótesis estadística}{16}{subsection.6.2}%
-\contentsline {subsubsection}{\numberline {1}Hipótesis nula:}{16}{subsubsection.6.2.1}%
-\contentsline {paragraph}{\numberline {a}Hipótesis alternativa:}{16}{paragraph.6.2.1.1}%
-\contentsline {section}{\numberline {VII}MARCO TEÓRICO}{17}{section.7}%
-\contentsline {section}{\numberline {VIII}METODOLOGÍA}{22}{section.8}%
-\contentsline {section}{\numberline {IX}RESULTADOS}{23}{section.9}%
-\contentsline {section}{\numberline {X}DISCUSIÓN}{28}{section.10}%
-\contentsline {section}{\numberline {XI}CONCLUSIONES}{29}{section.11}%
-\contentsline {section}{\numberline {XII}RECOMENDACIONES}{30}{section.12}%
-\contentsline {section}{\numberline {XII} REFERENCIAS}{31}{section.12}%
-\contentsline {subsection}{\numberline {} Anexo A. Autoarchivo en Repositorio y documentos de interés}{32}{section*.7}%
-\contentsline {subsection}{\numberline {} Anexo B. Recortar y abreviar direcciones web largas}{33}{section*.7}%
-\contentsline {subsection}{\numberline {} Anexo C. Incluir imágenes}{33}{section*.7}%
+\contentsline {section}{\numberline {VI}MARCO TEÓRICO}{16}{section.6}%
+\contentsline {section}{\numberline {VII}METODOLOGÍA}{21}{section.7}%
+\contentsline {subsection}{\numberline {A}Modelo dinámico}{21}{subsection.7.1}%
+\contentsline {section}{\numberline {VIII}RESULTADOS}{22}{section.8}%
+\contentsline {section}{\numberline {IX}DISCUSIÓN}{27}{section.9}%
+\contentsline {section}{\numberline {X}CONCLUSIONES}{28}{section.10}%
+\contentsline {section}{\numberline {XI}RECOMENDACIONES}{29}{section.11}%
+\contentsline {section}{\numberline {XI} REFERENCIAS}{30}{section.11}%
+\contentsline {subsection}{\numberline {} Anexo A. Autoarchivo en Repositorio y documentos de interés}{34}{section.11}%
+\contentsline {subsection}{\numberline {} Anexo B. Recortar y abreviar direcciones web largas}{35}{section.11}%
+\contentsline {subsection}{\numberline {} Anexo C. Incluir imágenes}{35}{section.11}%
 \contentsfinish 
