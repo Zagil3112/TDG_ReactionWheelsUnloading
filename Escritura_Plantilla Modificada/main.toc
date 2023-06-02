@@ -14,14 +14,14 @@
 \contentsline {section}{\numberline {VII}METODOLOGÍA}{22}{section.7}%
 \contentsline {subsection}{\numberline {A}Modelo dinámico}{22}{subsection.7.1}%
 \contentsline {subsection}{\numberline {B}Diseño de estrategia de control}{23}{subsection.7.2}%
-\contentsline {subsection}{\numberline {C}Análisis de órbitas}{23}{subsection.7.3}%
-\contentsline {section}{\numberline {VIII}MODELO DINÁMICO}{24}{section.8}%
-\contentsline {section}{\numberline {IX}RESULTADOS}{26}{section.9}%
-\contentsline {section}{\numberline {X}DISCUSIÓN}{32}{section.10}%
-\contentsline {section}{\numberline {XI}CONCLUSIONES}{33}{section.11}%
-\contentsline {section}{\numberline {XII}RECOMENDACIONES}{34}{section.12}%
-\contentsline {section}{\numberline {XII} REFERENCIAS}{35}{section.12}%
-\contentsline {subsection}{\numberline {} Anexo A. Autoarchivo en Repositorio y documentos de interés}{40}{section.12}%
-\contentsline {subsection}{\numberline {} Anexo B. Recortar y abreviar direcciones web largas}{41}{section.12}%
-\contentsline {subsection}{\numberline {} Anexo C. Incluir imágenes}{41}{section.12}%
+\contentsline {subsection}{\numberline {C}Análisis de órbitas}{24}{subsection.7.3}%
+\contentsline {section}{\numberline {VIII}MODELO DINÁMICO}{26}{section.8}%
+\contentsline {section}{\numberline {IX}RESULTADOS}{28}{section.9}%
+\contentsline {section}{\numberline {X}DISCUSIÓN}{33}{section.10}%
+\contentsline {section}{\numberline {XI}CONCLUSIONES}{34}{section.11}%
+\contentsline {section}{\numberline {XII}RECOMENDACIONES}{35}{section.12}%
+\contentsline {section}{\numberline {XII} REFERENCIAS}{36}{section.12}%
+\contentsline {subsection}{\numberline {} Anexo A. Autoarchivo en Repositorio y documentos de interés}{41}{section.12}%
+\contentsline {subsection}{\numberline {} Anexo B. Recortar y abreviar direcciones web largas}{42}{section.12}%
+\contentsline {subsection}{\numberline {} Anexo C. Incluir imágenes}{42}{section.12}%
 \contentsfinish 

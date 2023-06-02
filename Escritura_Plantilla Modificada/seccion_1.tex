@@ -18,6 +18,8 @@ En este sentido, se propone evaluar estrategias de control de actitud que incorp
 
 %Se refiere al interrogante que lleva al investigador a buscar respuestas concretas. Es la definición del problema que aborda con la investigación. 
 
+Estrategia de control que  permita eliminar la saturacion de la rueda de reacción 
+
 \begin{figure}[!ht]
 	\begin{center}
 		\includegraphics[scale=0.5]{imagenes/modelo_dinamico/diagrama_problema.PNG}\\
@@ -184,7 +186,7 @@ En este sentido, el desarrollo de este trabajo de grado se divide en tres etapas
 Primero es necesario interpretar el fenómeno de estudio, partiendo de la realidad y llevándola a un entorno matemático que permita su simulación. Para ello se recurre a un modelo dinámico, constituido por las ecuaciones diferenciales involucradas en el fenómeno físico y sus propiedades inerciales.
 De esta manera se pretende resolver las siguientes preguntas: ¿Cuál es el marco de referencia idóneo para plantear las ecuaciones del modelo dinámico? ¿De qué manera se puede comprobar que el modelo dinámico se acerca al modelamiento real del fenómeno? ¿Qué torques internos y externos deben tenerse en cuenta según las necesidades del proyecto?
 Para ello se plantean las siguientes actividades:
-\begin{itemize}
+\begin{enumerate}[label=\alph*)]
 	
 	\item Recopilación y comprensión de modelos dinámicos similares al caso de estudio según el estado del arte. Para esto se consultarán diversas fuentes de libros, bases de datos y revistas indexadas.
 	
@@ -193,7 +195,7 @@ Para ello se plantean las siguientes actividades:
 	\item Simulación realizando ajustes de parámetros usando la herramienta computacional de Matlab Simulink: se busca conocer el comportamiento del modelo dinámico que corresponda a la realidad.
 
 	
-\end{itemize}
+\end{enumerate}
 
 
 
@@ -201,7 +203,7 @@ Para ello se plantean las siguientes actividades:
 Una vez se tiene un modelo dinámico, se realizarán simulaciones con diferentes estrategias de control que garanticen condiciones de estabilidad e incluyan la desaturación de ruedas de reacción. 
 De tal manera que, en la medida que se realicen y se desarrollen las simulaciones esta etapa se responderán las preguntas: ¿Qué estrategia de control es la que más se emplea actualmente? ¿Qué deficiencias tiene?, comparando la estrategia de control de referencia ¿cómo se desempeñan los otros controladores? Para esto se proponen las siguientes actividades y experimentos:
 
-\begin{itemize}
+\begin{enumerate}[label=\alph*)]
 	
 	\item	Búsqueda bibliográfica de controladores para justificar para identificar aquellos que comúnmente utilizados para hacer frente al fenómeno de estudio. De esta manera, se seleccionará el controlador más usado para usarlo como punto de comparación. 
 	\item	Definir índices de desempeño del comportamiento de los controladores justificando la incorporación de las diferentes variables que hacen parte de este, teniendo en cuenta parámetros como el consumo energético, el tiempo de reacción y error en estado estable.
@@ -210,23 +212,23 @@ De tal manera que, en la medida que se realicen y se desarrollen las simulacione
 	\item	Realizar pruebas con los diferentes controladores en los diferentes escenarios propuestos y compararlos a partir de sus índices de desempeño.
 	
 	
-\end{itemize}
+\end{enumerate}
  
  \subsection{Análisis de órbitas} 
 
 Como se mencionó en la sección de modelo dinámico, este parte de realizar suposiciones y simplificaciones. Algunas de estas conciernen la órbita y las perturbaciones del medio ambiente espacial. En esta etapa se quiere determinar la influencia de ciertos parámetros orbitales de la órbita baja, sus correspondientes intensidades de campo geomagnético y como éstas afectan el desempeño de los magnetorquers en el fenómeno de desaturación.  
 Luego de implementar condiciones de ambiente espacial, las simulaciones deberían dilucidar las siguientes preguntas: ¿En qué órbitas de presenta un mejor desempeño por parte de los magnetorquers y con cual controlador? ¿Qué tipo de perfil de misiones son las más indicadas para los controladores seleccionados? Para ello se plantean las siguientes actividades y experimentos:
-\begin{itemize}
+\begin{enumerate}[label=\alph*)]
 	
 	\item	Integrar las intensidades de campo magnético terrestre según una órbita deseada en el modelo dinámico, a partir de recursos como el paquete SEET del software multifísico STK o su alternativa de código abierto GMAT, entre otros de uso libre. 
 	\item	Nuevamente realizar pruebas y comparaciones de los controladores de actitud con desaturación de RW basados en los índices de desempeño. De esta manera, se evalúan diferentes escenarios donde se varían espacial y temporalmente algunos parámetros orbitales como la inclinación, excentricidad y la variación del campo geomagnético.
 	
 	
-\end{itemize}
+\end{enumerate}
 
 Finalmente, el esquema de la estrategia metodológica puede apreciarse en la Fig.\ref{fig:metodologia}, donde se plantea el entregable u objetivo a cumplir al término cada etapa, el cual es fundamental para el desarrollo de la etapa posterior. De esta manera se consolida una estrategia secuencial pero que puede estar sujeta a diferentes iteraciones según el desarrollo de las actividades.
 
-\begin{figure}[!ht]
+\begin{figure}[h]
 	\begin{center}
 		\includegraphics[scale=1]{imagenes/metodologia/grafico_metodologia.png}\\
 	\end{center}
@@ -235,6 +237,7 @@ Finalmente, el esquema de la estrategia metodológica puede apreciarse en la Fig
 	\textit{}
 \end{figure}
 
+\FloatBarrier
 
 \section{MODELO DINÁMICO}
 
@@ -263,14 +266,11 @@ Donde $\omega$ es la velocidad angular en el marco del cuerpo. Por otro lado, se
 
 De esta manera, velocidad y la aceleración pueden ser determinadas: 
 
+\begin{gather}
+		\boldsymbol{v}=\left(\frac{\mathrm{d} \boldsymbol{r}}{\mathrm{d} t}\right)_i=\frac{\mathrm{d} \boldsymbol{R}}{\mathrm{d} t}+\left(\frac{\mathrm{d} \boldsymbol{\rho}}{\mathrm{d} t}\right)_b+\omega \times \boldsymbol{\rho}\label{eq:velocidad}\\	
+		\boldsymbol{a}=\left(\frac{\mathrm{d}^2 \boldsymbol{r}}{\mathrm{d} t^2}\right)_i=\frac{\mathrm{d}^2 \boldsymbol{R}}{\mathrm{d} t^2}+\left(\frac{\mathrm{d}^2 \boldsymbol{\rho}}{\mathrm{d} t^2}\right)_b+2 \omega \times\left(\frac{\mathrm{d} \boldsymbol{\rho}}{\mathrm{d} t}\right)_b+\frac{\mathrm{d} \omega}{\mathrm{d} t} \times \boldsymbol{\rho}+\omega \times(\omega \times \boldsymbol{\rho})\label{eq:aceleracion}				
+\end{gather}
 
-\begin{equation}\label{eq:velocidad}
-	\boldsymbol{v}=\left(\frac{\mathrm{d} \boldsymbol{r}}{\mathrm{d} t}\right)_i=\frac{\mathrm{d} \boldsymbol{R}}{\mathrm{d} t}+\left(\frac{\mathrm{d} \boldsymbol{\rho}}{\mathrm{d} t}\right)_b+\omega \times \boldsymbol{\rho} 
-\end{equation}	
-	
-\begin{equation}\label{eq:aceleracion}
-	\boldsymbol{a}=\left(\frac{\mathrm{d}^2 \boldsymbol{r}}{\mathrm{d} t^2}\right)_i=\frac{\mathrm{d}^2 \boldsymbol{R}}{\mathrm{d} t^2}+\left(\frac{\mathrm{d}^2 \boldsymbol{\rho}}{\mathrm{d} t^2}\right)_b+2 \omega \times\left(\frac{\mathrm{d} \boldsymbol{\rho}}{\mathrm{d} t}\right)_b+\frac{\mathrm{d} \omega}{\mathrm{d} t} \times \boldsymbol{\rho}+\omega \times(\omega \times \boldsymbol{\rho})
-\end{equation}
 
 
 Por otro lado, para citar ecuaciones e información semejante dentro del texto use $\backslash ref\{\}$, por ejemplo (\ref{eq:maxwell}) o (\ref{eq:maxwell3})
