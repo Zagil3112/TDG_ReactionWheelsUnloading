@@ -37,45 +37,45 @@ Warning--missing publisher in Kaplan1976
 Warning--edition ordinal word "e*" may be too high (or improper) for conversion in man:manual
 
 Done.
-You've used 29 entries,
+You've used 30 entries,
             4853 wiz_defined-function locations,
-            1124 strings with 13229 characters,
-and the built_in function-call counts, 18155 in all, are:
-= -- 1725
-> -- 372
-< -- 69
-+ -- 186
-- -- 94
-* -- 899
-:= -- 3067
-add.period$ -- 57
-call.type$ -- 29
-change.case$ -- 46
-chr.to.int$ -- 113
-cite$ -- 32
-duplicate$ -- 1338
-empty$ -- 1450
-format.name$ -- 136
-if$ -- 4033
+            1131 strings with 13384 characters,
+and the built_in function-call counts, 18662 in all, are:
+= -- 1763
+> -- 388
+< -- 70
++ -- 193
+- -- 98
+* -- 927
+:= -- 3150
+add.period$ -- 59
+call.type$ -- 30
+change.case$ -- 47
+chr.to.int$ -- 114
+cite$ -- 33
+duplicate$ -- 1374
+empty$ -- 1503
+format.name$ -- 144
+if$ -- 4147
 int.to.chr$ -- 1
-int.to.str$ -- 30
-missing$ -- 229
-newline$ -- 115
-num.names$ -- 88
-pop$ -- 585
+int.to.str$ -- 31
+missing$ -- 235
+newline$ -- 118
+num.names$ -- 91
+pop$ -- 607
 preamble$ -- 1
-purify$ -- 29
+purify$ -- 30
 quote$ -- 4
-skip$ -- 1404
+skip$ -- 1443
 stack$ -- 0
-substring$ -- 328
-swap$ -- 839
+substring$ -- 330
+swap$ -- 856
 text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 413
+type$ -- 421
 warning$ -- 3
-while$ -- 73
+while$ -- 75
 width$ -- 0
-write$ -- 345
+write$ -- 354
 (There was 1 error message)

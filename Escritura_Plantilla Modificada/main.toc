@@ -4,21 +4,24 @@
 \contentsline {section}{\numberline {} ABSTRACT}{9}{Doc-Start}%
 \contentsline {section}{\numberline {I}INTRODUCCIÓN}{10}{section.1}%
 \contentsline {section}{\numberline {II}PLANTEAMIENTO DEL PROBLEMA}{12}{section.2}%
-\contentsline {subsection}{\numberline {A}Antecedentes}{12}{subsection.2.1}%
-\contentsline {section}{\numberline {III}JUSTIFICACIÓN}{13}{section.3}%
-\contentsline {section}{\numberline {IV}OBJETIVOS}{14}{section.4}%
-\contentsline {subsection}{\numberline {A}Objetivo general}{14}{subsection.4.1}%
-\contentsline {subsection}{\numberline {B}Objetivos específicos}{14}{subsection.4.2}%
-\contentsline {section}{\numberline {V}PROBLEMA DE INVESTIGACIÓN}{15}{section.5}%
-\contentsline {section}{\numberline {VI}MARCO TEÓRICO}{16}{section.6}%
-\contentsline {section}{\numberline {VII}METODOLOGÍA}{21}{section.7}%
-\contentsline {subsection}{\numberline {A}Modelo dinámico}{21}{subsection.7.1}%
-\contentsline {section}{\numberline {VIII}RESULTADOS}{22}{section.8}%
-\contentsline {section}{\numberline {IX}DISCUSIÓN}{27}{section.9}%
-\contentsline {section}{\numberline {X}CONCLUSIONES}{28}{section.10}%
-\contentsline {section}{\numberline {XI}RECOMENDACIONES}{29}{section.11}%
-\contentsline {section}{\numberline {XI} REFERENCIAS}{30}{section.11}%
-\contentsline {subsection}{\numberline {} Anexo A. Autoarchivo en Repositorio y documentos de interés}{34}{section.11}%
-\contentsline {subsection}{\numberline {} Anexo B. Recortar y abreviar direcciones web largas}{35}{section.11}%
-\contentsline {subsection}{\numberline {} Anexo C. Incluir imágenes}{35}{section.11}%
+\contentsline {subsection}{\numberline {A}Estado del Arte}{12}{subsection.2.1}%
+\contentsline {section}{\numberline {III}JUSTIFICACIÓN}{14}{section.3}%
+\contentsline {section}{\numberline {IV}OBJETIVOS}{15}{section.4}%
+\contentsline {subsection}{\numberline {A}Objetivo general}{15}{subsection.4.1}%
+\contentsline {subsection}{\numberline {B}Objetivos específicos}{15}{subsection.4.2}%
+\contentsline {section}{\numberline {V}PROBLEMA DE INVESTIGACIÓN}{16}{section.5}%
+\contentsline {section}{\numberline {VI}MARCO TEÓRICO}{17}{section.6}%
+\contentsline {section}{\numberline {VII}METODOLOGÍA}{22}{section.7}%
+\contentsline {subsection}{\numberline {A}Modelo dinámico}{22}{subsection.7.1}%
+\contentsline {subsection}{\numberline {B}Diseño de estrategia de control}{23}{subsection.7.2}%
+\contentsline {subsection}{\numberline {C}Análisis de órbitas}{23}{subsection.7.3}%
+\contentsline {section}{\numberline {VIII}MODELO DINÁMICO}{24}{section.8}%
+\contentsline {section}{\numberline {IX}RESULTADOS}{26}{section.9}%
+\contentsline {section}{\numberline {X}DISCUSIÓN}{32}{section.10}%
+\contentsline {section}{\numberline {XI}CONCLUSIONES}{33}{section.11}%
+\contentsline {section}{\numberline {XII}RECOMENDACIONES}{34}{section.12}%
+\contentsline {section}{\numberline {XII} REFERENCIAS}{35}{section.12}%
+\contentsline {subsection}{\numberline {} Anexo A. Autoarchivo en Repositorio y documentos de interés}{40}{section.12}%
+\contentsline {subsection}{\numberline {} Anexo B. Recortar y abreviar direcciones web largas}{41}{section.12}%
+\contentsline {subsection}{\numberline {} Anexo C. Incluir imágenes}{41}{section.12}%
 \contentsfinish 

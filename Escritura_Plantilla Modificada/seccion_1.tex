@@ -177,9 +177,101 @@ y a su vez
 %--------------------------
 \section{METODOLOGÍA}
 
-En la metodología se establecen los enfoques de investigación, esto es, cuantitativo, cualitativo o mixto.
+%En la metodología se establecen los enfoques de investigación, esto es, cuantitativo, cualitativo o mixto.
+La estrategia metodológica tiene un enforque cuantitativo, ya que toma como punto de partida un fenómeno, que puede ser amplio en el campo de la dinámica de satélites, pero que se acota cada vez más según se definen las preguntas de investigación, su alcance y su definición de variables. Por otro lado, se define un conocimiento mínimo, consolidado en el marco teórico, y una revisión de los métodos e investigaciones que se han realizado hasta el momento, consignado en el estado del arte.
+En este sentido, el desarrollo de este trabajo de grado se divide en tres etapas:
+\subsection{Modelo dinámico} 
+Primero es necesario interpretar el fenómeno de estudio, partiendo de la realidad y llevándola a un entorno matemático que permita su simulación. Para ello se recurre a un modelo dinámico, constituido por las ecuaciones diferenciales involucradas en el fenómeno físico y sus propiedades inerciales.
+De esta manera se pretende resolver las siguientes preguntas: ¿Cuál es el marco de referencia idóneo para plantear las ecuaciones del modelo dinámico? ¿De qué manera se puede comprobar que el modelo dinámico se acerca al modelamiento real del fenómeno? ¿Qué torques internos y externos deben tenerse en cuenta según las necesidades del proyecto?
+Para ello se plantean las siguientes actividades:
+\begin{itemize}
+	
+	\item Recopilación y comprensión de modelos dinámicos similares al caso de estudio según el estado del arte. Para esto se consultarán diversas fuentes de libros, bases de datos y revistas indexadas.
+	
+	\item Adaptación de dichos modelos para la construcción de un modelo propio: se parte de un modelo simple y se hacen suposiciones como: orbita circular, campo magnético constante, simetrías, etc.
+	
+	\item Simulación realizando ajustes de parámetros usando la herramienta computacional de Matlab Simulink: se busca conocer el comportamiento del modelo dinámico que corresponda a la realidad.
 
-\subsection{Modelo dinámico}
+	
+\end{itemize}
+
+
+
+\subsection{Diseño de estrategia de control} 
+Una vez se tiene un modelo dinámico, se realizarán simulaciones con diferentes estrategias de control que garanticen condiciones de estabilidad e incluyan la desaturación de ruedas de reacción. 
+De tal manera que, en la medida que se realicen y se desarrollen las simulaciones esta etapa se responderán las preguntas: ¿Qué estrategia de control es la que más se emplea actualmente? ¿Qué deficiencias tiene?, comparando la estrategia de control de referencia ¿cómo se desempeñan los otros controladores? Para esto se proponen las siguientes actividades y experimentos:
+
+\begin{itemize}
+	
+	\item	Búsqueda bibliográfica de controladores para justificar para identificar aquellos que comúnmente utilizados para hacer frente al fenómeno de estudio. De esta manera, se seleccionará el controlador más usado para usarlo como punto de comparación. 
+	\item	Definir índices de desempeño del comportamiento de los controladores justificando la incorporación de las diferentes variables que hacen parte de este, teniendo en cuenta parámetros como el consumo energético, el tiempo de reacción y error en estado estable.
+	\item	Diseño y simulación de controladores de actitud con desaturación de RW, como por ejemplo LQR, PID, anti wind up Multi agente, modelo predictivo, static input allocation.
+	\item	Definir escenarios: Se plantearán diferentes escenarios correspondientes a un uso específico del cubesat, donde el objetivo varía según la órbita o el perfil de misión. De esta manera se evaluará el desempeño de los controladores para distintas aplicaciones, como un apuntamiento constante hacia una base terrena, disminución de consumo energético o aumento en la respuesta para alcanzar la estabilidad.
+	\item	Realizar pruebas con los diferentes controladores en los diferentes escenarios propuestos y compararlos a partir de sus índices de desempeño.
+	
+	
+\end{itemize}
+ 
+ \subsection{Análisis de órbitas} 
+
+Como se mencionó en la sección de modelo dinámico, este parte de realizar suposiciones y simplificaciones. Algunas de estas conciernen la órbita y las perturbaciones del medio ambiente espacial. En esta etapa se quiere determinar la influencia de ciertos parámetros orbitales de la órbita baja, sus correspondientes intensidades de campo geomagnético y como éstas afectan el desempeño de los magnetorquers en el fenómeno de desaturación.  
+Luego de implementar condiciones de ambiente espacial, las simulaciones deberían dilucidar las siguientes preguntas: ¿En qué órbitas de presenta un mejor desempeño por parte de los magnetorquers y con cual controlador? ¿Qué tipo de perfil de misiones son las más indicadas para los controladores seleccionados? Para ello se plantean las siguientes actividades y experimentos:
+\begin{itemize}
+	
+	\item	Integrar las intensidades de campo magnético terrestre según una órbita deseada en el modelo dinámico, a partir de recursos como el paquete SEET del software multifísico STK o su alternativa de código abierto GMAT, entre otros de uso libre. 
+	\item	Nuevamente realizar pruebas y comparaciones de los controladores de actitud con desaturación de RW basados en los índices de desempeño. De esta manera, se evalúan diferentes escenarios donde se varían espacial y temporalmente algunos parámetros orbitales como la inclinación, excentricidad y la variación del campo geomagnético.
+	
+	
+\end{itemize}
+
+Finalmente, el esquema de la estrategia metodológica puede apreciarse en la Fig.\ref{fig:metodologia}, donde se plantea el entregable u objetivo a cumplir al término cada etapa, el cual es fundamental para el desarrollo de la etapa posterior. De esta manera se consolida una estrategia secuencial pero que puede estar sujeta a diferentes iteraciones según el desarrollo de las actividades.
+
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=1]{imagenes/metodologia/grafico_metodologia.png}\\
+	\end{center}
+	\caption{Diagrama estrategia metodológica}
+	\label{fig:metodologia}
+	\textit{}
+\end{figure}
+
+
+\section{MODELO DINÁMICO}
+
+La de actitud de una nave espacial como un CubeSat puede ser representada por las ecuaciones dinámicas de Newton-Euler, las cuales describen los efectos de los torques externos e internos que modifican la aceleración del satélite. Para llegar a dichas ecuaciones se parte de la dinámica rotacional tal como se describen en \cite{Griffin2004}.
+
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.5]{imagenes/modelo_dinamico/ref_system.PNG}\\
+	\end{center}
+	\caption{Variación en el tiempo de un marco de referencia rotante}
+	\label{fig:rot_frame}
+	\textit{}
+\end{figure}
+
+La Fig.\ref{fig:rot_frame} muestra la geometría esencial del sistema. Se tiene el vector de posición $\rho$ en el marco del cuerpo en rotación, si se desea conocer su variación en el tiempo respecto al marco inercial se tiene:
+
+\begin{equation}\label{eq:variacion_rho}
+	\left(\frac{\mathrm{d} \rho}{\mathrm{d} t}\right)_i=\left(\frac{\mathrm{d} \rho}{\mathrm{d} t}\right)_b+\omega \times \boldsymbol{\rho}
+\end{equation}
+
+Donde $\omega$ es la velocidad angular en el marco del cuerpo. Por otro lado, se requieren determinar el vector posición $\vec{r}$ y sus derivadas $\vec{v}$ y $\vec{a}$. Del sistema vectorial se tiene una relación entre r y p:
+
+\begin{equation}\label{eq:suma_vectores}
+	r = R + \rho
+\end{equation}
+
+De esta manera, velocidad y la aceleración pueden ser determinadas: 
+
+
+\begin{equation}\label{eq:velocidad}
+	\boldsymbol{v}=\left(\frac{\mathrm{d} \boldsymbol{r}}{\mathrm{d} t}\right)_i=\frac{\mathrm{d} \boldsymbol{R}}{\mathrm{d} t}+\left(\frac{\mathrm{d} \boldsymbol{\rho}}{\mathrm{d} t}\right)_b+\omega \times \boldsymbol{\rho} 
+\end{equation}	
+	
+\begin{equation}\label{eq:aceleracion}
+	\boldsymbol{a}=\left(\frac{\mathrm{d}^2 \boldsymbol{r}}{\mathrm{d} t^2}\right)_i=\frac{\mathrm{d}^2 \boldsymbol{R}}{\mathrm{d} t^2}+\left(\frac{\mathrm{d}^2 \boldsymbol{\rho}}{\mathrm{d} t^2}\right)_b+2 \omega \times\left(\frac{\mathrm{d} \boldsymbol{\rho}}{\mathrm{d} t}\right)_b+\frac{\mathrm{d} \omega}{\mathrm{d} t} \times \boldsymbol{\rho}+\omega \times(\omega \times \boldsymbol{\rho})
+\end{equation}
+
 
 Por otro lado, para citar ecuaciones e información semejante dentro del texto use $\backslash ref\{\}$, por ejemplo (\ref{eq:maxwell}) o (\ref{eq:maxwell3})
 
