@@ -315,21 +315,21 @@ Donde $I$ es una matriz real y simétrica, llamada matriz de inercia, con compon
  	H = I\omega_b + h_w
  \end{equation}
  
- Por otro lado, el efecto de los torques externos se incluye al considerar una fuerza $F_i$ aplicada en una posición $\rho_i$ en las coordenadas del marco del cuerpo. Esta fuerza tiene un efecto dado por : 
- 
+ Por otro lado, el efecto de los torques externos se incluye al considerar una fuerza $F_i$ aplicada en una posición $\rho_i$ en las coordenadas del marco del cuerpo. Esta fuerza tiene un efecto dado por: 
+  
  \begin{equation}
  	T_i=\rho_i \times F_i  
  \end{equation}
  
  
-El torque neto de fuerzas externas sería:
+En este sentido, el torque neto de fuerzas externas es:
 
 \begin{equation}
 	T=\sum \rho_i \times F_i=\sum \rho_i \times m_i \frac{\mathrm{d}^2 r_i}{\mathrm{~d} t^2} 	
 \end{equation}
  
  
- Al expandir la expresión para la aceleración tal como se hizo anteriormente, se tiene que :
+ Al expandir la expresión para la aceleración tal como se hizo en la eq.(\ref{eq:aceleracion}), se tiene que :
  
  \begin{equation}
  	T= \frac{\mathrm{d} H}{\mathrm{d} t} = \left(\frac{\mathrm{d} H}{\mathrm{d} t}\right)_{body} + \omega \times H 	
@@ -361,7 +361,7 @@ Finalmente, igualando las ecuaciones anteriores y organizando términos se tiene
 	\frac{d \omega_b}{d t}=I^{-1}\left[-\omega_b \times\left(I \omega_b+h_w\right)+T+T_C\right]	
 \end{equation}
 
-donde\\
+donde:\\
 $$
 \mathbf{I}=\left[\begin{array}{ccc}
 	I_{x x} & I_{x y} & I_{x z} \\

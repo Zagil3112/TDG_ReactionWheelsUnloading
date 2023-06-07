@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.6.1)  7 JUN 2023 03:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.6.1)  7 JUN 2023 03:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1414,7 +1414,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 371--373
  []
 
 [29] [30]
-<imagenes/grafica.png, id=455, 501.37312pt x 505.13719pt>
+<imagenes/grafica.png, id=456, 501.37312pt x 505.13719pt>
 File: imagenes/grafica.png Graphic file (type png)
 <use imagenes/grafica.png>
 Package pdftex.def Info: imagenes/grafica.png  used on input line 405.
@@ -1430,7 +1430,7 @@ Underfull \hbox (badness 1708) in paragraph at lines 450--451
  []
 
 [31 <./imagenes/grafica.png>] [32] [33]
-<imagenes/ieee_logo.jpg, id=470, 593.21625pt x 332.74312pt>
+<imagenes/ieee_logo.jpg, id=471, 593.21625pt x 332.74312pt>
 File: imagenes/ieee_logo.jpg Graphic file (type jpg)
 <use imagenes/ieee_logo.jpg>
 Package pdftex.def Info: imagenes/ieee_logo.jpg  used on input line 482.
@@ -1438,7 +1438,7 @@ Package pdftex.def Info: imagenes/ieee_logo.jpg  used on input line 482.
  [34
 
  <./imagenes/ieee_logo.jpg>]
-<imagenes/escudo_udea_solo.png, id=476, 147.55125pt x 193.47281pt>
+<imagenes/escudo_udea_solo.png, id=477, 147.55125pt x 193.47281pt>
 File: imagenes/escudo_udea_solo.png Graphic file (type png)
 <use imagenes/escudo_udea_solo.png>
 Package pdftex.def Info: imagenes/escudo_udea_solo.png  used on input line 493.
@@ -1542,9 +1542,9 @@ ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/P
 ersonal/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb
 ><C:/Users/Personal/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmtt12.pfb>
-Output written on main.pdf (46 pages, 715852 bytes).
+Output written on main.pdf (46 pages, 716032 bytes).
 PDF statistics:
- 689 PDF objects out of 1000 (max. 8388607)
+ 690 PDF objects out of 1000 (max. 8388607)
  138 named destinations out of 1000 (max. 500000)
  256 words of extra memory for PDF output out of 10000 (max. 10000000)
 
