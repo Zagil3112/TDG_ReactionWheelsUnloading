@@ -322,7 +322,7 @@ Donde $I$ es una matriz real y simétrica, llamada matriz de inercia, con compon
  \end{equation}
  
  
-El torque neto de todas las fuerzas sería:
+El torque neto de fuerzas externas sería:
 
 \begin{equation}
 	T=\sum \rho_i \times F_i=\sum \rho_i \times m_i \frac{\mathrm{d}^2 r_i}{\mathrm{~d} t^2} 	
@@ -341,25 +341,53 @@ El torque neto de todas las fuerzas sería:
  	 \left(\frac{\mathrm{d} H}{\mathrm{d} t}\right)_{body} = T-\omega \times \left(I\omega + h_w\right) 	
  \end{equation}
  
- Análogamente, se puede obtener otra expresión para el cambio de momento angular al derivar la ecuación XX respecto al tiempo :
+ Análogamente, se puede obtener otra expresión para el cambio de momento angular al derivar la eq.(\ref{eq:H_total_RW}) respecto al tiempo :
+ 
+ \begin{equation}
+ 	\dot{H_b} = \left(\frac{\mathrm{d} H}{\mathrm{d} t}\right)_{body} = 
+ 	I\frac{\mathrm{d} \omega_b}{\mathrm{d} t} + \dot{h_w}  	
+ \end{equation}
+ 
+Tomando el principio del intercambio de momentos, se tiene que el momento angular producido por las ruedas de reacción se aplica al satélite con signo opuesto. Entonces si definimos $T_c$ como el par de control:
 
-
-Por otro lado, para citar ecuaciones e información semejante dentro del texto use $\backslash ref\{\}$, por ejemplo (\ref{eq:maxwell}) o (\ref{eq:maxwell3})
-
-\begin{equation}\label{eq:maxwell}
-	\oint_C \vec{B}\cdot d \vec{l}=\mu_0\int_S \vec{J}\cdot d \vec{s}+\mu_0\epsilon_0\dfrac{d }{d t}\int_S \vec{E}\cdot d \vec{s}
+\begin{equation}
+	\dot{h_w} = -T_c  	
 \end{equation}
 
-y a su vez
+Finalmente, igualando las ecuaciones anteriores y organizando términos se tiene una expresión para las aceleraciones angulares del CubeSat:
 
-\begin{gather}
-	\vec{\nabla}\cdot \vec{E}= \dfrac{\rho}{\epsilon_0}\\
-	\vec{\nabla}\cdot \vec{B}= 0\\
-	\vec{\nabla}\times\vec{E}=-\dfrac{\partial\vec{B}}{\partial t}\\
-	c^2\vec{\nabla}\times\vec{B} =\dfrac{\vec{J}}{\epsilon_0}+\dfrac{\partial
-		\vec{E}}{\partial t}\label{eq:maxwell3}\\
-	\vec{\nabla}\times \vec{B}=\mu_0\vec{J}+\mu_0 \epsilon_0 \dfrac{\partial \vec{E}}{\partial t}
-\end{gather}
+
+\begin{equation}\label{eq:modelo_dinamico}
+	\frac{d \omega_b}{d t}=I^{-1}\left[-\omega_b \times\left(I \omega_b+h_w\right)+T+T_C\right]	
+\end{equation}
+
+donde\\
+$$
+\mathbf{I}=\left[\begin{array}{ccc}
+	I_{x x} & I_{x y} & I_{x z} \\
+	I_{y x} & I_{y y} & I_{y z} \\
+	I_{z x} & I_{z y} & I_{z z}
+\end{array}\right]=\text { Matriz de inercia }
+$$
+$\omega_b=\left[\begin{array}{l}\omega_x \\ \omega_y \\ \omega_z\end{array}\right]=$ Vector de velocidad angular en el marco del cuerpo.\\
+
+$\mathbf{h_w}=\left[\begin{array}{l}h_x \\ h_y \\ h_z\end{array}\right]=$ Vector de momento de angular de las RW. 
+$$
+\begin{gathered}
+	\dot{\mathbf{q}}=\frac{1}{2} \Omega \mathbf{q} \\
+	\Omega=\left[\begin{array}{cccc}
+		0 & w_z & -w_y & w_x \\
+		-w_z & 0 & w_x & w_y \\
+		w_y & -w_x & 0 & w_z \\
+		-w_x & -w_y & -w_z & 0
+	\end{array}\right] \\
+	\mathbf{q}=\left[\begin{array}{llll}
+		q_1 & q_2 & q_3 & q_4
+	\end{array}\right]^T
+\end{gathered}
+$$ 
+
+
 
 \newpage
 %--------------------------
