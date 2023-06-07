@@ -271,6 +271,77 @@ De esta manera, velocidad y la aceleración pueden ser determinadas:
 		\boldsymbol{a}=\left(\frac{\mathrm{d}^2 \boldsymbol{r}}{\mathrm{d} t^2}\right)_i=\frac{\mathrm{d}^2 \boldsymbol{R}}{\mathrm{d} t^2}+\left(\frac{\mathrm{d}^2 \boldsymbol{\rho}}{\mathrm{d} t^2}\right)_b+2 \omega \times\left(\frac{\mathrm{d} \boldsymbol{\rho}}{\mathrm{d} t}\right)_b+\frac{\mathrm{d} \omega}{\mathrm{d} t} \times \boldsymbol{\rho}+\omega \times(\omega \times \boldsymbol{\rho})\label{eq:aceleracion}				
 \end{gather}
 
+En la dinámica rotacional, dos cantidades fundamentales de interés son el momento de inercia y el momento angular. El momento angular de una colección de puntos de masa es el momento de su momento lineal alrededor de un origen definido. A partir de Fig.\ref{fig:rot_frame}, el momento angular de la masa mi alrededor del origen en el sistema de inercial es:
+
+\begin{equation}
+	H_{t}=\sum r_i \times m_i v_i\\
+\end{equation}
+
+Si aplicamos las eq.(\ref{eq:velocidad}) y eq.(\ref{eq:aceleracion}) con $V =\frac{\mathrm{d} {R}}{\mathrm{d} t}$ y si suponemos que 1) el origen del marco de rotación se encuentra en el centro de masa del cuerpo ($\sum m_i\rho_i =0$), y 2) los vectores de posición $\rho_i$ están fijos en el marco del cuerpo, es decir, tenemos un cuerpo rígido $\frac{\mathrm{d} {\rho}}{\mathrm{d} t} =0$ . Se obtiene el momento angular total así:
+
+\begin{equation}\label{eq:H_total}
+H_{t}=\left(\sum m_i\right)R\times V +\sum m_i \rho_i\times\frac{\mathrm{d} {\rho_i}}{\mathrm{d} t} = H_{orb} + H_b \\
+\end{equation}
+
+El primer término de la derecha es el momento angular del cuerpo rígido debido a V en el marco de inercia. El segundo término es el momento angular del cuerpo debido a su velocidad de rotación alrededor de su propio centro de masa. La eq. (\ref{eq:H_total}) provee un importante resultado ya que indica que, en un cuerpo rígido, es posible escoger un marco de coordenadas que desacopla el momento angular del cuerpo y del momento angular orbital.
+Por tal motivo, el análisis se centrará únicamente en el segundo término, donde la eq.(\ref{eq:variacion_rho}) se simplificaría de la siguiente manera: 
+
+\begin{equation}\label{eq:variacion_rho_simplificada}
+	\frac{\mathrm{d} \rho_j}{\mathrm{d} t}=\omega\times\rho_i
+\end{equation}
+
+De esta manera, a partir de la eq.(\ref{eq:H_total}) tenemos que el momento angular en el marco del cuerpo es:
+
+\begin{equation}\label{eq:H_total_simplificada}
+	H=\sum m_i\rho_i\times\frac{\mathrm{d} {\rho_i}}{\mathrm{d} t} =
+	 \sum m_i\rho_i \times(\omega \times \rho_i) = I\omega \\
+\end{equation}
+Donde $I$ es una matriz real y simétrica, llamada matriz de inercia, con componentes: 
+ 
+ $$
+ \begin{aligned}
+ 	& I_{11}=\sum m_i\left(\rho_{i 2}^2+\rho_{i 3}^2\right) \\
+ 	& I_{22}=\sum m_i\left(\rho_{i 1}^2+\rho_{i 3}^2\right) \\
+ 	& I_{33}=\sum m_i\left(\rho_{i 1}^2+\rho_{i 2}^2\right) \\
+ 	& I_{12}=I_{21}=-\sum m_1 \rho_{i 1} \rho_{i 2} \\
+ 	& I_{13}=I_{31}=-\sum m_i \rho_{i 1} \rho_{i 3} \\
+ 	& I_{23}=I_{32}=-\sum m_i \rho_{i 2} \rho_{i 3}
+ \end{aligned}
+ $$
+ 
+ La eq.(\ref{eq:H_total_simplificada}) nos indica que el momento angular total depende de la matriz de inercia del cubesat y del vector de velocidades angulares. Sin embargo, es necesario introducir el efecto de las ruedas de reacción, las cuales también disponen de un momento angular $h_w$. Por lo tanto, se tiene a partir de la eq.(\ref{eq:H_total_simplificada}) que: 
+ 
+ \begin{equation}\label{eq:H_total_RW}
+ 	H = I\omega_b + h_w
+ \end{equation}
+ 
+ Por otro lado, el efecto de los torques externos se incluye al considerar una fuerza $F_i$ aplicada en una posición $\rho_i$ en las coordenadas del marco del cuerpo. Esta fuerza tiene un efecto dado por : 
+ 
+ \begin{equation}
+ 	T_i=\rho_i \times F_i  
+ \end{equation}
+ 
+ 
+El torque neto de todas las fuerzas sería:
+
+\begin{equation}
+	T=\sum \rho_i \times F_i=\sum \rho_i \times m_i \frac{\mathrm{d}^2 r_i}{\mathrm{~d} t^2} 	
+\end{equation}
+ 
+ 
+ Al expandir la expresión para la aceleración tal como se hizo anteriormente, se tiene que :
+ 
+ \begin{equation}
+ 	T= \frac{\mathrm{d} H}{\mathrm{d} t} = \left(\frac{\mathrm{d} H}{\mathrm{d} t}\right)_{body} + \omega \times H 	
+ \end{equation}
+ 
+ O visto de otra manera, asumiendo un marco fijo del cuerpo con ejes principales, se puede expresar el cambio del momento angular como el efecto de los torques y el producto cruz entre la velocidad angular y el momento angular total del sistema.
+ 
+  \begin{equation}
+ 	 \left(\frac{\mathrm{d} H}{\mathrm{d} t}\right)_{body} = T-\omega \times \left(I\omega + h_w\right) 	
+ \end{equation}
+ 
+ Análogamente, se puede obtener otra expresión para el cambio de momento angular al derivar la ecuación XX respecto al tiempo :
 
 
 Por otro lado, para citar ecuaciones e información semejante dentro del texto use $\backslash ref\{\}$, por ejemplo (\ref{eq:maxwell}) o (\ref{eq:maxwell3})
