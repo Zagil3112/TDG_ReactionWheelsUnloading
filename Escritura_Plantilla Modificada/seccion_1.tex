@@ -367,11 +367,27 @@ $$
 	I_{x x} & I_{x y} & I_{x z} \\
 	I_{y x} & I_{y y} & I_{y z} \\
 	I_{z x} & I_{z y} & I_{z z}
-\end{array}\right]=\text { Matriz de inercia }
+\end{array}\right]:\text { Matriz de inercia }
 $$
-$\omega_b=\left[\begin{array}{l}\omega_x \\ \omega_y \\ \omega_z\end{array}\right]=$ Vector de velocidad angular en el marco del cuerpo.\\
+$\mathbf{\omega_b}=\left[\begin{array}{l}\omega_x \\ \omega_y \\ \omega_z\end{array}\right]:$ Vector de velocidad angular en el marco del cuerpo.\\
 
-$\mathbf{h_w}=\left[\begin{array}{l}h_x \\ h_y \\ h_z\end{array}\right]=$ Vector de momento de angular de las RW. 
+$\mathbf{h_w}=\left[\begin{array}{l}h_x \\ h_y \\ h_z\end{array}\right]:$ Vector de momento de angular de las RW. 
+
+
+\begin{gather}	
+	\dot{\omega}_x=\left[N_{P x}+N_{A x}+N_{D x}+\omega_y \omega_z\left[I_{y y}-I_{z z}\right]-h_z \omega_y+h_y \omega_z-\dot{h}_x\right] / I_{x x}\label{eq:modelo_dinamico_x}\\
+	\dot{\omega}_y=\left[N_{P y}+N_{A y}+N_{D y}+\omega_x \omega_z\left[I_{z z}-I_{x x}\right]-h_x \omega_z+h_z \omega_x-\dot{h}_y\right] / I_{y y}\label{eq:modelo_dinamico_y}\\
+	\dot{\omega}_z=\left[N_{P z}+N_{A z}+N_{D z}+\omega_x \omega_y\left[I_{x x}-I_{y y}\right]-h_y \omega_x+h_x \omega_y-\dot{h}_z\right] / I_{z z}
+\end{gather}
+
+
+
+
+Interpretation of the Euler angles are more intuitive, but to avoid the possibility of singularities quaternions
+were used in simulation calculations. The quaternion kinematic
+differential equation used to update the satellite attitude is
+described by
+
 $$
 \begin{gathered}
 	\dot{\mathbf{q}}=\frac{1}{2} \Omega \mathbf{q} \\
