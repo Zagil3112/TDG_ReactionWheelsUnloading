@@ -337,13 +337,13 @@ En este sentido, el torque neto de fuerzas externas es:
  
  O visto de otra manera, asumiendo un marco fijo del cuerpo con ejes principales, se puede expresar el cambio del momento angular como el efecto de los torques y el producto cruz entre la velocidad angular y el momento angular total del sistema.
  
-  \begin{equation}
+  \begin{equation}\label{eq:H_dot_1}
  	 \left(\frac{\mathrm{d} H}{\mathrm{d} t}\right)_{body} = T-\omega \times \left(I\omega + h_w\right) 	
  \end{equation}
  
  Análogamente, se puede obtener otra expresión para el cambio de momento angular al derivar la eq.(\ref{eq:H_total_RW}) respecto al tiempo :
  
- \begin{equation}
+ \begin{equation}\label{eq:H_dot_2}
  	\dot{H_b} = \left(\frac{\mathrm{d} H}{\mathrm{d} t}\right)_{body} = 
  	I\frac{\mathrm{d} \omega_b}{\mathrm{d} t} + \dot{h_w}  	
  \end{equation}
@@ -354,7 +354,7 @@ Tomando el principio del intercambio de momentos, se tiene que el momento angula
 	\dot{h_w} = -T_c  	
 \end{equation}
 
-Al igualar las ecuaciones anteriores y organizando términos se tiene una expresión para las aceleraciones angulares del CubeSat:
+Al igualar las ecuaciones (\ref{eq:H_dot_1}) y (\ref{eq:H_dot_2}) se obtiene una expresión para las aceleraciones angulares, conocida como ecuación dinámica de Newton-Euler, la cual consolida el modelo dinámico del CubeSat:
 
 
 \begin{equation}\label{eq:modelo_dinamico}
@@ -367,9 +367,9 @@ $$
 	I_{x x} & I_{x y} & I_{x z} \\
 	I_{y x} & I_{y y} & I_{y z} \\
 	I_{z x} & I_{z y} & I_{z z}
-\end{array}\right]:\text { Matriz de inercia }
+\end{array}\right]:\text { Matriz de inercia del CubeSat }
 $$
-$\mathbf{\omega_b}=\left[\begin{array}{l}\omega_x \\ \omega_y \\ \omega_z\end{array}\right]:$ Vector de velocidad angular en el marco del cuerpo.\\
+$\mathbf{\omega_b}=\left[\begin{array}{l}\omega_x \\ \omega_y \\ \omega_z\end{array}\right]:$ Vector de velocidad angular del satélite en el marco del cuerpo.\\
 
 $\mathbf{h_w}=\left[\begin{array}{l}h_x \\ h_y \\ h_z\end{array}\right]:$ Vector de momento de angular de las RW. 
 
@@ -384,8 +384,8 @@ Realizando las respectivas multiplaciones matriciales, se tienen las ecuaciones 
 
 
 
-Finalmente, usando las velocidades angulares en cada eje es posible determinar la actitud del CubeSat. La interpretación de los ángulos de Euler es más intuitiva, pero para evitar que surjan singularidades, los cuaterniones
-resultan mas convenientes para los cálculos de simulación \cite{Steyn2011}. La ecuación diferencial cinemática de los cuaterniones está descrita la eq.(\ref{eq:quaterniones}): 
+Finalmente, usando las componentes del vector de velocidades angulares es posible determinar la actitud del CubeSat. La interpretación de los ángulos de Euler es más intuitiva, pero para evitar que surjan singularidades, los cuaterniones
+resultan mas convenientes para los cálculos de simulación \cite{Steyn2011}. La ecuación diferencial cinemática de los cuaterniones está descrita en la eq.(\ref{eq:quaterniones}): 
 
 \begin{equation}\label{eq:quaterniones}
 	\dot{\mathbf{q}}=\frac{1}{2} \Omega \mathbf{q} \\
