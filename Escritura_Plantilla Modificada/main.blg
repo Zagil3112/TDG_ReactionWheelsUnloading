@@ -25,6 +25,8 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: refe.bib
 Warning--entry type for "Groenewald2014" isn't style-file defined
 --line 473 of file refe.bib
+Warning--entry type for "Steyn2011" isn't style-file defined
+--line 501 of file refe.bib
 -- IEEEtranN.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -37,45 +39,45 @@ Warning--missing publisher in Kaplan1976
 Warning--edition ordinal word "e*" may be too high (or improper) for conversion in man:manual
 
 Done.
-You've used 30 entries,
+You've used 31 entries,
             4853 wiz_defined-function locations,
-            1131 strings with 13384 characters,
-and the built_in function-call counts, 18662 in all, are:
-= -- 1763
-> -- 388
-< -- 70
-+ -- 193
-- -- 98
-* -- 927
-:= -- 3150
-add.period$ -- 59
-call.type$ -- 30
-change.case$ -- 47
-chr.to.int$ -- 114
-cite$ -- 33
-duplicate$ -- 1374
-empty$ -- 1503
-format.name$ -- 144
-if$ -- 4147
+            1137 strings with 13644 characters,
+and the built_in function-call counts, 19227 in all, are:
+= -- 1816
+> -- 404
+< -- 71
++ -- 200
+- -- 102
+* -- 959
+:= -- 3245
+add.period$ -- 61
+call.type$ -- 31
+change.case$ -- 48
+chr.to.int$ -- 115
+cite$ -- 34
+duplicate$ -- 1413
+empty$ -- 1546
+format.name$ -- 152
+if$ -- 4268
 int.to.chr$ -- 1
-int.to.str$ -- 31
-missing$ -- 235
-newline$ -- 118
-num.names$ -- 91
-pop$ -- 607
+int.to.str$ -- 32
+missing$ -- 243
+newline$ -- 123
+num.names$ -- 94
+pop$ -- 635
 preamble$ -- 1
-purify$ -- 30
+purify$ -- 31
 quote$ -- 4
-skip$ -- 1443
+skip$ -- 1484
 stack$ -- 0
-substring$ -- 330
-swap$ -- 856
+substring$ -- 333
+swap$ -- 876
 text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 421
+type$ -- 437
 warning$ -- 3
-while$ -- 75
+while$ -- 77
 width$ -- 0
-write$ -- 354
+write$ -- 366
 (There was 1 error message)

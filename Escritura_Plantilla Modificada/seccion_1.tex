@@ -283,7 +283,7 @@ Si aplicamos las eq.(\ref{eq:velocidad}) y eq.(\ref{eq:aceleracion}) con $V =\fr
 H_{t}=\left(\sum m_i\right)R\times V +\sum m_i \rho_i\times\frac{\mathrm{d} {\rho_i}}{\mathrm{d} t} = H_{orb} + H_b \\
 \end{equation}
 
-El primer término de la derecha es el momento angular del cuerpo rígido debido a V en el marco de inercia. El segundo término es el momento angular del cuerpo debido a su velocidad de rotación alrededor de su propio centro de masa. La eq. (\ref{eq:H_total}) provee un importante resultado ya que indica que, en un cuerpo rígido, es posible escoger un marco de coordenadas que desacopla el momento angular del cuerpo y del momento angular orbital.
+El primer término de la derecha es el momento angular del cuerpo rígido debido a su velocidad traslacional V en el marco de inercia. El segundo término es el momento angular del cuerpo debido a su velocidad de rotación alrededor de su propio centro de masa. La eq. (\ref{eq:H_total}) provee un importante resultado ya que indica que, en un cuerpo rígido, es posible escoger un marco de coordenadas que desacopla el momento angular del cuerpo y del momento angular orbital.
 Por tal motivo, el análisis se centrará únicamente en el segundo término, donde la eq.(\ref{eq:variacion_rho}) se simplificaría de la siguiente manera: 
 
 \begin{equation}\label{eq:variacion_rho_simplificada}
@@ -354,14 +354,14 @@ Tomando el principio del intercambio de momentos, se tiene que el momento angula
 	\dot{h_w} = -T_c  	
 \end{equation}
 
-Finalmente, igualando las ecuaciones anteriores y organizando términos se tiene una expresión para las aceleraciones angulares del CubeSat:
+Al igualar las ecuaciones anteriores y organizando términos se tiene una expresión para las aceleraciones angulares del CubeSat:
 
 
 \begin{equation}\label{eq:modelo_dinamico}
 	\frac{d \omega_b}{d t}=I^{-1}\left[-\omega_b \times\left(I \omega_b+h_w\right)+T+T_C\right]	
 \end{equation}
 
-donde:\\
+donde:
 $$
 \mathbf{I}=\left[\begin{array}{ccc}
 	I_{x x} & I_{x y} & I_{x z} \\
@@ -373,36 +373,49 @@ $\mathbf{\omega_b}=\left[\begin{array}{l}\omega_x \\ \omega_y \\ \omega_z\end{ar
 
 $\mathbf{h_w}=\left[\begin{array}{l}h_x \\ h_y \\ h_z\end{array}\right]:$ Vector de momento de angular de las RW. 
 
+Realizando las respectivas multiplaciones matriciales, se tienen las ecuaciones en cada eje:
 
 \begin{gather}	
-	\dot{\omega}_x=\left[N_{P x}+N_{A x}+N_{D x}+\omega_y \omega_z\left[I_{y y}-I_{z z}\right]-h_z \omega_y+h_y \omega_z-\dot{h}_x\right] / I_{x x}\label{eq:modelo_dinamico_x}\\
-	\dot{\omega}_y=\left[N_{P y}+N_{A y}+N_{D y}+\omega_x \omega_z\left[I_{z z}-I_{x x}\right]-h_x \omega_z+h_z \omega_x-\dot{h}_y\right] / I_{y y}\label{eq:modelo_dinamico_y}\\
-	\dot{\omega}_z=\left[N_{P z}+N_{A z}+N_{D z}+\omega_x \omega_y\left[I_{x x}-I_{y y}\right]-h_y \omega_x+h_x \omega_y-\dot{h}_z\right] / I_{z z}
+	\dot{\omega}_x=\left[T_x+T_{C x}+\omega_y \omega_z\left[I_{y y}-I_{z z}\right]-h_z \omega_y+h_y \omega_z\right] / I_{x x}\label{eq:modelo_dinamico_x}\\
+	\dot{\omega}_y=\left[T_y+T_{C y}+\omega_x \omega_z\left[I_{z z}-I_{x x}\right]-h_x \omega_z+h_z \omega_x\right] / I_{y y}\label{eq:modelo_dinamico_y}\\
+	\dot{\omega}_z=\left[T_z+T_{C z}+\omega_x \omega_y\left[I_{x x}-I_{y y}\right]-h_y \omega_x+h_x \omega_y\right] / I_{z z}
 \end{gather}
 
 
 
 
-Interpretation of the Euler angles are more intuitive, but to avoid the possibility of singularities quaternions
-were used in simulation calculations. The quaternion kinematic
-differential equation used to update the satellite attitude is
-described by
+Finalmente, usando las velocidades angulares en cada eje es posible determinar la actitud del CubeSat. La interpretación de los ángulos de Euler es más intuitiva, pero para evitar que surjan singularidades, los cuaterniones
+resultan mas convenientes para los cálculos de simulación \cite{Steyn2011}. La ecuación diferencial cinemática de los cuaterniones está descrita la eq.(\ref{eq:quaterniones}): 
 
-$$
-\begin{gathered}
+\begin{equation}\label{eq:quaterniones}
 	\dot{\mathbf{q}}=\frac{1}{2} \Omega \mathbf{q} \\
-	\Omega=\left[\begin{array}{cccc}
-		0 & w_z & -w_y & w_x \\
-		-w_z & 0 & w_x & w_y \\
-		w_y & -w_x & 0 & w_z \\
-		-w_x & -w_y & -w_z & 0
-	\end{array}\right] \\
+\end{equation}
+
+Donde
+ 
+\begin{center}
+ 	$\Omega$ = $\left[\begin{array}{cccc}
+ 		0 & w_z & -w_y & w_x \\
+ 		-w_z & 0 & w_x & w_y \\
+ 		w_y & -w_x & 0 & w_z \\
+ 		-w_x & -w_y & -w_z & 0
+ 	\end{array}\right]$ 
+ 	
+\end{center}
+\hspace{\parindent} y
+\begin{center}
+	$
 	\mathbf{q}=\left[\begin{array}{llll}
 		q_1 & q_2 & q_3 & q_4
 	\end{array}\right]^T
-\end{gathered}
-$$ 
+	$
+\end{center}
 
+
+%% Fuerzas externas
+
+%Aerodinámica
+% Magnetorques
 
 
 \newpage
