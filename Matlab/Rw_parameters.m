@@ -14,7 +14,7 @@ T_max = 7.7501;% mNm
 
 % Inercia RW 
 % J = 4.32e-7; %[kg m2]
-J = 30e-7; %[kg m2]
+J = 7.613E-5; %[kg m2]
 Iw = [J 0 0 ;
       0 J 0 ;
       0 0 J ]; 
