@@ -14,7 +14,7 @@ T_max = 7.7501;% mNm
 
 % Inercia RW 
 % J = 4.32e-7; %[kg m2]
-J = 30E-7; %[kg m2]
+J = 7.613e-5; %[kg m2]
 Iw = [J 0 0 ;
       0 J 0 ;
       0 0 J ]; 
@@ -47,8 +47,5 @@ n_cal = n_layers*turns_per_layer;
 
 %%
 
-s = tf('s');
-voltaje = 9;
 
-sys = ((Kt*(J*s+B))/(La*J*s^2+(Ra*J+La*B)*s+Ra*B+Kt*Ke))
 
