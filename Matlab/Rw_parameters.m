@@ -10,14 +10,12 @@ B =(1/438)*(60/(2*pi))*1e-3; % Nm/rad/s
 Ke = (1/1120)*(60/(2*pi));  % V/rad/s
 
 T_ext = 6.850e-7;% Nm
-T_max = 7.7501;% mNm
+T_max = 7.7501e-3;% Nm
 
 % Inercia RW 
-% J = 4.32e-7; %[kg m2]
-J = 30E-7; %[kg m2]
-Iw = [J 0 0 ;
-      0 J 0 ;
-      0 0 J ]; 
+J_rotor = 4.32e-7; %[kg m2]
+J_flywheel = 7.1137e-5; %[kg m2]
+J = J_rotor+ J_flywheel; %[kg m2]
 
 
 %% Inercia EyasSat [kg m2] 
@@ -50,5 +48,5 @@ n_cal = n_layers*turns_per_layer;
 s = tf('s');
 voltaje = 9;
 
-sys = ((Kt*(J*s+B))/(La*J*s^2+(Ra*J+La*B)*s+Ra*B+Kt*Ke))
+sys = ((Kt*(J*s+B))/(La*J*s^2+(Ra*J+La*B)*s+Ra*B+Kt*Ke));
 
