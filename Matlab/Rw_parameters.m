@@ -12,6 +12,9 @@ Ke = (1/1120)*(60/(2*pi));  % V/rad/s
 T_ext = 6.850e-7;% Nm
 T_max = 7.7501e-3;% Nm
 
+RW_omega_max = 3940*((2*pi)/60); % rad/s
+% RW_omega_max = 1000*((2*pi)/60); % rad/s
+
 % Inercia RW 
 J_rotor = 4.32e-7; %[kg m2]
 J_flywheel = 7.1137e-5; %[kg m2]
