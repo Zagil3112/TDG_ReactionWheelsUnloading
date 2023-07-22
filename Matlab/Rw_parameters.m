@@ -12,9 +12,9 @@ Ke = (1/1120)*(60/(2*pi));  % V/rad/s
 
 
 T_max = 6.27e-3;% Nm
-
+% T_max = 0.5e-3;% Nm
 RW_omega_max = 3940*((2*pi)/60); % rad/s
-% RW_omega_max = 1000*((2*pi)/60); % rad/s
+%RW_omega_max = 1000*((2*pi)/60); % rad/s
 
 % Inercia RW 
 J_rotor = 4.32e-7; %[kg m2]
@@ -41,14 +41,12 @@ pSR = 1353/3e8;
 FSR = pSR*(1+0.6)*(0.192*0.192);
 
 %% Torques Externos
-
-
 T_grav = (3*mu_earth/(2*R_earth^3))*abs(I(3,3)-I(2,2)); % Gradiente gravitacional [Nm]
 T_mag = (0.01)*B; % Torque magnético [Nm]
 T_aero =F_aero*0.05; 
 T_solar = FSR*0.05;
 % T_ext = 6.850e-7;% Nm
-T_ext =(T_grav+T_mag+T_aero+T_solar)*1;% Nm
+T_ext =(T_grav+T_mag+T_aero+T_solar);% Nm
 %%  Magnetorquers
 A =((1.45e-2)^2)*pi/4; % m^2
 mu_0 = 1.25663706212e-6; %Vs/Am
@@ -68,7 +66,7 @@ dia_wire = 0.03; % cm
 coil_longitude = 7.92; %cm
 n_layers= (dia_coil-dia_core)/(2*dia_wire);
 turns_per_layer = coil_longitude/dia_wire;
-n_cal = n_layers*turns_per_layer;
+n_cal = n_layers*turns_per_layer; % # vueltas segun geometría 
 
 %%
 
