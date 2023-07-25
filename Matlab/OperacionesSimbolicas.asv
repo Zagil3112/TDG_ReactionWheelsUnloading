@@ -1,0 +1,9 @@
+% Paso 1: Definir los símbolos
+syms x y z w;
+
+% Paso 2: Crear la matriz A con los elementos simbólicos
+A = [x, y, z];
+B =4*eye(3);
+
+f
+cross2Matrix(A')

@@ -56,7 +56,7 @@ L = 0.585; % H
 l = 7.92e-2; % m 
 
 n=sqrt(L*l/(mu_0*mu_r*A)); % https://en.universaldenker.org/formulas/459
-T_max_mgt= -1.8432e-02; %mNm
+T_max_mgt= 1.8432e-05; %Nm
 
 %% Coil
 %dia_coil = 1.45 ;% cm
@@ -70,8 +70,8 @@ n_cal = n_layers*turns_per_layer; % # vueltas segun geometría
 
 %%
 
-s = tf('s');
-voltaje = 9;
-
-sys = ((Kt*(J*s+B))/(La*J*s^2+(Ra*J+La*B)*s+Ra*B+Kt*Ke));
+% s = tf('s');
+% voltaje = 9;
+% 
+% sys = ((Kt*(J*s+B))/(La*J*s^2+(Ra*J+La*B)*s+Ra*B+Kt*Ke));
 
