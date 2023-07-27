@@ -54,7 +54,7 @@ mu_r = 200000; % Hierro http://hyperphysics.phy-astr.gsu.edu/hbase/Tables/magpro
 %L = 11.2534e-3; % H 
 L = 0.585; % H 
 l = 7.92e-2; % m 
-
+R_mgt = 30 ;% Resistencia mgt [Ohm];
 n=sqrt(L*l/(mu_0*mu_r*A)); % https://en.universaldenker.org/formulas/459
 T_max_mgt= 1.8432e-05; %Nm
 
