@@ -48,7 +48,7 @@ A_model = [A11 zeros(3) A13;
 
 B_model = [I^-1 I^-1 I^-1;
     zeros(3) zeros(3) zeros(3);
-    -eye(3) zeros(3) zeros(3)];
+    eye(3) zeros(3) zeros(3)];
 
 C_model = [eye(3) zeros(3) zeros(3);
     zeros(3) eye(3) zeros(3);
