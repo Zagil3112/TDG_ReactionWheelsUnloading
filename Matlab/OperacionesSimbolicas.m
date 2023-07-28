@@ -16,12 +16,16 @@ I = [I11 I12 I13;
 
 L = [h1 h2 h3];
 
+R= skew(I*omega')-skew(omega')*I+skew(L');
 
 
+Aww = skew(I*omega')-skew(omega')*I+skew(L');
+Awh = -skew(omega');
 
-A= [1 24 6 ;
-    3 4 5;
-    1 4 2];
+A11 = (I^-1)*Aww;
+A13 =(I^-1)*Awh;
 
+A = [A11,zeros(3),A13;
+    0.5*eye(3),zeros(3),zeros(3);
+    zeros(3),zeros(3),zeros(3)]
 
-R= skew(I*omega')-skew(omega')*I+skew(L')
