@@ -48,7 +48,7 @@ T_solar = FSR*0.05;
 % T_ext = 6.850e-7;% Nm
 T_ext =(T_grav+T_mag+T_aero+T_solar);% Nm
 %%  Magnetorquers
-A =((1.45e-2)^2)*pi/4; % m^2
+A =((2e-2)^2)*pi/4; % m^2
 mu_0 = 1.25663706212e-6; %Vs/Am
 mu_r = 200000; % Hierro http://hyperphysics.phy-astr.gsu.edu/hbase/Tables/magprop.html#c2
 %L = 11.2534e-3; % H 

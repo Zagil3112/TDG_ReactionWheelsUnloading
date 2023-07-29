@@ -25,7 +25,7 @@ Awh = -skew(omega');
 A11 = (I^-1)*Aww;
 A13 =(I^-1)*Awh;
 
-A = [A11,zeros(3),A13;
-    0.5*eye(3),zeros(3),zeros(3);
-    zeros(3),zeros(3),zeros(3)]
+% A = [A11,zeros(3),A13;
+%     0.5*eye(3),zeros(3),zeros(3);
+%     zeros(3),zeros(3),zeros(3)]
 
