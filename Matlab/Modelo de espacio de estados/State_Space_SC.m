@@ -58,15 +58,14 @@ D_model = [zeros(3) zeros(3) zeros(3);
     zeros(3) zeros(3) zeros(3);
     zeros(3) zeros(3) zeros(3)];
 
-sys = ss(A_model,B_model,C_model,D_model);
-% % Q = [1,0,0,0;...
-% %     0,0,0,0;...
-% %     0,0,1,0;...
-% %     0,0,0,0];
-% Q = eye(9);
-% R = eye(9);
-% 
-% [K,S,P] = lqr(sys,Q,R)
+
+Q = eye(9);
+R = 1;
+
+[K,S,P] = lqr(A_model,B_model,Q,R);
+sys = ss(A_model-B_model*K,B_model,C_model,D_model);
+% G = -inv(C_model*inv(A_model-B_model*K)*B_model);
+% step(sys)
 % P = pole(sys)
 % % step(sys)
 % h = pzplot(sys)
