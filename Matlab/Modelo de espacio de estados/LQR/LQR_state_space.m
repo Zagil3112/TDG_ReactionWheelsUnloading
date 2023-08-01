@@ -73,18 +73,27 @@ switch scenario
         %Cheap control
         Q = eye(9);
         % Q(6,6) = 1000;
-        R = [1];
+        R = [0.005];
         
     case 2
         %Expensive control
         Q = eye(9);
-        Q(6,6) = 0.5;
-        R = [500];
+        % Q(5,5) = 1;
+        % Q(4,4) = 1;
+        % Q(6,6) = 1000;
+        % R = eye(9)*5;
+        % R(3,3) = 0.05
+        R=0.000005;
         
     case 3
         %Only penalize the velocity state
         Q = diag([0.001 10]);
         R = [1];
+
+    case 4
+        %Funcional 
+        Q = eye(9);
+        R = [500];
         
     otherwise
         error('Unknown method')

@@ -73,15 +73,22 @@ switch scenario
         %Cheap control
         Q = eye(9);
         % Q(6,6) = 1000;
-        R = [1];
+        R = [0.05];
         
     case 2
         %Expensive control
         Q = eye(9);
-        Q(6,6) = 10000;
+        % Q(5,5) = 20;
+        % Q(4,4) = 20;
+        % Q(6,6) = 1000;
         R = [500];
         
     case 3
+        %Only penalize the velocity state
+        Q = diag([0.001 10]);
+        R = [1];
+
+    case 4
         %Only penalize the velocity state
         Q = diag([0.001 10]);
         R = [1];
