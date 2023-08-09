@@ -24,27 +24,27 @@ A_motor = [-B/J Kt/J;
          -Ke/La -Ra/La];
 B_motor = [0; 1/La];
 
-C_motor = [1 0];
+C_motor = [0 Kt];
 
 D_motor = 0;
 
-motor =ss(A_motor,B_motor,C_motor,D_motor,...
-    'InputName','v','OutputName','y','StateName',{'w','v'});
-
-amp = tf(5,[1/1000 1]);
-plant=motor*amp;
-plant.StateName{3} = 'x3';
-pole(plant);
-isstable(plant);
-step(plant);
-ctrb_matrix = ctrb(plant);
-rank(ctrb_matrix);
-
-% controller
-
-plant.c =eye(3);
-plant.StateName{3} = 'x3';
-plant.OutputName = {'w','i','x3'};
-plant
-
-K = place(plant.a, plant.b, [-7 +5.25j, -7 -5.25j , -21]);
+% motor =ss(A_motor,B_motor,C_motor,D_motor,...
+%     'InputName','v','OutputName','y','StateName',{'w','v'});
+% 
+% amp = tf(5,[1/1000 1]);
+% plant=motor*amp;
+% plant.StateName{3} = 'x3';
+% pole(plant);
+% isstable(plant);
+% step(plant);
+% ctrb_matrix = ctrb(plant);
+% rank(ctrb_matrix);
+% 
+% % controller
+% 
+% plant.c =eye(3);
+% plant.StateName{3} = 'x3';
+% plant.OutputName = {'w','i','x3'};
+% plant
+% 
+% K = place(plant.a, plant.b, [-7 +5.25j, -7 -5.25j , -21]);
