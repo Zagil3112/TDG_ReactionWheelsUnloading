@@ -9,18 +9,23 @@ Bz = B(3);
 Tx = torques(1);
 Ty = torques(2);
 Tz = torques(3);
+% 
+% K= n_cal*A/R_mgt;
+K= 0.5;
 
-
-syms Vx Vy Vz
-eqn1 = 0*Vx + K*Bz*Vy -K*By*Vz == Tx;
-eqn2 = -K*Bz*Vx + 0*Vy +K*Bx*Vz == Ty;
-eqn3 = K*By*Vx -K*Bx*Vy +0*Vz == Tz;
-
-[A,B] = equationsToMatrix([eqn1, eqn2, eqn3], [Vx, Vy, Vz]);
+% syms Vx Vy Vz
+% eqn1 = 0*Vx + K*Bz*Vy -K*By*Vz == Tx;
+% eqn2 = -K*Bz*Vx + 0*Vy +K*Bx*Vz == Ty;
+% eqn3 = K*By*Vx -K*Bx*Vy +0*Vz == Tz;
+% 
+% [A,B] = equationsToMatrix([eqn1, eqn2, eqn3], [Vx, Vy, Vz]);
 
 % A = [0 K*Bz -K*By;
 %     -K*Bz 0 K*Bx;
 %     K*By -K*Bx 0];
 % B = torques;
 
-VoltagesXYZ = linsolve(A,B)
+% VoltagesXYZ = linsolve(A,B)
+
+syms Vx Vy Vz
+Y = vpasolve([0*Vx + K*Bz*Vy -K*By*Vz == Tx,-K*Bz*Vx + 0*Vy +K*Bx*Vz == Ty,K*By*Vx -K*Bx*Vy +0*Vz == Tz], [Vx,Vy,Vz])
