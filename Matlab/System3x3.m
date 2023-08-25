@@ -27,14 +27,14 @@ K= n_cal*A/R_mgt;
 
 % VoltagesXYZ = linsolve(A,B)
 
-% syms Vx Vy Vz
-% Y = vpasolve([0*Vx + K*Bz*Vy -K*By*Vz == Tx,-K*Bz*Vx + 0*Vy +K*Bx*Vz == Ty,K*By*Vx -K*Bx*Vy +0*Vz == Tz], [Vx,Vy,Vz])
+syms Vx Vy Vz
+Y = vpasolve([0*Vx + K*Bz*Vy -K*By*Vz == Tx,-K*Bz*Vx + 0*Vy +K*Bx*Vz == Ty,K*By*Vx -K*Bx*Vy +0*Vz == Tz], [Vx,Vy,Vz])
 
-F = @(x) [0*x(1)+K*Bz*x(2)-K*By*x(3)-Tx;
-         -K*Bz*x(1)+0*x(2)+K*Bx*x(3)-Ty;
-         K*By*x(1)-K*Bx*x(2)+0*x(3)-Tz];
-
-x0 = [2,1,2];
-options = optimoptions('fsolve','Display','iter');
-[x,fval] = fsolve(F,x0,options)
+% F = @(x) [0*x(1)+K*Bz*x(2)-K*By*x(3)-Tx;
+%          -K*Bz*x(1)+0*x(2)+K*Bx*x(3)-Ty;
+%          K*By*x(1)-K*Bx*x(2)+0*x(3)-Tz];
+% 
+% x0 = [0,0,0];
+% options = optimoptions('fsolve','Display','iter','FunctionTolerance',1e-20,'OptimalityTolerance',1e-30);
+% [x,fval] = fsolve(F,x0,options)
 
