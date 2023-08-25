@@ -130,8 +130,8 @@ B_model = [I^-1 I^-1 I^-1;
     eye(3) zeros(3) zeros(3)];
 
 C_model = [eye(3) zeros(3) zeros(3);
-    zeros(3) zeros(3) zeros(3);
-    zeros(3) zeros(3) zeros(3)];
+    zeros(3) eye(3) zeros(3);
+    zeros(3) zeros(3) eye(3)];
 
 D_model = [zeros(3) zeros(3) zeros(3);
     zeros(3) zeros(3) zeros(3);

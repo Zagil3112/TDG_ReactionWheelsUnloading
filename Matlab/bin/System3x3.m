@@ -10,8 +10,8 @@ Tx = torques(1);
 Ty = torques(2);
 Tz = torques(3);
 % 
-K= n_cal*A/R_mgt;
-% K= 0.5;
+% K= n_cal*A/R_mgt;
+K= 0.5;
 
 % syms Vx Vy Vz
 % eqn1 = 0*Vx + K*Bz*Vy -K*By*Vz == Tx;
@@ -27,14 +27,5 @@ K= n_cal*A/R_mgt;
 
 % VoltagesXYZ = linsolve(A,B)
 
-% syms Vx Vy Vz
-% Y = vpasolve([0*Vx + K*Bz*Vy -K*By*Vz == Tx,-K*Bz*Vx + 0*Vy +K*Bx*Vz == Ty,K*By*Vx -K*Bx*Vy +0*Vz == Tz], [Vx,Vy,Vz])
-
-F = @(x) [0*x(1) + K*Bz*x(2) -K*By*x(3)-Tx;
-         -K*Bz*x(1) + 0*x(2) +K*Bx*x(3)-Ty;
-         K*By*x(1) -K*Bx*x(2) +0*x(3) - Tz];
-
-x0 = [2,1,2];
-options = optimoptions('fmincon','Display','iter');
-[x,fval] = fsolve(F,x0,options)
-
+syms Vx Vy Vz
+Y = vpasolve([0*Vx + K*Bz*Vy -K*By*Vz == Tx,-K*Bz*Vx + 0*Vy +K*Bx*Vz == Ty,K*By*Vx -K*Bx*Vy +0*Vz == Tz], [Vx,Vy,Vz])
