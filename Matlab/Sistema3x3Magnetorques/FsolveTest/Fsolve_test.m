@@ -1,4 +1,4 @@
-B = [-30e-6 35e-6 0];
+B = [-30e-6 35e-6 10e-5];
 torques = [0 0 1.332e-5];
 
 Bx = B(1);
@@ -15,10 +15,10 @@ Tz = torques(3);
  F =  @(x)[0*x(1)+K*Bz*x(2)-K*By*x(3)-Tx;
           -K*Bz*x(1)+0*x(2)+K*Bx*x(3)-Ty;
           K*By*x(1)-K*Bx*x(2)+0*x(3)-Tz];
-
+tic 
 %%
 rng default % For reproducibility
-VoltageFS = 6;
+VoltageFS = 10;
 N = 100; % Try 10 random start points
 pts = 100*randn(N,3); % Initial points are rows in pts
 soln = zeros(N,3); % Allocate solution
@@ -31,3 +31,4 @@ idx = soln(:,1) >= -VoltageFS & soln(:,2) >= -VoltageFS & soln(:,3)>= -VoltageFS
     soln(:,1) <= VoltageFS & soln(:,2) <= VoltageFS & soln(:,3)<= VoltageFS;
 soln_filter = soln(idx,:);
 soln_filter = soln_filter(1,:)
+toc
