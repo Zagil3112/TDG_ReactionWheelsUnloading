@@ -137,6 +137,12 @@ D_model = [zeros(3) zeros(3) zeros(3);
     zeros(3) zeros(3) zeros(3);
     zeros(3) zeros(3) zeros(3)];
 
+%%
+B_model2 = [I^-1 I^-1;
+    zeros(3) zeros(3) ;
+    eye(3) zeros(3) ];
+
+Gamma= [I^-1 zeros(3) zeros(3)]';
 
 %%
 
@@ -202,8 +208,8 @@ x0(1) =0;
 x0(2) =0;
 x0(3) = 0;
 
-x0(5) = sin((pi/4)/2);
-x0(6) = -sin((pi/2)/2);
+% x0(5) = sin((pi/4)/2);
+x0(6) = -sin((pi/3)/2);
 
 %%
 
@@ -214,3 +220,17 @@ B_motor = [0; 1/La];
 C_motor = [0 Kt];
 
 D_motor = 0;
+
+%%
+[K2,S2,P2] = lqr(A_model,B_model2,Q,R);
+
+disp('K2 computed via LQR:')
+K2
+
+% Sub matrices 
+disp('K1_2:')
+K1_2 = K2(1:3,:)
+
+disp('K2_2:')
+K2_2 = K2(4:6,:)
+
