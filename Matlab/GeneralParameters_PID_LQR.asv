@@ -230,20 +230,17 @@ D_motor = 0;
 %%
 [K_gamma,S2,P2] = lqr(A_model,B_model2,Q,R);
 
-disp('K gamma computed via LQR:')
+disp('K2 computed via LQR:')
 K_gamma
 
-% Sub matrices 
-disp('K1_2:')
-K1_2 = K_gamma(1:3,:)
+% % Sub matrices 
+% disp('K1_2:')
+% K1_2 = K_gamma(1:3,:)
+% 
+% disp('K2_2:')
+% K2_2 = K_gamma(4:6,:)
 
-disp('K2_2:')
-K2_2 = K_gamma(4:6,:)
-
-disp('K gamma computed via LQR:')
-K_gamma
-disp('K3 gamma computed via LQR:')
-K3_2 = K_gamma(:,4:6)
+K3_2 = K_gamma(:,)
 
 %%
 
