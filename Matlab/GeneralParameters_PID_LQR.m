@@ -240,3 +240,17 @@ K1_2 = K_gamma(1:3,:)
 disp('K2_2:')
 K2_2 = K_gamma(4:6,:)
 
+%%
+
+% Specify the file name (change 'input.txt' to your file's name)
+fileName = 'Orbit_51_degrees.txt';
+fileName0 = 'Orbit_0_degrees.txt';
+fileName90 = 'Orbit_90_degrees.txt';
+
+% Call the readTxtFile function to read data from the file
+B_mag51 = readTxtFile(fileName);
+B_mag0 = readTxtFile(fileName0);
+B_mag90 = readTxtFile(fileName90);
+
+
+
