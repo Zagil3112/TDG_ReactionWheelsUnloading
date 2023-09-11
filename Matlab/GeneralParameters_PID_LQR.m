@@ -245,6 +245,9 @@ K_gamma
 disp('K3 gamma computed via LQR:')
 K3_2 = K_gamma(:,4:6)
 
+disp('K4 gamma computed via LQR:')
+K4_2 = K_gamma(:,1:3)
+
 %%
 
 % Specify the file name (change 'input.txt' to your file's name)
