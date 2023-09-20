@@ -143,37 +143,42 @@ D_model = [zeros(3) zeros(3) zeros(3);
 
 
 
-%%
+%% LQR (u :  RW y Mgt ; ud: T_p)
 B_model2 = [I^-1 I^-1;
     zeros(3) zeros(3) ;
     eye(3) zeros(3) ];
 
 Gamma= [I^-1 zeros(3) zeros(3)]';
 
+%% LQR (u :  RW ; ud: Mgt y T_p)
+% B_model3 = [I^-1;
+%     zeros(3)  ;
+%     eye(3) ];
+% 
+% Gamma2= [I^-1 I^-1;
+%     zeros(3) zeros(3);
+%     zeros(3) zeros(3)];
+
 %%
 
 
 %Choose Q and R
-scenario = 1;   %1 = cheap control
+scenario = 2;   %1 = cheap control
                 %2 = expensive control
                 %3 = ignore position
 
 switch scenario
     case 1
-        %Cheap control
+        
         Q = eye(9);
         % Q(6,6) = 1000;
         R = [0.005];
         
     case 2
-        %Expensive control
         Q = eye(9);
-        % Q(5,5) = 1;
-        % Q(4,4) = 1;
         % Q(6,6) = 1000;
-        % R = eye(9)*5;
-        % R(3,3) = 0.05
-        R=0.000005;
+        R = [0.05];     
+     
         
     case 3
         %Only penalize the velocity state
@@ -189,6 +194,7 @@ switch scenario
         error('Unknown method')
 end
 
+% LQR (u = RW, Mgt y Tp)
 [K,S,P] = lqr(A_model,B_model,Q,R);
 
 
@@ -228,6 +234,8 @@ C_motor = [0 Kt];
 D_motor = 0;
 
 %%
+
+% LQR (u = RW y Mgt, ud = Tp)
 [K_gamma,S2,P2] = lqr(A_model,B_model2,Q,R);
 
 disp('K gamma computed via LQR:')
@@ -247,6 +255,14 @@ K3_2 = K_gamma(:,4:6)
 
 disp('K4 gamma computed via LQR:')
 K4_2 = K_gamma(:,1:3)
+
+%%
+
+% % LQR (u = RW; ud = Mgt y Tp)
+% [K_gamma2,S3,P3] = lqr(A_model,B_model3,Q,R);
+% 
+% disp('K gamma 2 computed via LQR:')
+% K_gamma2
 
 %%
 

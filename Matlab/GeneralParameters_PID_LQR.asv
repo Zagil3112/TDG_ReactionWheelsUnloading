@@ -143,12 +143,21 @@ D_model = [zeros(3) zeros(3) zeros(3);
 
 
 
-%%
+%% LQR (u :  RW y Mgt ; ud: T_p)
 B_model2 = [I^-1 I^-1;
     zeros(3) zeros(3) ;
     eye(3) zeros(3) ];
 
 Gamma= [I^-1 zeros(3) zeros(3)]';
+
+%% LQR (u :  RW ; ud: Mgt y T_p)
+B_model3 = [I^-1;
+    zeros(3)  ;
+    eye(3) ];
+
+Gamma2= [I^-1 I^-1;
+    zeros(3) zeros(3);
+    zeros(3) zeros(3)];
 
 %%
 
@@ -189,6 +198,7 @@ switch scenario
         error('Unknown method')
 end
 
+% LQR (u = RW, Mgt y Tp)
 [K,S,P] = lqr(A_model,B_model,Q,R);
 
 
@@ -228,19 +238,35 @@ C_motor = [0 Kt];
 D_motor = 0;
 
 %%
+
+% LQR (u = RW y Mgt, ud = Tp)
 [K_gamma,S2,P2] = lqr(A_model,B_model2,Q,R);
 
-disp('K2 computed via LQR:')
+disp('K gamma computed via LQR:')
 K_gamma
 
-% % Sub matrices 
-% disp('K1_2:')
-% K1_2 = K_gamma(1:3,:)
-% 
-% disp('K2_2:')
-% K2_2 = K_gamma(4:6,:)
+% Sub matrices 
+disp('K1_2:')
+K1_2 = K_gamma(1:3,:)
 
-K3_2 = K_gamma(:,)
+disp('K2_2:')
+K2_2 = K_gamma(4:6,:)
+
+disp('K gamma computed via LQR:')
+K_gamma
+disp('K3 gamma computed via LQR:')
+K3_2 = K_gamma(:,4:6)
+
+disp('K4 gamma computed via LQR:')
+K4_2 = K_gamma(:,1:3)
+
+%%
+
+% LQR (u = RW; ud = Mgt y Tp)
+[K_gamma2,S3,P3] = lqr(A_model,B_model3,Q,R);
+
+disp('K gamma computed via LQR:')
+K_gamma2
 
 %%
 
