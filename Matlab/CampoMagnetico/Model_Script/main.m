@@ -2,7 +2,7 @@
 RAAN    =  38;                % Right Ascension of Ascendent Node [deg]
 w       =  35;                % Argument of perigee               [deg]
 v0      =  54;                % True anomaly at the departure     [deg]
-i       =  90;             % inclination                       [deg]
+i       =  0;             % inclination                       [deg]
 a       =  6378+400;              % Major semi-axis           (>6378) [km]
 e       =  0.001;             % Eccentricity
 start_time = datetime('08-Sep-2023 12:45:07'); % UTC time of sattelite starting point
@@ -22,7 +22,7 @@ time_step =1;               % Calculate point every time_step   [s],
 [B_mag, H_mag, D_mag, I_mag, F_mag] = b_calc(lla, time);
 B_mag = B_mag*1e-9;
 
-saveVariable(B_mag,"Orbit_90_degrees.txt")
+saveVariable(B_mag,"Orbit_0_degrees.txt")
 % %% PLOTTING
 % subplot(3,1,1)
 % plot(F_mag);
