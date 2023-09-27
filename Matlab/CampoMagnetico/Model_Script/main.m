@@ -6,7 +6,7 @@ i       =  90;             % inclination                       [deg]
 a       =  6378+400;              % Major semi-axis           (>6378) [km]
 e       =  0.001;             % Eccentricity
 start_time = datetime('08-Sep-2023 12:45:07'); % UTC time of sattelite starting point
-norb = 1;                     % number of orbits
+norb = 4;                     % number of orbits
 time_step =1;               % Calculate point every time_step   [s],
                               %   decrease for faster calculation
 
