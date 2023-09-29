@@ -2,56 +2,40 @@
 t_sim = 20000;
 
 %% Paths
-LQR_PID_controller = ".\Controladores\LQR\NonLinear\LQR_bloques_SS_LQR_cascada_PID_controller_NonLinear";
-PID_deltaH_controller = ".\Controladores\PID\PID_mgtXY_loadingTest";
-LQR_I_controller = ".\Controladores\LQR\NonLinear\LQR_bloques_SS_LQR_cascada_I_controller_NonLinear";
-LQR_deltaH_controller = ".\Controladores\LQR\NonLinear\LQR_bloques_SS_LQR_Delta_H_NonLinear";
+LQR_PID_path = ".\Controladores\LQR\NonLinear\LQR_bloques_SS_LQR_cascada_PID_controller_NonLinear";
+PID_deltaH_path = ".\Controladores\PID\PID_mgtXY_loadingTest";
+LQR_I_path = ".\Controladores\LQR\NonLinear\LQR_bloques_SS_LQR_cascada_I_controller_NonLinear";
+LQR_deltaH_path = ".\Controladores\LQR\NonLinear\LQR_bloques_SS_LQR_Delta_H_NonLinear";
 
+%Controller Objects
+
+LQR_PID_controller = sim(LQR_PID_path);
+PID_deltaH_controller= sim(PID_deltaH_path);
+LQR_I_controller= sim(LQR_I_path);
+LQR_deltaH_controller= sim(LQR_deltaH_path);
 
 %% LQR Cascade PID
-LQR_PID_controller_sim = sim(LQR_PID_controller);
-t1 = LQR_PID_controller_sim.Ref_Error.time;
-%Error de Referencia
-LQR_PID_YawError = LQR_PID_controller_sim.Ref_Error.signals.values(:,1);
-
-figure(1)
-plot(t1, LQR_PID_YawError, 'LineWidth', 3)
-title('LQR PID Yaw Error [rad]')
-grid on
-
+[t1,YawError1,RW_torques1] = GetControllerPlots(LQR_PID_controller,"LQR PID controller");
 %% PID delta H 
-% PID_deltaH_controller_sim = sim(PID_deltaH_controller);
-% t2 = PID_deltaH_controller_sim.Ref_Error.time;
-% 
-% %Error de Referencia
-% PID_deltaH_YawError = PID_deltaH_controller_sim.Ref_Error.signals.values(:,:,1:50);
-% 
-% figure(2)
-% plot(t2, PID_deltaH_YawError, 'LineWidth', 3)
-% title('PID Yaw Error [rad]')
-% grid on
-
+[t2,YawError2,RW_torques2] = GetControllerPlots(PID_deltaH_controller,"PID delta H controller");
 %% LQR Cascade I
-LQR_I_controller_sim = sim(LQR_I_controller);
-t3 = LQR_I_controller_sim.Ref_Error.time;
-%Error de Referencia
-LQR_I_YawError = LQR_I_controller_sim.Ref_Error.signals.values(:,1);
-
-figure(3)
-plot(t3, LQR_I_YawError, 'LineWidth', 3)
-title('LQR I Yaw Error [rad]')
-grid on
-
+[t3,YawError3,RW_torques3] = GetControllerPlots(LQR_I_controller,"LQR I controller");
 %% LQR Delta H 
-LQR_deltaH_controller_sim = sim(LQR_deltaH_controller);
-t4 = LQR_deltaH_controller_sim.Ref_Error.time;
-%Error de Referencia
-LQR_deltaH_YawError = LQR_deltaH_controller_sim.Ref_Error.signals.values(:,1);
+[t4,YawError4,RW_torques4] = GetControllerPlots(LQR_deltaH_controller,"LQR delta H controller");
+%%
 
-figure(4)
-plot(t4, LQR_deltaH_YawError, 'LineWidth', 3)
-title('LQR Delta H Yaw Error [rad]')
-grid on
+
+
+
+
+
+
+
+
+
+
+
+
 
 %%
 % RW_torqueX = simulation.RW_torque.signals.values(:,1);
