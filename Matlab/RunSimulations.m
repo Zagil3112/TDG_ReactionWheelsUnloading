@@ -22,7 +22,14 @@ LQR_deltaH_controller= sim(LQR_deltaH_path);
 [t3,YawError3,RW_torques3] = GetControllerPlots(LQR_I_controller,"LQR I controller");
 %% LQR Delta H 
 [t4,YawError4,RW_torques4] = GetControllerPlots(LQR_deltaH_controller,"LQR delta H controller");
-%%
+%% Plots
+
+% Torques
+
+groupPlots(t1, RW_torques1, t2, RW_torques2, t3, RW_torques3, t4, RW_torques4, "RW Z axis torques [Nm]");
+
+% Yaw Error
+groupPlots(t1, YawError1, t2, YawError2, t3, YawError3, t4, YawError4, "Yaw Error [rad]");
 
 
 
@@ -32,84 +39,66 @@ LQR_deltaH_controller= sim(LQR_deltaH_path);
 
 
 
+%% Performance Indices
 
+showPerformanceIndices(LQR_PID_controller,"LQR_PID_controller");
+showPerformanceIndices(PID_deltaH_controller,"PID_deltaH_controller");
+showPerformanceIndices(LQR_I_controller,"LQR_I_controller");
+showPerformanceIndices(LQR_deltaH_controller,"LQR_deltaH_controller");
 
+%% Functions
 
+function groupPlots(t1, param1, t2, param2, t3, param3, t4, param4,PlotTitle)
+    figure()
+    
+    plot(t1,param1,'LineWidth', 3);
+    hold on
+    
+    plot(t2,param2,'LineWidth', 2);
+    hold on
+    
+    plot(t3,param3,'LineWidth', 3);
+    hold on
+    
+    plot(t4,param4,'LineWidth', 1);
+    hold on
+    
+    legend("LQR cascade PID","PID delta H","LQR cascade I","LQR delta H")
+    
+    title(PlotTitle)
+    grid on
+    hold off
+end
 
+function [t,YawError,RW_torques] = GetControllerPlots(ControllerObject,ControllerName)
+   
+    t = ControllerObject.Ref_Error.time;
+    
+    %Error de Referencia
+    YawError = ControllerObject.Ref_Error.signals.values(:,1);
+    
+    figure()
+    plot(t, YawError, 'LineWidth', 3)
+    title(ControllerName+' Yaw Error [rad]')
+    grid on
+    
+    % RW Torques Z 
+    RW_torques = ControllerObject.RW_torque.signals.values(:,3);
+    
+    figure()
+    plot(t, RW_torques, 'LineWidth', 3)
+    title(ControllerName+' RW Z torques [Nm]')
+    grid on
+end
 
-%%
-% RW_torqueX = simulation.RW_torque.signals.values(:,1);
-% RW_torqueZ = simulation.RW_torque.signals.values(:,3);
-% 
-% figure(1)
-% % subplot(3,1,1)
-% plot(t, RW_torqueZ, 'LineWidth', 3)
-% title('RW_torqueZ ')
-% grid on
-% legend('RW_Z')
-% % x2 = simulation.sim_X.signals.values(:,2);
-% x3 = simulation.sim_X.signals.values(:,3);
-% 
-% x6 = simulation.sim_X.signals.values(:,6);
-% 
-% u1 = simulation.sim_U.signals.values(:,1);
-% u2 = simulation.sim_U.signals.values(:,2);
-% u3 = simulation.sim_U.signals.values(:,3);
-% 
-% % RW torque
-% RW_torque = simulation.RW_torque.signals.values();
-% 
-% 
-% % plot
+function showPerformanceIndices(ControllerObject,name)
+    
+    Error_ref = ControllerObject.performanceIndices.signals.values(end,1);
+    Error_deltaH = ControllerObject.performanceIndices.signals.values(end,2);
+    RW_power = ControllerObject.performanceIndices.signals.values(end,3);
+    Mgt_power = ControllerObject.performanceIndices.signals.values(end,4);
 
-% 
-% subplot(3,1,2)
-% plot(t, x2, 'LineWidth', 3)
-% grid on
-% legend('x_2')
-% 
-% subplot(3,1,3)
-% plot(t, x3, 'LineWidth', 3)
-% grid on
-% legend('x_3')
-% 
-% % Torques
-% figure(2)
-% subplot(3,1,1)
-% plot(t, u1, 'LineWidth', 3)
-% title(['Scenario ',num2str(scenario)])
-% grid on
-% legend('u_1')
-% 
-% subplot(3,1,2)
-% plot(t, u2, 'LineWidth', 3)
-% grid on
-% legend('u_2')
-% 
-% subplot(3,1,3)
-% plot(t, u3, 'LineWidth', 3)
-% grid on
-% legend('u_3')
-% 
-% %
-% figure(3)
-% plot(t, x6, 'LineWidth', 3)
-% title(['Scenario ',num2str(scenario)])
-% grid on
-% legend('x_6')
-% 
-% figure(4)
-% title("RW torque")
-% subplot(3,1,1)
-% plot(t, RW_torque(:,1), 'LineWidth', 3)
-% legend('TX')
-% 
-% 
-% subplot(3,1,2)
-% plot(t, RW_torque(:,2), 'LineWidth', 3)
-% legend('TY')
-% 
-% 
-% subplot(3,1,3)
-% plot(t, RW_torque(:,3), 'LineWidth', 3)
-% legend('TZ')
+    display("Performance Indices for "+name)
+    display("Total: "+num2str(Error_ref+Error_deltaH+RW_power+Mgt_power))
+    display(table(Error_ref,Error_deltaH,RW_power,Mgt_power))
+end

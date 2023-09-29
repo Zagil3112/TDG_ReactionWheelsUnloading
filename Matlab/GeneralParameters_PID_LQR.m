@@ -75,7 +75,12 @@ n_cal = n_layers*turns_per_layer; % # vueltas segun geometría
 % 
 % sys = ((Kt*(J*s+B))/(La*J*s^2+(Ra*J+La*B)*s+Ra*B+Kt*Ke));
 %%
+Error_ref_Gain = 700/9;
+DeltaH_error_Gain =3300*4*10000; 
+RW_power_Gain =5;
+Mgt_power_Gain = 0.1;
 
+%%
 
 
 % velocidad angular 
