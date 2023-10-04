@@ -18,8 +18,9 @@ En este sentido, se propone evaluar estrategias de control de actitud que incorp
 
 %Se refiere al interrogante que lleva al investigador a buscar respuestas concretas. Es la definición del problema que aborda con la investigación. 
 
-CubeSat basado en el modelo EyasSat el cual está equipado con:
- una rueda de reacción en el eje Z 
+El problema de desaturación de ruedas de reacción será abordado a partir de un CubeSat, basado en el modelo EyasSat, el cual está equipado con:
+
+Una rueda de reacción en el eje Z, por lo que se tendrá control unicamente en un grado de libertad. Este dispositivo es el que presenta el fenómeno de estudio, ya que a pesar de p
  
  dynamics but suffer from the drawback of possibly
  experiencing a gradual increase of their spinning
@@ -130,6 +131,84 @@ El problema de investigación es el enunciado de lo que puede ser demostrado o e
 \newpage
 %--------------------------
 \section{MARCO TEÓRICO}
+
+\subsection{CubeSat y EyasSat}
+El concepto CubeSat se refiere a un nanosatélite estándar cuyo diseño fue propuesto por los profesores Jordi Puig-Suari, de la Universidad Politécnica Estatal de California, y Bob Twiggs, de la Universidad de Stanford en 1999. Corresponde a un pequeño satélite constituido por unidades (U) con forma de cubo de 10 cm y una masa de hasta 1.3 kilogramos [7]. Son ampliamente utilizados alrededor el mundo por universidades ya que representan una alternativa para desplegar cargas científicas en el espacio con un presupuesto inferior a los 100.000 dólares [8]. 
+No obstante, también son diseñados con fines educativos para que los estudiantes se familiaricen con los principales sistemas que componen estos vehículos espaciales y puedan hacer pruebas de integración y rendimiento en un aula de clase. En este sentido, surge el CubeSat EyasSat [9] como parte de un programa de entrenamiento del Departamento de Astronáutica de la Academia de las Fuerzas Aéreas de Estados Unidos (USAFA). El EyasSat (Figura 1), se centra en seis subsistemas de los que constan la mayoría de los satélites. Estos subsistemas son: estructuras, potencia, comunicación y tratamiento de datos, control y determinación de actitud (ADCS), propulsión y sistemas térmicos. No obstante, el diseño modular del EyasSat permite la integración y mejora de subsistemas adicionales que pueden ampliar sus capacidades. Por ejemplo, [10] propone una nueva versión del ADCS, sistema de particular interés en esta investigación, el cual se extiende a tres ejes y permite la capacidad de ser probado en un cojinete de aire.
+
+
+Figura 1. Cubesat de entrenamiento EyasSat
+
+\subsection{Sistema de determinación y control de actitud (ADCS)}
+
+Este sistema se encarga de estabilizar y orientar el vehículo en las direcciones deseadas durante la misión a pesar de los torques de perturbaciones externos que actúan sobre él. Para ello es necesario que el vehículo determine su actitud mediante sensores, y la controle, mediante actuadores.
+
+Figura 2. ADCS EyasSat
+
+El Módulo ADCS del EyasSat (Figura 2), se compone de dos tipos de actuadores: una rueda de reacción en el eje Z y dos magnetorquers en el eje X e Y respectivamente. En la Figura 3. Ejes coordenados del EyasSat Figura 3 se evidencian los ejes coordenados en el marco del cuerpo.
+Por otro lado, la medición de la posición se realiza mediante dos sensores solares (situados en la parte superior e inferior del EyasSat) y un sensor solar diferencial-posicional (compuesto por dos células fotovoltaicas) [11]. En este sentido, es posible realizar pruebas de actitud recurriendo a un control de lazo cerrado de un grado de libertad. 
+
+Figura 3. Ejes coordenados del EyasSat [10]
+
+\subsubsection{Ruedas de reacción}
+
+Las ruedas de reacción (RW) son motores de alto torque acoplados a rotores de gran inercia. Permiten reposicionar vehículos espaciales y satélites controlables mientras están en órbita ya que contienen energía rotacional, almacenada mediante la conservación del momento angular, y pueden activar el intercambio de momento para proporcionar estabilidad a una nave espacial o al satélite.
+
+Figura 4. Funcionamiento RW [12]
+
+Como puede apreciarse en la Figura 4, en cuanto cambia la velocidad de rotación $\omega$ de la nave espacial, la RW desencadena una contra rotación del satélite, en la misma proporción, a través de la conservación del momento angular. Dicha contra rotación se produce a lo largo de un único eje, por lo que, para tener un control completo del sistema, es necesario recurrir a ensambles de tres ruedas de reacción.
+Son ampliamente utilizadas ya que sólo requieren energía eléctrica para funcionar y no requieren aplicadores externos de torque como cohetes o propelentes. Pueden asegurar el control de actitud en tres ejes de forma autónoma. Además, las ruedas de reacción pueden gestionar la orientación de un satélite o nave espacial con una precisión superior a otros dispositivos. Se trata de un elemento crítico para las misiones espaciales tanto de acción como de observación que requieren una precisión de apuntamiento muy elevada.
+
+\subsubsection{Magnetorquers}
+
+Por su parte, estos dispositivos utilizan bobinas magnéticas o electroimanes para generar momentos dipolares magnéticos, producen un par proporcional (y perpendicular) al campo magnético variable de la Tierra [13]. Esto puede representar un desafío ya que la magnitud del campo geomagnético varia con el tiempo y su desempeño disminuye a medida que aumenta la altura de la órbita como se ve en la ecuación (1) , donde B es la constante magnética terrestre y corresponde a $ B=m/R^3$, donde $m = 7.96*10^15$  $Wb/m$   y R es la distancia al centro de la tierra. De esta manera, se tiene una expresión para la magnitud del torque: 
+$Tmag= M×B$	(1)
+
+Donde Tmag es el torque creado, B es el vector de campo geomagnético, y M es el momento dipolar magnético generado por el magnetorque especificado en Amperios · vuelta · m2. No obstante, los electroimanes tienen la ventaja de no tener piezas móviles, ya que sólo necesitan un magnetómetro para detectar el campo y una varilla electromagnética enrollada en cada eje. Como utilizan los campos magnéticos naturales de la Tierra, son menos eficaces en órbitas altas donde disminuye la magnitud del campo.
+Por otro lado, según Wertz y Larson [1] , en el diseño de un ADCS, normalmente se requiere conocer la ubicación del centro de masa o gravedad (CG), así como los elementos de la matriz de inercia: los momentos y productos de inercia en torno a ejes de referencia elegidos. La dirección de los ejes principales, aquellos ejes para los que la matriz de inercia es diagonal y los productos de inercia son cero, también son de interés. Por último, es necesario saber cómo cambian estas propiedades con el tiempo, a medida que se utiliza combustible u otros componentes se desplazan o despliegan.
+
+\subsection{Fundamentos de dinámica de satélites}
+
+\subsubsection{Marcos de referencia}
+El primer paso para analizar y diseñar un sistema de control de actitud es definir los sistemas de referencia de coordenadas con los que trabajar, lo cual permite describir la actitud de un satélite como una desviación con respecto a un sistema de referencia elegido. Hay tres marcos de referencia comunes utilizados para la descripción de la actitud: Marco de referencia orbital (ORF), el marco de referencia centrado en el cuerpo (BRF) y el marco de referencia centrado en la tierra (ECI). 
+\subsubsection{Marco de Referencia Orbital (ORF)}
+En el ORF, el origen coincide con el CG del satélite. El eje Zo apunta hacia el centro de la Tierra. El eje Xo apunta en la dirección de la velocidad tangencialmente a la órbita. El eje Yo completa el sistema usando la regla de la mano derecha como se muestra en la Figura 5.
+
+Figura 5 Marcos de referencia ORF y BRR [14].
+
+\subsubsection{Marco de Referencia centrado en el cuerpo (BRF)}
+Por su parte, el BRF se fija con el satélite y su origen se sitúa de nuevo en el CG de este. La orientación del satélite se describe en relación con el marco orbital. El lado nadir del satélite está en la dirección del eje Zb, mientras que los ejes Xb e Yb coinciden con los ejes del ORF cuando el satélite tiene una actitud de 0 grados en alabeo, cabeceo y guiñada. Esta situación se ilustra en la Figura 5.
+
+Figura 6. Sistemas de referencia ECI y ECEF
+
+\subsubsection{Marco de Referencia centrado en la tierra (ECI)}
+Este marco está fijo en el espacio, por lo que es un marco de referencia no acelerado que permite la aplicación de las Leyes de Newton, donde su origen está situado en el centro de la Tierra. El eje Z apunta hacia el Polo Norte, el eje X hacia el Equinoccio de Primavera y el eje Y completa el sistema de coordenadas cartesianas. 
+Cuando se requiere considerar la rotación de la tierra, se recurre a un marco centrado y unido a la tierra (ECEF). Éste también se encuentra en el centro de la Tierra, sin embargo, los ejes X e Y giran con la tierra respecto al marco ECI alrededor del eje Z. El eje X apunta hacia la intersección del meridiano de Greenwich y el Ecuador. Finalmente, el eje Y completa el sistema siguiendo la regla de la mano derecha como se ve en la Figura 6.
+Estos marcos de coordenadas permiten describir la actitud en términos de la orientación del BRF con respecto al ORF o ECI. Para ello se utiliza la representación de cuaterniones o ángulos de Euler en una matriz de dirección coseno (DCM) o matriz de transformación. Esta matriz permite transformar vectores de un sistema de referencia a otro.
+
+\subsection{Teoría de Control}
+
+Como se mencionó en la sección del ADCS, para garantizar la estabilidad de un satélite primero es necesario conocer su orientación angular en el BRF y determinar su actitud respecto al ORF. No obstante, la acción de los actuadores depende de la posición instantánea y sus cambios para poder compensar y anticipar el efecto de las perturbaciones en la actitud. Por tal motivo, los ADCS se fundamentan en la teoría de control.
+De tal manera, la ingeniería de control recurre a los sistemas retroalimentados o en lazo cerrado, en los cuales, se alimenta al controlador con la señal de error de actuación, que es la diferencia entre la señal de entrada y la señal de realimentación (que puede ser la propia señal de salida o una función de la señal de salida y sus derivadas y/o integrales), con el fin de reducir el error y llevar la salida del sistema a un valor deseado [15]. 
+Así mismo, los sistemas en lazo cerrado tienen la habilidad de rechazar perturbaciones externas y mejorar la atenuación del ruido de medición. Las perturbaciones y el ruido de medición se incorporan en el diagrama de bloques como entradas externas, como se ilustra en la Figura 7.
+
+
+Figura 7. Sistema en lazo cerrado con perturbaciones externas
+\subsubsection{Modelo dinámico}
+
+Para comprender y controlar sistemas complejos, es preciso obtener modelos matemáticos cuantitativos de dichos sistemas. Es necesario, pues, analizar las relaciones entre las variables del sistema y obtener un modelo matemático. Dado que los sistemas considerados son dinámicos, las ecuaciones descriptivas suelen ser ecuaciones diferenciales. Además, si estas ecuaciones se pueden linealizar, es posible utilizar la transformada de Laplace para simplificar el método de solución. En la práctica, debido a la complejidad de los sistemas y nuestro desconocimiento de todos los factores relevantes, se hace necesaria la introducción de suposiciones relativas al funcionamiento del sistema. Por lo tanto, a menudo resultará útil considerar el sistema físico, expresar y linealizar el sistema.
+ 
+\subsection{Ambiente espacial en LEO}
+
+La órbita baja (LEO, por sus siglas en inglés) es una región del espacio que se encuentra a una altitud de aproximadamente 160 a 2000 kilómetros sobre la superficie de la Tierra, como se muestra en la Figura 8. Los satélites en LEO experimentan diversas condiciones ambientales, incluyendo gradientes de gravedad, arrastre aerodinámico y el campo magnético terrestre. 
+
+Figura 8. Órbita baja [16]
+
+Los gradientes de gravedad son causados por la variación de la fuerza gravitacional a medida que el satélite se mueve a través de diferentes regiones de la gravedad terrestre. Estos gradientes pueden causar momentos de torsión no deseados en el satélite, lo que puede afectar su orientación y estabilidad [13]. Por otro lado, el arrastre aerodinámico es causado por la interacción del satélite con la atmósfera terrestre, que puede causar una desaceleración y una disminución de la altitud del satélite. Por su parte, el campo magnético terrestre puede afectar la orientación y el control de los satélites que usan magnetorquers, que son dispositivos que utilizan el campo magnético para cambiar la orientación del satélite.
+Estos factores pueden afectar el sistema de control de un satélite en LEO de diversas maneras. Por ejemplo, los gradientes de gravedad y el arrastre aerodinámico pueden causar momentos de torsión no deseados en el satélite, lo que puede afectar la precisión del sistema de control. 
+Para mitigar estos efectos, se utilizan diversas técnicas de control, como el control de actitud, que utiliza dispositivos como magnetorquers, ruedas de reacción y propulsores para controlar la orientación del satélite. También se pueden utilizar técnicas de control adaptativo y control predictivo para compensar los efectos del arrastre aerodinámico y los gradientes de gravedad [17].
+Dado que el desempeño del ADCS se ve influenciado por las condiciones del ambiente espacial, es necesario conocer las particularidades de la órbita donde se encontrará el satélite. De esta manera, es posible incluir estos parámetros en el modelo dinámico y en los controladores que se valuarán. 
+
 
 En esta sección se citan los autores que han tenido influencia directa en tu investigación. Recuerda, debes escoger solo un método para realizar las citas y referencias, es decir, debes seleccionar entre gestores especializados como Mendeley, Zotero, EndNote, etc., Microsoft Word, o “Manuales”; no se deben mezclar entre sí. Nuestra recomendación principal es Mendeley. Evita referenciar sitios como blogs, Wikipedia, Rincón del Vago, Monografías.com y demás portales web que no se consideran fuentes primarias. No limites tu búsqueda a una sola herramienta (por ejemplo, solo www.google.com). Realiza búsquedas en diferentes plataformas académicas, tales como:
 
