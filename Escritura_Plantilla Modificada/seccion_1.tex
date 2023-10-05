@@ -292,28 +292,56 @@ $$
 %$$
 \subsubsection{Cuaterniones}
 
+%Los ángulos de Euler pueden provocar singularidades en determinados ángulos cuando se utilizan en cálculo numérico.
+%
+%%gimbal lock
+%
+%Los parámetros simétricos de Euler (cuaternión) son una mejor representación sin singularidades
+%y sin funciones trigonométricas en la matriz de transformación \cite{wertz1978spacecraft}. 
+%
+%El cuaternión se utiliza durante el cálculo numérico.Dado que la representación quaternion no tiene una representación física fácilmente interpretable, los ángulos de Euler se utilizarán
+%en el presente estudio para representar la actitud durante las simulaciones y los resultados de las pruebas.
+%
+%El conjunto de cuaterniones consta de cuatro parámetros, que se definen en términos del eje de Euler
+%de Euler. El teorema de rotación del eje propio de Euler establece que la rotación finita de un cuerpo rígido
+%con un punto fijo puede expresarse mediante una única rotación alrededor de algún eje fijo [14].
+%
+%Este eje fijo, el eje de Euler, se representa mediante un vector unitario en la IRF o BRF con
+%componentes ¯e = (ex, ey, ez).
+%
+% Los cuatro parámetros simétricos de Euler, o cuaterniones, están
+%definidos en las ecuaciones (2.2.5) a (2.2.8), donde es el ángulo de rotación sobre el eje de Euler
+
 \subsection{Teoría de Control}
 
 Como se mencionó en la sección del ADCS, para garantizar la estabilidad de un satélite primero es necesario conocer su orientación angular en el BRF y determinar su actitud respecto al ORF. No obstante, la acción de los actuadores depende de la posición instantánea y sus cambios para poder compensar y anticipar el efecto de las perturbaciones en la actitud. Por tal motivo, los ADCS se fundamentan en la teoría de control.
-De tal manera, la ingeniería de control recurre a los sistemas retroalimentados o en lazo cerrado, en los cuales, se alimenta al controlador con la señal de error de actuación, que es la diferencia entre la señal de entrada y la señal de realimentación (que puede ser la propia señal de salida o una función de la señal de salida y sus derivadas y/o integrales), con el fin de reducir el error y llevar la salida del sistema a un valor deseado [15]. 
-Así mismo, los sistemas en lazo cerrado tienen la habilidad de rechazar perturbaciones externas y mejorar la atenuación del ruido de medición. Las perturbaciones y el ruido de medición se incorporan en el diagrama de bloques como entradas externas, como se ilustra en la Figura 7.
+De tal manera, la ingeniería de control recurre a los sistemas retroalimentados o en lazo cerrado, en los cuales, se alimenta al controlador con la señal de error de actuación, que es la diferencia entre la señal de entrada y la señal de realimentación (que puede ser la propia señal de salida o una función de la señal de salida y sus derivadas y/o integrales), con el fin de reducir el error y llevar la salida del sistema a un valor deseado \cite{ogata2010modern}. 
+Así mismo, los sistemas en lazo cerrado tienen la habilidad de rechazar perturbaciones externas y mejorar la atenuación del ruido de medición. Las perturbaciones y el ruido de medición se incorporan en el diagrama de bloques como entradas externas, como se ilustra en la \textbf{Fig.\ref{fig:feedback}}.
 
 
-Figura 7. Sistema en lazo cerrado con perturbaciones externas
+
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.8]{imagenes/marco_teorico/lazo cerrado.PNG}\\
+	\end{center}
+	\caption{  Sistema en lazo cerrado con perturbaciones externas }
+	\label{fig:feedback}
+%	\footnotesize{Nota. Fuente \cite{tes:Sorolla2019}}
+\end{figure}
 \subsubsection{Modelo dinámico}
 
 Para comprender y controlar sistemas complejos, es preciso obtener modelos matemáticos cuantitativos de dichos sistemas. Es necesario, pues, analizar las relaciones entre las variables del sistema y obtener un modelo matemático. Dado que los sistemas considerados son dinámicos, las ecuaciones descriptivas suelen ser ecuaciones diferenciales. Además, si estas ecuaciones se pueden linealizar, es posible utilizar la transformada de Laplace para simplificar el método de solución. En la práctica, debido a la complejidad de los sistemas y nuestro desconocimiento de todos los factores relevantes, se hace necesaria la introducción de suposiciones relativas al funcionamiento del sistema. Por lo tanto, a menudo resultará útil considerar el sistema físico, expresar y linealizar el sistema.
  
 \subsection{Ambiente espacial en LEO}
 
-La órbita baja (LEO, por sus siglas en inglés) es una región del espacio que se encuentra a una altitud de aproximadamente 160 a 2000 kilómetros sobre la superficie de la Tierra, como se muestra en la Figura 8. Los satélites en LEO experimentan diversas condiciones ambientales, incluyendo gradientes de gravedad, arrastre aerodinámico y el campo magnético terrestre. 
-
-Figura 8. Órbita baja [16]
-
-Los gradientes de gravedad son causados por la variación de la fuerza gravitacional a medida que el satélite se mueve a través de diferentes regiones de la gravedad terrestre. Estos gradientes pueden causar momentos de torsión no deseados en el satélite, lo que puede afectar su orientación y estabilidad [13]. Por otro lado, el arrastre aerodinámico es causado por la interacción del satélite con la atmósfera terrestre, que puede causar una desaceleración y una disminución de la altitud del satélite. Por su parte, el campo magnético terrestre puede afectar la orientación y el control de los satélites que usan magnetorquers, que son dispositivos que utilizan el campo magnético para cambiar la orientación del satélite.
-Estos factores pueden afectar el sistema de control de un satélite en LEO de diversas maneras. Por ejemplo, los gradientes de gravedad y el arrastre aerodinámico pueden causar momentos de torsión no deseados en el satélite, lo que puede afectar la precisión del sistema de control. 
-Para mitigar estos efectos, se utilizan diversas técnicas de control, como el control de actitud, que utiliza dispositivos como magnetorquers, ruedas de reacción y propulsores para controlar la orientación del satélite. También se pueden utilizar técnicas de control adaptativo y control predictivo para compensar los efectos del arrastre aerodinámico y los gradientes de gravedad [17].
-Dado que el desempeño del ADCS se ve influenciado por las condiciones del ambiente espacial, es necesario conocer las particularidades de la órbita donde se encontrará el satélite. De esta manera, es posible incluir estos parámetros en el modelo dinámico y en los controladores que se evaluarán. 
+%La órbita baja (LEO, por sus siglas en inglés) es una región del espacio que se encuentra a una altitud de aproximadamente 160 a 2000 kilómetros sobre la superficie de la Tierra, como se muestra en la Figura 8. Los satélites en LEO experimentan diversas condiciones ambientales, incluyendo gradientes de gravedad, arrastre aerodinámico y el campo magnético terrestre. 
+%
+%Figura 8. Órbita baja [16]
+%
+%Los gradientes de gravedad son causados por la variación de la fuerza gravitacional a medida que el satélite se mueve a través de diferentes regiones de la gravedad terrestre. Estos gradientes pueden causar momentos de torsión no deseados en el satélite, lo que puede afectar su orientación y estabilidad [13]. Por otro lado, el arrastre aerodinámico es causado por la interacción del satélite con la atmósfera terrestre, que puede causar una desaceleración y una disminución de la altitud del satélite. Por su parte, el campo magnético terrestre puede afectar la orientación y el control de los satélites que usan magnetorquers, que son dispositivos que utilizan el campo magnético para cambiar la orientación del satélite.
+%Estos factores pueden afectar el sistema de control de un satélite en LEO de diversas maneras. Por ejemplo, los gradientes de gravedad y el arrastre aerodinámico pueden causar momentos de torsión no deseados en el satélite, lo que puede afectar la precisión del sistema de control. 
+%Para mitigar estos efectos, se utilizan diversas técnicas de control, como el control de actitud, que utiliza dispositivos como magnetorquers, ruedas de reacción y propulsores para controlar la orientación del satélite. También se pueden utilizar técnicas de control adaptativo y control predictivo para compensar los efectos del arrastre aerodinámico y los gradientes de gravedad [17].
+%Dado que el desempeño del ADCS se ve influenciado por las condiciones del ambiente espacial, es necesario conocer las particularidades de la órbita donde se encontrará el satélite. De esta manera, es posible incluir estos parámetros en el modelo dinámico y en los controladores que se evaluarán. 
 
 
 En esta sección se citan los autores que han tenido influencia directa en tu investigación. Recuerda, debes escoger solo un método para realizar las citas y referencias, es decir, debes seleccionar entre gestores especializados como Mendeley, Zotero, EndNote, etc., Microsoft Word, o “Manuales”; no se deben mezclar entre sí. Nuestra recomendación principal es Mendeley. Evita referenciar sitios como blogs, Wikipedia, Rincón del Vago, Monografías.com y demás portales web que no se consideran fuentes primarias. No limites tu búsqueda a una sola herramienta (por ejemplo, solo www.google.com). Realiza búsquedas en diferentes plataformas académicas, tales como:

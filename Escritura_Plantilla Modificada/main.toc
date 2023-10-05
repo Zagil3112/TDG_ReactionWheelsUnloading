@@ -22,7 +22,7 @@
 \contentsline {subsubsection}{\numberline {2}Ángulos de Euler}{23}{subsubsection.6.3.2}%
 \contentsline {subsubsection}{\numberline {3}Cuaterniones}{25}{subsubsection.6.3.3}%
 \contentsline {subsection}{\numberline {D}Teoría de Control}{25}{subsection.6.4}%
-\contentsline {subsubsection}{\numberline {1}Modelo dinámico}{25}{subsubsection.6.4.1}%
+\contentsline {subsubsection}{\numberline {1}Modelo dinámico}{26}{subsubsection.6.4.1}%
 \contentsline {subsection}{\numberline {E}Ambiente espacial en LEO}{26}{subsection.6.5}%
 \contentsline {section}{\numberline {VII}METODOLOGÍA}{32}{section.7}%
 \contentsline {subsection}{\numberline {A}Modelo dinámico}{32}{subsection.7.1}%
@@ -47,7 +47,7 @@
 \contentsline {section}{\numberline {XI}CONCLUSIONES}{48}{section.11}%
 \contentsline {section}{\numberline {XII}RECOMENDACIONES}{49}{section.12}%
 \contentsline {section}{\numberline {XII} REFERENCIAS}{50}{section.12}%
-\contentsline {subsection}{\numberline {} Anexo A. Autoarchivo en Repositorio y documentos de interés}{55}{section.12}%
-\contentsline {subsection}{\numberline {} Anexo B. Recortar y abreviar direcciones web largas}{56}{section.12}%
-\contentsline {subsection}{\numberline {} Anexo C. Incluir imágenes}{56}{section.12}%
+\contentsline {subsection}{\numberline {} Anexo A. Autoarchivo en Repositorio y documentos de interés}{56}{section.12}%
+\contentsline {subsection}{\numberline {} Anexo B. Recortar y abreviar direcciones web largas}{57}{section.12}%
+\contentsline {subsection}{\numberline {} Anexo C. Incluir imágenes}{57}{section.12}%
 \contentsfinish 
