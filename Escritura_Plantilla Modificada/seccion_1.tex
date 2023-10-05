@@ -199,11 +199,11 @@ Por otro lado, según Wertz y Larson \cite{Wertz1999} , en el diseño de un ADCS
 
 \subsubsection{Marcos de referencia}
 El primer paso para analizar y diseñar un sistema de control de actitud es definir los sistemas de referencia de coordenadas con los que trabajar, lo cual permite describir la actitud de un satélite como una desviación con respecto a un sistema de referencia elegido. Hay tres marcos de referencia comunes utilizados para la descripción de la actitud: Marco de referencia orbital (ORF), el marco de referencia centrado en el cuerpo (BRF) y el marco de referencia centrado en la tierra (ECI). 
-\paragraph{Marco de Referencia Orbital (ORF):}El origen coincide con el CG del satélite. El eje $Z_o$ apunta hacia el centro de la Tierra. El eje $X_o$ apunta en la dirección de la velocidad tangencialmente a la órbita. El eje $Y_o$ completa el sistema usando la regla de la mano derecha como se muestra en la \textbf{Fig. \ref{fig:marco_orbital}}.
+\paragraph{Marco de Referencia Orbital (ORF):} Es un marco no inercial donde el origen coincide con el CG del satélite. El eje $X_o$ apunta hacia el centro de la Tierra (nadir). El eje $Y_o$ apunta en la dirección de la velocidad tangencialmente a la órbita. El eje $Z_o$ completa el sistema usando la regla de la mano derecha como se muestra en la \textbf{Fig. \ref{fig:marco_orbital}}.
 
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[scale=0.6]{imagenes/marco_teorico/marco_orbital.PNG}\\
+		\includegraphics[scale=0.7]{imagenes/marco_teorico/marco_orbital.PNG}\\
 	\end{center}
 	\caption{ Marco Orbital.}
 	\label{fig:marco_orbital}
@@ -212,15 +212,85 @@ El primer paso para analizar y diseñar un sistema de control de actitud es defi
 
 
 
-\subsubsection{Marco de Referencia centrado en el cuerpo (BRF)}
-Por su parte, el BRF se fija con el satélite y su origen se sitúa de nuevo en el CG de este. La orientación del satélite se describe en relación con el marco orbital. El lado nadir del satélite está en la dirección del eje Zb, mientras que los ejes Xb e Yb coinciden con los ejes del ORF cuando el satélite tiene una actitud de 0 grados en alabeo, cabeceo y guiñada. Esta situación se ilustra en la 
+\paragraph{Marco de Referencia centrado en el cuerpo (BRF):}Se fija con respecto al centro de masa del satélite \textbf({Fig. \ref{fig:marco_cuerpo}}). Se utiliza para determinar la orientación de los instrumentos a bordo. Si algunos de los instrumentos a bordo dependen de de la orientación del satélite, por ejemplo una cámara, es conveniente definir el BRF con uno de los ejes paralelos al campo de visión de este instrumento. Por otro lado, la orientación del satélite se describe en relación con el marco orbital como se ve en la \textbf{Fig. \ref{fig:marco_orbital_cuerpo}}.
 
-Figura 6. Sistemas de referencia ECI y ECEF
 
-\subsubsection{Marco de Referencia centrado en la tierra (ECI)}
-Este marco está fijo en el espacio, por lo que es un marco de referencia no acelerado que permite la aplicación de las Leyes de Newton, donde su origen está situado en el centro de la Tierra. El eje Z apunta hacia el Polo Norte, el eje X hacia el Equinoccio de Primavera y el eje Y completa el sistema de coordenadas cartesianas. 
-Cuando se requiere considerar la rotación de la tierra, se recurre a un marco centrado y unido a la tierra (ECEF). Éste también se encuentra en el centro de la Tierra, sin embargo, los ejes X e Y giran con la tierra respecto al marco ECI alrededor del eje Z. El eje X apunta hacia la intersección del meridiano de Greenwich y el Ecuador. Finalmente, el eje Y completa el sistema siguiendo la regla de la mano derecha como se ve en la Figura 6.
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.7]{imagenes/marco_teorico/marco_cuerpo.PNG}\\
+	\end{center}
+	\caption{ Marco de referencia centrado en el cuerpo}
+	\label{fig:marco_cuerpo}
+%	\footnotesize{Nota. Fuente \cite{Andresen2005}}
+\end{figure}
+
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.7]{imagenes/marco_teorico/orbital_cuerpo.PNG}\\
+	\end{center}
+	\caption{ Marco de referencia centrado en el cuerpo y orbital}
+	\label{fig:marco_orbital_cuerpo}
+		\footnotesize{Nota. Fuente \cite{Karatas2006}}
+\end{figure}
+
+\paragraph{Marco de Referencia centrado en la tierra (ECI):}Este marco está fijo en el espacio, por lo que es un marco de referencia no acelerado que permite la aplicación de las Leyes de Newton, donde su origen está situado en el centro de la Tierra. El eje Z apunta hacia el Polo Norte, el eje X hacia el Equinoccio de Primavera y el eje Y completa el sistema de coordenadas cartesianas como se ve en la \textbf{Fig. \ref{fig:ECI}}.
+ 
+ \begin{figure}[!ht]
+ 	\begin{center}
+ 		\includegraphics[scale=0.7]{imagenes/marco_teorico/ECI.PNG}\\
+ 	\end{center}
+ 	\caption{ Marco de referencia inercial centrado en la tierra (ECI)}
+ 	\label{fig:ECI}
+ 	\footnotesize{Nota. Fuente \cite{Andresen2005}}
+ \end{figure}
+ 
+Cuando se requiere considerar la rotación de la tierra, se recurre a un marco centrado y unido a la tierra (ECEF). Éste también se encuentra en el centro de la Tierra, sin embargo, los ejes X e Y giran con la tierra respecto al marco ECI alrededor del eje Z. El eje X apunta hacia la intersección del meridiano de Greenwich y el Ecuador. Finalmente, el eje Y completa el sistema siguiendo la regla de la mano derecha como se ve en la \textbf{Fig.\ref{fig:ECEF}}.
+
+
+ \begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.7]{imagenes/marco_teorico/ECEF.PNG}\\
+	\end{center}
+	\caption{ Marco de referencia fijo centrado en la tierra (ECEF)}
+	\label{fig:ECEF}
+	\footnotesize{Nota. Fuente \cite{Andresen2005}}
+\end{figure}
+
 Estos marcos de coordenadas permiten describir la actitud en términos de la orientación del BRF con respecto al ORF o ECI. Para ello se utiliza la representación de cuaterniones o ángulos de Euler en una matriz de dirección coseno (DCM) o matriz de transformación. Esta matriz permite transformar vectores de un sistema de referencia a otro.
+
+\subsubsection{Ángulos de Euler}
+
+La actitud puede representarse mediante los ángulos de roll ($\phi$), pitch ($\theta$) y yaw ($\psi$). Estos ángulos representan las rotaciones consecutivas sobre los ejes $X$, $Y$ y $Z$ con el fin de pasar de un marco a otro \textbf{(Fig.\ref{fig:angulosEuler})}. El orden en que estas rotaciones son efectuadas tienen efectos en la matriz de rotación.
+
+
+
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.6]{imagenes/marco_teorico/angulos_euler.PNG}\\
+	\end{center}
+	\caption{ Ángulos de Euler : Roll-Pitch-Yaw }
+	\label{fig:angulosEuler}
+	\footnotesize{Nota. Fuente \cite{tes:Sorolla2019}}
+\end{figure}
+
+ Debido a que el problema discutido en este trabajo se restringió para solo un grado de libertad, solo basta realizar una rotacion de un ángulo $\phi$ en el eje $Z_o$ del marco orbital (ORF) para pasar al marco del cuerpo (BRF). Lo anterior puede lograrse con la matriz de transformación $R_{B}^{O}$:
+$$
+\mathbf{R_{B}^{O}}=\mathbf{R_{z,\psi}}=\left[\begin{array}{ccc}
+	cos\psi & -sin\psi & 0 \\
+	sin\psi & cos\psi & 0 \\
+	0 & 0 & 1
+\end{array}\right]
+$$
+
+
+%$$
+%\mathbf{I}=\left[\begin{array}{ccc}
+%	I_{x x} & I_{x y} & I_{x z} \\
+%	I_{y x} & I_{y y} & I_{y z} \\
+%	I_{z x} & I_{z y} & I_{z z}
+%\end{array}\right]:\text { Matriz de inercia del CubeSat }
+%$$
+\subsubsection{Cuaterniones}
 
 \subsection{Teoría de Control}
 

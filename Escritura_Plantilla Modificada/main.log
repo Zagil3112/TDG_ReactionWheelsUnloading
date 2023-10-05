@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.6.1)  4 OCT 2023 22:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.6.1)  5 OCT 2023 01:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1238,7 +1238,7 @@ or `spanish'. on input line 7.
 \openout2 = `seccion_0.aux'.
 
  (seccion_0.tex
-<imagenes/escudo_udea.png, id=194, 234.8775pt x 112.92188pt>
+<imagenes/escudo_udea.png, id=202, 234.8775pt x 112.92188pt>
 File: imagenes/escudo_udea.png Graphic file (type png)
 <use imagenes/escudo_udea.png>
 Package pdftex.def Info: imagenes/escudo_udea.png  used on input line 18.
@@ -1294,22 +1294,22 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 46.
 (C:\Users\Personal\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<imagenes/CC.jpg, id=203, 63.4005pt x 23.9805pt>
+<imagenes/CC.jpg, id=211, 63.4005pt x 23.9805pt>
 File: imagenes/CC.jpg Graphic file (type jpg)
 <use imagenes/CC.jpg>
 Package pdftex.def Info: imagenes/CC.jpg  used on input line 60.
 (pdftex.def)             Requested size: 63.40033pt x 23.98042pt.
-<imagenes/CCima.png, id=204, 61.101pt x 24.966pt>
+<imagenes/CCima.png, id=212, 61.101pt x 24.966pt>
 File: imagenes/CCima.png Graphic file (type png)
 <use imagenes/CCima.png>
 Package pdftex.def Info: imagenes/CCima.png  used on input line 61.
 (pdftex.def)             Requested size: 61.10085pt x 24.96593pt.
-<imagenes/escudo_udea_vice.png, id=205, 281.55188pt x 101.62968pt>
+<imagenes/escudo_udea_vice.png, id=213, 281.55188pt x 101.62968pt>
 File: imagenes/escudo_udea_vice.png Graphic file (type png)
 <use imagenes/escudo_udea_vice.png>
 Package pdftex.def Info: imagenes/escudo_udea_vice.png  used on input line 65.
 (pdftex.def)             Requested size: 98.54462pt x 35.5709pt.
-<imagenes/sis_biblo.png, id=206, 97.893pt x 36.792pt>
+<imagenes/sis_biblo.png, id=214, 97.893pt x 36.792pt>
 File: imagenes/sis_biblo.png Graphic file (type png)
 <use imagenes/sis_biblo.png>
 Package pdftex.def Info: imagenes/sis_biblo.png  used on input line 66.
@@ -1324,7 +1324,7 @@ LaTeX Info: Redefining \% on input line 2.
 \openout7 = `main.toc'.
 
  [3]
-Overfull \vbox (535.96767pt too high) has occurred while \output is active []
+Overfull \vbox (583.46767pt too high) has occurred while \output is active []
 
 
 [4] (main.lot
@@ -1357,7 +1357,7 @@ LaTeX Info: Redefining \% on input line 1.
 
 
 ] [11]
-<imagenes/planteamiento_del_problema/esquema_planteamiento.PNG, id=398, 760.340
+<imagenes/planteamiento_del_problema/esquema_planteamiento.PNG, id=420, 760.340
 62pt x 508.14844pt>
 File: imagenes/planteamiento_del_problema/esquema_planteamiento.PNG Graphic fil
 e (type png)
@@ -1367,20 +1367,20 @@ nto.PNG  used on input line 44.
 (pdftex.def)             Requested size: 380.16937pt x 254.0736pt.
  [12] [13 <./imagenes/planteamiento_del_problema/esquema_planteamiento.PNG>] [1
 4]
-<imagenes/justificacion/jaula.PNG, id=424, 315.42844pt x 313.9228pt>
+<imagenes/justificacion/jaula.PNG, id=446, 315.42844pt x 313.9228pt>
 File: imagenes/justificacion/jaula.PNG Graphic file (type png)
 <use imagenes/justificacion/jaula.PNG>
 Package pdftex.def Info: imagenes/justificacion/jaula.PNG  used on input line 8
 4.
 (pdftex.def)             Requested size: 205.02605pt x 204.0474pt.
  [15] [16 <./imagenes/justificacion/jaula.PNG>]
-<imagenes/marco_teorico/eyassat.PNG, id=440, 166.77692pt x 213.12276pt>
+<imagenes/marco_teorico/eyassat.PNG, id=462, 166.77692pt x 213.12276pt>
 File: imagenes/marco_teorico/eyassat.PNG Graphic file (type png)
 <use imagenes/marco_teorico/eyassat.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/eyassat.PNG  used on input line
  136.
 (pdftex.def)             Requested size: 150.09781pt x 191.80869pt.
-<imagenes/marco_teorico/adcs.PNG, id=441, 299.61937pt x 123.46124pt>
+<imagenes/marco_teorico/adcs.PNG, id=463, 299.61937pt x 123.46124pt>
 File: imagenes/marco_teorico/adcs.PNG Graphic file (type png)
 <use imagenes/marco_teorico/adcs.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/adcs.PNG  used on input line 14
@@ -1388,7 +1388,7 @@ Package pdftex.def Info: imagenes/marco_teorico/adcs.PNG  used on input line 14
 (pdftex.def)             Requested size: 269.65494pt x 111.11407pt.
 
 [17]
-<imagenes/marco_teorico/eyassat_axes.PNG, id=452, 333.49594pt x 246.1697pt>
+<imagenes/marco_teorico/eyassat_axes.PNG, id=474, 333.49594pt x 246.1697pt>
 File: imagenes/marco_teorico/eyassat_axes.PNG Graphic file (type png)
 <use imagenes/marco_teorico/eyassat_axes.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/eyassat_axes.PNG  used on input
@@ -1396,7 +1396,7 @@ Package pdftex.def Info: imagenes/marco_teorico/eyassat_axes.PNG  used on input
 (pdftex.def)             Requested size: 300.14357pt x 221.55066pt.
  [18 <./imagenes/marco_teorico/eyassat.PNG> <./imagenes/marco_teorico/adcs.PNG>
 ]
-<imagenes/marco_teorico/rw.PNG, id=461, 426.09187pt x 193.47281pt>
+<imagenes/marco_teorico/rw.PNG, id=483, 426.09187pt x 193.47281pt>
 File: imagenes/marco_teorico/rw.PNG Graphic file (type png)
 <use imagenes/marco_teorico/rw.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/rw.PNG  used on input line 176.
@@ -1404,101 +1404,135 @@ Package pdftex.def Info: imagenes/marco_teorico/rw.PNG  used on input line 176.
 (pdftex.def)             Requested size: 383.47913pt x 174.12392pt.
  [19 <./imagenes/marco_teorico/eyassat_axes.PNG> <./imagenes/marco_teorico/rw.P
 NG>] [20]
-<imagenes/marco_teorico/marco_orbital.PNG, id=484, 411.78844pt x 275.52937pt>
+<imagenes/marco_teorico/marco_orbital.PNG, id=506, 411.78844pt x 275.52937pt>
 File: imagenes/marco_teorico/marco_orbital.PNG Graphic file (type png)
 <use imagenes/marco_teorico/marco_orbital.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/marco_orbital.PNG  used on inpu
 t line 206.
-(pdftex.def)             Requested size: 247.07495pt x 165.3189pt.
- [21 <./imagenes/marco_teorico/marco_orbital.PNG>] [22] [23]
-[24] [25] [26]
-Underfull \hbox (badness 1122) in paragraph at lines 286--287
+(pdftex.def)             Requested size: 288.24992pt x 192.86923pt.
+ [21 <./imagenes/marco_teorico/marco_orbital.PNG>]
+<imagenes/marco_teorico/marco_cuerpo.PNG, id=517, 359.84438pt x 288.3272pt>
+File: imagenes/marco_teorico/marco_cuerpo.PNG Graphic file (type png)
+<use imagenes/marco_teorico/marco_cuerpo.PNG>
+Package pdftex.def Info: imagenes/marco_teorico/marco_cuerpo.PNG  used on input
+ line 220.
+(pdftex.def)             Requested size: 251.88934pt x 201.82765pt.
+<imagenes/marco_teorico/orbital_cuerpo.PNG, id=518, 277.035pt x 156.585pt>
+File: imagenes/marco_teorico/orbital_cuerpo.PNG Graphic file (type png)
+<use imagenes/marco_teorico/orbital_cuerpo.PNG>
+Package pdftex.def Info: imagenes/marco_teorico/orbital_cuerpo.PNG  used on inp
+ut line 229.
+(pdftex.def)             Requested size: 193.92317pt x 109.60873pt.
+ [22 <./imagenes/marco_teorico/marco_cuerpo.PNG> <./imagenes/marco_teorico/orbi
+tal_cuerpo.PNG>]
+<imagenes/marco_teorico/ECI.PNG, id=528, 355.3275pt x 264.23718pt>
+File: imagenes/marco_teorico/ECI.PNG Graphic file (type png)
+<use imagenes/marco_teorico/ECI.PNG>
+Package pdftex.def Info: imagenes/marco_teorico/ECI.PNG  used on input line 240
+.
+(pdftex.def)             Requested size: 248.72754pt x 184.96475pt.
+<imagenes/marco_teorico/ECEF.PNG, id=531, 302.63063pt x 258.9675pt>
+File: imagenes/marco_teorico/ECEF.PNG Graphic file (type png)
+<use imagenes/marco_teorico/ECEF.PNG>
+Package pdftex.def Info: imagenes/marco_teorico/ECEF.PNG  used on input line 25
+2.
+(pdftex.def)             Requested size: 211.83998pt x 181.27599pt.
+ [23 <./imagenes/marco_teorico/ECI.PNG>]
+<imagenes/marco_teorico/angulos_euler.PNG, id=539, 287.57437pt x 219.06844pt>
+File: imagenes/marco_teorico/angulos_euler.PNG Graphic file (type png)
+<use imagenes/marco_teorico/angulos_euler.PNG>
+Package pdftex.def Info: imagenes/marco_teorico/angulos_euler.PNG  used on inpu
+t line 269.
+(pdftex.def)             Requested size: 172.54594pt x 131.44206pt.
+ [24 <./imagenes/marco_teorico/ECEF.PNG> <./imagenes/marco_teorico/angulos_eule
+r.PNG>] [25] [26] [27] [28]
+Underfull \hbox (badness 1122) in paragraph at lines 356--357
 []\OT1/cmr/m/n/12 A con-ti-nua-ci^^Son se mues-tra una de las re-fe-ren-cias de
 l ar-chi-vo \OT1/cmr/m/it/12 re-fe.bib\OT1/cmr/m/n/12 , don-de
  []
 
-[27] [28] [29] [30] [31]
-<imagenes/metodologia/grafico_metodologia.png, id=608, 268.00125pt x 578.91281p
+[29] [30] [31] [32] [33]
+<imagenes/metodologia/grafico_metodologia.png, id=659, 268.00125pt x 578.91281p
 t>
 File: imagenes/metodologia/grafico_metodologia.png Graphic file (type png)
 <use imagenes/metodologia/grafico_metodologia.png>
 Package pdftex.def Info: imagenes/metodologia/grafico_metodologia.png  used on 
-input line 383.
+input line 453.
 (pdftex.def)             Requested size: 268.00058pt x 578.91139pt.
 
 
-LaTeX Warning: Float too large for page by 7.8206pt on input line 388.
+LaTeX Warning: Float too large for page by 7.8206pt on input line 458.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-Package placeins Info: Must dump some floats on input line 390.
-[32
-Package placeins Info: Float barrier, from input line 390, processed on page 32
-, lands on page 32. 
+Package placeins Info: Must dump some floats on input line 460.
+[34
+Package placeins Info: Float barrier, from input line 460, processed on page 34
+, lands on page 34. 
 ]
-Package placeins Info: Check again: on input line 390.
+Package placeins Info: Check again: on input line 460.
 
 
-Package placeins Warning: Some floats are stuck, on input line 390.
+Package placeins Warning: Some floats are stuck, on input line 460.
 
-[33 <./imagenes/metodologia/grafico_metodologia.png>]
-<imagenes/modelo_dinamico/ref_system.PNG, id=621, 518.6878pt x 262.73157pt>
+[35 <./imagenes/metodologia/grafico_metodologia.png>]
+<imagenes/modelo_dinamico/ref_system.PNG, id=672, 518.6878pt x 262.73157pt>
 File: imagenes/modelo_dinamico/ref_system.PNG Graphic file (type png)
 <use imagenes/modelo_dinamico/ref_system.PNG>
 Package pdftex.def Info: imagenes/modelo_dinamico/ref_system.PNG  used on input
- line 399.
+ line 469.
 (pdftex.def)             Requested size: 259.34326pt x 131.36545pt.
- [34
-Package placeins Info: Float barrier, from input line 390, processed on page 33
-, lands on page 34. 
+ [36
+Package placeins Info: Float barrier, from input line 460, processed on page 35
+, lands on page 36. 
 
- <./imagenes/modelo_dinamico/ref_system.PNG>] [35] [36]
-Underfull \hbox (badness 10000) in paragraph at lines 522--524
+ <./imagenes/modelo_dinamico/ref_system.PNG>] [37] [38]
+Underfull \hbox (badness 10000) in paragraph at lines 592--594
 
  []
 
-[37] [38] [39]
+[39] [40] [41]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 612.
+(hyperref)                than one, level fixed on input line 682.
 
-<imagenes/grafica.png, id=694, 501.37312pt x 505.13719pt>
+<imagenes/grafica.png, id=744, 501.37312pt x 505.13719pt>
 File: imagenes/grafica.png Graphic file (type png)
 <use imagenes/grafica.png>
-Package pdftex.def Info: imagenes/grafica.png  used on input line 626.
+Package pdftex.def Info: imagenes/grafica.png  used on input line 696.
 (pdftex.def)             Requested size: 250.68594pt x 252.56798pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 661--661
+Underfull \hbox (badness 10000) in paragraph at lines 731--731
 []|\OT1/cmr/m/n/12 Vietnam y
  []
 
 
-Underfull \hbox (badness 1708) in paragraph at lines 671--672
+Underfull \hbox (badness 1708) in paragraph at lines 741--742
 []|\OT1/cmr/m/n/12 Escuela Po-lit^^Secni-ca Fe-de-ral de
  []
 
-[40] [41 <./imagenes/grafica.png>] [42]
-<imagenes/ieee_logo.jpg, id=708, 593.21625pt x 332.74312pt>
+[42] [43 <./imagenes/grafica.png>] [44]
+<imagenes/ieee_logo.jpg, id=759, 593.21625pt x 332.74312pt>
 File: imagenes/ieee_logo.jpg Graphic file (type jpg)
 <use imagenes/ieee_logo.jpg>
-Package pdftex.def Info: imagenes/ieee_logo.jpg  used on input line 703.
+Package pdftex.def Info: imagenes/ieee_logo.jpg  used on input line 773.
 (pdftex.def)             Requested size: 296.60739pt x 166.37114pt.
- [43
+ [45
 
  <./imagenes/ieee_logo.jpg>]
-<imagenes/escudo_udea_solo.png, id=716, 147.55125pt x 193.47281pt>
+<imagenes/escudo_udea_solo.png, id=766, 147.55125pt x 193.47281pt>
 File: imagenes/escudo_udea_solo.png Graphic file (type png)
 <use imagenes/escudo_udea_solo.png>
-Package pdftex.def Info: imagenes/escudo_udea_solo.png  used on input line 714.
+Package pdftex.def Info: imagenes/escudo_udea_solo.png  used on input line 784.
 
 (pdftex.def)             Requested size: 147.55087pt x 193.47234pt.
 
-[44
+[46
 
- <./imagenes/escudo_udea_solo.png>] [45
+ <./imagenes/escudo_udea_solo.png>] [47
 
-] [46]) [47]
+] [48]) [49]
 \openout2 = `referencias.aux'.
 
  (referencias.tex
@@ -1514,30 +1548,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--56
 t . com / resources-[]downloads /
  []
 
-[48
+[50
 
 
 
-] [49]
-Underfull \hbox (badness 10000) in paragraph at lines 140--146
+] [51]
+Underfull \hbox (badness 10000) in paragraph at lines 144--150
 \OT1/cmr/m/it/12 Ap-pro-ved Draft Re-vi-sion for IEEE Stan-dard for In-for-ma-t
 ion technology-
  []
 
 
-Underfull \hbox (badness 1377) in paragraph at lines 140--146
+Underfull \hbox (badness 1377) in paragraph at lines 144--150
 \OT1/cmr/m/it/12 area networks-Specific requirements-Part 15.4b: Wi-re-less Me-
 dium Ac-cess Con-trol\OT1/cmr/m/n/12 .
  []
 
-[50])) [51]
+[52])) [53]
 \openout2 = `anexos.aux'.
 
- (anexos.tex [52
+ (anexos.tex [54
 
 
 
-] [53] [54]
+] [55] [56]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 8
 6.
 
@@ -1547,24 +1581,24 @@ File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 86.
 )
-[55] (main.aux (seccion_0.aux)
+[57] (main.aux (seccion_0.aux)
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
  (seccion_resumen.aux) (seccion_1.aux)
 (referencias.aux) (anexos.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B0BA83089201E7FFB3E0F951F41CAC57;8955.
+(rerunfilecheck)             Checksum: E247A465A04BC125923F23F352272340;9282.
 Package rerunfilecheck Info: File `main.hd' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31091 strings out of 476315
- 602991 string characters out of 5785781
- 1875068 words of memory out of 5000000
- 50769 multiletter control sequences out of 15000+600000
+ 31147 strings out of 476315
+ 604631 string characters out of 5785781
+ 1876068 words of memory out of 5000000
+ 50810 multiletter control sequences out of 15000+600000
  525331 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 103i,14n,111p,1380b,1146s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,14n,111p,1380b,1148s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Personal\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\t
 crm0800.pk> <C:\Users\Personal\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
 /dpi600\tcrm1000.pk> <C:\Users\Personal\AppData\Local\MiKTeX\fonts/pk/ljfour/jk
@@ -1592,9 +1626,9 @@ ersonal/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb
 ><C:/Users/Personal/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmtt10.pfb><C:/Users/Personal/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (55 pages, 1727635 bytes).
+Output written on main.pdf (57 pages, 1848024 bytes).
 PDF statistics:
- 951 PDF objects out of 1000 (max. 8388607)
- 190 named destinations out of 1000 (max. 500000)
- 478 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1003 PDF objects out of 1200 (max. 8388607)
+ 200 named destinations out of 1000 (max. 500000)
+ 519 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -17,35 +17,37 @@
 \contentsline {subsection}{\numberline {C}Fundamentos de dinámica de satélites}{21}{subsection.6.3}%
 \contentsline {subsubsection}{\numberline {1}Marcos de referencia}{21}{subsubsection.6.3.1}%
 \contentsline {paragraph}{\numberline {a}Marco de Referencia Orbital (ORF):}{21}{paragraph.6.3.1.1}%
-\contentsline {subsubsection}{\numberline {2}Marco de Referencia centrado en el cuerpo (BRF)}{22}{subsubsection.6.3.2}%
-\contentsline {subsubsection}{\numberline {3}Marco de Referencia centrado en la tierra (ECI)}{22}{subsubsection.6.3.3}%
-\contentsline {subsection}{\numberline {D}Teoría de Control}{22}{subsection.6.4}%
-\contentsline {subsubsection}{\numberline {1}Modelo dinámico}{23}{subsubsection.6.4.1}%
-\contentsline {subsection}{\numberline {E}Ambiente espacial en LEO}{23}{subsection.6.5}%
-\contentsline {section}{\numberline {VII}METODOLOGÍA}{30}{section.7}%
-\contentsline {subsection}{\numberline {A}Modelo dinámico}{30}{subsection.7.1}%
-\contentsline {subsection}{\numberline {B}Diseño de estrategia de control}{31}{subsection.7.2}%
-\contentsline {subsection}{\numberline {C}Análisis de órbitas}{32}{subsection.7.3}%
-\contentsline {section}{\numberline {VIII}DESARROLLO}{34}{section.8}%
-\contentsline {subsection}{\numberline {A}MODELO DINÁMICO}{34}{subsection.8.1}%
-\contentsline {subsubsection}{\numberline {1}PROPIEDADES INERCIALES}{39}{subsubsection.8.1.1}%
-\contentsline {subsubsection}{\numberline {2}MODELADO DE PERTURBACIONES}{39}{subsubsection.8.1.2}%
-\contentsline {subsubsection}{\numberline {3}MODELO RUEDAS DE REACCIÓN}{39}{subsubsection.8.1.3}%
-\contentsline {subsubsection}{\numberline {4}MODELO MAGNETORQUERS}{39}{subsubsection.8.1.4}%
-\contentsline {subsection}{\numberline {B}DISEÑO CONTROLADORES}{39}{subsection.8.2}%
-\contentsline {subsubsection}{\numberline {1}LINEALIZACIÓN Y ESPACIO DE ESTADOS}{39}{subsubsection.8.2.1}%
-\contentsline {subsubsection}{\numberline {2}LQR}{39}{subsubsection.8.2.2}%
-\contentsline {subsubsection}{\numberline {3}PID}{39}{subsubsection.8.2.3}%
-\contentsline {subsubsection}{\numberline {4}ÍNDICES DE DESEMPEÑO}{39}{subsubsection.8.2.4}%
-\contentsline {section}{\numberline {IX}RESULTADOS}{40}{section.9}%
-\contentsline {subsubsection}{\numberline {1}Perfil de misión 1}{40}{subsubsection.9.0.1}%
-\contentsline {subsubsection}{\numberline {2}Perfil de misión 2}{40}{subsubsection.9.0.2}%
-\contentsline {subsubsection}{\numberline {3}Perfil de misión 3}{40}{subsubsection.9.0.3}%
-\contentsline {section}{\numberline {X}DISCUSIÓN}{45}{section.10}%
-\contentsline {section}{\numberline {XI}CONCLUSIONES}{46}{section.11}%
-\contentsline {section}{\numberline {XII}RECOMENDACIONES}{47}{section.12}%
-\contentsline {section}{\numberline {XII} REFERENCIAS}{48}{section.12}%
-\contentsline {subsection}{\numberline {} Anexo A. Autoarchivo en Repositorio y documentos de interés}{53}{section.12}%
-\contentsline {subsection}{\numberline {} Anexo B. Recortar y abreviar direcciones web largas}{54}{section.12}%
-\contentsline {subsection}{\numberline {} Anexo C. Incluir imágenes}{54}{section.12}%
+\contentsline {paragraph}{\numberline {b}Marco de Referencia centrado en el cuerpo (BRF):}{22}{paragraph.6.3.1.2}%
+\contentsline {paragraph}{\numberline {c}Marco de Referencia centrado en la tierra (ECI):}{23}{paragraph.6.3.1.3}%
+\contentsline {subsubsection}{\numberline {2}Ángulos de Euler}{23}{subsubsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {3}Cuaterniones}{25}{subsubsection.6.3.3}%
+\contentsline {subsection}{\numberline {D}Teoría de Control}{25}{subsection.6.4}%
+\contentsline {subsubsection}{\numberline {1}Modelo dinámico}{25}{subsubsection.6.4.1}%
+\contentsline {subsection}{\numberline {E}Ambiente espacial en LEO}{26}{subsection.6.5}%
+\contentsline {section}{\numberline {VII}METODOLOGÍA}{32}{section.7}%
+\contentsline {subsection}{\numberline {A}Modelo dinámico}{32}{subsection.7.1}%
+\contentsline {subsection}{\numberline {B}Diseño de estrategia de control}{33}{subsection.7.2}%
+\contentsline {subsection}{\numberline {C}Análisis de órbitas}{34}{subsection.7.3}%
+\contentsline {section}{\numberline {VIII}DESARROLLO}{36}{section.8}%
+\contentsline {subsection}{\numberline {A}MODELO DINÁMICO}{36}{subsection.8.1}%
+\contentsline {subsubsection}{\numberline {1}PROPIEDADES INERCIALES}{41}{subsubsection.8.1.1}%
+\contentsline {subsubsection}{\numberline {2}MODELADO DE PERTURBACIONES}{41}{subsubsection.8.1.2}%
+\contentsline {subsubsection}{\numberline {3}MODELO RUEDAS DE REACCIÓN}{41}{subsubsection.8.1.3}%
+\contentsline {subsubsection}{\numberline {4}MODELO MAGNETORQUERS}{41}{subsubsection.8.1.4}%
+\contentsline {subsection}{\numberline {B}DISEÑO CONTROLADORES}{41}{subsection.8.2}%
+\contentsline {subsubsection}{\numberline {1}LINEALIZACIÓN Y ESPACIO DE ESTADOS}{41}{subsubsection.8.2.1}%
+\contentsline {subsubsection}{\numberline {2}LQR}{41}{subsubsection.8.2.2}%
+\contentsline {subsubsection}{\numberline {3}PID}{41}{subsubsection.8.2.3}%
+\contentsline {subsubsection}{\numberline {4}ÍNDICES DE DESEMPEÑO}{41}{subsubsection.8.2.4}%
+\contentsline {section}{\numberline {IX}RESULTADOS}{42}{section.9}%
+\contentsline {subsubsection}{\numberline {1}Perfil de misión 1}{42}{subsubsection.9.0.1}%
+\contentsline {subsubsection}{\numberline {2}Perfil de misión 2}{42}{subsubsection.9.0.2}%
+\contentsline {subsubsection}{\numberline {3}Perfil de misión 3}{42}{subsubsection.9.0.3}%
+\contentsline {section}{\numberline {X}DISCUSIÓN}{47}{section.10}%
+\contentsline {section}{\numberline {XI}CONCLUSIONES}{48}{section.11}%
+\contentsline {section}{\numberline {XII}RECOMENDACIONES}{49}{section.12}%
+\contentsline {section}{\numberline {XII} REFERENCIAS}{50}{section.12}%
+\contentsline {subsection}{\numberline {} Anexo A. Autoarchivo en Repositorio y documentos de interés}{55}{section.12}%
+\contentsline {subsection}{\numberline {} Anexo B. Recortar y abreviar direcciones web largas}{56}{section.12}%
+\contentsline {subsection}{\numberline {} Anexo C. Incluir imágenes}{56}{section.12}%
 \contentsfinish 
