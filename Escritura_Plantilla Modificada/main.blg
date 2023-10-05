@@ -31,10 +31,12 @@ Warning--entry type for "Lan2013" isn't style-file defined
 --line 509 of file refe.bib
 Warning--entry type for "Barnhart2005" isn't style-file defined
 --line 527 of file refe.bib
-Repeated entry---line 535 of file refe.bib
- : @report{Groenewald2014
- :                       ,
-I'm skipping whatever remains of this entry
+Warning--entry type for "Ritchey2004" isn't style-file defined
+--line 541 of file refe.bib
+Warning--entry type for "Rycroft1997" isn't style-file defined
+--line 560 of file refe.bib
+Warning--entry type for "Andresen2005" isn't style-file defined
+--line 568 of file refe.bib
 -- IEEEtranN.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -47,45 +49,45 @@ Warning--missing publisher in Kaplan1976
 Warning--edition ordinal word "e*" may be too high (or improper) for conversion in man:manual
 
 Done.
-You've used 34 entries,
+You've used 38 entries,
             4853 wiz_defined-function locations,
-            1157 strings with 14364 characters,
-and the built_in function-call counts, 20894 in all, are:
-= -- 1956
-> -- 462
-< -- 73
-+ -- 227
-- -- 118
-* -- 1038
-:= -- 3510
-add.period$ -- 67
-call.type$ -- 34
-change.case$ -- 52
-chr.to.int$ -- 118
-cite$ -- 37
-duplicate$ -- 1538
-empty$ -- 1683
-format.name$ -- 172
-if$ -- 4631
+            1179 strings with 15124 characters,
+and the built_in function-call counts, 23436 in all, are:
+= -- 2153
+> -- 587
+< -- 75
++ -- 282
+- -- 152
+* -- 1181
+:= -- 3898
+add.period$ -- 75
+call.type$ -- 38
+change.case$ -- 57
+chr.to.int$ -- 122
+cite$ -- 41
+duplicate$ -- 1717
+empty$ -- 1877
+format.name$ -- 215
+if$ -- 5183
 int.to.chr$ -- 1
-int.to.str$ -- 35
-missing$ -- 270
-newline$ -- 132
-num.names$ -- 103
-pop$ -- 720
+int.to.str$ -- 39
+missing$ -- 312
+newline$ -- 144
+num.names$ -- 115
+pop$ -- 854
 preamble$ -- 1
-purify$ -- 34
+purify$ -- 38
 quote$ -- 4
-skip$ -- 1603
+skip$ -- 1775
 stack$ -- 0
-substring$ -- 344
-swap$ -- 945
+substring$ -- 358
+swap$ -- 1048
 text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 484
+type$ -- 547
 warning$ -- 3
-while$ -- 83
+while$ -- 91
 width$ -- 0
-write$ -- 394
-(There were 2 error messages)
+write$ -- 431
+(There was 1 error message)

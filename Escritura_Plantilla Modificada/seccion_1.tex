@@ -154,7 +154,7 @@ Este sistema se encarga de estabilizar y orientar el vehículo en las direccione
 \end{figure}
 
 El Módulo ADCS del EyasSat \textbf{(Fig. \ref{fig:adcs})}, se compone de dos tipos de actuadores: una rueda de reacción en el eje Z y dos magnetorquers en el eje X e Y respectivamente. En la \textbf{Fig. \ref{fig:eyassat_axes}} se evidencian los ejes coordenados en el marco del cuerpo.
-Por otro lado, la medición de la posición se realiza mediante dos sensores solares (situados en la parte superior e inferior del EyasSat) y un sensor solar diferencial-posicional (compuesto por dos células fotovoltaicas) [11]. En este sentido, es posible realizar pruebas de actitud recurriendo a un control de lazo cerrado de un grado de libertad. 
+Por otro lado, la medición de la posición se realiza mediante dos sensores solares (situados en la parte superior e inferior del EyasSat) y un sensor solar diferencial-posicional (compuesto por dos células fotovoltaicas) \cite{Ritchey2004}. En este sentido, es posible realizar pruebas de actitud recurriendo a un control de lazo cerrado de un grado de libertad. 
 
 \begin{figure}[!ht]
 	\begin{center}
@@ -162,39 +162,58 @@ Por otro lado, la medición de la posición se realiza mediante dos sensores sol
 	\end{center}
 	\caption{ Ejes coordenados del EyasSat}
 	\label{fig:eyassat_axes}
-	\footnotesize{Nota. Fuente \cite{Groenewald2014}]
+	\footnotesize{Nota. Fuente \cite{Groenewald2014}}
 \end{figure}
 
-Figura 3. Ejes coordenados del EyasSat [10]
 
 \subsubsection{Ruedas de reacción}
 
 Las ruedas de reacción (RW) son motores de alto torque acoplados a rotores de gran inercia. Permiten reposicionar vehículos espaciales y satélites controlables mientras están en órbita ya que contienen energía rotacional, almacenada mediante la conservación del momento angular, y pueden activar el intercambio de momento para proporcionar estabilidad a una nave espacial o al satélite.
 
-Figura 4. Funcionamiento RW [12]
 
-Como puede apreciarse en la Figura 4, en cuanto cambia la velocidad de rotación $\omega$ de la nave espacial, la RW desencadena una contra rotación del satélite, en la misma proporción, a través de la conservación del momento angular. Dicha contra rotación se produce a lo largo de un único eje, por lo que, para tener un control completo del sistema, es necesario recurrir a ensambles de tres ruedas de reacción.
-Son ampliamente utilizadas ya que sólo requieren energía eléctrica para funcionar y no requieren aplicadores externos de torque como cohetes o propelentes. Pueden asegurar el control de actitud en tres ejes de forma autónoma. Además, las ruedas de reacción pueden gestionar la orientación de un satélite o nave espacial con una precisión superior a otros dispositivos. Se trata de un elemento crítico para las misiones espaciales tanto de acción como de observación que requieren una precisión de apuntamiento muy elevada.
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.9]{imagenes/marco_teorico/rw.PNG}\\
+	\end{center}
+	\caption{ Efecto de RW en la velocidad $\omega$ de un satélite.}
+	\label{fig:rw_diagram}
+	\footnotesize{Nota. Fuente \cite{opc:Charles2019}}
+\end{figure}
+
+Como puede apreciarse en la \textbf{Fig. \ref{fig:rw_diagram}}, en cuanto cambia la velocidad de rotación $\omega$ de la nave espacial, la RW desencadena una contra rotación del satélite, en la misma proporción, a través de la conservación del momento angular. Dicha contra rotación se produce a lo largo de un único eje, por lo que, para tener un control completo del sistema, es necesario recurrir a ensambles de tres ruedas de reacción.
+Son ampliamente utilizadas ya que sólo requieren energía eléctrica para funcionar y no necesitan actuadores externos de torque como cohetes o propelentes. Pueden asegurar el control de actitud en tres ejes de forma autónoma. Además, las ruedas de reacción pueden gestionar la orientación de un satélite o nave espacial con una precisión superior a otros dispositivos. Se trata de un elemento crítico para las misiones espaciales tanto de acción como de observación que requieren una precisión de apuntamiento muy elevada.
 
 \subsubsection{Magnetorquers}
 
-Por su parte, estos dispositivos utilizan bobinas magnéticas o electroimanes para generar momentos dipolares magnéticos, producen un par proporcional (y perpendicular) al campo magnético variable de la Tierra [13]. Esto puede representar un desafío ya que la magnitud del campo geomagnético varia con el tiempo y su desempeño disminuye a medida que aumenta la altura de la órbita como se ve en la ecuación (1) , donde B es la constante magnética terrestre y corresponde a $ B=m/R^3$, donde $m = 7.96*10^15$  $Wb/m$   y R es la distancia al centro de la tierra. De esta manera, se tiene una expresión para la magnitud del torque: 
-$Tmag= M×B$	(1)
+Por su parte, estos dispositivos utilizan bobinas magnéticas o electroimanes para generar momentos dipolares magnéticos, producen un par proporcional (y perpendicular) al campo magnético variable de la Tierra \cite{Rycroft1997}. Esto puede representar un desafío ya que la magnitud del campo geomagnético varia con el tiempo y su desempeño disminuye a medida que aumenta la altura de la órbita como se ve en la La eq. \ref{eq:torque_mgt} , donde $\vec{B}$ es la constante magnética terrestre y corresponde a $ \vec{B}=m/R^3$, donde $m = 7.96*10^{15}$    $Wb/m$   y R es la distancia al centro de la tierra. De esta manera, se tiene una expresión para la magnitud del torque: 
 
-Donde Tmag es el torque creado, B es el vector de campo geomagnético, y M es el momento dipolar magnético generado por el magnetorque especificado en Amperios · vuelta · m2. No obstante, los electroimanes tienen la ventaja de no tener piezas móviles, ya que sólo necesitan un magnetómetro para detectar el campo y una varilla electromagnética enrollada en cada eje. Como utilizan los campos magnéticos naturales de la Tierra, son menos eficaces en órbitas altas donde disminuye la magnitud del campo.
-Por otro lado, según Wertz y Larson [1] , en el diseño de un ADCS, normalmente se requiere conocer la ubicación del centro de masa o gravedad (CG), así como los elementos de la matriz de inercia: los momentos y productos de inercia en torno a ejes de referencia elegidos. La dirección de los ejes principales, aquellos ejes para los que la matriz de inercia es diagonal y los productos de inercia son cero, también son de interés. Por último, es necesario saber cómo cambian estas propiedades con el tiempo, a medida que se utiliza combustible u otros componentes se desplazan o despliegan.
+\begin{equation}\label{eq:torque_mgt}
+	\vec{\tau} = \vec{M}\times\vec{B}	
+\end{equation}
+
+
+Donde $\vec{\tau}$ es el torque creado, $\vec{B}$ es el vector de campo geomagnético, y $\vec{M}$ es el momento dipolar magnético generado por el magnetorquer especificado en $Amperios\cdot vuelta\cdot m^2$. No obstante, los electroimanes tienen la ventaja de no tener piezas móviles, ya que sólo necesitan un magnetómetro para detectar el campo y una varilla electromagnética enrollada en cada eje. Como utilizan los campos magnéticos naturales de la Tierra, son menos eficaces en órbitas altas donde disminuye la magnitud del campo.
+Por otro lado, según Wertz y Larson \cite{Wertz1999} , en el diseño de un ADCS, normalmente se requiere conocer la ubicación del centro de masa o gravedad (CG), así como los elementos de la matriz de inercia: los momentos y productos de inercia en torno a ejes de referencia elegidos. La dirección de los ejes principales, aquellos ejes para los que la matriz de inercia es diagonal y los productos de inercia son cero, también son de interés. Por último, es necesario saber cómo cambian estas propiedades con el tiempo, a medida que se utiliza combustible u otros componentes se desplazan o despliegan.
 
 \subsection{Fundamentos de dinámica de satélites}
 
 \subsubsection{Marcos de referencia}
 El primer paso para analizar y diseñar un sistema de control de actitud es definir los sistemas de referencia de coordenadas con los que trabajar, lo cual permite describir la actitud de un satélite como una desviación con respecto a un sistema de referencia elegido. Hay tres marcos de referencia comunes utilizados para la descripción de la actitud: Marco de referencia orbital (ORF), el marco de referencia centrado en el cuerpo (BRF) y el marco de referencia centrado en la tierra (ECI). 
-\subsubsection{Marco de Referencia Orbital (ORF)}
-En el ORF, el origen coincide con el CG del satélite. El eje Zo apunta hacia el centro de la Tierra. El eje Xo apunta en la dirección de la velocidad tangencialmente a la órbita. El eje Yo completa el sistema usando la regla de la mano derecha como se muestra en la Figura 5.
+\paragraph{Marco de Referencia Orbital (ORF):}El origen coincide con el CG del satélite. El eje $Z_o$ apunta hacia el centro de la Tierra. El eje $X_o$ apunta en la dirección de la velocidad tangencialmente a la órbita. El eje $Y_o$ completa el sistema usando la regla de la mano derecha como se muestra en la \textbf{Fig. \ref{fig:marco_orbital}}.
 
-Figura 5 Marcos de referencia ORF y BRR [14].
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.6]{imagenes/marco_teorico/marco_orbital.PNG}\\
+	\end{center}
+	\caption{ Marco Orbital.}
+	\label{fig:marco_orbital}
+	\footnotesize{Nota. Fuente \cite{Andresen2005}}
+\end{figure}
+
+
 
 \subsubsection{Marco de Referencia centrado en el cuerpo (BRF)}
-Por su parte, el BRF se fija con el satélite y su origen se sitúa de nuevo en el CG de este. La orientación del satélite se describe en relación con el marco orbital. El lado nadir del satélite está en la dirección del eje Zb, mientras que los ejes Xb e Yb coinciden con los ejes del ORF cuando el satélite tiene una actitud de 0 grados en alabeo, cabeceo y guiñada. Esta situación se ilustra en la Figura 5.
+Por su parte, el BRF se fija con el satélite y su origen se sitúa de nuevo en el CG de este. La orientación del satélite se describe en relación con el marco orbital. El lado nadir del satélite está en la dirección del eje Zb, mientras que los ejes Xb e Yb coinciden con los ejes del ORF cuando el satélite tiene una actitud de 0 grados en alabeo, cabeceo y guiñada. Esta situación se ilustra en la 
 
 Figura 6. Sistemas de referencia ECI y ECEF
 
