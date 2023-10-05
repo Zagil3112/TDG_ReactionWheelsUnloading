@@ -18,32 +18,37 @@ En este sentido, se propone evaluar estrategias de control de actitud que incorp
 
 %Se refiere al interrogante que lleva al investigador a buscar respuestas concretas. Es la definición del problema que aborda con la investigación. 
 
-El fenómeno de desaturación de ruedas de reacción será abordado a partir de un CubeSat, basado en el modelo EyasSat, el cual está equipado con:
+El fenómeno de desaturación de ruedas de reacción será abordado en un picosatélite tipo CubeSat \textbf{(Fig. \ref{fig:diagrama_problema})}, particularmente en el modelo EyasSat, el cual está equipado con:
 
 \begin{itemize}
 
 \item Una rueda de reacción en el eje Z, por lo que se tendrá control unicamente en un grado de libertad. En este actuador es donde se presenta el fenómeno de estudio, ya que a pesar de proporcionar una respuesta rápida en el control de actitud, sufre de un incremento gradual de su tasa de giro. Lo anterior, debido a su incapacidad para alterar el momento angular total del satélite en presencia de perturbaciones externas. 
  
-\item Magnetorquers en el eje X e Y respectivamente, los cuales pueden ejercer torques en los 3 ejes según la intensidad de campo magnético presente. No obstante, el modelo estará restringido a contemplar solo los torques generados en el eje Z con el fin de disminuir la velocidad de rotación que pueda presentar la rueda de reacción. 
+\item Magnetorquers en el eje X e Y respectivamente, los cuales pueden ejercer torques en los 3 ejes debido a la interacción del campo magnético terrestre. No obstante, el modelo estará restringido a contemplar solo los torques generados en el eje Z con el fin de disminuir la velocidad de rotación que pueda presentar la rueda de reacción. 
 
 \end{itemize}
 
-De esta manera el problema abordado en este trabajo consiste en el diseño de estrategias de control que  permitan eliminar la saturación de ruedas de reacción mediante los magnetorquers, que sirven como actuadores secundarios en el sistema de control de actitud. Dichos dispositivos, deberán garantizar que el momento angular de las ruedas de reacción sea igual momento angular del satélite.
+De esta manera, el problema tratado en este trabajo consiste en el diseño de estrategias de control que permitan eliminar la saturación de ruedas de reacción mediante los magnetorquers, que sirven como actuadores secundarios en el sistema de control de actitud. Dichos dispositivos, deberán garantizar que el momento angular de las ruedas de reacción sea igual momento angular del satélite, evitando una acumulación progresiva de la velocidad de rotación de las RW.
+Ya que el rendimiento de los magnetorquers depende de su interacción con el campo geomagnético, es de interés evaluar 3 órbitas que permitan identificar el escenario mas favorable donde se podrían desempeñar.
 
-Simultáneamente, dichas estrategias deben permitir alcanzar una actitud deseada en diferentes escenarios: Respuesta de equilibrio ante perturbaciones, respuesta a escalón de un angulo deseado y respuesta de rampa para alcanzar una velocidad de rotación constante.
+Ademas de eliminar el exceso de momento angular, dichas estrategias de desaturación, simultáneamente deben permitir que el satélite alcance una actitud deseada en el marco de referencia del cuerpo ante diferentes respuestas:
+\begin{itemize}
+	\item Respuesta de equilibrio ante perturbaciones. 
+	\item Respuesta tipo escalón de un angulo deseado.
+	\item Respuesta tipo rampa para alcanzar una velocidad de rotación constante.
+\end{itemize} 
  
 
-%\begin{figure}[!ht]
-%	\begin{center}
-%		\includegraphics[scale=0.5]{imagenes/modelo_dinamico/diagrama_problema.PNG}\\
-%	\end{center}
-%	\caption{An inertially pointing satellite orbiting around the earth and equipped
-%		with reaction wheels and magnetorquers.}
-%	\label{diagrama_problema}
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.5]{imagenes/planteamiento_del_problema/esquema_planteamiento.PNG}\\
+	\end{center}
+	\caption{CubeSat EyasSat equipado con 1 rueda de reacción y 2 magnetorquers.}
+	\label{fig:diagrama_problema}
 %	\footnotesize{Nota. Fuente \url{https://www.ieee.org/}.} %\citep{lib:apa}.
-%\end{figure}
+\end{figure}
 
-\subsection{Estado del Arte}
+\section{ESTADO DEL ARTE}
 
 La desaturación de ruedas de reacción es un problema común en los satélites, incluidos los Cubesats, que pueden llevar a una pérdida de control de actitud. La ley de producto cruzado (CCPL) es una solución clásica en ingeniería comúnmente utilizado para resolver este paradigma desde una aproximación lineal \cite{Tregouet2015}. Pero en los últimos años se han desarrollado diferentes controladores que involucran sistemas no lineales.
 Sin embargo, tal como se expresa en \cite{Yang2017}, el problema de control de actitud y la saturación de ruedas de reacción es comúnmente abordado como temas separados desde el punto de vista de diseño, por lo cual, no existen tantos artículos en los que se incluyan ambos objetivos. En su trabajo se propone un método de diseño de un LQR periódico variable en el tiempo donde se incluyen los torques generados por gradientes gravitacionales y los efectos periódicos del campo geomagnético alrededor de la órbita. Además, señala que los artículos existentes no suelen estos efectos mencionados anteriormente.
@@ -59,7 +64,7 @@ A su vez, en \cite{tes:Sorolla2019} se realiza un desarrollo matemático de la d
 
 \section{JUSTIFICACIÓN}
 
-Diseño de susbsistemas, eficiencia energetica 
+ 
 %Responde a los interrogantes del por qué se desea conocer el tema y por qué se seleccionó, así como cuál es el aporte que tendrá el texto a la ciencia. 
 %
 %No abuse del uso de \textit{cursivas} o \textbf{negritas} dentro del texto, úselas muy moderadamente, por lo general saturan y dificultan la lectura del documento. Utilice cursivas en casos muy particulares como géneros y especies (\textit{Tyrannus melancholicus}), términos químicos (\textit{kr}), letras griegas ($\beta$) y algunos títulos y subtítulos. El entorno matemático de \LaTeX \ muestra las variables y símbolos en letra cursiva, asegurese de hacer lo mismo al referenciarla en el documento, Utilice \textbf{negritas} en algunos títulos de capítulos y subcapítulos, algunos datos de tablas o enfatizar aspectos muy particulares. El uso de \underline{texto subrayado} no se recomienda en normas IEEE.
@@ -68,8 +73,20 @@ Diseño de susbsistemas, eficiencia energetica
 %
 %Prefiera las comillas “inglesas” y ‘sencillas’ por sobre las «latinas» o «españolas».
 
-Diseño de mision: enfasis en el limitado consumo de potencia
-Linea de investigacion con la Jaula 
+Dentro del proceso de diseño de una misión espacial, es fundamental evaluar el rendimiento de los subsistemas de un vehículo con el fin de garantizar el cumplimiento del perfil de misión. Especialmente, en el sector espacial es de vital importancia limitar el consumo de potencia eléctrica para maximizar la vida útil del misión. En este sentido, las técnicas de desaturación de ruedas de reacción, ademas de garantizar la estabilidad y el control de actitud, permiten establecer un balance entre el rendimiento y el consumo de potencia eléctrica al tratar de minimizar la acción de control de los actuadores sin afectar la estabilidad del sistema.
+
+Por otro lado, conocer el desempeño de los magnetorquers según su órbita, permite tener un criterio a la hora de evaluar perfiles de misión que cumplan con los requerimientos y a su vez sean eficientes en materia de consumo de potencia. 
+
+Finalmente, el diseño teórico de controladores crea la oportunidad de evaluarlos en un ambiente controlado, donde se puedan implementar las estrategias de control en sistemas ADCS reales. Para ello, se pretende fomentar una linea de investigación en sistemas de control de actitud, donde se cuenta con una Jaula de Helmholtz  \textbf{(Fig. \ref{fig:jaula})} funcional y operativa, como parte del inventario del grupo de investigación ASTRA de la Universidad de Antioquia. 
+
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.65]{imagenes/justificacion/jaula.PNG}\\
+	\end{center}
+	\caption{Ensamble Jaula de Helmholtz.}
+	\label{fig:jaula}
+	%	\footnotesize{Nota. Fuente \url{https://www.ieee.org/}.} %\citep{lib:apa}.
+\end{figure}
 
 %\begin{description}
 %    \item[Características:] texto descriptivo.
@@ -110,20 +127,43 @@ Validar computacionalmente una estrategia de control de actitud para el picosat�
 \section{MARCO TEÓRICO}
 
 \subsection{CubeSat y EyasSat}
-El concepto CubeSat se refiere a un nanosatélite estándar cuyo diseño fue propuesto por los profesores Jordi Puig-Suari, de la Universidad Politécnica Estatal de California, y Bob Twiggs, de la Universidad de Stanford en 1999. Corresponde a un pequeño satélite constituido por unidades (U) con forma de cubo de 10 cm y una masa de hasta 1.3 kilogramos [7]. Son ampliamente utilizados alrededor el mundo por universidades ya que representan una alternativa para desplegar cargas científicas en el espacio con un presupuesto inferior a los 100.000 dólares [8]. 
-No obstante, también son diseñados con fines educativos para que los estudiantes se familiaricen con los principales sistemas que componen estos vehículos espaciales y puedan hacer pruebas de integración y rendimiento en un aula de clase. En este sentido, surge el CubeSat EyasSat [9] como parte de un programa de entrenamiento del Departamento de Astronáutica de la Academia de las Fuerzas Aéreas de Estados Unidos (USAFA). El EyasSat (Figura 1), se centra en seis subsistemas de los que constan la mayoría de los satélites. Estos subsistemas son: estructuras, potencia, comunicación y tratamiento de datos, control y determinación de actitud (ADCS), propulsión y sistemas térmicos. No obstante, el diseño modular del EyasSat permite la integración y mejora de subsistemas adicionales que pueden ampliar sus capacidades. Por ejemplo, [10] propone una nueva versión del ADCS, sistema de particular interés en esta investigación, el cual se extiende a tres ejes y permite la capacidad de ser probado en un cojinete de aire.
+El concepto CubeSat se refiere a un nanosatélite estándar cuyo diseño fue propuesto por los profesores Jordi Puig-Suari, de la Universidad Politécnica Estatal de California, y Bob Twiggs, de la Universidad de Stanford en 1999. Corresponde a un pequeño satélite constituido por unidades (U) con forma de cubo de 10 cm y una masa de hasta 1.3 kilogramos \cite{Lan2013}. Son ampliamente utilizados alrededor el mundo por universidades ya que representan una alternativa para desplegar cargas científicas en el espacio con un presupuesto inferior a los 100.000 dólares \cite{opc:Satcatalog}. 
+No obstante, también son diseñados con fines educativos para que los estudiantes se familiaricen con los principales sistemas que componen estos vehículos espaciales y puedan hacer pruebas de integración y rendimiento en un aula de clase. En este sentido, surge el CubeSat EyasSat \cite{Barnhart2005} como parte de un programa de entrenamiento del Departamento de Astronáutica de la Academia de las Fuerzas Aéreas de Estados Unidos (USAFA). El EyasSat \textbf{(Fig. \ref{fig:eyassat})}, se centra en seis subsistemas de los que constan la mayoría de los satélites. Estos subsistemas son: estructuras, potencia, comunicación y tratamiento de datos, control y determinación de actitud (ADCS), propulsión y sistemas térmicos. No obstante, el diseño modular del EyasSat permite la integración y mejora de subsistemas adicionales que pueden ampliar sus capacidades. Por ejemplo, \cite{Groenewald2014} propone una nueva versión del ADCS, sistema de particular interés en esta investigación, el cual se extiende a tres ejes y permite la capacidad de ser probado en un cojinete de aire.
 
 
-Figura 1. Cubesat de entrenamiento EyasSat
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.9]{imagenes/marco_teorico/eyassat.PNG}\\
+	\end{center}
+	\caption{CubeSat de entrenamiento EyasSat.}
+	\label{fig:eyassat}
+	%	\footnotesize{Nota. Fuente \url{https://www.ieee.org/}.} %\citep{lib:apa}.
+\end{figure}
 
 \subsection{Sistema de determinación y control de actitud (ADCS)}
 
 Este sistema se encarga de estabilizar y orientar el vehículo en las direcciones deseadas durante la misión a pesar de los torques de perturbaciones externos que actúan sobre él. Para ello es necesario que el vehículo determine su actitud mediante sensores, y la controle, mediante actuadores.
 
-Figura 2. ADCS EyasSat
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.9]{imagenes/marco_teorico/adcs.PNG}\\
+	\end{center}
+	\caption{ADCS EyasSat.}
+	\label{fig:adcs}
+	%	\footnotesize{Nota. Fuente \url{https://www.ieee.org/}.} %\citep{lib:apa}.
+\end{figure}
 
-El Módulo ADCS del EyasSat (Figura 2), se compone de dos tipos de actuadores: una rueda de reacción en el eje Z y dos magnetorquers en el eje X e Y respectivamente. En la Figura 3. Ejes coordenados del EyasSat Figura 3 se evidencian los ejes coordenados en el marco del cuerpo.
+El Módulo ADCS del EyasSat \textbf{(Fig. \ref{fig:adcs})}, se compone de dos tipos de actuadores: una rueda de reacción en el eje Z y dos magnetorquers en el eje X e Y respectivamente. En la \textbf{Fig. \ref{fig:eyassat_axes}} se evidencian los ejes coordenados en el marco del cuerpo.
 Por otro lado, la medición de la posición se realiza mediante dos sensores solares (situados en la parte superior e inferior del EyasSat) y un sensor solar diferencial-posicional (compuesto por dos células fotovoltaicas) [11]. En este sentido, es posible realizar pruebas de actitud recurriendo a un control de lazo cerrado de un grado de libertad. 
+
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.9]{imagenes/marco_teorico/eyassat_axes.PNG}\\
+	\end{center}
+	\caption{ Ejes coordenados del EyasSat}
+	\label{fig:eyassat_axes}
+	\footnotesize{Nota. Fuente \cite{Groenewald2014}]
+\end{figure}
 
 Figura 3. Ejes coordenados del EyasSat [10]
 
@@ -184,7 +224,7 @@ Figura 8. Órbita baja [16]
 Los gradientes de gravedad son causados por la variación de la fuerza gravitacional a medida que el satélite se mueve a través de diferentes regiones de la gravedad terrestre. Estos gradientes pueden causar momentos de torsión no deseados en el satélite, lo que puede afectar su orientación y estabilidad [13]. Por otro lado, el arrastre aerodinámico es causado por la interacción del satélite con la atmósfera terrestre, que puede causar una desaceleración y una disminución de la altitud del satélite. Por su parte, el campo magnético terrestre puede afectar la orientación y el control de los satélites que usan magnetorquers, que son dispositivos que utilizan el campo magnético para cambiar la orientación del satélite.
 Estos factores pueden afectar el sistema de control de un satélite en LEO de diversas maneras. Por ejemplo, los gradientes de gravedad y el arrastre aerodinámico pueden causar momentos de torsión no deseados en el satélite, lo que puede afectar la precisión del sistema de control. 
 Para mitigar estos efectos, se utilizan diversas técnicas de control, como el control de actitud, que utiliza dispositivos como magnetorquers, ruedas de reacción y propulsores para controlar la orientación del satélite. También se pueden utilizar técnicas de control adaptativo y control predictivo para compensar los efectos del arrastre aerodinámico y los gradientes de gravedad [17].
-Dado que el desempeño del ADCS se ve influenciado por las condiciones del ambiente espacial, es necesario conocer las particularidades de la órbita donde se encontrará el satélite. De esta manera, es posible incluir estos parámetros en el modelo dinámico y en los controladores que se valuarán. 
+Dado que el desempeño del ADCS se ve influenciado por las condiciones del ambiente espacial, es necesario conocer las particularidades de la órbita donde se encontrará el satélite. De esta manera, es posible incluir estos parámetros en el modelo dinámico y en los controladores que se evaluarán. 
 
 
 En esta sección se citan los autores que han tenido influencia directa en tu investigación. Recuerda, debes escoger solo un método para realizar las citas y referencias, es decir, debes seleccionar entre gestores especializados como Mendeley, Zotero, EndNote, etc., Microsoft Word, o “Manuales”; no se deben mezclar entre sí. Nuestra recomendación principal es Mendeley. Evita referenciar sitios como blogs, Wikipedia, Rincón del Vago, Monografías.com y demás portales web que no se consideran fuentes primarias. No limites tu búsqueda a una sola herramienta (por ejemplo, solo www.google.com). Realiza búsquedas en diferentes plataformas académicas, tales como:

@@ -27,6 +27,14 @@ Warning--entry type for "Groenewald2014" isn't style-file defined
 --line 473 of file refe.bib
 Warning--entry type for "Steyn2011" isn't style-file defined
 --line 501 of file refe.bib
+Warning--entry type for "Lan2013" isn't style-file defined
+--line 509 of file refe.bib
+Warning--entry type for "Barnhart2005" isn't style-file defined
+--line 527 of file refe.bib
+Repeated entry---line 535 of file refe.bib
+ : @report{Groenewald2014
+ :                       ,
+I'm skipping whatever remains of this entry
 -- IEEEtranN.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -39,45 +47,45 @@ Warning--missing publisher in Kaplan1976
 Warning--edition ordinal word "e*" may be too high (or improper) for conversion in man:manual
 
 Done.
-You've used 31 entries,
+You've used 34 entries,
             4853 wiz_defined-function locations,
-            1137 strings with 13644 characters,
-and the built_in function-call counts, 19227 in all, are:
-= -- 1816
-> -- 404
-< -- 71
-+ -- 200
-- -- 102
-* -- 959
-:= -- 3245
-add.period$ -- 61
-call.type$ -- 31
-change.case$ -- 48
-chr.to.int$ -- 115
-cite$ -- 34
-duplicate$ -- 1413
-empty$ -- 1546
-format.name$ -- 152
-if$ -- 4268
+            1157 strings with 14364 characters,
+and the built_in function-call counts, 20894 in all, are:
+= -- 1956
+> -- 462
+< -- 73
++ -- 227
+- -- 118
+* -- 1038
+:= -- 3510
+add.period$ -- 67
+call.type$ -- 34
+change.case$ -- 52
+chr.to.int$ -- 118
+cite$ -- 37
+duplicate$ -- 1538
+empty$ -- 1683
+format.name$ -- 172
+if$ -- 4631
 int.to.chr$ -- 1
-int.to.str$ -- 32
-missing$ -- 243
-newline$ -- 123
-num.names$ -- 94
-pop$ -- 635
+int.to.str$ -- 35
+missing$ -- 270
+newline$ -- 132
+num.names$ -- 103
+pop$ -- 720
 preamble$ -- 1
-purify$ -- 31
+purify$ -- 34
 quote$ -- 4
-skip$ -- 1484
+skip$ -- 1603
 stack$ -- 0
-substring$ -- 333
-swap$ -- 876
+substring$ -- 344
+swap$ -- 945
 text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 437
+type$ -- 484
 warning$ -- 3
-while$ -- 77
+while$ -- 83
 width$ -- 0
-write$ -- 366
-(There was 1 error message)
+write$ -- 394
+(There were 2 error messages)
