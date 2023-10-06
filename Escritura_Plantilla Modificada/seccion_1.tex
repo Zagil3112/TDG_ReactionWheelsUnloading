@@ -199,6 +199,21 @@ Por otro lado, según Wertz y Larson \cite{Wertz1999} , en el diseño de un ADCS
 
 \subsubsection{Marcos de referencia}
 El primer paso para analizar y diseñar un sistema de control de actitud es definir los sistemas de referencia de coordenadas con los que trabajar, lo cual permite describir la actitud de un satélite como una desviación con respecto a un sistema de referencia elegido. Hay tres marcos de referencia comunes utilizados para la descripción de la actitud: Marco de referencia orbital (ORF), el marco de referencia centrado en el cuerpo (BRF) y el marco de referencia centrado en la tierra (ECI). 
+
+\paragraph{Marco de referencia alineado con el plano de la horizontal local (LVLH):} Se define este sistema como aquel que tiene su origen justo por debajo de la proyección del centro de gravedad del vehículo sobre la superficie de la Tierra. Se orienta de tal manera que el eje $Z$ apunta en dirección al norte
+geográfico, el eje $Y$ apunta al este geográfico y el eje $X$ apunta “hacia arriba”
+paralelo a la línea que une el origen del sistema coordenado con el centro de la
+Tierra tal como se observa el la \textbf{Fig. \ref{fig:LVLH}}.
+
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.7]{imagenes/marco_teorico/LVLH.PNG}\\
+	\end{center}
+	\caption{ Sistema de referencia basado en la horizontal local.}
+	\label{fig:LVLH}
+	\footnotesize{Nota. Fuente \cite{cornelisse1979rocket}}
+\end{figure}
+
 \paragraph{Marco de Referencia Orbital (ORF):} Es un marco no inercial donde el origen coincide con el CG del satélite. El eje $X_o$ apunta hacia el centro de la Tierra (nadir). El eje $Y_o$ apunta en la dirección de la velocidad tangencialmente a la órbita. El eje $Z_o$ completa el sistema usando la regla de la mano derecha como se muestra en la \textbf{Fig. \ref{fig:marco_orbital}}.
 
 \begin{figure}[!ht]
@@ -305,18 +320,42 @@ Los ángulos de Euler pueden provocar singularidades en determinados ángulos cu
 
 Por este motivo, es mas conveniente usar los cuaterniones, ya que son una mejor representación sin singularidades y sin funciones trigonométricas en la matriz de transformación \cite{wertz1978spacecraft}. En este sentido, el conjunto de cuaterniones consta de cuatro parámetros, que se definen en términos del eje de Euler. El teorema de rotación del eje propio de Euler establece que la rotación finita de un cuerpo rígido con un punto fijo puede expresarse mediante una única rotación alrededor de algún eje fijo.
 
-Este eje fijo, el eje de Euler, se representa mediante un vector unitario componentes imaginarias $\hat{e} =(e_x,e_y,e_z)$ y una componente real donde $\Phi$ es el  ángulo de rotación sobre el eje de Euler.
+Este eje fijo, el eje de Euler, se representa mediante un vector unitario de componentes imaginarias $\hat{e} =(e_x,e_y,e_z)$ y una componente real $\eta$ donde $\Phi$ es el  ángulo de rotación sobre el eje de Euler. Esta representación se define como se evidencia desde la eq. (\ref{eq:cuaterniones}).
 
-\begin{gather}
-%	$q1 = e_x sin(\Phi /2)$\label{eq:q1}\\[10pt]
-	q_1 = e_x sin\left(\dfrac{\Phi}{2}\right)\label{eq:q1}\\[10pt]
-	q_2 = e_y sin\left(\dfrac{\Phi}{2}\right)\label{eq:q2}\\[10pt]
-	q_3 = e_z sin\left(\dfrac{\Phi}{2}\right)\label{eq:q3}\\[10pt]
-	q_4 = cos\left(\dfrac{\Phi}{2}\right)\label{eq:q4}\\[10pt]
-\end{gather}
+\begin{equation}
+	\eta = cos\left(\frac{\Phi}{2}\right),
+	\qquad
+	\eta =\left[\begin{array}{c}
+		\epsilon_1\\
+		\epsilon_2\\
+		 \epsilon_3
+	\end{array}\right] =
+	\left[\begin{array}{c}
+		e_x sin\left(\Phi/2\right)\\
+		e_y sin\left(\Phi/2\right)\\
+		e_z sin\left(\Phi/2\right)
+	\end{array}\right] ,
+	\qquad
+		q = \left[\begin{array}{c}
+			\eta\\
+		\epsilon_1\\
+		\epsilon_2\\
+		\epsilon_3
+	\end{array}\right] ,
+	\label{eq:cuaterniones}
+\end{equation}
 
+%\begin{gather}
+%%	$q1 = e_x sin(\Phi /2)$\label{eq:q1}\\[10pt]
+%	q_1 = e_x sin\left(\dfrac{\Phi}{2}\right)\label{eq:q1}\\[10pt]
+%	q_2 = e_y sin\left(\dfrac{\Phi}{2}\right)\label{eq:q2}\\[10pt]
+%	q_3 = e_z sin\left(\dfrac{\Phi}{2}\right)\label{eq:q3}\\[10pt]
+%	q_4 = cos\left(\dfrac{\Phi}{2}\right)\label{eq:q4}\\[10pt]
+%\end{gather}
 
- Sin embargo, a diferencia de los ángulos de Euler, los cuaterniones no resultan tan intuitivos de interpretar, por lo tanto, serán usados en algunos cálculos numéricos que involucran la dinámica del CubeSat, pero tambien se recurriá a los ángulos de Euler para representar las rotaciones deseadas para el sistema de control  
+Donde se cumple que $\eta^2 + \epsilon_1^2+ \epsilon_2^2+ \epsilon_3^2 =1 $
+
+Sin embargo, a diferencia de los ángulos de Euler, los cuaterniones no resultan tan intuitivos de interpretar, por lo tanto, serán usados en algunos cálculos numéricos que involucran la dinámica del CubeSat, pero tambien se recurriá a los ángulos de Euler para representar las rotaciones deseadas para el sistema de control  
 
 
 
