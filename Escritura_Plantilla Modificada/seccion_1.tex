@@ -198,6 +198,7 @@ Por otro lado, según Wertz y Larson \cite{Wertz1999} , en el diseño de un ADCS
 \subsection{Fundamentos de dinámica de satélites}
 
 \subsubsection{Marcos de referencia}
+\hfill \break
 El primer paso para analizar y diseñar un sistema de control de actitud es definir los sistemas de referencia de coordenadas con los que trabajar, lo cual permite describir la actitud de un satélite como una desviación con respecto a un sistema de referencia elegido. Hay tres marcos de referencia comunes utilizados para la descripción de la actitud: Marco de referencia orbital (ORF), el marco de referencia centrado en el cuerpo (BRF) y el marco de referencia centrado en la tierra (ECI). 
 
 \paragraph{Marco de referencia alineado con el plano de la horizontal local (LVLH):} Se define este sistema como aquel que tiene su origen justo por debajo de la proyección del centro de gravedad del vehículo sobre la superficie de la Tierra. Se orienta de tal manera que el eje $Z$ apunta en dirección al norte
@@ -271,11 +272,11 @@ Cuando se requiere considerar la rotación de la tierra, se recurre a un marco c
 	\footnotesize{Nota. Fuente \cite{Andresen2005}}
 \end{figure}
 
-Estos marcos de coordenadas permiten describir la actitud en términos de la orientación del BRF con respecto al ORF o ECI. Para ello se utiliza la representación de cuaterniones o ángulos de Euler en una matriz de dirección coseno (DCM) o matriz de transformación. Esta matriz permite transformar vectores de un sistema de referencia a otro.
+Estos marcos de coordenadas permiten describir la actitud en términos de la orientación del BRF con respecto al ORF o ECI. Para ello se utiliza la representación de cuaterniones o ángulos de Euler en una matriz de cosenos directores (DCM) o matriz de transformación. Esta matriz permite transformar vectores de un sistema de referencia a otro como se verá en la siguiente sección.
 
 \subsubsection{Transformación de marcos de referencia}
-
-Se utiliza la notación $C_{to}^{from}$ para denotar una matriz de transformación de coordenadas desde un
+\hfill \break
+Según la notación y formulación presentada en \cite{grewal2007global},  $C_{to}^{from}$ denota una matriz de transformación de coordenadas desde un
 marco de coordenadas (designado por "from") a otro marco de coordenadas (designado por "to"). Por ejemplo $C_{BRF}^{ORF}$ denota la matriz de transformación de coordenadas desde el marco orbital al marco centrado en el cuerpo. Las matrices de transformación de coordenadas cumplen algunas propiedades útiles como:
 
 \begin{itemize}
@@ -318,7 +319,7 @@ C_{XYZ}^{UVW} = \left[\begin{array}{ccc}
 \end{array}\right]
 $$
 
-De la expresión anterior, $1_{a}^{T}1_b$ representa el producto punto de un vector unitario del marco $XYZ$ con un vector unitario del marco $UVW$. Sin embargo, este producto punto también representa el ángulo entre ambos vectores, por lo que se tiene que $1_a^{T}1_b = cos\left(\theta_{ab}\right)$. Por este motivo, las matrices de transformación también son llamadas matrices de cosenos directores y se define con la siguiente expresión:
+De la expresión anterior, $1_{a}^{T}1_b$ representa el producto punto de un vector unitario del marco $XYZ$ con un vector unitario del marco $UVW$. Sin embargo, este producto punto también representa el ángulo entre ambos vectores, por lo que se tiene que $1_a^{T}1_b = cos\left(\theta_{ab}\right)$. Por este motivo, las matrices de transformación también son llamadas matrices de cosenos directores (DCM) y se define con la siguiente expresión:
 
 $$
 C_{XYZ}^{UVW} = \left[\begin{array}{ccc}
@@ -329,9 +330,8 @@ C_{XYZ}^{UVW} = \left[\begin{array}{ccc}
 $$
 	
 
-
 \subsubsection{Ángulos de Euler}
-
+\hfill \break
 La actitud de un vehículo puede representarse mediante los ángulos de roll ($\phi$), pitch ($\theta$) y yaw ($\psi$). Estos ángulos representan las rotaciones consecutivas sobre los ejes $X$, $Y$ y $Z$ con el fin de pasar de un marco a otro \textbf{(Fig.\ref{fig:angulosEuler})}. El orden en que estas rotaciones son efectuadas tienen efectos en la matriz de rotación.
 
 
@@ -363,7 +363,7 @@ $$
 %\end{array}\right]:\text { Matriz de inercia del CubeSat }
 %$$
 \subsubsection{Cuaterniones}
-
+\hfill \break
 Los ángulos de Euler pueden provocar singularidades en determinados ángulos cuando se utilizan en cálculos numéricos. A ese problema se le conoce intuitivamente como gimbal lock o bloqueo de Cardan. Como puede verse en el gimbal de la \textbf{Fig.\ref{fig:gimbal}}, puede darse el caso que dos ejes giren de forma paralela, perdiendo así un grado de libertad.
 
 \begin{figure}[!ht]
@@ -442,7 +442,7 @@ Sin embargo, a diferencia de los ángulos de Euler, los cuaterniones no resultan
 
 
 \subsection{Teoría de Control}
-
+\hfill \break
 Como se mencionó en la sección del ADCS, para garantizar la estabilidad de un satélite primero es necesario conocer su orientación angular en el BRF y determinar su actitud respecto al ORF. No obstante, la acción de los actuadores depende de la posición instantánea y sus cambios para poder compensar y anticipar el efecto de las perturbaciones en la actitud. Por tal motivo, los ADCS se fundamentan en la teoría de control.
 De tal manera, la ingeniería de control recurre a los sistemas retroalimentados o en lazo cerrado, en los cuales, se alimenta al controlador con la señal de error de actuación, que es la diferencia entre la señal de entrada y la señal de realimentación (que puede ser la propia señal de salida o una función de la señal de salida y sus derivadas y/o integrales), con el fin de reducir el error y llevar la salida del sistema a un valor deseado \cite{ogata2010modern}. 
 Así mismo, los sistemas en lazo cerrado tienen la habilidad de rechazar perturbaciones externas y mejorar la atenuación del ruido de medición. Las perturbaciones y el ruido de medición se incorporan en el diagrama de bloques como entradas externas, como se ilustra en la \textbf{Fig.\ref{fig:feedback}}.
@@ -477,7 +477,7 @@ La órbita baja (LEO, por sus siglas en inglés) es una región del espacio que 
 
 Los gradientes de gravedad son causados por la variación de la fuerza gravitacional a medida que el satélite se mueve a través de diferentes regiones de la gravedad terrestre. Estos gradientes pueden causar momentos de torsión no deseados en el satélite, lo que puede afectar su orientación y estabilidad \cite{Rycroft1997}.
 
-Por otro lado, el arrastre aerodinámico es causado por la interacción del satélite con la atmósfera terrestre, que puede causar una desaceleración y una disminución de la altitud de la órbita. Por su parte, el campo geomagnético puede afectar la orientación y el control de los vehículos que usan magnetorquers.
+Por otro lado, el arrastre aerodinámico es causado por la interacción del satélite con la atmósfera, que puede causar una desaceleración y una disminución de la altitud de la órbita. Por su parte, el campo geomagnético puede afectar la orientación y el control de los vehículos que usan magnetorquers.
 
 Estos factores pueden afectar el sistema de control en LEO de diversas maneras. Por ejemplo, los gradientes de gravedad y el arrastre aerodinámico pueden causar momentos de torsión no deseados, lo que puede añade energía al sistema en forma de momento angular, afectando la precisión del sistema de control.
  
@@ -759,11 +759,12 @@ $$
 	I_{z x} & I_{z y} & I_{z z}
 \end{array}\right]:\text { Matriz de inercia del CubeSat }
 $$
-$\mathbf{\omega_b}=\left[\begin{array}{l}\omega_x \\ \omega_y \\ \omega_z\end{array}\right]:$ Vector de velocidad angular del satélite en el marco del cuerpo.\\
 
-$\mathbf{h_w}=\left[\begin{array}{l}h_x \\ h_y \\ h_z\end{array}\right]:$ Vector de momento de angular de las RW. 
+$\mathbf{\omega_b}=\left[\begin{array}{l}\omega_x \\ \omega_y \\ \omega_z\end{array}\right]:$ Vector de velocidad angular del satélite en el marco del cuerpo.\\[5pt]	
 
-Realizando las respectivas multiplaciones matriciales, se tienen las ecuaciones en cada eje:
+$\mathbf{h_w}=\left[\begin{array}{l}h_x \\ h_y \\ h_z\end{array}\right]:$ Vector de momento de angular de las RW.\\[10pt]	
+
+\noindent Realizando las respectivas multiplicaciones matriciales, se tienen las ecuaciones en cada eje:
 
 \begin{gather}	
 	\dot{\omega}_x=\left[T_x+T_{C x}+\omega_y \omega_z\left[I_{y y}-I_{z z}\right]-h_z \omega_y+h_y \omega_z\right] / I_{x x}\label{eq:modelo_dinamico_x}\\
@@ -783,48 +784,63 @@ resultan mas convenientes para los cálculos de simulación \cite{Steyn2011}. La
 
 Donde
  
+%\begin{center}
+% 	$\Omega$ = $\left[\begin{array}{cccc}
+% 		0 & w_z & -w_y & w_x \\
+% 		-w_z & 0 & w_x & w_y \\
+% 		w_y & -w_x & 0 & w_z \\
+% 		-w_x & -w_y & -w_z & 0
+% 	\end{array}\right]$ 
+% 	
+%\end{center}
+%\hspace{\parindent} y
+%\begin{center}
+%	$
+%	\mathbf{q}=\left[\begin{array}{llll}
+%		q_1 & q_2 & q_3 & q_4
+%	\end{array}\right]^T
+%	$
+%\end{center}
+
 \begin{center}
- 	$\Omega$ = $\left[\begin{array}{cccc}
- 		0 & w_z & -w_y & w_x \\
- 		-w_z & 0 & w_x & w_y \\
- 		w_y & -w_x & 0 & w_z \\
- 		-w_x & -w_y & -w_z & 0
- 	\end{array}\right]$ 
- 	
-\end{center}
-\hspace{\parindent} y
-\begin{center}
-	$
+	$\Omega$ = $\left[\begin{array}{cccc}
+		0 & w_z & -w_y & w_x \\
+		-w_z & 0 & w_x & w_y \\
+		w_y & -w_x & 0 & w_z \\
+		-w_x & -w_y & -w_z & 0
+	\end{array}\right],
+	\qquad
 	\mathbf{q}=\left[\begin{array}{llll}
 		q_1 & q_2 & q_3 & q_4
 	\end{array}\right]^T
 	$
 \end{center}
 
-\subsubsection{PROPIEDADES INERCIALES}
+\subsection{PROPIEDADES INERCIALES}
 
 %Fotos y diseño CAD
 
-\subsubsection{MODELADO DE PERTURBACIONES}
+\subsection{MODELADO DE PERTURBACIONES}
 
 % Mencionar tipos de perturbaciones y el calculo de peor escenario para el Eyassat
 
-\subsubsection{MODELO RUEDAS DE REACCIÓN}
+\subsection{MODELO RUEDAS DE REACCIÓN}
 
 % Funcion de transferencia
 
-\subsubsection{MODELO MAGNETORQUERS}
+\subsection{MODELO MAGNETORQUERS}
 
 % Ecuacion de torque
 
 
-\subsection{DISEÑO CONTROLADORES}
+\section{DISEÑO CONTROLADORES}
 \subsubsection{LINEALIZACIÓN Y ESPACIO DE ESTADOS}
 \subsubsection{LQR}
-Funcion de costo 
+%Funcion de costo 
 \subsubsection{PID}
 \subsubsection{ÍNDICES DE DESEMPEÑO}
-
+\section{ANALISIS DE ORBITAS}
+\subsection{Modelo de Campo Magnético}
 
 %% Fuerzas externas
 
