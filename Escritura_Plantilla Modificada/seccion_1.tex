@@ -234,16 +234,16 @@ Tierra tal como se observa el la \textbf{Fig. \ref{fig:LVLH}}.
 	\begin{center}
 		\includegraphics[scale=0.7]{imagenes/marco_teorico/marco_cuerpo.PNG}\\
 	\end{center}
-	\caption{ Marco de referencia centrado en el cuerpo. Adicionalmente se observan los ángulos roll ($\phi$), pitch ($\theta$) y yaw ($\psi$)}
+	\caption{ Marco de referencia centrado en el cuerpo. Adicionalmente se observan los ángulos roll ($\phi$), pitch ($\theta$) y yaw ($\psi$)}.
 	\label{fig:marco_cuerpo}
 %	\footnotesize{Nota. Fuente \cite{Andresen2005}}
 \end{figure}
 
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[scale=0.7]{imagenes/marco_teorico/orbital_cuerpo.PNG}\\
+		\includegraphics[scale=0.9]{imagenes/marco_teorico/orbital_cuerpo.PNG}\\
 	\end{center}
-	\caption{ Marco de referencia centrado en el cuerpo y orbital}
+	\caption{ Marco de referencia centrado en el cuerpo y marco orbital}
 	\label{fig:marco_orbital_cuerpo}
 		\footnotesize{Nota. Fuente \cite{Karatas2006}}
 \end{figure}
@@ -276,10 +276,58 @@ Estos marcos de coordenadas permiten describir la actitud en términos de la ori
 \subsubsection{Transformación de marcos de referencia}
 
 Se utiliza la notación $C_{to}^{from}$ para denotar una matriz de transformación de coordenadas desde un
-marco de coordenadas (designado por "from") a otro marco de coordenadas (designado por "to"). Por ejemplo $C_{BRF}^{ORF}$ denota la matriz de transformación de coordenadas desde el marco orbital al marco centrado en el cuerpo.
+marco de coordenadas (designado por "from") a otro marco de coordenadas (designado por "to"). Por ejemplo $C_{BRF}^{ORF}$ denota la matriz de transformación de coordenadas desde el marco orbital al marco centrado en el cuerpo. Las matrices de transformación de coordenadas cumplen algunas propiedades útiles como:
 
-Las matrices de transformación de coordenadas cumplen la regla de composición:
-$C_{C}^{B} C_{B}^{A} = C_{C}^{A}$ , donde A, B y C representan diferentes marcos de coordenadas.
+\begin{itemize}
+	
+	\item La regla de composición que expresa que 
+	\begin{equation}
+		C_{C}^{B} C_{B}^{A} = C_{C}^{A}\label{eq:transformada1}
+	\end{equation}
+	donde A, B y C representan diferentes marcos de coordenadas.
+	
+	\item La inversa de una matriz de transformación es igual a su transpuesta, lo cual revierte la rotación del marco de referencia. Esto se expresa de la siguiente manera:
+		\begin{equation}
+			 \left(C_{C}^{B}\right)^T = \left(C_{C}^{B}\right)^{-1} = C_{B}^{C}\label{eq:transformada2}
+		\end{equation}
+		
+\end{itemize}
+
+En este sentido, se puede definir una expresión general para la transformación de coordenadas en 3 ejes. Para expresar el vector $\vec{v}$ en el marco $XYZ$ y se quiere expresar en el marco $UVW$ se tiene que:
+
+$$
+\left[\begin{array}{c}
+	v_x\\
+	v_y\\
+	v_z
+\end{array}\right] = 
+C_{XYZ}^{UVW}
+\left[\begin{array}{c}
+	v_u\\
+	v_v\\
+	v_w
+\end{array}\right]
+$$
+
+Donde
+$$
+C_{XYZ}^{UVW} = \left[\begin{array}{ccc}
+	1_x^{T}1_u & 1_x^{T}1_v & 1_x^{T}1_w\\
+	1_y^{T}1_u & 1_y^{T}1_v & 1_y^{T}1_w\\
+	1_z^{T}1_u & 1_z^{T}1_v & 1_z^{T}1_w
+\end{array}\right]
+$$
+
+De la expresión anterior, $1_{a}^{T}1_b$ representa el producto punto de un vector unitario del marco $XYZ$ con un vector unitario del marco $UVW$. Sin embargo, este producto punto también representa el ángulo entre ambos vectores, por lo que se tiene que $1_a^{T}1_b = cos\left(\theta_{ab}\right)$. Por este motivo, las matrices de transformación también son llamadas matrices de cosenos directores y se define con la siguiente expresión:
+
+$$
+C_{XYZ}^{UVW} = \left[\begin{array}{ccc}
+	cos\left(\theta_{xu}\right) &cos\left(\theta_{xv}\right) & cos\left(\theta_{xw}\right)\\
+	cos\left(\theta_{yu}\right) &cos\left(\theta_{yv}\right) & cos\left(\theta_{yw}\right)\\
+	cos\left(\theta_{zu}\right) &cos\left(\theta_{zv}\right) & cos\left(\theta_{zw}\right)
+\end{array}\right]
+$$
+	
 
 
 \subsubsection{Ángulos de Euler}
