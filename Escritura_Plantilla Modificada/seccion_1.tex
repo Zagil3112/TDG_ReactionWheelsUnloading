@@ -234,7 +234,7 @@ Tierra tal como se observa el la \textbf{Fig. \ref{fig:LVLH}}.
 	\begin{center}
 		\includegraphics[scale=0.7]{imagenes/marco_teorico/marco_cuerpo.PNG}\\
 	\end{center}
-	\caption{ Marco de referencia centrado en el cuerpo}
+	\caption{ Marco de referencia centrado en el cuerpo. Adicionalmente se observan los ángulos roll ($\phi$), pitch ($\theta$) y yaw ($\psi$)}
 	\label{fig:marco_cuerpo}
 %	\footnotesize{Nota. Fuente \cite{Andresen2005}}
 \end{figure}
@@ -273,6 +273,15 @@ Cuando se requiere considerar la rotación de la tierra, se recurre a un marco c
 
 Estos marcos de coordenadas permiten describir la actitud en términos de la orientación del BRF con respecto al ORF o ECI. Para ello se utiliza la representación de cuaterniones o ángulos de Euler en una matriz de dirección coseno (DCM) o matriz de transformación. Esta matriz permite transformar vectores de un sistema de referencia a otro.
 
+\subsubsection{Transformación de marcos de referencia}
+
+Se utiliza la notación $C_{to}^{from}$ para denotar una matriz de transformación de coordenadas desde un
+marco de coordenadas (designado por "from") a otro marco de coordenadas (designado por "to"). Por ejemplo $C_{BRF}^{ORF}$ denota la matriz de transformación de coordenadas desde el marco orbital al marco centrado en el cuerpo.
+
+Las matrices de transformación de coordenadas cumplen la regla de composición:
+$C_{C}^{B} C_{B}^{A} = C_{C}^{A}$ , donde A, B y C representan diferentes marcos de coordenadas.
+
+
 \subsubsection{Ángulos de Euler}
 
 La actitud de un vehículo puede representarse mediante los ángulos de roll ($\phi$), pitch ($\theta$) y yaw ($\psi$). Estos ángulos representan las rotaciones consecutivas sobre los ejes $X$, $Y$ y $Z$ con el fin de pasar de un marco a otro \textbf{(Fig.\ref{fig:angulosEuler})}. El orden en que estas rotaciones son efectuadas tienen efectos en la matriz de rotación.
@@ -288,7 +297,7 @@ La actitud de un vehículo puede representarse mediante los ángulos de roll ($\
 	\footnotesize{Nota. Fuente \cite{tes:Sorolla2019}}
 \end{figure}
 
- Debido a que el problema discutido en este trabajo se restringió para solo un grado de libertad, solo basta realizar una rotacion de un ángulo $\phi$ en el eje $Z_o$ del marco orbital (ORF) para pasar al marco del cuerpo (BRF). Lo anterior puede lograrse con la matriz de transformación $R_{B}^{O}$:
+ Debido a que el problema discutido en este trabajo se restringió para solo un grado de libertad, solo basta realizar una rotacion de un ángulo $\phi$ en el eje $Z_o$ del marco orbital (ORF) para pasar al marco del cuerpo (BRF) como se vió en la  \textbf{Fig. \ref{fig:marco_cuerpo}}. Lo anterior puede lograrse con la matriz de transformación $R_{B}^{O}$:
 $$
 \mathbf{R_{B}^{O}}=\mathbf{R_{z,\psi}}=\left[\begin{array}{ccc}
 	cos\psi & -sin\psi & 0 \\
@@ -353,9 +362,34 @@ Este eje fijo, el eje de Euler, se representa mediante un vector unitario de com
 %	q_4 = cos\left(\dfrac{\Phi}{2}\right)\label{eq:q4}\\[10pt]
 %\end{gather}
 
-Donde se cumple que $\eta^2 + \epsilon_1^2+ \epsilon_2^2+ \epsilon_3^2 =1 $
+Donde se cumple que $\eta^2 + \epsilon_1^2+ \epsilon_2^2+ \epsilon_3^2 =1 $. Por otro lado, si se quiere pasar de ángulos de Euler a cuaterniones puede hacerse siguiendo la expresión (\ref{eq:euler2quat}).
 
-Sin embargo, a diferencia de los ángulos de Euler, los cuaterniones no resultan tan intuitivos de interpretar, por lo tanto, serán usados en algunos cálculos numéricos que involucran la dinámica del CubeSat, pero tambien se recurriá a los ángulos de Euler para representar las rotaciones deseadas para el sistema de control  
+\begin{equation}
+q=\left[\begin{array}{c}
+	\eta \\
+	\epsilon_1 \\
+	\epsilon_2 \\
+	\epsilon_3
+\end{array}\right]=\left[\begin{array}{l}
+	c(\phi / 2) c(\theta / 2) c(\psi / 2)+s(\phi / 2) s(\theta / 2) s(\psi / 2) \\
+	s(\phi / 2) c(\theta / 2) c(\psi / 2)-s(\phi / 2) c(\theta / 2) s(\psi / 2) \\
+	c(\phi / 2) s(\theta / 2) c(\psi / 2)+s(\phi / 2) c(\theta / 2) s(\psi / 2) \\
+	c(\phi / 2) c(\theta / 2) s(\psi / 2)-s(\phi / 2) s(\theta / 2) c(\psi / 2)
+\end{array}\right]\label{eq:euler2quat}
+\end{equation}
+
+
+La transformacion de cuaterniones a angulos de Euler puede ser calculada con la expresión (\ref{eq:quat2euler}).
+
+\begin{equation}
+	\begin{gathered}
+		\phi=\operatorname{atan}\left(2\left(q_2 q_3+\eta q_1\right),\left(\eta^2-q_1^2-q_2^2-q_3^2\right)\right) \\
+		\theta=\operatorname{asin}\left(\left(q_1 q_3-\eta q_2\right)\right) \\
+		\psi=\operatorname{atan}\left(2\left(q_1 q_2+\eta q_3\right),\left(\eta^2+q_1^2-q_2^2-q_3^2\right)\right)
+	\end{gathered}\label{eq:quat2euler}
+\end{equation}
+
+Sin embargo, a diferencia de los ángulos de Euler, los cuaterniones no resultan tan intuitivos de interpretar, por lo tanto, serán usados en algunos cálculos numéricos que involucran la dinámica del CubeSat, pero tambien se recurriá a los ángulos de Euler para representar las rotaciones deseadas para el sistema de control.
 
 
 
