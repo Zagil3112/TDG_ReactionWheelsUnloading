@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.6.1)  7 OCT 2023 00:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.10.8)  8 OCT 2023 17:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1030,12 +1030,21 @@ Package xtemplate Info: Declaring object type 'tasks' taking 3 argument(s) on
 (C:\Users\Personal\AppData\Local\Programs\MiKTeX\tex/latex/placeins\placeins.st
 y
 Package: placeins 2005/04/18  v 2.2
-) (C:\Users\Personal\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
+)
+(C:\Users\Personal\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.s
+ty
+Package: subcaption 2023/02/19 v1.6 Sub-captions (AR)
+Package caption Info: New subtype `subfigure' on input line 239.
+\c@subfigure=\count400
+Package caption Info: New subtype `subtable' on input line 239.
+\c@subtable=\count401
+)
+(C:\Users\Personal\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip73
 \bibsep=\skip74
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count400
+\c@NAT@ctr=\count402
 )
 (C:\Users\Personal\AppData\Local\Programs\MiKTeX\tex/latex/tocloft\tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
@@ -1066,8 +1075,8 @@ Package tocloft Info: The document has section divisions on input line 51.
 \cftbeforefigskip=\skip98
 \cftfigindent=\skip99
 \cftfignumwidth=\skip100
-\c@lofdepth=\count401
-\c@lotdepth=\count402
+\c@lofdepth=\count403
+\c@lotdepth=\count404
 \cftbeforelottitleskip=\skip101
 \cftafterlottitleskip=\skip102
 \cftbeforetabskip=\skip103
@@ -1117,8 +1126,8 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 66.
 Package hyperref Info: Option `plainpages' set `false' on input line 66.
 Package hyperref Info: Option `bookmarksopen' set `true' on input line 66.
 Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 66.
-\c@HD@unique=\count403
-\c@HD@hypercount=\count404
+\c@HD@unique=\count405
+\c@HD@hypercount=\count406
 \HD@helplength=\skip117
 ) (main.aux (seccion_0.aux)
 LaTeX Info: Redefining \. on input line 24.
@@ -1187,16 +1196,16 @@ LaTeX Info: Redefining \% on input line 7.
 (C:\Users\Personal\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf
 .mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count405
+\scratchcounter=\count407
 \scratchdimen=\dimen330
 \scratchbox=\box128
-\nofMPsegments=\count406
-\nofMParguments=\count407
+\nofMPsegments=\count408
+\nofMParguments=\count409
 \everyMPshowfont=\toks48
-\MPscratchCnt=\count408
+\MPscratchCnt=\count410
 \MPscratchDim=\dimen331
-\MPnumerator=\count409
-\makeMPintoPDFobject=\count410
+\MPnumerator=\count411
+\makeMPintoPDFobject=\count412
 \everyMPtoPDFconversion=\toks49
 )
 (C:\Users\Personal\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopd
@@ -1357,7 +1366,7 @@ LaTeX Info: Redefining \% on input line 1.
 
 
 ] [11]
-<imagenes/planteamiento_del_problema/esquema_planteamiento.PNG, id=448, 760.340
+<imagenes/planteamiento_del_problema/esquema_planteamiento.PNG, id=450, 760.340
 62pt x 508.14844pt>
 File: imagenes/planteamiento_del_problema/esquema_planteamiento.PNG Graphic fil
 e (type png)
@@ -1367,20 +1376,20 @@ nto.PNG  used on input line 44.
 (pdftex.def)             Requested size: 380.16937pt x 254.0736pt.
  [12] [13 <./imagenes/planteamiento_del_problema/esquema_planteamiento.PNG>] [1
 4]
-<imagenes/justificacion/jaula.PNG, id=474, 315.42844pt x 313.9228pt>
+<imagenes/justificacion/jaula.PNG, id=476, 315.42844pt x 313.9228pt>
 File: imagenes/justificacion/jaula.PNG Graphic file (type png)
 <use imagenes/justificacion/jaula.PNG>
 Package pdftex.def Info: imagenes/justificacion/jaula.PNG  used on input line 8
 4.
 (pdftex.def)             Requested size: 205.02605pt x 204.0474pt.
  [15] [16 <./imagenes/justificacion/jaula.PNG>]
-<imagenes/marco_teorico/eyassat.PNG, id=490, 166.77692pt x 213.12276pt>
+<imagenes/marco_teorico/eyassat.PNG, id=492, 166.77692pt x 213.12276pt>
 File: imagenes/marco_teorico/eyassat.PNG Graphic file (type png)
 <use imagenes/marco_teorico/eyassat.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/eyassat.PNG  used on input line
  136.
 (pdftex.def)             Requested size: 150.09781pt x 191.80869pt.
-<imagenes/marco_teorico/adcs.PNG, id=491, 299.61937pt x 123.46124pt>
+<imagenes/marco_teorico/adcs.PNG, id=493, 299.61937pt x 123.46124pt>
 File: imagenes/marco_teorico/adcs.PNG Graphic file (type png)
 <use imagenes/marco_teorico/adcs.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/adcs.PNG  used on input line 14
@@ -1388,7 +1397,7 @@ Package pdftex.def Info: imagenes/marco_teorico/adcs.PNG  used on input line 14
 (pdftex.def)             Requested size: 269.65494pt x 111.11407pt.
 
 [17]
-<imagenes/marco_teorico/eyassat_axes.PNG, id=502, 333.49594pt x 246.1697pt>
+<imagenes/marco_teorico/eyassat_axes.PNG, id=504, 333.49594pt x 246.1697pt>
 File: imagenes/marco_teorico/eyassat_axes.PNG Graphic file (type png)
 <use imagenes/marco_teorico/eyassat_axes.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/eyassat_axes.PNG  used on input
@@ -1396,7 +1405,7 @@ Package pdftex.def Info: imagenes/marco_teorico/eyassat_axes.PNG  used on input
 (pdftex.def)             Requested size: 300.14357pt x 221.55066pt.
  [18 <./imagenes/marco_teorico/eyassat.PNG> <./imagenes/marco_teorico/adcs.PNG>
 ]
-<imagenes/marco_teorico/rw.PNG, id=511, 426.09187pt x 193.47281pt>
+<imagenes/marco_teorico/rw.PNG, id=513, 426.09187pt x 193.47281pt>
 File: imagenes/marco_teorico/rw.PNG Graphic file (type png)
 <use imagenes/marco_teorico/rw.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/rw.PNG  used on input line 176.
@@ -1404,26 +1413,26 @@ Package pdftex.def Info: imagenes/marco_teorico/rw.PNG  used on input line 176.
 (pdftex.def)             Requested size: 383.47913pt x 174.12392pt.
  [19 <./imagenes/marco_teorico/eyassat_axes.PNG> <./imagenes/marco_teorico/rw.P
 NG>] [20]
-<imagenes/marco_teorico/LVLH.PNG, id=534, 369.63094pt x 275.52937pt>
+<imagenes/marco_teorico/LVLH.PNG, id=536, 369.63094pt x 275.52937pt>
 File: imagenes/marco_teorico/LVLH.PNG Graphic file (type png)
 <use imagenes/marco_teorico/LVLH.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/LVLH.PNG  used on input line 21
 1.
 (pdftex.def)             Requested size: 258.73988pt x 192.86923pt.
-<imagenes/marco_teorico/marco_orbital.PNG, id=537, 411.78844pt x 275.52937pt>
+<imagenes/marco_teorico/marco_orbital.PNG, id=539, 411.78844pt x 275.52937pt>
 File: imagenes/marco_teorico/marco_orbital.PNG Graphic file (type png)
 <use imagenes/marco_teorico/marco_orbital.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/marco_orbital.PNG  used on inpu
 t line 222.
 (pdftex.def)             Requested size: 288.24992pt x 192.86923pt.
  [21]
-<imagenes/marco_teorico/marco_cuerpo.PNG, id=546, 420.06938pt x 311.66437pt>
+<imagenes/marco_teorico/marco_cuerpo.PNG, id=548, 420.06938pt x 311.66437pt>
 File: imagenes/marco_teorico/marco_cuerpo.PNG Graphic file (type png)
 <use imagenes/marco_teorico/marco_cuerpo.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/marco_cuerpo.PNG  used on input
  line 236.
 (pdftex.def)             Requested size: 294.04655pt x 218.16356pt.
-<imagenes/marco_teorico/orbital_cuerpo.PNG, id=547, 277.035pt x 156.585pt>
+<imagenes/marco_teorico/orbital_cuerpo.PNG, id=549, 277.035pt x 156.585pt>
 File: imagenes/marco_teorico/orbital_cuerpo.PNG Graphic file (type png)
 <use imagenes/marco_teorico/orbital_cuerpo.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/orbital_cuerpo.PNG  used on inp
@@ -1431,7 +1440,7 @@ ut line 245.
 (pdftex.def)             Requested size: 249.3292pt x 140.92519pt.
  [22 <./imagenes/marco_teorico/LVLH.PNG> <./imagenes/marco_teorico/marco_orbita
 l.PNG>]
-<imagenes/marco_teorico/ECI.PNG, id=558, 355.3275pt x 264.23718pt>
+<imagenes/marco_teorico/ECI.PNG, id=560, 355.3275pt x 264.23718pt>
 File: imagenes/marco_teorico/ECI.PNG Graphic file (type png)
 <use imagenes/marco_teorico/ECI.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/ECI.PNG  used on input line 256
@@ -1439,7 +1448,7 @@ Package pdftex.def Info: imagenes/marco_teorico/ECI.PNG  used on input line 256
 (pdftex.def)             Requested size: 248.72754pt x 184.96475pt.
  [23 <./imagenes/marco_teorico/marco_cuerpo.PNG> <./imagenes/marco_teorico/orbi
 tal_cuerpo.PNG>]
-<imagenes/marco_teorico/ECEF.PNG, id=568, 302.63063pt x 258.9675pt>
+<imagenes/marco_teorico/ECEF.PNG, id=570, 302.63063pt x 258.9675pt>
 File: imagenes/marco_teorico/ECEF.PNG Graphic file (type png)
 <use imagenes/marco_teorico/ECEF.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/ECEF.PNG  used on input line 26
@@ -1447,129 +1456,155 @@ Package pdftex.def Info: imagenes/marco_teorico/ECEF.PNG  used on input line 26
 (pdftex.def)             Requested size: 211.83998pt x 181.27599pt.
  [24 <./imagenes/marco_teorico/ECI.PNG> <./imagenes/marco_teorico/ECEF.PNG>] [2
 5]
-<imagenes/marco_teorico/angulos_euler.PNG, id=588, 287.57437pt x 219.06844pt>
+<imagenes/marco_teorico/angulos_euler.PNG, id=590, 287.57437pt x 219.06844pt>
 File: imagenes/marco_teorico/angulos_euler.PNG Graphic file (type png)
 <use imagenes/marco_teorico/angulos_euler.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/angulos_euler.PNG  used on inpu
 t line 341.
 (pdftex.def)             Requested size: 230.0598pt x 175.25497pt.
  [26 <./imagenes/marco_teorico/angulos_euler.PNG>]
-<imagenes/marco_teorico/gimbal.PNG, id=597, 221.32687pt x 162.6075pt>
+<imagenes/marco_teorico/gimbal.PNG, id=599, 221.32687pt x 162.6075pt>
 File: imagenes/marco_teorico/gimbal.PNG Graphic file (type png)
 <use imagenes/marco_teorico/gimbal.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/gimbal.PNG  used on input line 
 371.
 (pdftex.def)             Requested size: 177.06172pt x 130.08617pt.
  [27 <./imagenes/marco_teorico/gimbal.PNG>] [28]
-<imagenes/marco_teorico/lazo cerrado.PNG, id=618, 387.69844pt x 139.27031pt>
+<imagenes/marco_teorico/lazo cerrado.PNG, id=620, 387.69844pt x 139.27031pt>
 File: imagenes/marco_teorico/lazo cerrado.PNG Graphic file (type png)
 <use imagenes/marco_teorico/lazo cerrado.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/lazo cerrado.PNG  used on input
- line 454.
+ line 453.
 (pdftex.def)             Requested size: 310.15916pt x 111.41638pt.
  [29 <./imagenes/marco_teorico/lazo cerrado.PNG>]
-<imagenes/marco_teorico/leo.jpg, id=626, 228.35312pt x 175.15437pt>
+<imagenes/marco_teorico/leo.jpg, id=628, 228.35312pt x 175.15437pt>
 File: imagenes/marco_teorico/leo.jpg Graphic file (type jpg)
 <use imagenes/marco_teorico/leo.jpg>
-Package pdftex.def Info: imagenes/marco_teorico/leo.jpg  used on input line 471
+Package pdftex.def Info: imagenes/marco_teorico/leo.jpg  used on input line 470
 .
 (pdftex.def)             Requested size: 228.35255pt x 175.15395pt.
  [30 <./imagenes/marco_teorico/leo.jpg>]
-[31] [32] [33]
-<imagenes/metodologia/grafico_metodologia.png, id=658, 268.00125pt x 578.91281p
+[31] [32] [33] [34]
+<imagenes/metodologia/grafico_metodologia.png, id=666, 268.00125pt x 578.91281p
 t>
 File: imagenes/metodologia/grafico_metodologia.png Graphic file (type png)
 <use imagenes/metodologia/grafico_metodologia.png>
 Package pdftex.def Info: imagenes/metodologia/grafico_metodologia.png  used on 
 input line 622.
-(pdftex.def)             Requested size: 268.00058pt x 578.91139pt.
-
-
-LaTeX Warning: Float too large for page by 7.8206pt on input line 627.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-Package placeins Info: Must dump some floats on input line 629.
-[34
-Package placeins Info: Float barrier, from input line 629, processed on page 34
-, lands on page 34. 
-]
-Package placeins Info: Check again: on input line 629.
-
-
-Package placeins Warning: Some floats are stuck, on input line 629.
-
-[35 <./imagenes/metodologia/grafico_metodologia.png>]
-<imagenes/modelo_dinamico/ref_system.PNG, id=671, 518.6878pt x 262.73157pt>
+(pdftex.def)             Requested size: 214.40128pt x 463.13087pt.
+ [35 <./imagenes/metodologia/grafico_metodologia.png>]
+<imagenes/modelo_dinamico/ref_system.PNG, id=673, 518.6878pt x 262.73157pt>
 File: imagenes/modelo_dinamico/ref_system.PNG Graphic file (type png)
 <use imagenes/modelo_dinamico/ref_system.PNG>
 Package pdftex.def Info: imagenes/modelo_dinamico/ref_system.PNG  used on input
- line 638.
-(pdftex.def)             Requested size: 259.34326pt x 131.36545pt.
- [36
-Package placeins Info: Float barrier, from input line 629, processed on page 35
-, lands on page 36. 
+ line 636.
+(pdftex.def)             Requested size: 311.21509pt x 157.64014pt.
 
- <./imagenes/modelo_dinamico/ref_system.PNG>] [37] [38]
-Underfull \hbox (badness 10000) in paragraph at lines 763--764
+[36 <./imagenes/modelo_dinamico/ref_system.PNG>] [37] [38]
+Underfull \hbox (badness 10000) in paragraph at lines 761--762
 
  []
 
 [39]
-Underfull \hbox (badness 10000) in paragraph at lines 765--766
+Underfull \hbox (badness 10000) in paragraph at lines 763--764
 
  []
 
+[40]
+<imagenes/modelo_dinamico/eyassat_armado.jpg, id=734, 4015.0pt x 3011.25pt>
+File: imagenes/modelo_dinamico/eyassat_armado.jpg Graphic file (type jpg)
+<use imagenes/modelo_dinamico/eyassat_armado.jpg>
+Package pdftex.def Info: imagenes/modelo_dinamico/eyassat_armado.jpg  used on i
+nput line 828.
+(pdftex.def)             Requested size: 212.41261pt x 159.30142pt.
+<imagenes/modelo_dinamico/capas.jpeg, id=735, 1142.2675pt x 1011.78pt>
+File: imagenes/modelo_dinamico/capas.jpeg Graphic file (type jpg)
+<use imagenes/modelo_dinamico/capas.jpeg>
+Package pdftex.def Info: imagenes/modelo_dinamico/capas.jpeg  used on input lin
+e 831.
+(pdftex.def)             Requested size: 180.3177pt x 159.71127pt.
+<imagenes/modelo_dinamico/eyassat_medicion.jpg, id=736, 3011.25pt x 4015.0pt>
+File: imagenes/modelo_dinamico/eyassat_medicion.jpg Graphic file (type jpg)
+<use imagenes/modelo_dinamico/eyassat_medicion.jpg>
+Package pdftex.def Info: imagenes/modelo_dinamico/eyassat_medicion.jpg  used on
+ input line 842.
+(pdftex.def)             Requested size: 180.3177pt x 240.39949pt.
+<imagenes/modelo_dinamico/placa_medicion.jpg, id=737, 3011.25pt x 4015.0pt>
+File: imagenes/modelo_dinamico/placa_medicion.jpg Graphic file (type jpg)
+<use imagenes/modelo_dinamico/placa_medicion.jpg>
+Package pdftex.def Info: imagenes/modelo_dinamico/placa_medicion.jpg  used on i
+nput line 845.
+(pdftex.def)             Requested size: 180.3177pt x 240.39949pt.
+<imagenes/modelo_dinamico/escenario.PNG, id=738, 499.8675pt x 667.74469pt>
+File: imagenes/modelo_dinamico/escenario.PNG Graphic file (type png)
+<use imagenes/modelo_dinamico/escenario.PNG>
+Package pdftex.def Info: imagenes/modelo_dinamico/escenario.PNG  used on input 
+line 854.
+(pdftex.def)             Requested size: 199.94345pt x 267.09314pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 837.
+(hyperref)                than one, level fixed on input line 876.
 
-[40] [41]
+[41 <./imagenes/modelo_dinamico/eyassat_armado.jpg> <./imagenes/modelo_dinamico
+/capas.jpeg> <./imagenes/modelo_dinamico/eyassat_medicion.jpg> <./imagenes/mode
+lo_dinamico/placa_medicion.jpg>]
+<imagenes/analisis_de_orbitas/orbitas.jpg, id=743, 602.25pt x 490.83376pt>
+File: imagenes/analisis_de_orbitas/orbitas.jpg Graphic file (type jpg)
+<use imagenes/analisis_de_orbitas/orbitas.jpg>
+Package pdftex.def Info: imagenes/analisis_de_orbitas/orbitas.jpg  used on inpu
+t line 885.
+(pdftex.def)             Requested size: 240.89572pt x 196.33002pt.
+ [42 <./imagenes/modelo_dinamico/escenario.PNG>] [43 <./imagenes/analisis_de_or
+bitas/orbitas.jpg>]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 867.
+(hyperref)                than one, level fixed on input line 917.
 
-<imagenes/grafica.png, id=742, 501.37312pt x 505.13719pt>
-File: imagenes/grafica.png Graphic file (type png)
-<use imagenes/grafica.png>
-Package pdftex.def Info: imagenes/grafica.png  used on input line 881.
-(pdftex.def)             Requested size: 250.68594pt x 252.56798pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 916--916
+LaTeX Warning: Reference `table:prob_milenio' on page 44 undefined on input lin
+e 927.
+
+
+LaTeX Warning: Reference `fig:hiperbolica' on page 44 undefined on input line 9
+27.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 966--966
 []|\OT1/cmr/m/n/12 Vietnam y
  []
 
 
-Underfull \hbox (badness 1708) in paragraph at lines 926--927
+Underfull \hbox (badness 1708) in paragraph at lines 976--977
 []|\OT1/cmr/m/n/12 Escuela Po-lit^^Secni-ca Fe-de-ral de
  []
 
-[42] [43 <./imagenes/grafica.png>] [44]
-<imagenes/ieee_logo.jpg, id=757, 593.21625pt x 332.74312pt>
+[44] [45]
+<imagenes/ieee_logo.jpg, id=767, 593.21625pt x 332.74312pt>
 File: imagenes/ieee_logo.jpg Graphic file (type jpg)
 <use imagenes/ieee_logo.jpg>
-Package pdftex.def Info: imagenes/ieee_logo.jpg  used on input line 958.
+Package pdftex.def Info: imagenes/ieee_logo.jpg  used on input line 1008.
 (pdftex.def)             Requested size: 296.60739pt x 166.37114pt.
- [45
+ [46
 
  <./imagenes/ieee_logo.jpg>]
-<imagenes/escudo_udea_solo.png, id=764, 147.55125pt x 193.47281pt>
+<imagenes/escudo_udea_solo.png, id=774, 147.55125pt x 193.47281pt>
 File: imagenes/escudo_udea_solo.png Graphic file (type png)
 <use imagenes/escudo_udea_solo.png>
-Package pdftex.def Info: imagenes/escudo_udea_solo.png  used on input line 969.
-
+Package pdftex.def Info: imagenes/escudo_udea_solo.png  used on input line 1019
+.
 (pdftex.def)             Requested size: 147.55087pt x 193.47234pt.
+ [47
 
-[46
+ <./imagenes/escudo_udea_solo.png>] [48
 
- <./imagenes/escudo_udea_solo.png>] [47
-
-] [48]) [49]
+] [49]) [50]
 \openout2 = `referencias.aux'.
 
- (referencias.tex
-(main.bbl
+ (referencias.tex (main.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 53--56
 []\OT1/cmr/m/n/12 EYASSAT, ``GEN 5 Na-no-sa-te-lli-te Si-mu-la-tor, with COS-MO
 S, User Gui-
@@ -1581,18 +1616,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--56
 t . com / resources-[]downloads /
  []
 
-[50
+[51
 
 
 
-] [51])) [52]
+] [52])) [53]
 \openout2 = `anexos.aux'.
 
- (anexos.tex [53
+ (anexos.tex [54
 
 
 
-] [54] [55]
+] [55] [56]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 8
 6.
 
@@ -1602,52 +1637,53 @@ File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 86.
 )
-[56] (main.aux (seccion_0.aux)
+[57] (main.aux (seccion_0.aux)
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
  (seccion_resumen.aux) (seccion_1.aux)
 (referencias.aux) (anexos.aux))
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 525246B5761E4EB68AF5EDFCFE5ABA4A;10287.
+(rerunfilecheck)             Checksum: 490B253C0CACD3588F099FA7856A1EC2;10293.
 Package rerunfilecheck Info: File `main.hd' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31119 strings out of 476315
- 604555 string characters out of 5785781
- 1877068 words of memory out of 5000000
- 50788 multiletter control sequences out of 15000+600000
- 524994 words of font info for 79 fonts, out of 8000000 for 9000
+ 31280 strings out of 476315
+ 608641 string characters out of 5785780
+ 1878068 words of memory out of 5000000
+ 50938 multiletter control sequences out of 15000+600000
+ 524659 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  103i,14n,111p,1380b,1121s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Personal\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\t
-crm1000.pk> <C:\Users\Personal\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\tcrm1200.pk><C:/Users/Personal/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Personal/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Personal/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Personal/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/
-Personal/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pf
-b><C:/Users/Personal/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmmi10.pfb><C:/Users/Personal/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmmi12.pfb><C:/Users/Personal/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Personal/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/Personal/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Personal
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Use
-rs/Personal/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.p
-fb><C:/Users/Personal/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmr8.pfb><C:/Users/Personal/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmsy10.pfb><C:/Users/Personal/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Personal/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Personal/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Personal/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Use
-rs/Personal/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12
-.pfb>
-Output written on main.pdf (56 pages, 1936932 bytes).
+crm1200.pk><C:/Users/Personal/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmbx10.pfb><C:/Users/Personal/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Personal/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Personal/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Personal/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Use
+rs/Personal/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10
+.pfb><C:/Users/Personal/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmmi12.pfb><C:/Users/Personal/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmmi8.pfb><C:/Users/Personal/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/Personal/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Personal/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Person
+al/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Us
+ers/Personal/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.
+pfb><C:/Users/Personal/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmsy10.pfb><C:/Users/Personal/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmsy8.pfb><C:/Users/Personal/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Personal/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Personal/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Person
+al/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on main.pdf (57 pages, 12926008 bytes).
 PDF statistics:
- 988 PDF objects out of 1000 (max. 8388607)
- 191 named destinations out of 1000 (max. 500000)
- 563 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 994 PDF objects out of 1000 (max. 8388607)
+ 194 named destinations out of 1000 (max. 500000)
+ 588 words of extra memory for PDF output out of 10000 (max. 10000000)
 

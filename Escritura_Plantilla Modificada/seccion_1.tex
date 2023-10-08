@@ -442,7 +442,6 @@ Sin embargo, a diferencia de los ángulos de Euler, los cuaterniones no resultan
 
 
 \subsection{Teoría de Control}
-\hfill \break
 Como se mencionó en la sección del ADCS, para garantizar la estabilidad de un satélite primero es necesario conocer su orientación angular en el BRF y determinar su actitud respecto al ORF. No obstante, la acción de los actuadores depende de la posición instantánea y sus cambios para poder compensar y anticipar el efecto de las perturbaciones en la actitud. Por tal motivo, los ADCS se fundamentan en la teoría de control.
 De tal manera, la ingeniería de control recurre a los sistemas retroalimentados o en lazo cerrado, en los cuales, se alimenta al controlador con la señal de error de actuación, que es la diferencia entre la señal de entrada y la señal de realimentación (que puede ser la propia señal de salida o una función de la señal de salida y sus derivadas y/o integrales), con el fin de reducir el error y llevar la salida del sistema a un valor deseado \cite{ogata2010modern}. 
 Así mismo, los sistemas en lazo cerrado tienen la habilidad de rechazar perturbaciones externas y mejorar la atenuación del ruido de medición. Las perturbaciones y el ruido de medición se incorporan en el diagrama de bloques como entradas externas, como se ilustra en la \textbf{Fig.\ref{fig:feedback}}.
@@ -617,25 +616,24 @@ Luego de implementar condiciones de ambiente espacial, las simulaciones debería
 
 Finalmente, el esquema de la estrategia metodológica puede apreciarse en la Fig.\ref{fig:metodologia}, donde se plantea el entregable u objetivo a cumplir al término cada etapa, el cual es fundamental para el desarrollo de la etapa posterior. De esta manera se consolida una estrategia secuencial pero que puede estar sujeta a diferentes iteraciones según el desarrollo de las actividades.
 
-\begin{figure}[h]
+\newpage
+\begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[scale=1]{imagenes/metodologia/grafico_metodologia.png}\\
+		\includegraphics[scale=0.8]{imagenes/metodologia/grafico_metodologia.png}\\
 	\end{center}
 	\caption{Diagrama estrategia metodológica}
 	\label{fig:metodologia}
 	\textit{}
 \end{figure}
 
-\FloatBarrier
 
-
-
+\newpage
 \section{MODELO DINÁMICO}
 La de actitud de una nave espacial como un CubeSat puede ser representada por las ecuaciones dinámicas de Newton-Euler, las cuales describen los efectos de los torques externos e internos que modifican la aceleración del satélite. Para llegar a dichas ecuaciones se parte de la dinámica rotacional tal como se describen en \cite{Griffin2004}.
 
-\begin{figure}[!ht]
+\begin{figure}[!h]
 	\begin{center}
-		\includegraphics[scale=0.5]{imagenes/modelo_dinamico/ref_system.PNG}\\
+		\includegraphics[scale=0.6]{imagenes/modelo_dinamico/ref_system.PNG}\\
 	\end{center}
 	\caption{Variación en el tiempo de un marco de referencia rotante}
 	\label{fig:rot_frame}
@@ -815,10 +813,51 @@ Donde
 	\end{array}\right]^T
 	$
 \end{center}
-
+\newpage
 \subsection{PROPIEDADES INERCIALES}
 
 %Fotos y diseño CAD
+
+Con el fin de obtener la matriz de inercia se 
+
+
+\begin{figure}[h]
+	\centering
+	\subfloat[Gatito]{
+		\label{f:cube_armado}
+		\includegraphics[width=0.45\textwidth]{imagenes/modelo_dinamico/eyassat_armado.jpg}}
+	\subfloat[Tigre]{
+		\label{f:cube_desarmado}
+		\includegraphics[width=0.382\textwidth]{imagenes/modelo_dinamico/capas.jpeg}}
+	
+	\caption{Múltiples imágenes}
+	\label{f:animales}
+\end{figure}
+
+
+\begin{figure}[h!]
+	\centering
+	\subfloat[Gatito]{
+		\label{fig:medicion_capas}
+		\includegraphics[width=0.382\textwidth]{imagenes/modelo_dinamico/eyassat_medicion.jpg}}
+	\subfloat[Tigre]{
+		\label{fig:placa_cube}
+		\includegraphics[width=0.382\textwidth]{imagenes/modelo_dinamico/placa_medicion.jpg}}
+	
+	\caption{Múltiples imágenes}
+	\label{fig:mediciones}
+\end{figure}
+
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[scale=0.4]{imagenes/modelo_dinamico/escenario.PNG}\\
+	\end{center}
+	\caption{Simulink}
+	\label{fig:escenario}
+	\textit{}
+\end{figure}
+
 
 \subsection{MODELADO DE PERTURBACIONES}
 
@@ -839,7 +878,18 @@ Donde
 %Funcion de costo 
 \subsubsection{PID}
 \subsubsection{ÍNDICES DE DESEMPEÑO}
-\section{ANALISIS DE ORBITAS}
+\section{ANÁLISIS DE ÓRBITAS}
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.4]{imagenes/analisis_de_orbitas/orbitas.jpg}\\
+	\end{center}
+	\caption{Orbitas a evaluar}
+	\label{fig:orbitas}
+	\textit{}
+\end{figure}
+
+
 \subsection{Modelo de Campo Magnético}
 
 %% Fuerzas externas
@@ -876,32 +926,32 @@ En los resultados se comunican los hallazgos y descubrimientos del estudio. Se i
 
  Al narrar descriptivamente una figura, tabla, etc., en un párrafo, puedes insertar una referencia cruzada, es decir, un hipervínculo al elemento mencionado dentro o fuera de paréntesis, ejemplos: estos resultados se muestran en la \textbf{Tabla \ref{table:prob_milenio}}.  Igualmente, los datos son validados con otros instrumentos \textbf{(Tabla \ref{table:num_mersenne}, Tabla \ref{table:medalla_fields})}. Lineamientos que se establecen en la nueva versión de las Normas APA séptima edición \textbf{(Fig. \ref{figportada_apa})}. La producción intelectual institucional se publica en el Repositorio \textbf{(Fig. \ref{fig:escudo_udea})}. Si la figura es de tu completa autoría, \textbf{NO} es necesario colocar la leyenda “Elaboración propia” \textbf{(Fig. \ref{fig:hiperbolica})}.
 
-\begin{figure}[!ht]
-    \begin{center}
-    \includegraphics[scale=0.5]{imagenes/grafica.png}\\
-    \end{center}
-    \caption{Función hiperbólica}
-    \label{fig:hiperbolica}
-    \textit{}
-\end{figure}
+%\begin{figure}[!ht]
+%    \begin{center}
+%    \includegraphics[scale=0.5]{imagenes/grafica.png}\\
+%    \end{center}
+%    \caption{Función hiperbólica}
+%    \label{fig:hiperbolica}
+%    \textit{}
+%\end{figure}
 
-\begin{table}%[!ht]
-\caption{\MakeUppercase{Problemas del milenio: la resolucion de uno de estos problemas se premian con un monto de us\$ 1 millon}}
-\begin{center}
-\begin{tabular}{  l c }
-    \hline
-    1 & El problema de $P$ frente a $NP$  \\ \hline
-    2 &  La conjetura de Hodge \\ \hline
-    3 &  La conjetura de Poincaré \\ \hline
-    4 &  La hipótesis de Riemann \\ \hline
-    5 &  Yang-Mills y el salto de masa ("mass gap")\\ \hline
-    6 &  Las ecuaciones de Navier-Stokes\\ \hline
-    7 &  Conjetura de Birch y Swinnerton-Dyer\\
-        \hline
-\end{tabular}
-\end{center}
-\label{table:prob_milenio}
-\end{table}
+%\begin{table}%[!ht]
+%\caption{\MakeUppercase{Problemas del milenio: la resolucion de uno de estos problemas se premian con un monto de us\$ 1 millon}}
+%\begin{center}
+%\begin{tabular}{  l c }
+%    \hline
+%    1 & El problema de $P$ frente a $NP$  \\ \hline
+%    2 &  La conjetura de Hodge \\ \hline
+%    3 &  La conjetura de Poincaré \\ \hline
+%    4 &  La hipótesis de Riemann \\ \hline
+%    5 &  Yang-Mills y el salto de masa ("mass gap")\\ \hline
+%    6 &  Las ecuaciones de Navier-Stokes\\ \hline
+%    7 &  Conjetura de Birch y Swinnerton-Dyer\\
+%        \hline
+%\end{tabular}
+%\end{center}
+%\label{table:prob_milenio}
+%\end{table}
 
 %\clearpage
 
