@@ -24,7 +24,11 @@
 \usepackage{tasks}
 \usepackage[verbose]{placeins}
 \usepackage{subcaption}
-
+\usepackage[
+starfontserif % comment for sans glyphs
+]{starfont}
+\DeclareSymbolFont{starfontsym}{OT1}{sts}{m}{n}
+\DeclareMathSymbol{\mathTerra}{\mathord}{starfontsym}{76}
 
 \usepackage[numbers]{natbib}
 
