@@ -474,7 +474,7 @@ La órbita baja (LEO, por sus siglas en inglés) es una región del espacio que 
 		\footnotesize{Nota. Fuente \cite{opc:LEO}}
 \end{figure}
 
-Los gradientes de gravedad son causados por la variación de la fuerza gravitacional a medida que el satélite se mueve a través de diferentes regiones de la gravedad terrestre. Estos gradientes pueden causar momentos de torsión no deseados en el satélite, lo que puede afectar su orientación y estabilidad \cite{Rycroft1997}.
+Los gradientes de gravedad son causados por la variación de la fuerza gravitacional a medida que el satélite se mueve a través de diferentes regiones del campo gravitacional. Esta variación decrece con el radio de la órbita a razón de $1/r^2$ por la ley de Newton. En este sentido, la parte baja de un satélite experimenta una atracción mayor que su parte superior, causando momentos de torsión no deseados y que tienden a alinear el eje del vehículo de menor inercia con el plano local vertial \cite{griffin2004space}, lo que puede afectar su orientación y estabilidad.
 
 Por otro lado, el arrastre aerodinámico es causado por la interacción del satélite con la atmósfera, que puede causar una desaceleración y una disminución de la altitud de la órbita. Por su parte, el campo geomagnético puede afectar la orientación y el control de los vehículos que usan magnetorquers.
 
@@ -882,6 +882,37 @@ Debido a que la inercia se midió a partir del centro de masa, los productos de 
 \subsection{MODELADO DE PERTURBACIONES}
 
 % Mencionar tipos de perturbaciones y el calculo de peor escenario para el Eyassat
+Tal como se mencionó en la sección de ambiente espacial en LEO, las cuatro fuentes principales de perturbaciones son: 
+\begin{itemize}
+	\item Gradiente gravitacional.
+	\item Aerodinámico. 
+	\item Radiación solar.
+	\item Campo geomagnético.
+\end{itemize}
+
+Dichas perturbaciones son representadas como fuerzas que actúan sobre el vehículo, sin embargo, cuando no actúan sobre el centro de masa, se producen torques externos que alteran la actitud y que deben ser tenidos en cuenta por el ADCS.
+
+Existen algunos autores \cite{zapf2006robust}\cite{Andresen2005} que modelan las perturbaciones en función de la posición y actitud del vehículo a lo largo de su órbita. Sin embargo, para este trabajo se hizo una simplificación similar a la abordada por \cite{tes:Sorolla2019}, en la cual se parte de cada una de las ecuaciones de perturbaciones y se evalúa el valor máximo de dicha perturbación. Como resultado, es posible sumar los torques externos como una constante, los cuales serán incluidos en la \textbf{eq. \ref{eq:modelo_dinamico}} del modelo dinámico.
+
+\subsubsection{Torque Gravitacional}
+
+
+The maximum Earth gravity gradient can be expressed as:
+
+%Tg = 3μ
+%2R3 |Iz − Iy| sin(2) (4.1)
+%where:
+%Tg: is the maximum gravity torque
+%μ: is the Earth’s gravitational parameter (3.986 1014 m3/s2)
+%R: is the orbit radius (6.370 + 600) 103 m
+%: is the maximum deviation of the orbit frame Z-axis (see 3.1.3)
+%Iz, Iy: are the moments of inertia about z and y-axis
+%The value of  represents the inclination in which the torque arm will act. Then
+%sin(2) = 1 is the worst-case value that it can take. Then solving 4.1 we get:
+%Tg = 3 × 3.986 1014
+%2 × (6.970 103)3 |0, 0609 − 0, 1052| × 1 (4.2)
+%Tg = 7, 8171 10−8 Nm
+
 
 \subsection{MODELO RUEDAS DE REACCIÓN}
 

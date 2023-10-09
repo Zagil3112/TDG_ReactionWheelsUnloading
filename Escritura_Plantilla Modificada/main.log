@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.10.8)  9 OCT 2023 01:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.10.8)  9 OCT 2023 02:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1193,4 +1193,123 @@ Package doc Info: Made | a short reference for \verb on input line 7.
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
 
-(C:\Users\Personal\AppData\Local\Programs\MiKTeX\tex/context/bas
+(C:\Users\Personal\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf
+.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count407
+\scratchdimen=\dimen330
+\scratchbox=\box128
+\nofMPsegments=\count408
+\nofMParguments=\count409
+\everyMPshowfont=\toks48
+\MPscratchCnt=\count410
+\MPscratchDim=\dimen331
+\MPnumerator=\count411
+\makeMPintoPDFobject=\count412
+\everyMPtoPDFconversion=\toks49
+)
+(C:\Users\Personal\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopd
+f-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\Personal\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sy
+s.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: longtable package is loaded.
+
+(C:\Users\Personal\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.st
+y
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+)
+Package caption Info: End \AtBeginDocument code.
+Package hyperref Info: Link coloring ON on input line 7.
+ (main.out) (main.out)
+\@outlinefile=\write5
+\openout5 = `main.out'.
+
+
+(C:\Users\Personal\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\t
+ranslations-basic-dictionary-spanish.trsl
+File: translations-basic-dictionary-spanish.trsl (spanish translation file `tra
+nslations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' f
+or `spanish'. on input line 7.
+ (main.hd)
+\HD@savedest@out=\write6
+\openout6 = `main.hd'.
+
+\openout2 = `seccion_0.aux'.
+
+ (seccion_0.tex
+<imagenes/escudo_udea.png, id=218, 234.8775pt x 112.92188pt>
+File: imagenes/escudo_udea.png Graphic file (type png)
+<use imagenes/escudo_udea.png>
+Package pdftex.def Info: imagenes/escudo_udea.png  used on input line 18.
+(pdftex.def)             Requested size: 169.11166pt x 81.30367pt.
+ [1
+Non-PDF special ignored!
+<special> header=pstricks.pro
+Non-PDF special ignored!
+<special> header=pst-algparser.pro
+Non-PDF special ignored!
+<special> header=pst-tools.pro
+Non-PDF special ignored!
+<special> header=pst-dots.pro
+Non-PDF special ignored!
+<special> header=pst-node.pro
+Non-PDF special ignored!
+<special> header=pst-3d.pro
+Non-PDF special ignored!
+<special> header=pst-math.pro
+Non-PDF special ignored!
+<special> header=pstricks-add.pro
+Non-PDF special ignored!
+<special> header=pst-grad.pro
+Non-PDF special ignored!
+<special> header=pst-coil.pro
+Non-PDF special ignored!
+<special> header=pst-text.pro
+
+Non-PDF special ignored!
+<special> ps: /pssetRGBcolor /setrgbcolor load def /pssetCMYKcolor /setcmyk...
+Non-PDF special ignored!
+<special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
+Non-PDF special ignored!
+<special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
+Non-PDF special ignored!
+<special> ps:0.8 setlinewidth 0 setgray
+Non-PDF special ignored!
+<special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
+Non-PDF special ignored!
+<special> ps:0.8 setlinewidth 0 setgray
+
+{C:/Users/Personal/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./imagene
+s/escudo_udea.png>]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
+
+
+(C:\Users\Personal\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 46.
+
+
+(C:\Users\Personal\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<imagenes/CC.jpg, id=227, 63.4005pt x 23.9805pt>
+File: imagenes/CC.jpg Graphic file (type jpg)
+<use imagenes/CC.jpg>
+Package pdftex.def Info: imagenes/CC.jpg  used on input line 60.
+(pdftex.def)             Requested size: 63.40033pt x 23.98042pt.
+<imagenes/CCima.png, id=228, 61.101pt x 24.966pt>
+File: imagenes/CCima.png Graphic file (type png)
+<use imagenes/CCima.png>
+Package pdftex.def Info: imagenes/CCima.png  used on input line 61.
+(pdftex.def)    
