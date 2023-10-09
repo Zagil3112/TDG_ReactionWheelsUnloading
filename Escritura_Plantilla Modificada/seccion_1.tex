@@ -813,51 +813,71 @@ Donde
 	\end{array}\right]^T
 	$
 \end{center}
+En la siguiente sección se profundizará en como determinar parámetros fundamentales del modelo dinámico, sintetizado en la eq. (\ref{eq:modelo_dinamico}), como la matriz de inercia del EyasSat, el modelo de los actuadores del ADCS y el cálculo de perturbaciones. 
+
 \newpage
 \subsection{PROPIEDADES INERCIALES}
 
 %Fotos y diseño CAD
 
-Con el fin de obtener la matriz de inercia se 
+Con el fin de obtener la matriz de inercia del EyasSat se realizó un CAD en el software Inventor\textsuperscript{\tiny\textregistered}. Para ello se desarmó el Cubesat con el fin de conocer las dimensiones de las tarjetas integradas donde se encuentran los diferentes subsistemas \textbf{(Fig. \ref{fig:eyassat_lab})}. De igual forma, como se evidencia en la \textbf{Fig. \ref{fig:mediciones}}, los pesos de cada tarjeta fueron registrados para realizar el cálculo de la matriz de inercia a partir de la distribución de masa de los componentes.
 
 
 \begin{figure}[h]
 	\centering
-	\subfloat[Gatito]{
+	\subfloat[Ensamble EyasSat.]{
 		\label{f:cube_armado}
 		\includegraphics[width=0.45\textwidth]{imagenes/modelo_dinamico/eyassat_armado.jpg}}
-	\subfloat[Tigre]{
+	\subfloat[Tarjetas integradas que componen los módulos del EyasSat. ]{
 		\label{f:cube_desarmado}
 		\includegraphics[width=0.382\textwidth]{imagenes/modelo_dinamico/capas.jpeg}}
 	
-	\caption{Múltiples imágenes}
-	\label{f:animales}
+	\caption{Cálculo de matriz de inercia.}
+	\label{fig:eyassat_lab}
 \end{figure}
+
+Como resultado de este ejercicio, se determinó que el EyasSat tiene una masa total de $3.705$ $kg$ y los valores de la diagonal principal de la matriz de inercia se calcularon como se evidencia en la \textbf{Tabla \ref{table:inercia_eyassat}}.
+\begin{table}[h]
+	\caption{\MakeUppercase{Inercias EyasSat}}
+	\begin{center}
+		\begin{tabular}{ c|c}
+			\hline
+			Componente & Inercia [$kg\cdot m^2$] \\ \hline
+			$I_{xx}$ &  $3.361\cdot10^{-2}$ \\ \hline
+			$I_{yy}$ &  $3.082\cdot10^{-2}$ \\ \hline
+			$I_{zz}$ &  $2.717\cdot10^{-2}$ \\ \hline
+	
+		\end{tabular}
+	\end{center}
+	\label{table:inercia_eyassat}
+\end{table}
+
+Debido a que la inercia se midió a partir del centro de masa, los productos de inercia pueden despreciarse. Finalmente, el CAD se incluyó en el entorno de 3D World Editor de Simulink\textsuperscript{\tiny\textregistered} como se aprecia en la \textbf{Fig. \ref{fig:escenario}}.
 
 
 \begin{figure}[h!]
 	\centering
-	\subfloat[Gatito]{
+	\subfloat[Ensamble del módulo ADCS.]{
 		\label{fig:medicion_capas}
-		\includegraphics[width=0.382\textwidth]{imagenes/modelo_dinamico/eyassat_medicion.jpg}}
-	\subfloat[Tigre]{
+		\includegraphics[width=0.31\textwidth]{imagenes/modelo_dinamico/eyassat_medicion.jpg}}
+	\subfloat[Pesaje de la placa inferior del módulo ADCS.]{
 		\label{fig:placa_cube}
-		\includegraphics[width=0.382\textwidth]{imagenes/modelo_dinamico/placa_medicion.jpg}}
+		\includegraphics[width=0.31\textwidth]{imagenes/modelo_dinamico/placa_medicion.jpg}}
 	
-	\caption{Múltiples imágenes}
+	\caption{Módulo ADCS del EyasSat}
 	\label{fig:mediciones}
 \end{figure}
 
 
-\begin{figure}[!h]
+\begin{figure}[h!]
 	\begin{center}
-		\includegraphics[scale=0.4]{imagenes/modelo_dinamico/escenario.PNG}\\
+		\includegraphics[scale=0.32]{imagenes/modelo_dinamico/escenario.PNG}\\
 	\end{center}
-	\caption{Simulink}
+	\caption{CAD del EyasSat en el entorno 3D World de Simulink.}
 	\label{fig:escenario}
 	\textit{}
 \end{figure}
-
+\newpage
 
 \subsection{MODELADO DE PERTURBACIONES}
 
@@ -870,7 +890,7 @@ Con el fin de obtener la matriz de inercia se
 \subsection{MODELO MAGNETORQUERS}
 
 % Ecuacion de torque
-
+% Mostrar como se calcularon el numero de vueltas
 
 \section{DISEÑO CONTROLADORES}
 \subsubsection{LINEALIZACIÓN Y ESPACIO DE ESTADOS}
