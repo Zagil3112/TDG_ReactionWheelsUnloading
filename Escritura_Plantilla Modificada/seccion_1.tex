@@ -478,6 +478,8 @@ Los gradientes de gravedad son causados por la variación de la fuerza de graved
 
 Por otro lado, el arrastre aerodinámico es causado por la interacción del satélite con la atmósfera, que puede causar una desaceleración y una disminución de la altitud de la órbita. Por su parte, el campo geomagnético puede afectar la orientación y el control de los vehículos que usan magnetorquers.
 
+%Torque magnético%
+
 Estos factores pueden afectar el sistema de control en LEO de diversas maneras. Por ejemplo, los gradientes de gravedad y el arrastre aerodinámico pueden causar momentos de torsión no deseados, lo que puede añade energía al sistema en forma de momento angular, afectando la precisión del sistema de control.
  
 Para mitigar estos efectos, se utilizan diversas técnicas de control, como el control de actitud, que utiliza dispositivos como los ya mencionados magnetorquers, ruedas de reacción y propulsores para controlar la orientación. También se pueden utilizar técnicas de control adaptativo y control predictivo para compensar los efectos del arrastre aerodinámico y los gradientes de gravedad \cite{Junkins1997}.
@@ -899,7 +901,7 @@ Existen algunos autores \cite{zapf2006robust}\cite{Andresen2005} que modelan las
 El torque gravitacional máximo puede ser expresado por:
 
 \begin{equation}
-T_g = \frac{3\mu_\mathTerra}{2R^3}\lvert I_z -Iy\rvert sin(2\theta)\label{eq:torque_grav}
+T_g = \frac{3\mu_\mathTerra}{2R^3}\lvert I_{zz} -I_{yy}\rvert sin(2\theta)\label{eq:torque_grav}
 \end{equation}
 
 \noindent Donde:\\
