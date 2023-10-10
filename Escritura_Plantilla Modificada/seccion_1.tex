@@ -840,11 +840,11 @@ Como resultado de este ejercicio, se determinó que el EyasSat tiene una masa to
 \begin{table}[h]
 	\caption{\MakeUppercase{Inercias EyasSat}}
 	\begin{center}
-		\begin{tabular}{ c|c}
-			\hline
+		\begin{tabular}{ c c}
+			
 			Componente & Inercia [$kg\cdot m^2$] \\ \hline
-			$I_{xx}$ &  $3.361\cdot10^{-2}$ \\ \hline
-			$I_{yy}$ &  $3.082\cdot10^{-2}$ \\ \hline
+			$I_{xx}$ &  $3.361\cdot10^{-2}$ \\ 
+			$I_{yy}$ &  $3.082\cdot10^{-2}$ \\ 
 			$I_{zz}$ &  $2.717\cdot10^{-2}$ \\ \hline
 	
 		\end{tabular}
@@ -949,7 +949,6 @@ $\rho$: es la densidad atmosférica\\
 $V$: Velocidad del satélite \\
 $C_d$: Coeficiente de arrastre $\approx$ 2.5.\\
 $A$: Área superficial de incidencia $= \left(0.192\,m\right)^2$.\\
-
 Para estimar la densidad del aire a 500 $km$ de altitud puede consultarse \cite{wertz2001mission} donde se obtiene que:
  $$\rho \approx 1.7\cdot10^{-11} kg/m^3$$
  Por otro lado, la velocidad lineal de un cuerpo que se encuentra en una órbita circular puede estimarse con la expresión:
@@ -966,11 +965,69 @@ $$
 $$		
 
  
-\subsubsection{Torque por Radiación Solar}
+\subsubsection{Torque por radiación solar}
+\hfill \break
+Para calcular esta perturbación se procede de manera similar respecto al torque aerodinámico. Primero se calcula la fuerza por radiación solar que se ejerce sobre el CubeSat, la cual viene dada por: 
+
+\begin{equation}\label{eq:fuerza_radiacion}
+	F_{SR} = -p_{SR}\,C_{R}\,A\,cos\,i	
+\end{equation}
+
+\noindent Donde:\\
+$p_{SR}$: es la densidad fuerza de presión solar por unidad de área, la cual se calcula usando la densidad de flujo solar y la velocidad de la luz ($c$) con las siguientes expresiones: 
+
+$$
+\begin{aligned}
+	& SF = 1.353\,W/m^2\\
+	& p_{SR} = \frac{SF}{c} = \frac{1353}{3\cdot10^{8}}=4.51\cdot10^{-6}\,N/m^2	
+\end{aligned}
+$$
+\\
+\noindent$C_{R}$: es el coeficiente de reflectividad, el cual también puede ser expresado como: $C_R = 1+q$. De \cite{mcclain2001fundamentals} se obtiene un valor tipico de $q =0.6$ para satélites.\\
+$i$: es el ángulo de incidencia del sol hacia la superficie del satélite.\\
+$A$: es el área superficial del satélite $= \left(0.192\,m\right)^2$.\\
+Dado que se busca obtener el peor escenario, el ángulo de incidencia será $i=0$, donde se maximiza la \textbf{eq. \ref{eq:fuerza_radiacion}}. En este sentido, una vez obtenida la ecuación de la fuerza de radiación, se calcula un torque a la misma distancia del centro de masas que en la sección anterior. Por lo tanto, se tiene que: 
+ $$
+ \begin{aligned}
+ 	& T_{SR} = F_{SR}\times\left(\overline{CP} - \overline{CG}\right)\\
+ 	& T_{SR} = p_{SR}\,C_{R}\,A\,cos\,i\times\left(0.05\right) \\
+ 	& T_{SR} =1.33\cdot10^{-8} Nm
+ \end{aligned}
+ $$
+%\newpage
+\subsubsection{Perturbaciones totales}
+\hfill \break
+Al recopilar y sumar las magnitudes de los torques de perturbación, como se evidencia en la \textbf{Tabla \ref{table:pertubaciones}}, se obtiene el torque total $T_{ext} = 2.78\cdot10^{-6}$. 
+
+\begin{table}[h]
+	\caption{\MakeUppercase{Torques externos de perturbación }}
+	\begin{center}
+		\begin{tabular}{ c c c}
+			
+			 &  \textbf{Perturbación} &  \textbf{Magnitud [Nm]}\\ \hline
+			$T_g$ &  Torque Gravitacional & $6.73\cdot10^{-9}$ \\ 
+			$T_m$ &  Torque Magnético & $4.91\cdot10^{-7}$ \\ 
+			$T_{aero}$ &  Torque Aerodinámico & $2.27\cdot10^{-6}$ \\ 
+			$T_{SR}$ &  Torque  Radiación Solar& $1.33\cdot10^{-8}$ \\ \hline
+			\mbox{\boldmath$T_{ext}$} &  \textbf{Total}& \mbox{\boldmath$2.78\cdot10^{-6}$} \\
+		\end{tabular}
+	\end{center}
+	\label{table:pertubaciones}
+\end{table}
+
+Dado que el problema solo contempla 1 grado de libertad en el eje Z, las perturbaciones se pueden escribir en notación vectorial como:
+
+\begin{equation}\label{eq:torquePerturbacionVec}
+	\mathbf{T_{ext}}=\left[\begin{array}{lll}
+		0 & 0 & T_{ext}
+	\end{array}\right]
+\end{equation}
 
 \subsection{MODELO RUEDAS DE REACCIÓN}
-
-% Funcion de transferencia
+% Circuito de armadura
+%Ecuacuiones 
+% Parametros de la referencia
+%Diagrama de bloques
 
 \subsection{MODELO MAGNETORQUERS}
 

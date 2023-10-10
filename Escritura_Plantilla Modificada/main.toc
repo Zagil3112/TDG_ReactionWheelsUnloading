@@ -36,25 +36,26 @@
 \contentsline {subsubsection}{\numberline {1}Torque Gravitacional}{43}{subsubsection.8.2.1}%
 \contentsline {subsubsection}{\numberline {2}Torque Magnético}{44}{subsubsection.8.2.2}%
 \contentsline {subsubsection}{\numberline {3}Torque Aerodinámico}{44}{subsubsection.8.2.3}%
-\contentsline {subsubsection}{\numberline {4}Torque por Radiación Solar}{45}{subsubsection.8.2.4}%
-\contentsline {subsection}{\numberline {C}MODELO RUEDAS DE REACCIÓN}{46}{subsection.8.3}%
-\contentsline {subsection}{\numberline {D}MODELO MAGNETORQUERS}{46}{subsection.8.4}%
-\contentsline {section}{\numberline {IX}DISEÑO CONTROLADORES}{46}{section.9}%
-\contentsline {subsubsection}{\numberline {1}LINEALIZACIÓN Y ESPACIO DE ESTADOS}{46}{subsubsection.9.0.1}%
-\contentsline {subsubsection}{\numberline {2}LQR}{46}{subsubsection.9.0.2}%
-\contentsline {subsubsection}{\numberline {3}PID}{46}{subsubsection.9.0.3}%
-\contentsline {subsubsection}{\numberline {4}ÍNDICES DE DESEMPEÑO}{46}{subsubsection.9.0.4}%
-\contentsline {section}{\numberline {X}ANÁLISIS DE ÓRBITAS}{46}{section.10}%
-\contentsline {subsection}{\numberline {A}Modelo de Campo Magnético}{46}{subsection.10.1}%
-\contentsline {section}{\numberline {XI}RESULTADOS}{47}{section.11}%
-\contentsline {subsubsection}{\numberline {1}Perfil de misión 1}{47}{subsubsection.11.0.1}%
-\contentsline {subsubsection}{\numberline {2}Perfil de misión 2}{47}{subsubsection.11.0.2}%
-\contentsline {subsubsection}{\numberline {3}Perfil de misión 3}{47}{subsubsection.11.0.3}%
-\contentsline {section}{\numberline {XII}DISCUSIÓN}{51}{section.12}%
-\contentsline {section}{\numberline {XIII}CONCLUSIONES}{52}{section.13}%
-\contentsline {section}{\numberline {XIV}RECOMENDACIONES}{53}{section.14}%
-\contentsline {section}{\numberline {XIV} REFERENCIAS}{54}{section.14}%
-\contentsline {subsection}{\numberline {} Anexo A. Autoarchivo en Repositorio y documentos de interés}{59}{section.14}%
-\contentsline {subsection}{\numberline {} Anexo B. Recortar y abreviar direcciones web largas}{60}{section.14}%
-\contentsline {subsection}{\numberline {} Anexo C. Incluir imágenes}{60}{section.14}%
+\contentsline {subsubsection}{\numberline {4}Torque por radiación solar}{45}{subsubsection.8.2.4}%
+\contentsline {subsubsection}{\numberline {5}Perturbaciones totales}{46}{subsubsection.8.2.5}%
+\contentsline {subsection}{\numberline {C}MODELO RUEDAS DE REACCIÓN}{47}{subsection.8.3}%
+\contentsline {subsection}{\numberline {D}MODELO MAGNETORQUERS}{47}{subsection.8.4}%
+\contentsline {section}{\numberline {IX}DISEÑO CONTROLADORES}{47}{section.9}%
+\contentsline {subsubsection}{\numberline {1}LINEALIZACIÓN Y ESPACIO DE ESTADOS}{47}{subsubsection.9.0.1}%
+\contentsline {subsubsection}{\numberline {2}LQR}{47}{subsubsection.9.0.2}%
+\contentsline {subsubsection}{\numberline {3}PID}{47}{subsubsection.9.0.3}%
+\contentsline {subsubsection}{\numberline {4}ÍNDICES DE DESEMPEÑO}{47}{subsubsection.9.0.4}%
+\contentsline {section}{\numberline {X}ANÁLISIS DE ÓRBITAS}{47}{section.10}%
+\contentsline {subsection}{\numberline {A}Modelo de Campo Magnético}{47}{subsection.10.1}%
+\contentsline {section}{\numberline {XI}RESULTADOS}{48}{section.11}%
+\contentsline {subsubsection}{\numberline {1}Perfil de misión 1}{48}{subsubsection.11.0.1}%
+\contentsline {subsubsection}{\numberline {2}Perfil de misión 2}{48}{subsubsection.11.0.2}%
+\contentsline {subsubsection}{\numberline {3}Perfil de misión 3}{48}{subsubsection.11.0.3}%
+\contentsline {section}{\numberline {XII}DISCUSIÓN}{53}{section.12}%
+\contentsline {section}{\numberline {XIII}CONCLUSIONES}{54}{section.13}%
+\contentsline {section}{\numberline {XIV}RECOMENDACIONES}{55}{section.14}%
+\contentsline {section}{\numberline {XIV} REFERENCIAS}{56}{section.14}%
+\contentsline {subsection}{\numberline {} Anexo A. Autoarchivo en Repositorio y documentos de interés}{61}{section.14}%
+\contentsline {subsection}{\numberline {} Anexo B. Recortar y abreviar direcciones web largas}{62}{section.14}%
+\contentsline {subsection}{\numberline {} Anexo C. Incluir imágenes}{62}{section.14}%
 \contentsfinish 
