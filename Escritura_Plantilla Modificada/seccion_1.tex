@@ -892,14 +892,14 @@ Tal como se mencionó en la sección de ambiente espacial en LEO, las cuatro fue
 
 Dichas perturbaciones son representadas como fuerzas que actúan sobre el vehículo, sin embargo, cuando no actúan sobre el centro de masa, se producen torques externos que alteran la actitud y que deben ser tenidos en cuenta por el ADCS.
 
-Existen algunos autores \cite{zapf2006robust}\cite{Andresen2005} que modelan las perturbaciones en función de la posición y actitud del vehículo a lo largo de su órbita. Sin embargo, para este trabajo se hizo una simplificación similar a la propuesta por \cite{tes:Sorolla2019}, en la cual se parte de cada una de las ecuaciones de perturbaciones, extraídas de \cite{hughes2012spacecraft}, donde se evalúa el valor máximo de dicha perturbación. Como resultado, es posible sumar los torques externos como una constante, los cuales serán incluidos en la \textbf{eq. \ref{eq:modelo_dinamico}} del modelo dinámico.
+Existen algunos autores \cite{zapf2006robust}\cite{Andresen2005} que modelan las perturbaciones en función de la posición y actitud del vehículo a lo largo de su órbita. Sin embargo, para este trabajo se hizo una simplificación similar a la propuesta por P.S Bayod \cite{tes:Sorolla2019}, en la cual se parte de cada una de las ecuaciones de perturbaciones, extraídas de \cite{hughes2012spacecraft}, donde se evalúa el valor máximo de dicha perturbación. Como resultado, es posible sumar los torques externos como una constante, los cuales serán incluidos en la \textbf{eq. \ref{eq:modelo_dinamico}} del modelo dinámico.
 
 \subsubsection{Torque Gravitacional}
 \hfill \break
 El torque gravitacional máximo puede ser expresado por:
 
 \begin{equation}
-T_g = \frac{3\mu_\mathTerra}{2R^3}\lvert I_{zz} -I_{yy}\rvert sin(2\theta)\label{eq:torque_grav}
+T_g = \frac{3\mu_\mathTerra}{2R^3}\,\lvert I_{zz} -I_{yy}\,\rvert sin(2\theta)\label{eq:torque_grav}
 \end{equation}
 
 \noindent Donde:\\
@@ -947,7 +947,7 @@ La fuerza aerodinámica que experimenta el EyasSat, en una órbita determinada, 
 \noindent Donde:\\
 $\rho$: es la densidad atmosférica\\
 $V$: Velocidad del satélite \\
-$C_d$: Coeficiente de drag $\approx$ 2.5.\\
+$C_d$: Coeficiente de arrastre $\approx$ 2.5.\\
 $A$: Área superficial de incidencia $= \left(0.192\,m\right)^2$.\\
 
 Para estimar la densidad del aire a 500 $km$ de altitud puede consultarse \cite{wertz2001mission} donde se obtiene que:

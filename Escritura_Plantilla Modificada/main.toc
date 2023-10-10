@@ -36,10 +36,11 @@
 \contentsline {subsubsection}{\numberline {1}Torque Gravitacional}{43}{subsubsection.8.2.1}%
 \contentsline {subsubsection}{\numberline {2}Torque Magnético}{44}{subsubsection.8.2.2}%
 \contentsline {subsubsection}{\numberline {3}Torque Aerodinámico}{44}{subsubsection.8.2.3}%
-\contentsline {subsection}{\numberline {C}MODELO RUEDAS DE REACCIÓN}{45}{subsection.8.3}%
-\contentsline {subsection}{\numberline {D}MODELO MAGNETORQUERS}{45}{subsection.8.4}%
-\contentsline {section}{\numberline {IX}DISEÑO CONTROLADORES}{45}{section.9}%
-\contentsline {subsubsection}{\numberline {1}LINEALIZACIÓN Y ESPACIO DE ESTADOS}{45}{subsubsection.9.0.1}%
+\contentsline {subsubsection}{\numberline {4}Torque por Radiación Solar}{45}{subsubsection.8.2.4}%
+\contentsline {subsection}{\numberline {C}MODELO RUEDAS DE REACCIÓN}{46}{subsection.8.3}%
+\contentsline {subsection}{\numberline {D}MODELO MAGNETORQUERS}{46}{subsection.8.4}%
+\contentsline {section}{\numberline {IX}DISEÑO CONTROLADORES}{46}{section.9}%
+\contentsline {subsubsection}{\numberline {1}LINEALIZACIÓN Y ESPACIO DE ESTADOS}{46}{subsubsection.9.0.1}%
 \contentsline {subsubsection}{\numberline {2}LQR}{46}{subsubsection.9.0.2}%
 \contentsline {subsubsection}{\numberline {3}PID}{46}{subsubsection.9.0.3}%
 \contentsline {subsubsection}{\numberline {4}ÍNDICES DE DESEMPEÑO}{46}{subsubsection.9.0.4}%
