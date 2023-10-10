@@ -476,7 +476,8 @@ La órbita baja (LEO, por sus siglas en inglés) es una región del espacio que 
 
 Los gradientes de gravedad son causados por la variación de la fuerza de gravedad a medida que el satélite se mueve a través de diferentes regiones del campo gravitacional. Esta variación decrece con el radio de la órbita a razón de $1/r^2$ por la ley de Newton. En este sentido, la parte baja de un satélite experimenta una atracción mayor que su parte superior, causando momentos de torsión no deseados y que tienden a alinear el eje del vehículo de menor inercia con el plano local vertial \cite{griffin2004space}, lo que puede afectar su orientación y estabilidad.
 
-Por otro lado, el arrastre aerodinámico es causado por la interacción del satélite con la atmósfera, que puede causar una desaceleración y una disminución de la altitud de la órbita. Por su parte, el campo geomagnético puede afectar la orientación y el control de los vehículos que usan magnetorquers.
+Por otro lado, el arrastre aerodinámico es causado por la interacción del satélite con la alta atmósfera, este arrastre genera un torque debido al desfase entre el centro de masa y el centro de presión del CubeSat. Por su parte, el campo geomagnético puede afectar la orientación y el control de los vehículos debido a los torques magnéticos. Estos últimos se aparecen gracias a los lazos de corriente que generan dipolos y magnetizaciones residuales sobre el satélite\cite{Giesselman2006}.
+
 
 %Torque magnético%
 
@@ -913,14 +914,30 @@ $Izz, Iyy$: son los momentos de inercia sobre los ejes $Z_b$ e $Y_b$.\\
 
 \noindent Tomando el valor máximo donde el torque actúa con un brazo a $45°$, entonces 
 $$sin(2\theta) = 1$$
-Por lo tanto, $T_g = 6.737$ $10^{-9} Nm$
+Por lo tanto, reemplazando los valores se obtiene que: 
+$$T_g = 6.737\;10^{-9} Nm$$
 
 \subsubsection{Torque Magnético}
-
+\hfill \break
+Similarmente a como lo expresa la \textbf{eq. \ref{eq:torque_mgt}}, el torque magnético generado por el satélite está dado por:
 $$
-\vec{\tau} = \vec{M}\times\vec{B}	
+T_m = \vec{m_{sat}}\times\vec{B}	
 $$
 
+\noindent Donde:\\
+$\vec{m_{sat}}$ : es el dipolo residual del satélite.\\
+$\vec{B}$: es la estimación del campo magnético terrestre para una órbita circular.\\
+
+Debido a que el dipolo residual solo puede ser determinado experimentalmente, se tomará un valor de referencia de $0.01\,A $ $m^2$ usado en \cite{Giesselman2006}, donde desarrollan el cálculo  para un picosatélite similar al EyasSat.\\
+Adicionalmente, el campo geomagnético puede ser estimado por:
+\begin{equation}
+	\vec{B} = \frac{2M}{R^3}\label{eq:campoMagnetico}
+\end{equation}
+Donde $M$ es el momento magnético terrestre ($M = 7.96\:10^{15}\:tesla\:m^3$) y el radio de la órbita $R$ es igual a $(6370 + 500)$ $10^3$ $m$. como en el cálculo anterior. Por consiguiente, el torque magnético es igual a:
+$$T_m = 4.91\;10^{-7} Nm$$
+	
+
+\subsubsection{Torque Aerodinámico}
 
 \subsection{MODELO RUEDAS DE REACCIÓN}
 

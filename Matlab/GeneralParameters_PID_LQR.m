@@ -42,7 +42,7 @@ FSR = pSR*(1+0.6)*(0.192*0.192);
 
 %% Torques Externos
 T_grav = (3*mu_earth/(2*R_earth^3))*abs(I(3,3)-I(2,2)); % Gradiente gravitacional [Nm]
-T_mag = (0.01)*B; % Torque magnético [Nm]
+T_mag = (0.01)*B_earth; % Torque magnético [Nm]
 T_aero =F_aero*0.05; 
 T_solar = FSR*0.05;
 % T_ext = 6.850e-7;% Nm

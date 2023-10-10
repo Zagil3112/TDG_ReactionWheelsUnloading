@@ -48,48 +48,49 @@ Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
 Reallocating 'global_strs' (item size: 1) to 4000000 items.
 Warning--empty journal in Venturini2018
 Warning--missing publisher in Kaplan1976
+Warning--empty journal in Giesselman2006
 Warning--empty journal in zapf2006robust
 
 Done.
-You've used 28 entries,
+You've used 29 entries,
             4853 wiz_defined-function locations,
-            1129 strings with 13625 characters,
-and the built_in function-call counts, 16998 in all, are:
-= -- 1448
-> -- 520
-< -- 50
-+ -- 249
-- -- 134
-* -- 909
-:= -- 2830
-add.period$ -- 55
-call.type$ -- 28
-change.case$ -- 32
-chr.to.int$ -- 97
-cite$ -- 31
-duplicate$ -- 1189
-empty$ -- 1387
-format.name$ -- 186
-if$ -- 3717
+            1135 strings with 13827 characters,
+and the built_in function-call counts, 17711 in all, are:
+= -- 1513
+> -- 532
+< -- 57
++ -- 257
+- -- 136
+* -- 941
+:= -- 2942
+add.period$ -- 57
+call.type$ -- 29
+change.case$ -- 33
+chr.to.int$ -- 113
+cite$ -- 33
+duplicate$ -- 1238
+empty$ -- 1439
+format.name$ -- 189
+if$ -- 3879
 int.to.chr$ -- 1
-int.to.str$ -- 29
-missing$ -- 222
-newline$ -- 126
-num.names$ -- 84
-pop$ -- 673
+int.to.str$ -- 30
+missing$ -- 228
+newline$ -- 129
+num.names$ -- 87
+pop$ -- 690
 preamble$ -- 1
-purify$ -- 28
+purify$ -- 29
 quote$ -- 2
-skip$ -- 1257
+skip$ -- 1311
 stack$ -- 0
-substring$ -- 244
-swap$ -- 692
-text.length$ -- 8
+substring$ -- 280
+swap$ -- 725
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 372
-warning$ -- 3
-while$ -- 65
+type$ -- 388
+warning$ -- 4
+while$ -- 70
 width$ -- 0
-write$ -- 323
+write$ -- 333
 (There was 1 error message)
