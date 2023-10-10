@@ -474,9 +474,9 @@ La órbita baja (LEO, por sus siglas en inglés) es una región del espacio que 
 		\footnotesize{Nota. Fuente \cite{opc:LEO}}
 \end{figure}
 
-Los gradientes de gravedad son causados por la variación de la fuerza de gravedad a medida que el satélite se mueve a través de diferentes regiones del campo gravitacional. Esta variación decrece con el radio de la órbita a razón de $1/r^2$ por la ley de Newton. En este sentido, la parte baja de un satélite experimenta una atracción mayor que su parte superior, causando momentos de torsión no deseados y que tienden a alinear el eje del vehículo de menor inercia con el plano local vertial \cite{griffin2004space}, lo que puede afectar su orientación y estabilidad.
+Los gradientes de gravedad son causados por la variación de la fuerza de gravedad a medida que el satélite se mueve a través de diferentes regiones del campo gravitacional. Esta variación decrece con el radio de la órbita a razón de $1/r^2$ por la ley de Newton. En este sentido, la parte baja de un satélite experimenta una atracción mayor que su parte superior, causando momentos de torsión no deseados y que tienden a alinear el eje del vehículo de menor inercia con el plano local vertical (LVLH) \cite{griffin2004space}, lo que puede afectar su orientación y estabilidad.
 
-Por otro lado, el arrastre aerodinámico es causado por la interacción del satélite con la alta atmósfera, este arrastre genera un torque debido al desfase entre el centro de masa y el centro de presión del CubeSat. Por su parte, el campo geomagnético puede afectar la orientación y el control de los vehículos debido a los torques magnéticos. Estos últimos se aparecen gracias a los lazos de corriente que generan dipolos y magnetizaciones residuales sobre el satélite\cite{Giesselman2006}.
+Por otro lado, el arrastre aerodinámico es causado por la interacción del satélite con la alta atmósfera, este arrastre genera un torque debido al desfase entre el centro de masa y el centro de presión del CubeSat. Por su parte, el campo geomagnético puede afectar la orientación y el control de los vehículos debido a los torques magnéticos. Estos últimos aparecen gracias a los lazos de corriente que generan dipolos y magnetizaciones residuales sobre el satélite\cite{Giesselman2006}.
 
 
 %Torque magnético%
@@ -895,7 +895,7 @@ Tal como se mencionó en la sección de ambiente espacial en LEO, las cuatro fue
 
 Dichas perturbaciones son representadas como fuerzas que actúan sobre el vehículo, sin embargo, cuando no actúan sobre el centro de masa, se producen torques externos que alteran la actitud y que deben ser tenidos en cuenta por el ADCS.
 
-Existen algunos autores \cite{zapf2006robust}\cite{Andresen2005} que modelan las perturbaciones en función de la posición y actitud del vehículo a lo largo de su órbita. Sin embargo, para este trabajo se hizo una simplificación similar a la propuesta por \cite{tes:Sorolla2019}, en la cual se parte de cada una de las ecuaciones de perturbaciones \cite{hughes2012spacecraft} y se evalúa el valor máximo de dicha perturbación. Como resultado, es posible sumar los torques externos como una constante, los cuales serán incluidos en la \textbf{eq. \ref{eq:modelo_dinamico}} del modelo dinámico.
+Existen algunos autores \cite{zapf2006robust}\cite{Andresen2005} que modelan las perturbaciones en función de la posición y actitud del vehículo a lo largo de su órbita. Sin embargo, para este trabajo se hizo una simplificación similar a la propuesta por \cite{tes:Sorolla2019}, en la cual se parte de cada una de las ecuaciones de perturbaciones, extraídas de \cite{hughes2012spacecraft}, donde se evalúa el valor máximo de dicha perturbación. Como resultado, es posible sumar los torques externos como una constante, los cuales serán incluidos en la \textbf{eq. \ref{eq:modelo_dinamico}} del modelo dinámico.
 
 \subsubsection{Torque Gravitacional}
 \hfill \break
@@ -915,14 +915,16 @@ $Izz, Iyy$: son los momentos de inercia sobre los ejes $Z_b$ e $Y_b$.\\
 \noindent Tomando el valor máximo donde el torque actúa con un brazo a $45°$, entonces 
 $$sin(2\theta) = 1$$
 Por lo tanto, reemplazando los valores se obtiene que: 
-$$T_g = 6.737\;10^{-9} Nm$$
+$$T_g = 6.737\cdot10^{-9} Nm$$
 
 \subsubsection{Torque Magnético}
 \hfill \break
 Similarmente a como lo expresa la \textbf{eq. \ref{eq:torque_mgt}}, el torque magnético generado por el satélite está dado por:
-$$
-T_m = \vec{m_{sat}}\times\vec{B}	
-$$
+
+\begin{equation}
+	T_m = \vec{m_{sat}}\times\vec{B}\label{eq:torque_mag}	
+\end{equation}
+
 
 \noindent Donde:\\
 $\vec{m_{sat}}$ : es el dipolo residual del satélite.\\
@@ -933,11 +935,41 @@ Adicionalmente, el campo geomagnético puede ser estimado por:
 \begin{equation}
 	\vec{B} = \frac{2M}{R^3}\label{eq:campoMagnetico}
 \end{equation}
-Donde $M$ es el momento magnético terrestre ($M = 7.96\:10^{15}\:tesla\:m^3$) y el radio de la órbita $R$ es igual a $(6370 + 500)$ $10^3$ $m$. como en el cálculo anterior. Por consiguiente, el torque magnético es igual a:
-$$T_m = 4.91\;10^{-7} Nm$$
+Donde $M$ es el momento magnético terrestre ($M = 7.96\cdot10^{15}\:tesla\:m^3$) y el radio de la órbita $R$ es igual a $(6370 + 500)$ $10^3$ $m$. como en el cálculo anterior. Por consiguiente, el torque magnético es igual a:
+$$T_m = 4.91\cdot10^{-7} Nm$$
 	
 
 \subsubsection{Torque Aerodinámico}
+\hfill \break
+La fuerza aerodinámica que experimenta el EyasSat, en una órbita determinada, debido a su interacción con la alta atmósfera puede ser expresada por:
+
+\begin{equation}\label{eq:fuerza_aero}
+	F_{aero} = \frac{1}{2}\rho\,V^2\,C_{d}\,A
+\end{equation}
+
+\noindent Donde:\\
+$\rho$: es la densidad atmosférica\\
+$V$: Velocidad del satélite \\
+$C_d$: Coeficiente de drag $\approx$ 2.5.\\
+$A$: Área superficial de incidencia $= \left(0.192\,m\right)^2$.\\
+
+Para estimar la densidad del aire a 500 $km$ de altitud puede consultarse \cite{wertz2001mission} donde se obtiene que:
+ $$\rho \approx 1.7\cdot10^{-11} kg/m^3$$
+ Por otro lado, la velocidad lineal de un cuerpo que se encuentra en una órbita circular puede estimarse con la expresión:
+ $$ V = \sqrt{\frac{GM}{R}} = \sqrt{\frac{6.67\,10^{-6}\times\,5.97\,10^{24}}{6370\,10^3 +500\,10^3}} =7613.27\,m/s $$
+
+Finalmente, dado que la fuerza aerodinámica se aplica sobre el centro de presión, y éste tiene un desfase respecto al centro de masa, se genera un torque con un brazo equivalente a la distancia entre el C.G y el C.P. Por lo tanto, se tiene la expresión:
+
+$$
+\begin{aligned}
+		& T_{aero} = F_{aero}\times\left(\overline{CP} - \overline{CG}\right)\\
+		& T_{aero} = \frac{1}{2}\rho\,V^2\,C_{d}\,A\times\left(0.05\right) \\
+		& T_{aero} =2.27\cdot10^{-6} Nm
+\end{aligned}
+$$		
+
+ 
+
 
 \subsection{MODELO RUEDAS DE REACCIÓN}
 

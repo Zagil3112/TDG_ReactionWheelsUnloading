@@ -52,45 +52,45 @@ Warning--empty journal in Giesselman2006
 Warning--empty journal in zapf2006robust
 
 Done.
-You've used 29 entries,
+You've used 30 entries,
             4853 wiz_defined-function locations,
-            1135 strings with 13827 characters,
-and the built_in function-call counts, 17711 in all, are:
-= -- 1513
-> -- 532
+            1141 strings with 14047 characters,
+and the built_in function-call counts, 18383 in all, are:
+= -- 1564
+> -- 562
 < -- 57
-+ -- 257
-- -- 136
-* -- 941
-:= -- 2942
-add.period$ -- 57
-call.type$ -- 29
-change.case$ -- 33
-chr.to.int$ -- 113
-cite$ -- 33
-duplicate$ -- 1238
-empty$ -- 1439
-format.name$ -- 189
-if$ -- 3879
++ -- 270
+- -- 144
+* -- 987
+:= -- 3060
+add.period$ -- 59
+call.type$ -- 30
+change.case$ -- 34
+chr.to.int$ -- 114
+cite$ -- 34
+duplicate$ -- 1280
+empty$ -- 1497
+format.name$ -- 199
+if$ -- 4025
 int.to.chr$ -- 1
-int.to.str$ -- 30
-missing$ -- 228
-newline$ -- 129
-num.names$ -- 87
-pop$ -- 690
+int.to.str$ -- 31
+missing$ -- 237
+newline$ -- 134
+num.names$ -- 90
+pop$ -- 717
 preamble$ -- 1
-purify$ -- 29
+purify$ -- 30
 quote$ -- 2
-skip$ -- 1311
+skip$ -- 1359
 stack$ -- 0
-substring$ -- 280
-swap$ -- 725
+substring$ -- 282
+swap$ -- 750
 text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 388
+type$ -- 396
 warning$ -- 4
-while$ -- 70
+while$ -- 72
 width$ -- 0
-write$ -- 333
+write$ -- 346
 (There was 1 error message)
