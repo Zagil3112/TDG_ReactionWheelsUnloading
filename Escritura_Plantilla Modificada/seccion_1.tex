@@ -771,10 +771,7 @@ $\mathbf{h_w}=\left[\begin{array}{l}h_x \\ h_y \\ h_z\end{array}\right]:$ Vector
 \end{gather}
 
 
-
-
-Finalmente, usando las componentes del vector de velocidades angulares es posible determinar la actitud del CubeSat. La interpretación de los ángulos de Euler es más intuitiva, pero para evitar que surjan singularidades, los cuaterniones
-resultan mas convenientes para los cálculos de simulación \cite{Steyn2011}. La ecuación diferencial cinemática de los cuaterniones está descrita en la  \textbf{eq.(\ref{eq:quaterniones})}: 
+Finalmente, usando las componentes del vector de velocidades angulares es posible determinar la actitud del CubeSat. La interpretación de los ángulos de Euler es más intuitiva, pero para evitar que surjan singularidades, los cuaterniones resultan mas convenientes para los cálculos de simulación \cite{Steyn2011}. La ecuación diferencial cinemática de los cuaterniones está descrita en la  \textbf{eq.(\ref{eq:quaterniones})}: 
 
 \begin{equation}\label{eq:quaterniones}
 	\dot{\mathbf{q}}=\frac{1}{2} \Omega \mathbf{q} \\
@@ -1099,8 +1096,7 @@ Debido a que los manuales técnicos del EyasSat no especifican el modelo preciso
 	\footnotesize{Nota. Fuente \cite{maxon2023}}
 \end{figure}
 
-
-\begin{table}[h]
+\begin{table}[!ht]
 	\caption{\MakeUppercase{Parámetros electro-mecánicos RW }}
 	\begin{center}
 		\begin{tabular}{ c c c}
@@ -1119,21 +1115,43 @@ Debido a que los manuales técnicos del EyasSat no especifican el modelo preciso
 \end{table}
 
 \subsection{MODELO MAGNETORQUERS}
-
 % Ecuacion/Diagrama de torque
-Tomando la \textbf{eq (\ref{eq:torque_mgt})} 
+Recordando la \textbf{eq (\ref{eq:torque_mgt})}, donde se tiene que $\vec{\tau} =\vec{M}\times\vec{B}$, el momento dipolar $\vec{M}$ puede expresarse como:
 
-$$
-	\vec{\tau} = \vec{M}\times\vec{B}	
-$$
+\begin{gather}
+	\vec{M} = nIA\hat{n}\label{eq:momento_dipolar}\\[10pt]
+	\vec{\tau} = nIA\,\hat{n}\times\vec{B}\label{eq:torque_mgt_completa}
+\end{gather}
+
+\noindent Donde:\\
+$n$: es el número de vueltas de la bobina.\\
+$I$: es la corriente que pasa por el magnetorquer.\\
+$A$: es el área del magnetorquer en la dirección normal $\hat{n}$.
+
+Tal como se muestra en la \textbf{Fig. \ref{fig:magnetorquers}a} , el momento dipolar tratará de alinearse con la resultante del campo magnético debido al torque generado, el cual es proporcional a la corriente, al numero de vueltas y al área como lo indica la \textbf{eq (\ref{eq:torque_mgt_completa})}.
+
+La \textbf{Fig. \ref{fig:magnetorquers}b} muestra los actuadores reales del EyasSat, los cuales están dispuestos en los ejes $X$ e $Y$. Con el fin de determinar las propiedades mencionadas anteriormente, se realizaron mediciones de inductancia y resistencia como se muestra en la \textbf{Fig. \ref{fig:medicionH}}
+
+\begin{figure}[h!]
+	\centering
+	\subfloat[Principio de funcionamiento de los magnetorquers.]{
+		\label{fig:mgt_wp}
+		\includegraphics[width=0.5\textwidth]{imagenes/modelo_dinamico/magnetorquer.png}}
+	\subfloat[Módulo de magnetorquers del EyasSat.]{
+		\label{fig:mgt_real}
+		\includegraphics[width=0.31\textwidth]{imagenes/modelo_dinamico/magnetorquers.jpg}}
+	
+	\caption{Magnetorquers}
+	\label{fig:magnetorquers}
+\end{figure}
 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[scale=0.45]{imagenes/modelo_dinamico/magnetorquer.png}\\
+		\includegraphics[scale=0.07]{imagenes/modelo_dinamico/medicion_mgt.jpg}\\
 	\end{center}
-	\caption{Funcionamiento Magnetorquers.}
-	\label{fig:mgt}
-	\footnotesize{Nota. Fuente \cite{tes:Niccolo}}
+	\caption{Medición de inductancia de magnetorquers.}
+	\label{fig:medicionH}
+	%	\footnotesize{Nota. Fuente \cite{maxon2023}}
 \end{figure}
 
 % Mostrar como se calcularon el numero de vueltas
