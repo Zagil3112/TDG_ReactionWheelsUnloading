@@ -42,7 +42,7 @@
 \contentsline {subsection}{\numberline {D}MODELO MAGNETORQUERS}{52}{subsection.8.4}%
 \contentsline {section}{\numberline {IX}DISEÑO CONTROLADORES}{52}{section.9}%
 \contentsline {subsubsection}{\numberline {1}LINEALIZACIÓN Y ESPACIO DE ESTADOS}{52}{subsubsection.9.0.1}%
-\contentsline {subsubsection}{\numberline {2}LQR}{52}{subsubsection.9.0.2}%
+\contentsline {subsubsection}{\numberline {2}LQR}{53}{subsubsection.9.0.2}%
 \contentsline {subsubsection}{\numberline {3}PID}{53}{subsubsection.9.0.3}%
 \contentsline {subsubsection}{\numberline {4}ÍNDICES DE DESEMPEÑO}{53}{subsubsection.9.0.4}%
 \contentsline {section}{\numberline {X}ANÁLISIS DE ÓRBITAS}{53}{section.10}%

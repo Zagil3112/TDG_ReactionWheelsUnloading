@@ -1092,7 +1092,7 @@ Debido a que los manuales técnicos del EyasSat no especifican el modelo preciso
 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[scale=0.5]{imagenes/modelo_dinamico/motorRW.jpg}\\
+		\includegraphics[scale=0.35]{imagenes/modelo_dinamico/motorRW.jpg}\\
 	\end{center}
 	\caption{Motor sin escobillas A-max 22.}
 	\label{fig:motorRW}
@@ -1106,12 +1106,13 @@ Debido a que los manuales técnicos del EyasSat no especifican el modelo preciso
 		\begin{tabular}{ c c c}
 			
 			&  \textbf{Parámetro} &  \textbf{Valor}\\ \hline
-			$R$ &  Inductancia & $4.91\cdot10^{-7}$ \\ 
-			$K_t$ &  Constante de torque & $2.27\cdot10^{-6}$ \\ 
-			$K_e$ &  Constante de campo& $1.33\cdot10^{-8}$ \\ 
-			$B$ &  Coeficiente de fricción& $1.33\cdot10^{-8}$ \\ 
-			$T_{max}$ & Torque máximo & $1.33\cdot10^{-8}$ \\
-			$\omega_{max}$ & RPM máximas & $1.33\cdot10^{-8}$ \\ \hline
+			$R$ &  Inductancia $(mH)$ & 0.222\\ 
+			$K_t$ &  Constante de torque $(Nm/A)$ & $8.55\cdot10^{-3}$ \\ 
+			$K_e$ &  Constante de campo $(V/rad/s)$& $(1/1120)\cdot(60/2\pi)$ \\ 
+			$B$ &  Coeficiente de fricción $(Nm/rad/s)$& $(1/438)\cdot(60/2\pi)\cdot10^{-3}$ \\
+			$J$ &  Inercia total $(kg\,m^2)$& $7.157\cdot10^{-5}$ \\  
+			$T_{max}$ & Torque máximo $(Nm)$ & $6.27\cdot10^{-3}$ \\
+			$\omega_{max}$ & RPM máximas & $3940$ \\ \hline
 		\end{tabular}
 	\end{center}
 	\label{table:motorRW}
@@ -1120,9 +1121,32 @@ Debido a que los manuales técnicos del EyasSat no especifican el modelo preciso
 \subsection{MODELO MAGNETORQUERS}
 
 % Ecuacion/Diagrama de torque
+Tomando la \textbf{eq (\ref{eq:torque_mgt})} 
+
+$$
+	\vec{\tau} = \vec{M}\times\vec{B}	
+$$
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.45]{imagenes/modelo_dinamico/magnetorquer.png}\\
+	\end{center}
+	\caption{Funcionamiento Magnetorquers.}
+	\label{fig:mgt}
+	\footnotesize{Nota. Fuente \cite{tes:Niccolo}}
+\end{figure}
+
 % Mostrar como se calcularon el numero de vueltas
+
+
+
 % Parametros de referencia
+
+
+
 % 	Imagen de toma de resistencia
+
+
 % Diagrama de bloques
 
 \begin{figure}[h]
@@ -1133,6 +1157,7 @@ Debido a que los manuales técnicos del EyasSat no especifican el modelo preciso
 	\label{fig:bloquesMgt}
 	\textit{}
 \end{figure}
+\subsection{MODELO DE CAMPO MAGNÉTICO}
 
 \section{DISEÑO CONTROLADORES}
 \subsubsection{LINEALIZACIÓN Y ESPACIO DE ESTADOS}
@@ -1152,7 +1177,7 @@ Debido a que los manuales técnicos del EyasSat no especifican el modelo preciso
 \end{figure}
 
 
-\subsection{Modelo de Campo Magnético}
+
 
 %% Fuerzas externas
 
