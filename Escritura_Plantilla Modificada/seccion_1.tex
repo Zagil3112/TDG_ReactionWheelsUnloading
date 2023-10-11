@@ -1128,7 +1128,7 @@ Recordando la \textbf{eq (\ref{eq:torque_mgt})}, donde se tiene que $\vec{\tau} 
 \noindent Donde:\\
 $n$: es el número de vueltas de la bobina.\\
 $I$: es la corriente que pasa por el magnetorquer.\\
-$A$: es el área del magnetorquer en la dirección normal $\hat{n}$.
+$A$: es el área del magnetorquer en la dirección normal de la bobina. $\hat{n}$.
 
 Tal como se muestra en la \textbf{Fig. \ref{fig:magnetorquers}a} , el momento dipolar tratará de alinearse con la resultante del campo magnético debido al torque generado, el cual es proporcional a la corriente, al numero de vueltas y al área como lo indica la \textbf{eq (\ref{eq:torque_mgt_completa})}.
 
@@ -1212,23 +1212,42 @@ De esta manera, en la \textbf{Tabla \ref{table:Mgt}} se recopilaron los parámet
 
 
 \subsection{MODELO DE CAMPO MAGNÉTICO}
+% Diagrama de flujo : 
+% 1. parámetros orbitales
+% 2. Calculo de lla y tiempo
+% 3. calculo de B segun NED
+% 4. Transformacion de coordenadas NED a BRF 
 
+% Diagrama de bloques 
+
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.4]{imagenes/modelo_dinamico/modelo_campoMagnetico.PNG}\\
+	\end{center}
+	\caption{Implementación del modelo de campo geomagnético en Simulink.}
+	\label{fig:modeloB}
+	\textit{}
+\end{figure}
+
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.3]{imagenes/analisis_de_orbitas/orbitas.jpg}\\
+	\end{center}
+	\caption{Orbitas a evaluar}
+	\label{fig:orbitas}
+	\textit{}
+\end{figure}
+
+\newpage
 \section{DISEÑO CONTROLADORES}
 \subsubsection{LINEALIZACIÓN Y ESPACIO DE ESTADOS}
 \subsubsection{LQR}
 %Funcion de costo 
 \subsubsection{PID}
 \subsubsection{ÍNDICES DE DESEMPEÑO}
-\section{ANÁLISIS DE ÓRBITAS}
 
-\begin{figure}[h]
-	\begin{center}
-		\includegraphics[scale=0.4]{imagenes/analisis_de_orbitas/orbitas.jpg}\\
-	\end{center}
-	\caption{Orbitas a evaluar}
-	\label{fig:orbitas}
-	\textit{}
-\end{figure}
+
+
 
 
 
@@ -1254,7 +1273,7 @@ Sujeto a 3 tipos de órbita
 1- 0°
 2- 20° (ISS)
 3- 90° (Polar)
-
+%\section{ANÁLISIS DE ÓRBITAS}
 \subsubsection{Perfil de misión 1}
 \subsubsection{Perfil de misión 2} 
 \subsubsection{Perfil de misión 3}  
