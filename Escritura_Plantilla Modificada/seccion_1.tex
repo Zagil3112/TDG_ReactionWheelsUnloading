@@ -1102,12 +1102,14 @@ Debido a que los manuales técnicos del EyasSat no especifican el modelo preciso
 		\begin{tabular}{ c c c}
 			
 			&  \textbf{Parámetro} &  \textbf{Valor}\\ \hline
-			$R$ &  Inductancia $(mH)$ & 0.222\\ 
+			$R$ &  Resistencia $(\Omega)$ & 3.36\\ 
+			$L$ &  Inductancia $(mH)$ & 0.222\\ 
 			$K_t$ &  Constante de torque $(Nm/A)$ & $8.55\cdot10^{-3}$ \\ 
 			$K_e$ &  Constante de campo $(V/rad/s)$& $(1/1120)\cdot(60/2\pi)$ \\ 
 			$B$ &  Coeficiente de fricción $(Nm/rad/s)$& $(1/438)\cdot(60/2\pi)\cdot10^{-3}$ \\
 			$J$ &  Inercia total $(kg\,m^2)$& $7.157\cdot10^{-5}$ \\  
 			$T_{max}$ & Torque máximo $(Nm)$ & $6.27\cdot10^{-3}$ \\
+			$V_{max}$ & Voltaje máximo $(V)$ & $6$ \\
 			$\omega_{max}$ & RPM máximas & $3940$ \\ \hline
 		\end{tabular}
 	\end{center}
@@ -1155,26 +1157,60 @@ La \textbf{Fig. \ref{fig:magnetorquers}b} muestra los actuadores reales del Eyas
 \end{figure}
 
 % Mostrar como se calcularon el numero de vueltas
+No obstante, al comparar los parámetros con otros magnetorquers de usos similares, como el CubeTorquer, fabricado por la Universidad de Stellenbosh \cite{Groenewald2014}, éstos no correspondían con los valores de inductancia medidos, los cuales determinan el número de vueltas. Por lo tanto, se optó por determinar este parámetro usando las dimensiones de la bobina como se ve en la \textbf{Fig. \ref{fig:numVueltas}}:
 
+\begin{gather}
+	 N_{vueltas} = \#_{capas}\times \left(vueltas/capa\right)\label{key}\\[10pt]
+	 N_{vueltas}= \left[\left(\diameter_{bobina}-\diameter_{nucleo}\right)/2\cdot \diameter_{cable} \right]\times L_{bobina} /\diameter_{cable}\\[10pt]
+	 N_{vueltas}= 5412
+\end{gather}
 
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.7]{imagenes/modelo_dinamico/dimensiones_mgt.png}\\
+	\end{center}
+	\caption{Cálculo de número de vueltas.}
+	\label{fig:numVueltas}
+	%	\footnotesize{Nota. Fuente \cite{maxon2023}}
+\end{figure}
 
 % Parametros de referencia
-
-
-
-% 	Imagen de toma de resistencia
+De esta manera, en la \textbf{Tabla \ref{table:Mgt}} se recopilaron los parámetros de los magnetorquers que se emplearían en el modelo. En la \textbf{Fig. \ref{fig:bloquesMgt}} se evidencia la implementación en Simulink para el magnetorquer $X$, la cual es igual para el $Y$. 
+\newpage
+\begin{table}[!ht]
+	\caption{\MakeUppercase{Parámetros Magnetorquers }}
+	\begin{center}
+		\begin{tabular}{ c c c}
+			
+			&  \textbf{Parámetro} &  \textbf{Valor}\\ \hline
+			$\vec{M}$ &  Momento magnético nominal $(Am^2)$ & 0.2834\\ 
+			$T_{max}$ &  Torque máximo $(Nm)$ & $1.843\cdot10^{-5}$ \\ 
+			$R$ &  Resistencia $(\Omega)$& $30$ \\ 
+			$\diameter_{b}$ &  Diámetro bobina $(cm)$& $2$ \\
+			$\diameter_{c}$ &  Diámetro núcleo $(cm)$& $0.77$ \\
+			$\diameter_{w}$ &  Calibre cable $(cm)$& $0.03$ \\  
+			$L_{b}$ & Longitud bobina $(cm)$ & $7.92$ \\
+			$N_{b}$ & Número de vueltas de bobina  & $5412$ \\
+			$L$ & Inductancia $(H)$ & $0.585$ \\ \hline
+			
+		\end{tabular}
+	\end{center}
+	\label{table:Mgt}
+\end{table}
 
 
 % Diagrama de bloques
 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[scale=0.5]{imagenes/modelo_dinamico/bloquesMgt.PNG}\\
+		\includegraphics[scale=0.4]{imagenes/modelo_dinamico/bloquesMgt.PNG}\\
 	\end{center}
 	\caption{Diagrama de bloques Magnetorquer X.}
 	\label{fig:bloquesMgt}
 	\textit{}
 \end{figure}
+
+
 \subsection{MODELO DE CAMPO MAGNÉTICO}
 
 \section{DISEÑO CONTROLADORES}
