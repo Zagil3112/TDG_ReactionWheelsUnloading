@@ -738,8 +738,8 @@ En este sentido, el torque neto de fuerzas externas es:
  
 Tomando el principio del intercambio de momentos, se tiene que el momento angular producido por las ruedas de reacción se aplica al satélite con signo opuesto. Entonces si definimos $T_c$ como el par de control:
 
-\begin{equation}
-	\dot{h_w} = -T_c  	
+\begin{equation}\label{eq:torque_h}
+	\dot{h_w} = T_c  	
 \end{equation}
 
 Al igualar las ecuaciones (\ref{eq:H_dot_1}) y (\ref{eq:H_dot_2}) se obtiene una expresión para las aceleraciones angulares, conocida como ecuación dinámica de Newton-Euler, la cual consolida el modelo dinámico del CubeSat:
@@ -1021,7 +1021,7 @@ Dado que el problema solo contempla 1 grado de libertad en el eje Z, las perturb
 
 \subsection{MODELO DE RUEDAS DE REACCIÓN}
 
-Como se mencionó en la sección del ADCS, las ruedas de reacción son motores de alta inercia. Por lo tanto, su modelamiento parte de un circuito de armadura para motores DC. El objetivo es obtener una expresión que relacione el voltaje de entrada con el torque y el momento angular, es decir, determinar su función de transferencia.
+Como se mencionó en la sección del ADCS, las ruedas de reacción son motores de alta inercia. Por lo tanto, su modelamiento parte de un circuito de armadura para motores DC. El objetivo es obtener una expresión que relacione el voltaje de entrada con el torque de salida, es decir, determinar su función de transferencia. De igual forma, la corriente que consuma el motor también será un parámetro de utilidad para determinar los índices de desempeño de los controladores, por lo que es de interés obtener también su función de transferencia.
  
 % Circuito de armadura
 \begin{figure}[h]
@@ -1065,26 +1065,57 @@ Por otro lado, se asume que existe relación proporcional entre $e(t)$ y $\omega
 \end{gather}
 
 % eq y mostrar la eq de tranferencia de torque 
-Finalmente, realizando la transformada de Laplace de las ecuaciones \textbf{(\ref{eq:armadura})} a \textbf{(\ref{eq:constante_torque})} se pueden obtener las funciones de transferencia para la corriente $i(s)$, $\omega(s)$ y el torque del motor $T_m(s)$. 
+Finalmente, realizando la transformada de Laplace de las ecuaciones \textbf{(\ref{eq:armadura})} a \textbf{(\ref{eq:constante_torque})} se pueden obtener las funciones de transferencia para la corriente $i(s)$, $\omega(s)$ y el torque del motor $T_m(s)$ expresadas por. 
 
 \begin{gather}
 	\frac{T_m(s)}{v(s)}= \frac{K_t\left(Js+B\right)}{LJs^2 + \left(RJ+LB\right)s +RB+K_tK_e}\label{eq:trans_torque_voltaje}\\[10pt]	
 	\frac{i(s)}{v(s)}= \frac{Js+B}{LJs^2 + \left(RJ+LB\right)s +RB+K_tK_e}\label{eq:trans_i_voltaje}\\[10pt]
 	\frac{\omega(s)}{v(s)}= \frac{K_t}{LJs^2 + \left(RJ+LB\right)s +RB+K_tK_e}\label{eq:trans_omega_voltaje}
 \end{gather}
-
-% Selección de referencia de RW y sus Parametros
-
+\\
 %Diagrama de bloques
+
+En la \textbf{Fig. \ref{fig:bloquesRW}} se muestra la implementación del modelo de ruedas de reacción en Simulink. Ademas se calcular el torque y la corriente, dicho modelo calcula el momento angular $h_{RW}$ según la \textbf{eq (\ref{eq:torque_h})}.
 
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[scale=0.5]{imagenes/modelo_dinamico/bloquesRW.PNG}\\
 	\end{center}
-	\caption{Diagrama de bloques RW.}
+	\caption{Diagrama de bloques del modelo de RW en Simulink.}
 	\label{fig:bloquesRW}
 	\textit{}
 \end{figure}
+
+% Selección de referencia de RW y sus Parametros
+Debido a que los manuales técnicos del EyasSat no especifican el modelo preciso del motor empleado para las RW. Se seleccionaron los parámetros electromecánicos del motor A-max 22 \textbf{(Fig. \ref{fig:motorRW})}, el cual fue empleado en el trabajo de Groenewald y Steyn \cite{Groenewald2014}. Dichos parámetros pueden se consultados en la \textbf{Tabla \ref{table:motorRW}}.
+
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.5]{imagenes/modelo_dinamico/motorRW.jpg}\\
+	\end{center}
+	\caption{Motor sin escobillas A-max 22.}
+	\label{fig:motorRW}
+	\footnotesize{Nota. Fuente \cite{maxon2023}}
+\end{figure}
+
+
+\begin{table}[h]
+	\caption{\MakeUppercase{Parámetros electro-mecánicos RW }}
+	\begin{center}
+		\begin{tabular}{ c c c}
+			
+			&  \textbf{Parámetro} &  \textbf{Valor}\\ \hline
+			$R$ &  Inductancia & $4.91\cdot10^{-7}$ \\ 
+			$K_t$ &  Constante de torque & $2.27\cdot10^{-6}$ \\ 
+			$K_e$ &  Constante de campo& $1.33\cdot10^{-8}$ \\ 
+			$B$ &  Coeficiente de fricción& $1.33\cdot10^{-8}$ \\ 
+			$T_{max}$ & Torque máximo & $1.33\cdot10^{-8}$ \\
+			$\omega_{max}$ & RPM máximas & $1.33\cdot10^{-8}$ \\ \hline
+		\end{tabular}
+	\end{center}
+	\label{table:motorRW}
+\end{table}
 
 \subsection{MODELO MAGNETORQUERS}
 
