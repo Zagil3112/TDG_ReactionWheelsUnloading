@@ -729,7 +729,7 @@ En este sentido, el torque neto de fuerzas externas es:
  	 \left(\frac{\mathrm{d} H}{\mathrm{d} t}\right)_{body} = T-\omega \times \left(I\omega + h_w\right) 	
  \end{equation}
  
- Análogamente, se puede obtener otra expresión para el cambio de momento angular al derivar la eq.(\ref{eq:H_total_RW}) respecto al tiempo :
+ Análogamente, se puede obtener otra expresión para el cambio de momento angular al derivar la \textbf{eq.(\ref{eq:H_total_RW})} respecto al tiempo :
  
  \begin{equation}\label{eq:H_dot_2}
  	\dot{H_b} = \left(\frac{\mathrm{d} H}{\mathrm{d} t}\right)_{body} = 
@@ -774,31 +774,14 @@ $\mathbf{h_w}=\left[\begin{array}{l}h_x \\ h_y \\ h_z\end{array}\right]:$ Vector
 
 
 Finalmente, usando las componentes del vector de velocidades angulares es posible determinar la actitud del CubeSat. La interpretación de los ángulos de Euler es más intuitiva, pero para evitar que surjan singularidades, los cuaterniones
-resultan mas convenientes para los cálculos de simulación \cite{Steyn2011}. La ecuación diferencial cinemática de los cuaterniones está descrita en la eq.(\ref{eq:quaterniones}): 
+resultan mas convenientes para los cálculos de simulación \cite{Steyn2011}. La ecuación diferencial cinemática de los cuaterniones está descrita en la  \textbf{eq.(\ref{eq:quaterniones})}: 
 
 \begin{equation}\label{eq:quaterniones}
 	\dot{\mathbf{q}}=\frac{1}{2} \Omega \mathbf{q} \\
 \end{equation}
 
-Donde
+Donde:
  
-%\begin{center}
-% 	$\Omega$ = $\left[\begin{array}{cccc}
-% 		0 & w_z & -w_y & w_x \\
-% 		-w_z & 0 & w_x & w_y \\
-% 		w_y & -w_x & 0 & w_z \\
-% 		-w_x & -w_y & -w_z & 0
-% 	\end{array}\right]$ 
-% 	
-%\end{center}
-%\hspace{\parindent} y
-%\begin{center}
-%	$
-%	\mathbf{q}=\left[\begin{array}{llll}
-%		q_1 & q_2 & q_3 & q_4
-%	\end{array}\right]^T
-%	$
-%\end{center}
 
 \begin{center}
 	$\Omega$ = $\left[\begin{array}{cccc}
@@ -813,6 +796,19 @@ Donde
 	\end{array}\right]^T
 	$
 \end{center}
+
+En la \textbf{Fig. \ref{fig:din_sc}} se evidencia la implementación de la \textbf{eq.(\ref{eq:modelo_dinamico})} en Simulink, donde se tienen como salidas tanto las ecuaciones cinemáticas, que relacionan velocidades angulares $\omega$, como las ecuaciones dinámicas, las cuales determinan la actitud del satélite por medio de los cuaterniones $q$.
+
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[scale=0.6]{imagenes/modelo_dinamico/dinamica_satelite.PNG}\\
+	\end{center}
+	\caption{Implementación modelo dinámico en Simulink.}
+	\label{fig:din_sc}
+	\textit{}
+\end{figure}
+
 En la siguiente sección se profundizará en como determinar parámetros fundamentales del modelo dinámico, sintetizado en la eq. (\ref{eq:modelo_dinamico}), como la matriz de inercia del EyasSat, el modelo de los actuadores del ADCS y el cálculo de perturbaciones. 
 
 \newpage
@@ -1023,16 +1019,89 @@ Dado que el problema solo contempla 1 grado de libertad en el eje Z, las perturb
 	\end{array}\right]
 \end{equation}
 
-\subsection{MODELO RUEDAS DE REACCIÓN}
+\subsection{MODELO DE RUEDAS DE REACCIÓN}
+
+Como se mencionó en la sección del ADCS, las ruedas de reacción son motores de alta inercia. Por lo tanto, su modelamiento parte de un circuito de armadura para motores DC. El objetivo es obtener una expresión que relacione el voltaje de entrada con el torque y el momento angular, es decir, determinar su función de transferencia.
+ 
 % Circuito de armadura
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=1.5]{imagenes/modelo_dinamico/motor.PNG}\\
+	\end{center}
+	\caption{Circuito de armadura de un motor DC.}
+	\label{fig:motordc}
+	\textit{}
+\end{figure}
+
 %Ecuacuiones 
-% Parametros de la referencia
+A partir de la \textbf{Fig. \ref{fig:motordc}} puede realizarse un análisis de malla del circuito de armadura:
+
+\begin{equation}\label{eq:armadura}
+	L\frac{di(t)}{dt} =v(t) -Ri(t) -e(t)
+\end{equation}
+
+\noindent Donde:\\
+ $e(t)$: es voltaje inducido en la armadura a través del flujo de campo fijo ("Fixed field").\\
+ $R$: es la resistencia eléctrica.\\
+ $L$: es la inductancia eléctrica.\\ 
+ 
+ Por su parte, la ecuación mecánica del rotor viene dada por el modelo:
+
+\begin{equation}\label{eq:torque_dc}
+	J\frac{d\omega(t)}{dt} = T_{m}(t)-B\omega
+\end{equation}
+
+\noindent Donde:\\
+$T_{m}(t)$: es el torque generado por el motor.\\
+$J$: es el momento de inercia total del rotor y la carga.\\
+$\omega$: es la velocidad angular del motor.\\ 
+$B$: es el coeficiente de fricción.\\ 
+
+Por otro lado, se asume que existe relación proporcional entre $e(t)$ y $\omega$ a través de la constante de campo $K_e$ \textbf{(eq. \ref{eq:constante_campo})}. Asi mismo, se supone una relación proporcional entre el torque mecánico y la corriente por medio de la constante de torque $K_t$ \textbf{(eq. \ref{eq:constante_torque})}
+
+\begin{gather}
+	e(t) = K_e\,\omega(t)\label{eq:constante_campo}\\[10pt]
+	T_m(t) = K_t\,i(t)\label{eq:constante_torque}
+\end{gather}
+
+% eq y mostrar la eq de tranferencia de torque 
+Finalmente, realizando la transformada de Laplace de las ecuaciones \textbf{(\ref{eq:armadura})} a \textbf{(\ref{eq:constante_torque})} se pueden obtener las funciones de transferencia para la corriente $i(s)$, $\omega(s)$ y el torque del motor $T_m(s)$. 
+
+\begin{gather}
+	\frac{T_m(s)}{v(s)}= \frac{K_t\left(Js+B\right)}{LJs^2 + \left(RJ+LB\right)s +RB+K_tK_e}\label{eq:trans_torque_voltaje}\\[10pt]	
+	\frac{i(s)}{v(s)}= \frac{Js+B}{LJs^2 + \left(RJ+LB\right)s +RB+K_tK_e}\label{eq:trans_i_voltaje}\\[10pt]
+	\frac{\omega(s)}{v(s)}= \frac{K_t}{LJs^2 + \left(RJ+LB\right)s +RB+K_tK_e}\label{eq:trans_omega_voltaje}
+\end{gather}
+
+% Selección de referencia de RW y sus Parametros
+
 %Diagrama de bloques
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.5]{imagenes/modelo_dinamico/bloquesRW.PNG}\\
+	\end{center}
+	\caption{Diagrama de bloques RW.}
+	\label{fig:bloquesRW}
+	\textit{}
+\end{figure}
 
 \subsection{MODELO MAGNETORQUERS}
 
-% Ecuacion de torque
+% Ecuacion/Diagrama de torque
 % Mostrar como se calcularon el numero de vueltas
+% Parametros de referencia
+% 	Imagen de toma de resistencia
+% Diagrama de bloques
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.5]{imagenes/modelo_dinamico/bloquesMgt.PNG}\\
+	\end{center}
+	\caption{Diagrama de bloques Magnetorquer X.}
+	\label{fig:bloquesMgt}
+	\textit{}
+\end{figure}
 
 \section{DISEÑO CONTROLADORES}
 \subsubsection{LINEALIZACIÓN Y ESPACIO DE ESTADOS}

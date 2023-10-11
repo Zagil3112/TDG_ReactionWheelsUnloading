@@ -1,61 +1,61 @@
 \thispagestyle {empty}
 \babel@toc {spanish}{}\relax 
-\contentsline {section}{\numberline {} RESUMEN}{8}{Doc-Start}%
-\contentsline {section}{\numberline {} ABSTRACT}{9}{Doc-Start}%
-\contentsline {section}{\numberline {I}INTRODUCCIÓN}{10}{section.1}%
-\contentsline {section}{\numberline {II}PLANTEAMIENTO DEL PROBLEMA}{12}{section.2}%
-\contentsline {section}{\numberline {III}ESTADO DEL ARTE}{13}{section.3}%
-\contentsline {section}{\numberline {IV}JUSTIFICACIÓN}{15}{section.4}%
-\contentsline {section}{\numberline {V}OBJETIVOS}{16}{section.5}%
-\contentsline {subsection}{\numberline {A}Objetivo general}{16}{subsection.5.1}%
-\contentsline {subsection}{\numberline {B}Objetivos específicos}{16}{subsection.5.2}%
-\contentsline {section}{\numberline {VI}MARCO TEÓRICO}{17}{section.6}%
-\contentsline {subsection}{\numberline {A}CubeSat y EyasSat}{17}{subsection.6.1}%
-\contentsline {subsection}{\numberline {B}Sistema de determinación y control de actitud (ADCS)}{17}{subsection.6.2}%
-\contentsline {subsubsection}{\numberline {1}Ruedas de reacción}{18}{subsubsection.6.2.1}%
-\contentsline {subsubsection}{\numberline {2}Magnetorquers}{20}{subsubsection.6.2.2}%
-\contentsline {subsection}{\numberline {C}Fundamentos de dinámica de satélites}{21}{subsection.6.3}%
-\contentsline {subsubsection}{\numberline {1}Marcos de referencia}{21}{subsubsection.6.3.1}%
-\contentsline {paragraph}{\numberline {a}Marco de referencia alineado con el plano de la horizontal local (LVLH):}{21}{paragraph.6.3.1.1}%
-\contentsline {paragraph}{\numberline {b}Marco de Referencia Orbital (ORF):}{21}{paragraph.6.3.1.2}%
-\contentsline {paragraph}{\numberline {c}Marco de Referencia centrado en el cuerpo (BRF):}{21}{paragraph.6.3.1.3}%
-\contentsline {paragraph}{\numberline {d}Marco de Referencia centrado en la tierra (ECI):}{22}{paragraph.6.3.1.4}%
-\contentsline {subsubsection}{\numberline {2}Transformación de marcos de referencia}{25}{subsubsection.6.3.2}%
-\contentsline {subsubsection}{\numberline {3}Ángulos de Euler}{26}{subsubsection.6.3.3}%
-\contentsline {subsubsection}{\numberline {4}Cuaterniones}{27}{subsubsection.6.3.4}%
-\contentsline {subsection}{\numberline {D}Teoría de Control}{28}{subsection.6.4}%
-\contentsline {subsubsection}{\numberline {1}Modelo dinámico}{29}{subsubsection.6.4.1}%
-\contentsline {subsection}{\numberline {E}Ambiente espacial en LEO}{30}{subsection.6.5}%
-\contentsline {section}{\numberline {VII}METODOLOGÍA}{32}{section.7}%
-\contentsline {subsection}{\numberline {A}Modelo dinámico}{32}{subsection.7.1}%
-\contentsline {subsection}{\numberline {B}Diseño de estrategia de control}{33}{subsection.7.2}%
-\contentsline {subsection}{\numberline {C}Análisis de órbitas}{34}{subsection.7.3}%
-\contentsline {section}{\numberline {VIII}MODELO DINÁMICO}{36}{section.8}%
-\contentsline {subsection}{\numberline {A}PROPIEDADES INERCIALES}{41}{subsection.8.1}%
-\contentsline {subsection}{\numberline {B}MODELADO DE PERTURBACIONES}{43}{subsection.8.2}%
-\contentsline {subsubsection}{\numberline {1}Torque Gravitacional}{43}{subsubsection.8.2.1}%
-\contentsline {subsubsection}{\numberline {2}Torque Magnético}{44}{subsubsection.8.2.2}%
-\contentsline {subsubsection}{\numberline {3}Torque Aerodinámico}{44}{subsubsection.8.2.3}%
-\contentsline {subsubsection}{\numberline {4}Torque por radiación solar}{45}{subsubsection.8.2.4}%
-\contentsline {subsubsection}{\numberline {5}Perturbaciones totales}{46}{subsubsection.8.2.5}%
-\contentsline {subsection}{\numberline {C}MODELO RUEDAS DE REACCIÓN}{47}{subsection.8.3}%
-\contentsline {subsection}{\numberline {D}MODELO MAGNETORQUERS}{47}{subsection.8.4}%
-\contentsline {section}{\numberline {IX}DISEÑO CONTROLADORES}{47}{section.9}%
-\contentsline {subsubsection}{\numberline {1}LINEALIZACIÓN Y ESPACIO DE ESTADOS}{47}{subsubsection.9.0.1}%
-\contentsline {subsubsection}{\numberline {2}LQR}{47}{subsubsection.9.0.2}%
-\contentsline {subsubsection}{\numberline {3}PID}{47}{subsubsection.9.0.3}%
-\contentsline {subsubsection}{\numberline {4}ÍNDICES DE DESEMPEÑO}{47}{subsubsection.9.0.4}%
-\contentsline {section}{\numberline {X}ANÁLISIS DE ÓRBITAS}{47}{section.10}%
-\contentsline {subsection}{\numberline {A}Modelo de Campo Magnético}{47}{subsection.10.1}%
-\contentsline {section}{\numberline {XI}RESULTADOS}{48}{section.11}%
-\contentsline {subsubsection}{\numberline {1}Perfil de misión 1}{48}{subsubsection.11.0.1}%
-\contentsline {subsubsection}{\numberline {2}Perfil de misión 2}{48}{subsubsection.11.0.2}%
-\contentsline {subsubsection}{\numberline {3}Perfil de misión 3}{48}{subsubsection.11.0.3}%
-\contentsline {section}{\numberline {XII}DISCUSIÓN}{53}{section.12}%
-\contentsline {section}{\numberline {XIII}CONCLUSIONES}{54}{section.13}%
-\contentsline {section}{\numberline {XIV}RECOMENDACIONES}{55}{section.14}%
-\contentsline {section}{\numberline {XIV} REFERENCIAS}{56}{section.14}%
-\contentsline {subsection}{\numberline {} Anexo A. Autoarchivo en Repositorio y documentos de interés}{61}{section.14}%
-\contentsline {subsection}{\numberline {} Anexo B. Recortar y abreviar direcciones web largas}{62}{section.14}%
-\contentsline {subsection}{\numberline {} Anexo C. Incluir imágenes}{62}{section.14}%
+\contentsline {section}{\numberline {} RESUMEN}{9}{Doc-Start}%
+\contentsline {section}{\numberline {} ABSTRACT}{10}{Doc-Start}%
+\contentsline {section}{\numberline {I}INTRODUCCIÓN}{11}{section.1}%
+\contentsline {section}{\numberline {II}PLANTEAMIENTO DEL PROBLEMA}{13}{section.2}%
+\contentsline {section}{\numberline {III}ESTADO DEL ARTE}{14}{section.3}%
+\contentsline {section}{\numberline {IV}JUSTIFICACIÓN}{16}{section.4}%
+\contentsline {section}{\numberline {V}OBJETIVOS}{17}{section.5}%
+\contentsline {subsection}{\numberline {A}Objetivo general}{17}{subsection.5.1}%
+\contentsline {subsection}{\numberline {B}Objetivos específicos}{17}{subsection.5.2}%
+\contentsline {section}{\numberline {VI}MARCO TEÓRICO}{18}{section.6}%
+\contentsline {subsection}{\numberline {A}CubeSat y EyasSat}{18}{subsection.6.1}%
+\contentsline {subsection}{\numberline {B}Sistema de determinación y control de actitud (ADCS)}{18}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {1}Ruedas de reacción}{19}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {2}Magnetorquers}{21}{subsubsection.6.2.2}%
+\contentsline {subsection}{\numberline {C}Fundamentos de dinámica de satélites}{22}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {1}Marcos de referencia}{22}{subsubsection.6.3.1}%
+\contentsline {paragraph}{\numberline {a}Marco de referencia alineado con el plano de la horizontal local (LVLH):}{22}{paragraph.6.3.1.1}%
+\contentsline {paragraph}{\numberline {b}Marco de Referencia Orbital (ORF):}{22}{paragraph.6.3.1.2}%
+\contentsline {paragraph}{\numberline {c}Marco de Referencia centrado en el cuerpo (BRF):}{22}{paragraph.6.3.1.3}%
+\contentsline {paragraph}{\numberline {d}Marco de Referencia centrado en la tierra (ECI):}{23}{paragraph.6.3.1.4}%
+\contentsline {subsubsection}{\numberline {2}Transformación de marcos de referencia}{26}{subsubsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {3}Ángulos de Euler}{27}{subsubsection.6.3.3}%
+\contentsline {subsubsection}{\numberline {4}Cuaterniones}{28}{subsubsection.6.3.4}%
+\contentsline {subsection}{\numberline {D}Teoría de Control}{29}{subsection.6.4}%
+\contentsline {subsubsection}{\numberline {1}Modelo dinámico}{30}{subsubsection.6.4.1}%
+\contentsline {subsection}{\numberline {E}Ambiente espacial en LEO}{31}{subsection.6.5}%
+\contentsline {section}{\numberline {VII}METODOLOGÍA}{33}{section.7}%
+\contentsline {subsection}{\numberline {A}Modelo dinámico}{33}{subsection.7.1}%
+\contentsline {subsection}{\numberline {B}Diseño de estrategia de control}{34}{subsection.7.2}%
+\contentsline {subsection}{\numberline {C}Análisis de órbitas}{35}{subsection.7.3}%
+\contentsline {section}{\numberline {VIII}MODELO DINÁMICO}{37}{section.8}%
+\contentsline {subsection}{\numberline {A}PROPIEDADES INERCIALES}{43}{subsection.8.1}%
+\contentsline {subsection}{\numberline {B}MODELADO DE PERTURBACIONES}{45}{subsection.8.2}%
+\contentsline {subsubsection}{\numberline {1}Torque Gravitacional}{45}{subsubsection.8.2.1}%
+\contentsline {subsubsection}{\numberline {2}Torque Magnético}{46}{subsubsection.8.2.2}%
+\contentsline {subsubsection}{\numberline {3}Torque Aerodinámico}{46}{subsubsection.8.2.3}%
+\contentsline {subsubsection}{\numberline {4}Torque por radiación solar}{47}{subsubsection.8.2.4}%
+\contentsline {subsubsection}{\numberline {5}Perturbaciones totales}{48}{subsubsection.8.2.5}%
+\contentsline {subsection}{\numberline {C}MODELO DE RUEDAS DE REACCIÓN}{49}{subsection.8.3}%
+\contentsline {subsection}{\numberline {D}MODELO MAGNETORQUERS}{51}{subsection.8.4}%
+\contentsline {section}{\numberline {IX}DISEÑO CONTROLADORES}{51}{section.9}%
+\contentsline {subsubsection}{\numberline {1}LINEALIZACIÓN Y ESPACIO DE ESTADOS}{51}{subsubsection.9.0.1}%
+\contentsline {subsubsection}{\numberline {2}LQR}{51}{subsubsection.9.0.2}%
+\contentsline {subsubsection}{\numberline {3}PID}{51}{subsubsection.9.0.3}%
+\contentsline {subsubsection}{\numberline {4}ÍNDICES DE DESEMPEÑO}{52}{subsubsection.9.0.4}%
+\contentsline {section}{\numberline {X}ANÁLISIS DE ÓRBITAS}{52}{section.10}%
+\contentsline {subsection}{\numberline {A}Modelo de Campo Magnético}{52}{subsection.10.1}%
+\contentsline {section}{\numberline {XI}RESULTADOS}{53}{section.11}%
+\contentsline {subsubsection}{\numberline {1}Perfil de misión 1}{53}{subsubsection.11.0.1}%
+\contentsline {subsubsection}{\numberline {2}Perfil de misión 2}{53}{subsubsection.11.0.2}%
+\contentsline {subsubsection}{\numberline {3}Perfil de misión 3}{53}{subsubsection.11.0.3}%
+\contentsline {section}{\numberline {XII}DISCUSIÓN}{57}{section.12}%
+\contentsline {section}{\numberline {XIII}CONCLUSIONES}{58}{section.13}%
+\contentsline {section}{\numberline {XIV}RECOMENDACIONES}{59}{section.14}%
+\contentsline {section}{\numberline {XIV} REFERENCIAS}{60}{section.14}%
+\contentsline {subsection}{\numberline {} Anexo A. Autoarchivo en Repositorio y documentos de interés}{65}{section.14}%
+\contentsline {subsection}{\numberline {} Anexo B. Recortar y abreviar direcciones web largas}{66}{section.14}%
+\contentsline {subsection}{\numberline {} Anexo C. Incluir imágenes}{66}{section.14}%
 \contentsfinish 
