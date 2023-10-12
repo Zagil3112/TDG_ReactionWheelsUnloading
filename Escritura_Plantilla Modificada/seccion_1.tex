@@ -1234,7 +1234,7 @@ $a$: semi-eje mayor \\
 $e$: excentricidad.
 	 
 % Diagrama de flujo : 
-Posteriormente, estos parámetros son usados por el propagador para determinar las coordenadas $XYZ$ de la órbita, en el marco $ECI$. Luego estas coordenadas son convertidas en latitud, longitud y altura ya que la función \textit{igrfmagm} de matlab recibe estos parámetros de entrada. Dicha función se encarga de calcular las intensidades de campo
+Posteriormente, estos parámetros son usados por el propagador para determinar las coordenadas $XYZ$ de la órbita, en el marco $ECI$. Luego estas coordenadas son convertidas en latitud, longitud y altura ya que la función \textit{igrfmagm} de Matlab recibe estos parámetros de entrada. Dicha función se encarga de calcular las intensidades de campo para cada punto de la órbita, sin embargo, estas intensidades en encuentran en el marco LVLH.
 \begin{figure}[!ht]
 	\begin{center}
 		\includegraphics[scale=0.4]{imagenes/modelo_dinamico/flujo_campo.png}\\
@@ -1243,10 +1243,8 @@ Posteriormente, estos parámetros son usados por el propagador para determinar l
 	\label{fig:flujoCampo}
 	\textit{}
 \end{figure}
-% 1. parámetros orbitales
-% 2. Calculo de lla y tiempo
-% 3. calculo de B segun NED
 % 4. Transformacion de coordenadas NED a BRF 
+Hasta este punto, los pasos anteriores se realizan en Matlab con el fin de ahorrar capacidad de computo y disminuir los tiempos de simulación. Sin embargo, para poder transformar las intensidades de campo del marco LVLH/NED al marco BRF se requiere conocer los ángulos de Euler ($RPY$) en cada punto de la órbita. Por tal motivo, la implementación de Simulink  \textbf{(Fig. \ref{fig:modeloB})}  recibe el vector de campos magnéticos LVLH y realiza la transformación de marcos de referencia usando la actitud instantánea del satélite.
 
 % Diagrama de bloques 
 
@@ -1258,6 +1256,60 @@ Posteriormente, estos parámetros son usados por el propagador para determinar l
 	\label{fig:modeloB}
 	\textit{}
 \end{figure}
+
+La transformación de de intensidades de campo magnético está dada por: 
+\begin{equation}	
+	\left[\begin{array}{c}
+		B_x\\
+		B_y\\
+		B_z
+	\end{array}\right]_{BRF} = 
+	C_{BRF}^{NED}
+	\left[\begin{array}{c}
+		B_x\\
+		B_y\\
+		B_z
+	\end{array}\right]_{NED}	
+\end{equation}
+
+Para hallar la matriz $C_{BRF}^{NED}$, se remite a \cite{grewal2007global} donde se define la matriz:
+
+$$
+C_{ENU}^{BRF}=\left[\begin{array}{ccc}
+	S_Y C_P & C_R C_Y+S_R S_Y S_P & -S_R C_Y+C_R S_Y S_P \\
+	C_Y C_P & -C_R S_Y+S_R C_Y S_P & S_R S_Y+C_R C_Y S_P \\
+	S_P & -S_R C_P & -C_R C_P
+\end{array}\right],
+$$
+Donde :
+$$
+\begin{aligned}
+	S_R & =\sin (R), \\
+	C_R & =\cos (R), \\
+	S_P & =\sin (P), \\
+	C_P & =\cos (P), \\
+	S_Y & =\sin (Y), \\
+	C_Y & =\cos (Y),
+\end{aligned}
+$$
+
+Por otro lado, se conoce la transformación :
+$$
+C_{ENU}^{NED}=\left[\begin{array}{ccc}
+	0 &1 &0 \\
+	1 & 0 & 0 \\
+	0 & 0 &-1
+\end{array}\right]
+$$
+
+Finalmente, usando las propiedad \textbf{(\ref{eq:transformada1})} descrita en la sección de transformación de marcos de referencia, se tiene que:
+
+\begin{gather}
+	C_{BRF}^{NED} = \left(C_{ENU}^{BRF}\right)^T\,C_{ENU}^{NED}\\[10pt]
+	C_{BRF}^{NED} = C_{BRF}^{ENU}\,C_{ENU}^{NED}
+\end{gather}
+	
+
 
 \begin{figure}[!ht]
 	\begin{center}
