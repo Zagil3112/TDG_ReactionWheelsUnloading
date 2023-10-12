@@ -1212,7 +1212,37 @@ De esta manera, en la \textbf{Tabla \ref{table:Mgt}} se recopilaron los parámet
 
 
 \subsection{MODELO DE CAMPO MAGNÉTICO}
+
+Con el fin de evaluar el desempeño de los magnetorquers en diferentes órbitas se requiere determinar la magnitud del campo magnético a lo largo de la trayectoria del EyasSat. Para ello se recurre a un script de Matlab encargado de calcular todas las intensidades de campo para luego ser leídas por el modelo en Simulink.
+
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.6]{imagenes/modelo_dinamico/Elementos_orbitales.jpg}\\
+	\end{center}
+	\caption{Elementos orbitales.}
+	\label{fig:elementosOrbitales}
+	\textit{}
+\end{figure}
+	 
+La lógica de este procedimiento se ilustra en el diagrama de flujo de la \textbf{Fig. \ref{fig:flujoCampo}}, el cual inicia definiendo los parámetros orbitales, mostrados en la \textbf{Fig. \ref{fig:elementosOrbitales}}, donde:
+
+\noindent$RAAN$: ascensión recta del nodo ascendente.  \\
+$\omega$: argumento de perigeo. \\
+$\nu$: anomalía verdadera\\
+$i$: inclinación \\
+$a$: semi-eje mayor \\
+$e$: excentricidad.
+	 
 % Diagrama de flujo : 
+Posteriormente, estos parámetros son usados por el propagador para determinar las coordenadas $XYZ$ de la órbita, en el marco $ECI$. Luego estas coordenadas son convertidas en latitud, longitud y altura ya que la función \textit{igrfmagm} de matlab recibe estos parámetros de entrada. Dicha función se encarga de calcular las intensidades de campo
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.4]{imagenes/modelo_dinamico/flujo_campo.png}\\
+	\end{center}
+	\caption{Diagrama de flujo para cálculo de intensidades de campo para una órbita determinada.}
+	\label{fig:flujoCampo}
+	\textit{}
+\end{figure}
 % 1. parámetros orbitales
 % 2. Calculo de lla y tiempo
 % 3. calculo de B segun NED

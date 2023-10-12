@@ -41,20 +41,20 @@
 \contentsline {subsection}{\numberline {C}MODELO DE RUEDAS DE REACCIÓN}{49}{subsection.8.3}%
 \contentsline {subsection}{\numberline {D}MODELO MAGNETORQUERS}{52}{subsection.8.4}%
 \contentsline {subsection}{\numberline {E}MODELO DE CAMPO MAGNÉTICO}{56}{subsection.8.5}%
-\contentsline {section}{\numberline {IX}DISEÑO CONTROLADORES}{57}{section.9}%
-\contentsline {subsubsection}{\numberline {1}LINEALIZACIÓN Y ESPACIO DE ESTADOS}{57}{subsubsection.9.0.1}%
-\contentsline {subsubsection}{\numberline {2}LQR}{57}{subsubsection.9.0.2}%
-\contentsline {subsubsection}{\numberline {3}PID}{57}{subsubsection.9.0.3}%
-\contentsline {subsubsection}{\numberline {4}ÍNDICES DE DESEMPEÑO}{57}{subsubsection.9.0.4}%
-\contentsline {section}{\numberline {X}RESULTADOS}{58}{section.10}%
-\contentsline {subsubsection}{\numberline {1}Perfil de misión 1}{58}{subsubsection.10.0.1}%
-\contentsline {subsubsection}{\numberline {2}Perfil de misión 2}{58}{subsubsection.10.0.2}%
-\contentsline {subsubsection}{\numberline {3}Perfil de misión 3}{58}{subsubsection.10.0.3}%
-\contentsline {section}{\numberline {XI}DISCUSIÓN}{62}{section.11}%
-\contentsline {section}{\numberline {XII}CONCLUSIONES}{63}{section.12}%
-\contentsline {section}{\numberline {XIII}RECOMENDACIONES}{64}{section.13}%
-\contentsline {section}{\numberline {XIII} REFERENCIAS}{65}{section.13}%
-\contentsline {subsection}{\numberline {} Anexo A. Autoarchivo en Repositorio y documentos de interés}{70}{section.13}%
-\contentsline {subsection}{\numberline {} Anexo B. Recortar y abreviar direcciones web largas}{71}{section.13}%
-\contentsline {subsection}{\numberline {} Anexo C. Incluir imágenes}{71}{section.13}%
+\contentsline {section}{\numberline {IX}DISEÑO CONTROLADORES}{58}{section.9}%
+\contentsline {subsubsection}{\numberline {1}LINEALIZACIÓN Y ESPACIO DE ESTADOS}{58}{subsubsection.9.0.1}%
+\contentsline {subsubsection}{\numberline {2}LQR}{58}{subsubsection.9.0.2}%
+\contentsline {subsubsection}{\numberline {3}PID}{58}{subsubsection.9.0.3}%
+\contentsline {subsubsection}{\numberline {4}ÍNDICES DE DESEMPEÑO}{58}{subsubsection.9.0.4}%
+\contentsline {section}{\numberline {X}RESULTADOS}{59}{section.10}%
+\contentsline {subsubsection}{\numberline {1}Perfil de misión 1}{59}{subsubsection.10.0.1}%
+\contentsline {subsubsection}{\numberline {2}Perfil de misión 2}{59}{subsubsection.10.0.2}%
+\contentsline {subsubsection}{\numberline {3}Perfil de misión 3}{59}{subsubsection.10.0.3}%
+\contentsline {section}{\numberline {XI}DISCUSIÓN}{63}{section.11}%
+\contentsline {section}{\numberline {XII}CONCLUSIONES}{64}{section.12}%
+\contentsline {section}{\numberline {XIII}RECOMENDACIONES}{65}{section.13}%
+\contentsline {section}{\numberline {XIII} REFERENCIAS}{66}{section.13}%
+\contentsline {subsection}{\numberline {} Anexo A. Autoarchivo en Repositorio y documentos de interés}{71}{section.13}%
+\contentsline {subsection}{\numberline {} Anexo B. Recortar y abreviar direcciones web largas}{72}{section.13}%
+\contentsline {subsection}{\numberline {} Anexo C. Incluir imágenes}{72}{section.13}%
 \contentsfinish 
