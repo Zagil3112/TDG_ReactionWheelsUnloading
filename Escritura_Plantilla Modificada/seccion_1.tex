@@ -1302,7 +1302,7 @@ C_{ENU}^{NED}=\left[\begin{array}{ccc}
 \end{array}\right]
 $$
 
-Finalmente, usando las propiedad \textbf{(\ref{eq:transformada1})} descrita en la sección de transformación de marcos de referencia, se tiene que:
+Finalmente, usando las propiedades \textbf{(\ref{eq:transformada1})} y \textbf{(\ref{eq:transformada2})}, descritas en la sección de transformación de marcos de referencia, se tiene que:
 
 \begin{gather}
 	C_{BRF}^{NED} = \left(C_{ENU}^{BRF}\right)^T\,C_{ENU}^{NED}\\[10pt]
@@ -1311,18 +1311,89 @@ Finalmente, usando las propiedad \textbf{(\ref{eq:transformada1})} descrita en l
 	
 
 
-\begin{figure}[!ht]
-	\begin{center}
-		\includegraphics[scale=0.3]{imagenes/analisis_de_orbitas/orbitas.jpg}\\
-	\end{center}
-	\caption{Orbitas a evaluar}
-	\label{fig:orbitas}
-	\textit{}
-\end{figure}
+%\begin{figure}[!ht]
+%	\begin{center}
+%		\includegraphics[scale=0.3]{imagenes/analisis_de_orbitas/orbitas.jpg}\\
+%	\end{center}
+%	\caption{Orbitas a evaluar}
+%	\label{fig:orbitas}
+%	\textit{}
+%\end{figure}
 
 \newpage
 \section{DISEÑO CONTROLADORES}
 \subsubsection{LINEALIZACIÓN Y ESPACIO DE ESTADOS}
+
+%Sistema no lineal 
+
+\begin{equation}
+	\begin{aligned}
+		& \underbrace{\left[\begin{array}{c}
+				\dot{\omega} \\
+				\dot{q} \\
+				\dot{h_{RW}}
+			\end{array}\right]}_{\dot{x}}=\underbrace{\left[\begin{array}{c}
+				{\mathrm{I}}^{-1}\left(N_{\mathrm{ext}}+N_{\mathrm{ctrl}}-{\mathrm{S}}(\omega)\left({\mathrm{I}} \omega+L_{\mathrm{mw}}\right)\right) \\
+				\frac{1}{2} {\Omega} q \\
+				T_c
+			\end{array}\right]}_{f(x,u,w)}\\[10pt]
+		& \underbrace{\left[\begin{array}{c}
+				\omega \\
+				q \\
+				h_{RW}
+			\end{array}\right]}_y=\underbrace{\left[\begin{array}{ccc}
+				\underline{1}_{3 \times 3} & \underline{0}_{3 \times 4} & \underline{0}_{3 \times 3}\\
+				\underline{0}_{4 \times 3} & \underline{1}_{4 \times 4} & \underline{0}_{4 \times 3} \\
+				\underline{0}_{3 \times 3} & \underline{0}_{3 \times 4} & \underline{1}_{3 \times 3}
+			\end{array}\right]}_{{\mathrm{C}}} \underbrace{\left[\begin{array}{c}
+				\omega \\
+				q \\
+				h_{RW}
+			\end{array}\right]}_x
+	\end{aligned}	
+\end{equation}
+
+% Linealizacion
+
+
+\begin{equation}
+	\begin{aligned}
+		& x(t) =\bar{x}(t)+ \tilde{x}(t) \\
+		& u(t) =\bar{u}(t)+ \tilde{u}(t) \\
+		& y(t) =\bar{y}(t)+ \tilde{y}(t) \\
+	\end{aligned}
+\end{equation}	
+
+\begin{equation}
+	\begin{aligned}
+		& \dot{x}(t) =\mathrm{A}x(t)+ \mathrm{B}u(t)+ \Gamma u_d(t)\\
+		& y(t) =\mathrm{C}x(t)+ \mathrm{D}y(t)		
+	\end{aligned}
+\end{equation}	
+
+
+%\begin{equation}
+%	\mathrm{A} \equiv\left[\begin{array}{cccc}
+%		\frac{\partial f_1}{\partial x_1} & \frac{\partial f_1}{\partial x_2} & \cdots & \frac{\partial f_1}{\partial x_n} \\
+%		\frac{\partial f_2}{\partial x_1} & \frac{\partial f_2}{\partial x_2} & \cdots & \frac{\partial f_2}{\partial x_n} \\
+%		& \vdots & \\
+%		\frac{\partial f_n}{\partial x_1} & \frac{\partial f_n}{\partial x_2} & \cdots & \frac{\partial f_n}{\partial x_n}
+%	\end{array}\right]_0 \text { y } \mathrm{B} \equiv\left[\begin{array}{cccc}
+%		\frac{\partial f_1}{\partial u_1} & \frac{\partial f_1}{\partial u_2} & \cdots & \frac{\partial f_1}{\partial u_m} \\
+%		\frac{\partial f_2}{\partial u_1} & \frac{\partial f_2}{\partial u_2} & \cdots & \frac{\partial f_2}{\partial u_m} \\
+%		& & \vdots & \\
+%		\frac{\partial f_n}{\partial u_1} & \frac{\partial f_n}{\partial u_2} & \cdots & \frac{\partial f_n}{\partial u_m}
+%	\end{array}\right]_0
+%\end{equation}
+
+\begin{equation}
+	\mathrm{A}_{ij}= \frac{\partial f_i}{\partial x_j}
+	\text { ; } 
+	\mathrm{B}_{ij}= \frac{\partial f_i}{\partial u_j}
+	\text { ; }
+	\Gamma_{ij}= \frac{\partial f_i}{\partial u_{d_j}}		
+\end{equation}
+
 \subsubsection{LQR}
 %Funcion de costo 
 \subsubsection{PID}
