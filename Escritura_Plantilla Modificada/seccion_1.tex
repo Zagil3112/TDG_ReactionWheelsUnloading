@@ -1322,6 +1322,21 @@ Finalmente, usando las propiedades \textbf{(\ref{eq:transformada1})} y \textbf{(
 
 \newpage
 \section{DISEÑO CONTROLADORES}
+
+Tal como se mencionó en el planteamiento del problema, las estrategias de control tienen como objetivos desaturar las RW a la vez que permiten que el EyasSat alcance una actitud determinada ante diferentes respuestas. En cuanto al control de actitud se diseñaron dos controladores, PID y LQR, los cuales determinan el voltaje que  debe suministrar el subsistema de potencia a las RW. Por otro lado, la desaturación se logra por medio de la acción de control de los magnetorquers, la cual se rige por dos métodos diferentes dependiendo del controlador de actitud:
+
+\begin{itemize}
+	 \item Tanto para el controlador PID y LQR, se evalúa una ley de control para desaturación que define el torque del actuador dado por la siguiente expresión:
+	 	\begin{equation}
+	 		\vec{\tau}_{mgt} = -k\Delta h =\vec{M}\times\vec{B} 
+	 	\end{equation} 
+	 Donde $k$ es la ganancia para el control de desaturación y $\Delta h$ es la diferencia entre el momento angular del satélite y el momento angular de las RW.
+	 
+	 \item Para el LQR, se implementa un controlador en cascada que recibe los valores de referencia calculados a partir de las ganancias que provee el LQR.   
+\end{itemize}
+
+
+
 \subsubsection{LINEALIZACIÓN Y ESPACIO DE ESTADOS}
 
 %Sistema no lineal 
