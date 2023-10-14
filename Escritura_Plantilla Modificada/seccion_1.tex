@@ -713,20 +713,20 @@ Donde $I$ es una matriz real y simétrica, llamada matriz de inercia, con compon
 En este sentido, el torque neto de fuerzas externas es:
 
 \begin{equation}
-	T=\sum \rho_i \times F_i=\sum \rho_i \times m_i \frac{\mathrm{d}^2 r_i}{\mathrm{~d} t^2} 	
+	T_{ext}=\sum \rho_i \times F_i=\sum \rho_i \times m_i \frac{\mathrm{d}^2 r_i}{\mathrm{~d} t^2} 	
 \end{equation}
  
  
  Al expandir la expresión para la aceleración tal como se hizo en la eq.(\ref{eq:aceleracion}), se tiene que :
  
  \begin{equation}
- 	T= \frac{\mathrm{d} H}{\mathrm{d} t} = \left(\frac{\mathrm{d} H}{\mathrm{d} t}\right)_{body} + \omega \times H 	
+ 	T_{ext}= \frac{\mathrm{d} H}{\mathrm{d} t} = \left(\frac{\mathrm{d} H}{\mathrm{d} t}\right)_{body} + \omega \times H 	
  \end{equation}
  
  O visto de otra manera, asumiendo un marco fijo del cuerpo con ejes principales, se puede expresar el cambio del momento angular como el efecto de los torques y el producto cruz entre la velocidad angular y el momento angular total del sistema.
  
   \begin{equation}\label{eq:H_dot_1}
- 	 \left(\frac{\mathrm{d} H}{\mathrm{d} t}\right)_{body} = T-\omega \times \left(I\omega + h_w\right) 	
+ 	 \left(\frac{\mathrm{d} H}{\mathrm{d} t}\right)_{body} = T_{ext}-\omega \times \left(I\omega + h_w\right) 	
  \end{equation}
  
  Análogamente, se puede obtener otra expresión para el cambio de momento angular al derivar la \textbf{eq.(\ref{eq:H_total_RW})} respecto al tiempo :
@@ -746,7 +746,10 @@ Al igualar las ecuaciones (\ref{eq:H_dot_1}) y (\ref{eq:H_dot_2}) se obtiene una
 
 
 \begin{equation}\label{eq:modelo_dinamico}
-	\frac{d \omega_b}{d t}=I^{-1}\left[-\omega_b \times\left(I \omega_b+h_w\right)+T+T_C\right]	
+	\begin{aligned}
+		& \frac{d \omega_b}{d t}=I^{-1}\left[-\omega_b \times\left(I \omega_b+h_w\right)+T_{ext}+T_c\right]\\[10pt]
+		& \dot{\omega_b}=I^{-1}\left[-S(\omega)\left(I \omega_b+h_w\right)+T_{ext}+T_c\right]
+	\end{aligned}
 \end{equation}
 
 donde:
@@ -773,7 +776,7 @@ $\mathbf{h_w}=\left[\begin{array}{l}h_x \\ h_y \\ h_z\end{array}\right]:$ Vector
 
 Finalmente, usando las componentes del vector de velocidades angulares es posible determinar la actitud del CubeSat. La interpretación de los ángulos de Euler es más intuitiva, pero para evitar que surjan singularidades, los cuaterniones resultan mas convenientes para los cálculos de simulación \cite{Steyn2011}. La ecuación diferencial cinemática de los cuaterniones está descrita en la  \textbf{eq.(\ref{eq:quaterniones})}: 
 
-\begin{equation}\label{eq:quaterniones}
+\begin{equation}\label{eq:modelo_cinematico}
 	\dot{\mathbf{q}}=\frac{1}{2} \Omega \mathbf{q} \\
 \end{equation}
 
@@ -1330,9 +1333,25 @@ Tal como se mencionó en el planteamiento del problema, las estrategias de contr
 	 	\begin{equation}
 	 		\vec{\tau}_{mgt} = -k\Delta h =\vec{M}\times\vec{B} 
 	 	\end{equation} 
-	 Donde $k$ es la ganancia para el control de desaturación y $\Delta h$ es la diferencia entre el momento angular del satélite y el momento angular de las RW.
+	 Donde $k$ es la ganancia para el control de desaturación y $\Delta h$ es la diferencia entre el momento angular del satélite y el momento angular de las RW. La representación simplificada de este lazo de control puede evidenciarse en la \textbf{Fig. \ref{fig:desaturacionDiagrama}}.
 	 
-	 \item Para el LQR, se implementa un controlador en cascada que recibe los valores de referencia calculados a partir de las ganancias que provee el LQR.   
+	 \begin{figure}[!ht]
+	 	\begin{center}
+	 		\includegraphics[scale=0.55]{imagenes/controladores/Diagrama_controlador.PNG}\\
+	 	\end{center}
+	 	\caption{Control de lazo cerrado para el control de actitud y ley de control de saturación.}
+	 	\label{fig:desaturacionDiagrama}	 	
+	 \end{figure}
+	 
+	 \item Para el LQR, se implementa un controlador en cascada que recibe los valores de referencia calculados a partir de las ganancias de la matriz $K$. Este lazo de control de ilustra en la \textbf{Fig. \ref{fig:desaturacionDiagrama2}}. El diseño de los controladores y la definición del espacio de estados serán desarrollados en la siguiente subsección.  
+	 
+	 \begin{figure}[!ht]
+	 	\begin{center}
+	 		\includegraphics[scale=0.55]{imagenes/controladores/Diagrama_controlador2.PNG}\\
+	 	\end{center}
+	 	\caption{Control de lazo cerrado para el control de actitud y controlador en cascada.}
+	 	\label{fig:desaturacionDiagrama2}	 	
+	 \end{figure} 	  
 \end{itemize}
 
 
@@ -1346,16 +1365,16 @@ Tal como se mencionó en el planteamiento del problema, las estrategias de contr
 		& \underbrace{\left[\begin{array}{c}
 				\dot{\omega} \\
 				\dot{q} \\
-				\dot{h_{RW}}
+				\dot{h_{w}}
 			\end{array}\right]}_{\dot{x}}=\underbrace{\left[\begin{array}{c}
-				{\mathrm{I}}^{-1}\left(N_{\mathrm{ext}}+N_{\mathrm{ctrl}}-{\mathrm{S}}(\omega)\left({\mathrm{I}} \omega+L_{\mathrm{mw}}\right)\right) \\
+				{\mathrm{I}}^{-1}\left(T_{\mathrm{ext}}+T_c-{\mathrm{S}}(\omega)\left({\mathrm{I}} \omega_{b}+h_{\mathrm{w}}\right)\right) \\
 				\frac{1}{2} {\Omega} q \\
 				T_c
 			\end{array}\right]}_{f(x,u,w)}\\[10pt]
 		& \underbrace{\left[\begin{array}{c}
 				\omega \\
 				q \\
-				h_{RW}
+				h_{w}
 			\end{array}\right]}_y=\underbrace{\left[\begin{array}{ccc}
 				\underline{1}_{3 \times 3} & \underline{0}_{3 \times 4} & \underline{0}_{3 \times 3}\\
 				\underline{0}_{4 \times 3} & \underline{1}_{4 \times 4} & \underline{0}_{4 \times 3} \\
@@ -1363,7 +1382,7 @@ Tal como se mencionó en el planteamiento del problema, las estrategias de contr
 			\end{array}\right]}_{{\mathrm{C}}} \underbrace{\left[\begin{array}{c}
 				\omega \\
 				q \\
-				h_{RW}
+				h_{w}
 			\end{array}\right]}_x
 	\end{aligned}	
 \end{equation}
