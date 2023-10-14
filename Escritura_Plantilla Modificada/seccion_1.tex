@@ -398,7 +398,7 @@ Este eje fijo, el eje de Euler, se representa mediante un vector unitario de com
 		\epsilon_1\\
 		\epsilon_2\\
 		\epsilon_3
-	\end{array}\right] ,
+	\end{array}\right] 
 	\label{eq:cuaterniones}
 \end{equation}
 
@@ -774,7 +774,7 @@ $\mathbf{h_w}=\left[\begin{array}{l}h_x \\ h_y \\ h_z\end{array}\right]:$ Vector
 \end{gather}
 
 
-Finalmente, usando las componentes del vector de velocidades angulares es posible determinar la actitud del CubeSat. La interpretación de los ángulos de Euler es más intuitiva, pero para evitar que surjan singularidades, los cuaterniones resultan mas convenientes para los cálculos de simulación \cite{Steyn2011}. La ecuación diferencial cinemática de los cuaterniones está descrita en la  \textbf{eq.(\ref{eq:quaterniones})}: 
+Finalmente, usando las componentes del vector de velocidades angulares es posible determinar la actitud del CubeSat. La interpretación de los ángulos de Euler es más intuitiva, pero para evitar que surjan singularidades, los cuaterniones resultan mas convenientes para los cálculos de simulación \cite{Steyn2011}. La ecuación diferencial cinemática de los cuaterniones está descrita en la  \textbf{eq.(\ref{eq:modelo_cinematico})}: 
 
 \begin{equation}\label{eq:modelo_cinematico}
 	\dot{\mathbf{q}}=\frac{1}{2} \Omega \mathbf{q} \\
@@ -1357,20 +1357,22 @@ Tal como se mencionó en el planteamiento del problema, las estrategias de contr
 
 
 \subsubsection{LINEALIZACIÓN Y ESPACIO DE ESTADOS}
-
+\hfill \break
+Las ecuaciones dinámicas \textbf{(\ref{eq:modelo_dinamico})} y cinemáticas \textbf{(\ref{eq:modelo_cinematico})} conforman el espacio de estados que se evidencia en 
+\textbf{(\ref{eq:espacio_estados_non})}, donde $x$ son los estados definidos por la velocidad angular ($w$), cuaterniones ($q$) y el momento angular de las RW ($h_w$). 
 %Sistema no lineal 
 
-\begin{equation}
+\begin{equation}\label{eq:espacio_estados_non}
 	\begin{aligned}
 		& \underbrace{\left[\begin{array}{c}
 				\dot{\omega} \\
 				\dot{q} \\
 				\dot{h_{w}}
 			\end{array}\right]}_{\dot{x}}=\underbrace{\left[\begin{array}{c}
-				{\mathrm{I}}^{-1}\left(T_{\mathrm{ext}}+T_c-{\mathrm{S}}(\omega)\left({\mathrm{I}} \omega_{b}+h_{\mathrm{w}}\right)\right) \\
+				{\mathrm{I}}^{-1}\left(T_{\mathrm{ext}}+T_{c}-{\mathrm{S}}(\omega)\left({\mathrm{I}} \omega_{b}+h_{\mathrm{w}}\right)\right) \\
 				\frac{1}{2} {\Omega} q \\
-				T_c
-			\end{array}\right]}_{f(x,u,w)}\\[10pt]
+				T_{RW}
+			\end{array}\right]}_{f(x,u)}\\[10pt]
 		& \underbrace{\left[\begin{array}{c}
 				\omega \\
 				q \\
@@ -1388,46 +1390,61 @@ Tal como se mencionó en el planteamiento del problema, las estrategias de contr
 \end{equation}
 
 % Linealizacion
-
+Sin embargo, la naturaleza de estas ecuaciones de $f(x,u)$ es no lineal. Por lo tanto, con el fin de diseñar los controladores, estas ecuaciones deben ser linealizadas sobre un punto de control($\bar{\omega},\bar{q},\bar{h_w}$) y teniendo en cuenta pequeñas variaciones sobre ese punto representados por el símbolo $\sim$ sobre las variables. En este sentido, los estados y las entradas del sistema se expresan de la forma: 
 
 \begin{equation}
 	\begin{aligned}
 		& x(t) =\bar{x}(t)+ \tilde{x}(t) \\
-		& u(t) =\bar{u}(t)+ \tilde{u}(t) \\
-		& y(t) =\bar{y}(t)+ \tilde{y}(t) \\
+		& u(t) =\bar{u}(t)+ \tilde{u}(t) 		
 	\end{aligned}
 \end{equation}	
 
+No obstante, debe hacerse una distinción entre las entradas, las cuales corresponden a los torques que afectan la dinámica del sistema. El torque de control $T_c$ está definido por la contribución de los torques generados por las RW y los magnetorquers:
+$$ T_c = T_{RW} +T_{mgt}$$
+Por otro lado, los torques externos no se consideran entradas ya que son perturbaciones a las que no se les ejerce control. Por lo tanto, son tratados en el término $u_d$. De esta manera, es posible expresar el espacio de estados de la siguiente forma:
+ 
 \begin{equation}
 	\begin{aligned}
-		& \dot{x}(t) =\mathrm{A}x(t)+ \mathrm{B}u(t)+ \Gamma u_d(t)\\
-		& y(t) =\mathrm{C}x(t)+ \mathrm{D}y(t)		
+		& \dot{x}(t) =\mathrm{A}x(t)+ \mathrm{B}u(t)+ \Gamma u_d(t)
+%		& y(t) =\mathrm{C}x(t)+ \mathrm{D}y(t)		
 	\end{aligned}
 \end{equation}	
-
-
-%\begin{equation}
-%	\mathrm{A} \equiv\left[\begin{array}{cccc}
-%		\frac{\partial f_1}{\partial x_1} & \frac{\partial f_1}{\partial x_2} & \cdots & \frac{\partial f_1}{\partial x_n} \\
-%		\frac{\partial f_2}{\partial x_1} & \frac{\partial f_2}{\partial x_2} & \cdots & \frac{\partial f_2}{\partial x_n} \\
-%		& \vdots & \\
-%		\frac{\partial f_n}{\partial x_1} & \frac{\partial f_n}{\partial x_2} & \cdots & \frac{\partial f_n}{\partial x_n}
-%	\end{array}\right]_0 \text { y } \mathrm{B} \equiv\left[\begin{array}{cccc}
-%		\frac{\partial f_1}{\partial u_1} & \frac{\partial f_1}{\partial u_2} & \cdots & \frac{\partial f_1}{\partial u_m} \\
-%		\frac{\partial f_2}{\partial u_1} & \frac{\partial f_2}{\partial u_2} & \cdots & \frac{\partial f_2}{\partial u_m} \\
-%		& & \vdots & \\
-%		\frac{\partial f_n}{\partial u_1} & \frac{\partial f_n}{\partial u_2} & \cdots & \frac{\partial f_n}{\partial u_m}
-%	\end{array}\right]_0
-%\end{equation}
-
+\noindent Donde: 
 \begin{equation}
-	\mathrm{A}_{ij}= \frac{\partial f_i}{\partial x_j}
-	\text { ; } 
-	\mathrm{B}_{ij}= \frac{\partial f_i}{\partial u_j}
-	\text { ; }
-	\Gamma_{ij}= \frac{\partial f_i}{\partial u_{d_j}}		
+	\begin{aligned}
+		& x(t) = \left[\begin{array}{c}
+			\omega \\
+			q \\
+			h_{w}
+		\end{array}\right];
+		& u(t) = \left[\begin{array}{c}
+			T_{RW} \\
+			T_{mgt}
+		\end{array}\right]; 
+		&\;u_d(t) = \left[\begin{array}{c}
+			T_{ext} \\		
+		\end{array}\right]		
+	\end{aligned}
 \end{equation}
 
+\begin{equation}
+	\begin{aligned}		
+		&\mathrm{A}_{ij}= \frac{\partial f_i}{\partial x_j};	
+		&\mathrm{B}_{ij}= \frac{\partial f_i}{\partial u_j};	
+		&\;\Gamma_{ij}= \frac{\partial f_i}{\partial u_{d_j}}		
+	\end{aligned}
+\end{equation}
+Con el fin de hallar las matrices $A$, $B$ y $\Gamma$ debe determinarse una expresión linealizada para los términos de $f(x,u)$, constituidos por las ecuaciones dinámicas y cinemáticas.
+
+\paragraph{Linealiazión de la ecuación dinámica}
+\paragraph{Linealiazión de la ecuación cinemática}
+
+%	q = \left[\begin{array}{c}
+	%	\eta\\
+	%	\epsilon_1\\
+	%	\epsilon_2\\
+	%	\epsilon_3
+	%\end{array}\right]
 \subsubsection{LQR}
 %Funcion de costo 
 \subsubsection{PID}
