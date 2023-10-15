@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.10.11)  14 OCT 2023 19:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.10.11)  14 OCT 2023 19:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1745,39 +1745,39 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 [62] [63] [64]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 1543.
+(hyperref)                than one, level fixed on input line 1562.
 
 
 LaTeX Warning: Reference `table:prob_milenio' on page 65 undefined on input lin
-e 1553.
+e 1572.
 
 
 LaTeX Warning: Reference `fig:hiperbolica' on page 65 undefined on input line 1
-553.
+572.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1592--1592
+Underfull \hbox (badness 10000) in paragraph at lines 1611--1611
 []|\OT1/cmr/m/n/12 Vietnam y
  []
 
 
-Underfull \hbox (badness 1708) in paragraph at lines 1602--1603
+Underfull \hbox (badness 1708) in paragraph at lines 1621--1622
 []|\OT1/cmr/m/n/12 Escuela Po-lit^^Secni-ca Fe-de-ral de
  []
 
 [65] [66]
-<imagenes/ieee_logo.jpg, id=1045, 593.21625pt x 332.74312pt>
+<imagenes/ieee_logo.jpg, id=1050, 593.21625pt x 332.74312pt>
 File: imagenes/ieee_logo.jpg Graphic file (type jpg)
 <use imagenes/ieee_logo.jpg>
-Package pdftex.def Info: imagenes/ieee_logo.jpg  used on input line 1634.
+Package pdftex.def Info: imagenes/ieee_logo.jpg  used on input line 1653.
 (pdftex.def)             Requested size: 296.60739pt x 166.37114pt.
  [67
 
  <./imagenes/ieee_logo.jpg>]
-<imagenes/escudo_udea_solo.png, id=1053, 147.55125pt x 193.47281pt>
+<imagenes/escudo_udea_solo.png, id=1058, 147.55125pt x 193.47281pt>
 File: imagenes/escudo_udea_solo.png Graphic file (type png)
 <use imagenes/escudo_udea_solo.png>
-Package pdftex.def Info: imagenes/escudo_udea_solo.png  used on input line 1645
+Package pdftex.def Info: imagenes/escudo_udea_solo.png  used on input line 1664
 .
 (pdftex.def)             Requested size: 147.55087pt x 193.47234pt.
  [68
@@ -1834,10 +1834,10 @@ Package rerunfilecheck Info: File `main.hd' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31921 strings out of 476315
- 620363 string characters out of 5785779
+ 31927 strings out of 476315
+ 620443 string characters out of 5785779
  1881068 words of memory out of 5000000
- 51462 multiletter control sequences out of 15000+600000
+ 51465 multiletter control sequences out of 15000+600000
  529246 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  103i,24n,111p,1380b,1250s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1873,9 +1873,9 @@ Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Personal/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users
 /Personal/AppData/Local/Programs/MiKTeX/fonts/type1/public/starfont/strfnser.pf
 b>
-Output written on main.pdf (79 pages, 19140161 bytes).
+Output written on main.pdf (79 pages, 19141994 bytes).
 PDF statistics:
- 1332 PDF objects out of 1440 (max. 8388607)
- 277 named destinations out of 1000 (max. 500000)
+ 1337 PDF objects out of 1440 (max. 8388607)
+ 280 named destinations out of 1000 (max. 500000)
  701 words of extra memory for PDF output out of 10000 (max. 10000000)
 

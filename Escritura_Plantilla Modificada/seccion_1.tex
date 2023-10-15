@@ -1453,8 +1453,8 @@ y se escoge un punto de operación $\bar{\omega}$ para el sistema y se modela co
 
 Tomando la \textbf{eq. (\ref{eq:modelo_dinamico})} es posible considerar $T_{ext}$ como una constante al rededor del punto de control de un marco de tiempo $\Delta t$. Por lo tanto, $\dot{\omega}$ se puede expresar como una función de $\omega$, $T_c$ y $h_w$. De esta manera, es posible linealizar usando la expansión de Taylor de primer orden, obteniendo la siguiente expresión:
 
-\begin{equation}\label{eq:modelo_dinmico_linealizado}
-	\dot{\omega_b}=I^{-1}\left[S(I\omega)-S(\omega)I+S(h_w)\right]\tilde{\omega}-I^{-1}S(\omega)\tilde{h_w}+I^{-1}\left(T_{RW}+T_{mgt}\right)
+\begin{equation}\label{eq:modelo_dinamico_linealizado}
+	\dot{\omega_b}=I^{-1}\left[S(I\bar{\omega}-S(\bar{\omega})I+S(\bar{h_w})\right]\tilde{\omega}-I^{-1}S(\bar{\omega})\tilde{h_w}+I^{-1}\left(T_{RW}+T_{mgt}\right)
 \end{equation}
 
 \paragraph{Linealiazión de la ecuación cinemática}
@@ -1500,7 +1500,26 @@ Siguiendo un procedimiento similar al anterior, se tiene que $dq$ es la orientac
 	\dot{\tilde{g}} = -\frac{1}{2}S(\omega)\tilde{g}+\frac{1}{2}q_4I\omega = \frac{1}{2}I\tilde{\omega}
 \end{equation}
 
-Donde $g$ se conoce como vector de Gibbs y corresponde a las primeras 3 componentes vectoriales de un cuaternion. 
+Donde $g$ se conoce como vector de Gibbs y corresponde a las primeras 3 componentes vectoriales de un cuaternion. Finalmente, recurriendo a las ecuaciones \textbf{(\ref{eq:modelo_dinamico_linealizado})} y \textbf{(\ref{eq:modelo_cinematico_linealizado})}, las matrices $A$, $B$ y $\Gamma$ pueden ser expresadas como :
+
+\begin{gather}
+	A = \left[\begin{array}{ccc}
+		 I^{-1}\left[S(I\bar{\omega})-S(\bar{\omega})I+S(\bar{h_w})\right]& 0_{3x3} & -IS(\bar{\omega)}\\
+		\frac{1}{2}I & 0_{3x3} & 0_{3x3} \\
+		 0_{3x3}& 0_{3x3} & 0_{3x3}
+	\end{array}\right] \label{eq:matrizA}\\[10pt]
+	B= \left[\begin{array}{cc}
+		I^{-1}&I^{-1}  \\
+		0_{3x3}& 0_{3x3}  \\
+		-I& 0_{3x3}
+	\end{array}\right]\label{eq:matrizB}\\[10pt]			
+	\Gamma =\left[\begin{array}{c}
+		I^{-1}  \\
+		0_{3x3} \\
+		0_{3x3}
+	\end{array}\right] \label{eq:matrizGamma}				
+\end{gather}
+ 
 %	q = \left[\begin{array}{c}
 	%	\eta\\
 	%	\epsilon_1\\

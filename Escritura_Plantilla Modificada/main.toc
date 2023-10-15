@@ -45,8 +45,8 @@
 \contentsline {subsubsection}{\numberline {1}LINEALIZACIÓN Y ESPACIO DE ESTADOS}{61}{subsubsection.9.0.1}%
 \contentsline {paragraph}{\numberline {a}Linealiazión de la ecuación dinámica}{62}{paragraph.9.0.1.1}%
 \contentsline {paragraph}{\numberline {b}Linealiazión de la ecuación cinemática}{63}{paragraph.9.0.1.2}%
-\contentsline {subsubsection}{\numberline {2}LQR}{63}{subsubsection.9.0.2}%
-\contentsline {subsubsection}{\numberline {3}PID}{63}{subsubsection.9.0.3}%
+\contentsline {subsubsection}{\numberline {2}LQR}{64}{subsubsection.9.0.2}%
+\contentsline {subsubsection}{\numberline {3}PID}{64}{subsubsection.9.0.3}%
 \contentsline {subsubsection}{\numberline {4}ÍNDICES DE DESEMPEÑO}{64}{subsubsection.9.0.4}%
 \contentsline {section}{\numberline {X}RESULTADOS}{65}{section.10}%
 \contentsline {subsubsection}{\numberline {1}Perfil de misión 1}{65}{subsubsection.10.0.1}%

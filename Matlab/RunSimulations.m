@@ -1,6 +1,6 @@
 %% Params
 t_sim = 20000;
-
+plot_flag = false;
 %% Paths
 LQR_PID_path = ".\Controladores\LQR\NonLinear\LQR_bloques_SS_LQR_cascada_PID_controller_NonLinear";
 PID_deltaH_path = ".\Controladores\PID\PID_mgtXY_loadingTest";
@@ -24,7 +24,7 @@ LQR_deltaH_controller= sim(LQR_deltaH_path);
 [t4,YawError4,RW_torques4] = GetControllerPlots(LQR_deltaH_controller,"LQR delta H controller");
 %% Plots
 
-% Torques
+% RW Torques
 
 groupPlots(t1, RW_torques1, t2, RW_torques2, t3, RW_torques3, t4, RW_torques4, "RW Z axis torques [Nm]");
 
@@ -76,19 +76,20 @@ function [t,YawError,RW_torques] = GetControllerPlots(ControllerObject,Controlle
     
     %Error de Referencia
     YawError = ControllerObject.Ref_Error.signals.values(:,1);
-    
-    figure()
-    plot(t, YawError, 'LineWidth', 3)
-    title(ControllerName+' Yaw Error [rad]')
-    grid on
-    
+    if (plot_flag)
+        figure()
+        plot(t, YawError, 'LineWidth', 3)
+        title(ControllerName+' Yaw Error [rad]')
+        grid on
+    end
     % RW Torques Z 
     RW_torques = ControllerObject.RW_torque.signals.values(:,3);
-    
-    figure()
-    plot(t, RW_torques, 'LineWidth', 3)
-    title(ControllerName+' RW Z torques [Nm]')
-    grid on
+     if (plot_flag)
+        figure()
+        plot(t, RW_torques, 'LineWidth', 3)
+        title(ControllerName+' RW Z torques [Nm]')
+        grid on
+     end
 end
 
 function showPerformanceIndices(ControllerObject,name)
