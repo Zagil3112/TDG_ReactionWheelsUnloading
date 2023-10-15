@@ -1437,8 +1437,70 @@ Por otro lado, los torques externos no se consideran entradas ya que son perturb
 Con el fin de hallar las matrices $A$, $B$ y $\Gamma$ debe determinarse una expresión linealizada para los términos de $f(x,u)$, constituidos por las ecuaciones dinámicas y cinemáticas.
 
 \paragraph{Linealiazión de la ecuación dinámica}
-\paragraph{Linealiazión de la ecuación cinemática}
+\hfill \break
+Según el procedimiento planteado en \cite{Andresen2005}, se parte de la ecuación dinámica \textbf{(\ref{eq:modelo_dinamico})} :
+$$
+ \dot{\omega_b}=I^{-1}\left[-S(\omega)\left(I \omega_b+h_w\right)+T_{ext}+T_c\right]
+$$
 
+y se escoge un punto de operación $\bar{\omega}$ para el sistema y se modela con pequeñas variaciones $\tilde{\omega}$ en dicho punto de operación. Esto se expresa en:
+\begin{equation}
+	\begin{aligned}
+		& \omega = \omega(t+\Delta t) = \bar{\omega} + \tilde{\omega}\\
+		& \dot{\omega} = \tilde{\omega}
+	\end{aligned}	 
+\end{equation}
+
+Tomando la \textbf{eq. (\ref{eq:modelo_dinamico})} es posible considerar $T_{ext}$ como una constante al rededor del punto de control de un marco de tiempo $\Delta t$. Por lo tanto, $\dot{\omega}$ se puede expresar como una función de $\omega$, $T_c$ y $h_w$. De esta manera, es posible linealizar usando la expansión de Taylor de primer orden, obteniendo la siguiente expresión:
+
+\begin{equation}\label{eq:modelo_dinmico_linealizado}
+	\dot{\omega_b}=I^{-1}\left[S(I\omega)-S(\omega)I+S(h_w)\right]\tilde{\omega}-I^{-1}S(\omega)\tilde{h_w}+I^{-1}\left(T_{RW}+T_{mgt}\right)
+\end{equation}
+
+\paragraph{Linealiazión de la ecuación cinemática}
+\hfill \break
+Siguiendo un procedimiento similar al anterior, se tiene que $dq$ es la orientación en el tiempo $t +\Delta t$ relativa a la actitud en el tiempo $t$, por lo tanto $\tilde{q}$ se puede expresar como:
+ 
+\begin{equation}
+	\begin{aligned}		
+		& \tilde{q} = \left[\begin{array}{c}				
+				\tilde{\epsilon_1}\\
+				\tilde{\epsilon_2}\\
+				\tilde{\epsilon_3} \\
+				\tilde{\eta}
+			\end{array}\right] =
+			\left[\begin{array}{c}
+				\tilde{g}\\				
+				\tilde{q_4}
+			\end{array}\right] =
+				\left[\begin{array}{c}
+				dq_1\\				
+				dq_2\\
+				dq_3\\
+				dq_4
+			\end{array}\right] =
+				\left[\begin{array}{c}
+					e_x sin\left(\frac{1}{2}\omega dt\right)\\
+					e_y sin\left(\frac{1}{2}\omega dt\right)\\
+					e_z sin\left(\frac{1}{2}\omega dt\right)\\
+					cos\left(\frac{1}{2}\omega dt\right)
+				\end{array}\right]\approx
+				\left[\begin{array}{c}
+					\frac{1}{2}\omega_1 dt\\				
+					\frac{1}{2}\omega_2 dt\\
+					\frac{1}{2}\omega_3 dt\\
+					1
+				\end{array}\right]						
+	\end{aligned}	
+\end{equation}
+
+\noindent Recurriendo a \cite{Blanke2010}, se tiene que $\frac{d}{dt}q_4 = 0$ y $S(\omega)dg =0$. Por lo tanto:
+
+\begin{equation}\label{eq:modelo_cinematico_linealizado}
+	\dot{\tilde{g}} = -\frac{1}{2}S(\omega)\tilde{g}+\frac{1}{2}q_4I\omega = \frac{1}{2}I\tilde{\omega}
+\end{equation}
+
+Donde $g$ se conoce como vector de Gibbs y corresponde a las primeras 3 componentes vectoriales de un cuaternion. 
 %	q = \left[\begin{array}{c}
 	%	\eta\\
 	%	\epsilon_1\\

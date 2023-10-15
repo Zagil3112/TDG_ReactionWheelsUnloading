@@ -39,6 +39,8 @@ Warning--entry type for "Andresen2005" isn't style-file defined
 --line 568 of file refe.bib
 Warning--entry type for "Karatas2006" isn't style-file defined
 --line 576 of file refe.bib
+Warning--entry type for "Blanke2010" isn't style-file defined
+--line 727 of file refe.bib
 -- IEEEtranN.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -46,45 +48,51 @@ Warning--entry type for "Karatas2006" isn't style-file defined
 Reallocating 'glb_str_end' (item size: 4) to 20 items.
 Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
 Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Too many commas in name 1 of "Blanke, M., & Larsen, M. B" for entry Blanke2010
+while executing---line 2673 of file ieeeudea.bst
 Warning--empty journal in Venturini2018
 Warning--missing publisher in Kaplan1976
 Warning--empty journal in Giesselman2006
 Warning--empty journal in zapf2006robust
+Too many commas in name 1 of "Blanke, M., & Larsen, M. B" for entry Blanke2010
+while executing---line 2687 of file ieeeudea.bst
+Too many commas in name 1 of "Blanke, M., & Larsen, M. B" for entry Blanke2010
+while executing---line 2687 of file ieeeudea.bst
 
 Done.
 You've used 33 entries,
             4853 wiz_defined-function locations,
-            1157 strings with 14556 characters,
-and the built_in function-call counts, 19957 in all, are:
-= -- 1716
+            1156 strings with 14556 characters,
+and the built_in function-call counts, 19921 in all, are:
+= -- 1704
 > -- 592
 < -- 60
 + -- 285
 - -- 152
-* -- 1061
-:= -- 3347
+* -- 1057
+:= -- 3326
 add.period$ -- 65
 call.type$ -- 33
 change.case$ -- 38
 chr.to.int$ -- 117
 cite$ -- 37
 duplicate$ -- 1395
-empty$ -- 1630
+empty$ -- 1636
 format.name$ -- 213
-if$ -- 4368
+if$ -- 4362
 int.to.chr$ -- 1
 int.to.str$ -- 34
 missing$ -- 259
 newline$ -- 145
 num.names$ -- 99
-pop$ -- 774
+pop$ -- 785
 preamble$ -- 1
 purify$ -- 33
 quote$ -- 2
-skip$ -- 1482
+skip$ -- 1480
 stack$ -- 0
 substring$ -- 292
-swap$ -- 814
+swap$ -- 808
 text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 6
@@ -92,5 +100,5 @@ type$ -- 435
 warning$ -- 4
 while$ -- 78
 width$ -- 0
-write$ -- 380
-(There was 1 error message)
+write$ -- 378
+(There were 4 error messages)

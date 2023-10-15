@@ -215,8 +215,8 @@ M.~Group, ``A-max 22 mm, Precious Metal Brushes CLL, 3.5 Watt, with
   terminals,'' 2023, [En línea]. Disponible en:
   \url{https://www.maxongroup.com/maxon/view/product/motor/dcmotor/amax/amax22/110137}.
 
-\bibitem[Bellini(2014)]{tes:Niccolo}
-N.~Bellini, ``\textit{Magnetic Actuators for Nanosatellite Attitude Control},''
-  Tesis de doctorado, Bologna University, 2014.
+\bibitem[Blanke(2010)]{Blanke2010}
+.~L. M.~B. Blanke, M., ``Satellite Dynamics and Control in a Quaternion
+  Formulation,'' 2010.
 
 \end{thebibliography}
