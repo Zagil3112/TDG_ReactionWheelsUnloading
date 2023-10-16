@@ -1555,6 +1555,24 @@ La cual solo tiene solución si $A$ y $B$ son controlables. Para ello se puede u
 \end{equation}
 El sistema es controlable si la matriz de controlabilidad $C_o$ tiene un rango total, es decir, el rango es igual al número de estados del modelo de espacio de estados. Por otro lado, para obtener la matriz de ganancias $K$ puede ser obtenida usando la función \textit{lqr} dada por $[K,P,E] = lqr(A,B,Q,R)$. De esta manera, $P$ es obtenida como solución a la \textbf{eq. (\ref{eq:Ricatti})} y $E$ son los valores propios en lazo cerrado $\lvert A-BK\rvert$ que deben garantizar la estabilidad. 
 
+% Definir las matrices Q y R empleadas
+
+% Mostrar modelo
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.5]{imagenes/controladores/lqr.PNG}\\
+	\end{center}
+	\caption{LQR simplificado y controlador en cascada con valor de referencia.}
+	\label{fig:lqr}	 	
+\end{figure}
+
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.5]{imagenes/controladores/cascada.PNG}\\
+	\end{center}
+	\caption{Controlador PID en cascada.}
+	\label{fig:lqr_cascada}	 	
+\end{figure}
 
 \subsubsection{PID}
 \subsubsection{ÍNDICES DE DESEMPEÑO}
