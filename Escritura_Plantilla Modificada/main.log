@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.10.11)  14 OCT 2023 19:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.10.11)  16 OCT 2023 15:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1742,49 +1742,49 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 1439.
 
-[62] [63] [64]
+[62] [63] [64] [65]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 1562.
+(hyperref)                than one, level fixed on input line 1590.
 
 
-LaTeX Warning: Reference `table:prob_milenio' on page 65 undefined on input lin
-e 1572.
+LaTeX Warning: Reference `table:prob_milenio' on page 66 undefined on input lin
+e 1600.
 
 
-LaTeX Warning: Reference `fig:hiperbolica' on page 65 undefined on input line 1
-572.
+LaTeX Warning: Reference `fig:hiperbolica' on page 66 undefined on input line 1
+600.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1611--1611
+Underfull \hbox (badness 10000) in paragraph at lines 1639--1639
 []|\OT1/cmr/m/n/12 Vietnam y
  []
 
 
-Underfull \hbox (badness 1708) in paragraph at lines 1621--1622
+Underfull \hbox (badness 1708) in paragraph at lines 1649--1650
 []|\OT1/cmr/m/n/12 Escuela Po-lit^^Secni-ca Fe-de-ral de
  []
 
-[65] [66]
-<imagenes/ieee_logo.jpg, id=1050, 593.21625pt x 332.74312pt>
+[66] [67]
+<imagenes/ieee_logo.jpg, id=1063, 593.21625pt x 332.74312pt>
 File: imagenes/ieee_logo.jpg Graphic file (type jpg)
 <use imagenes/ieee_logo.jpg>
-Package pdftex.def Info: imagenes/ieee_logo.jpg  used on input line 1653.
+Package pdftex.def Info: imagenes/ieee_logo.jpg  used on input line 1681.
 (pdftex.def)             Requested size: 296.60739pt x 166.37114pt.
- [67
-
- <./imagenes/ieee_logo.jpg>]
-<imagenes/escudo_udea_solo.png, id=1058, 147.55125pt x 193.47281pt>
-File: imagenes/escudo_udea_solo.png Graphic file (type png)
-<use imagenes/escudo_udea_solo.png>
-Package pdftex.def Info: imagenes/escudo_udea_solo.png  used on input line 1664
-.
-(pdftex.def)             Requested size: 147.55087pt x 193.47234pt.
  [68
 
- <./imagenes/escudo_udea_solo.png>] [69
+ <./imagenes/ieee_logo.jpg>]
+<imagenes/escudo_udea_solo.png, id=1070, 147.55125pt x 193.47281pt>
+File: imagenes/escudo_udea_solo.png Graphic file (type png)
+<use imagenes/escudo_udea_solo.png>
+Package pdftex.def Info: imagenes/escudo_udea_solo.png  used on input line 1692
+.
+(pdftex.def)             Requested size: 147.55087pt x 193.47234pt.
+ [69
 
-] [70]) [71]
+ <./imagenes/escudo_udea_solo.png>] [70
+
+] [71]) [72]
 \openout2 = `referencias.aux'.
 
  (referencias.tex (main.bbl
@@ -1799,18 +1799,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--56
 t . com / resources-[]downloads /
  []
 
-[72
+[73
 
 
 
-] [73] [74])) [75]
+] [74] [75])) [76]
 \openout2 = `anexos.aux'.
 
- (anexos.tex [76
+ (anexos.tex [77
 
 
 
-] [77] [78]
+] [78] [79]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 8
 6.
 
@@ -1820,7 +1820,7 @@ File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 86.
 )
-[79] (main.aux (seccion_0.aux)
+[80] (main.aux (seccion_0.aux)
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
  (seccion_resumen.aux) (seccion_1.aux)
@@ -1834,10 +1834,10 @@ Package rerunfilecheck Info: File `main.hd' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31927 strings out of 476315
- 620443 string characters out of 5785779
+ 31939 strings out of 476315
+ 620629 string characters out of 5785779
  1881068 words of memory out of 5000000
- 51465 multiletter control sequences out of 15000+600000
+ 51471 multiletter control sequences out of 15000+600000
  529246 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  103i,24n,111p,1380b,1250s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1873,9 +1873,9 @@ Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Personal/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users
 /Personal/AppData/Local/Programs/MiKTeX/fonts/type1/public/starfont/strfnser.pf
 b>
-Output written on main.pdf (79 pages, 19141994 bytes).
+Output written on main.pdf (80 pages, 19147811 bytes).
 PDF statistics:
- 1337 PDF objects out of 1440 (max. 8388607)
- 280 named destinations out of 1000 (max. 500000)
+ 1350 PDF objects out of 1440 (max. 8388607)
+ 286 named destinations out of 1000 (max. 500000)
  701 words of extra memory for PDF output out of 10000 (max. 10000000)
 

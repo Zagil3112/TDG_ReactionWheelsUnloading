@@ -1390,7 +1390,7 @@ Las ecuaciones dinámicas \textbf{(\ref{eq:modelo_dinamico})} y cinemáticas \te
 \end{equation}
 
 % Linealizacion
-Sin embargo, la naturaleza de las ecuaciones de $f(x,u)$ es no lineal. Por lo tanto, con el fin de diseñar los controladores, estas ecuaciones deben ser linealizadas sobre un punto de control ($\bar{\omega},\bar{q},\bar{h_w}$) y teniendo en cuenta pequeñas variaciones sobre ese punto representados por el símbolo $\sim$ sobre las variables. En este sentido, los estados y las entradas del sistema se expresan de la forma: 
+Sin embargo, la naturaleza de las ecuaciones de $f(x,u)$ es no lineal. Por lo tanto, con el fin de diseñar los controladores, estas ecuaciones deben ser linealizadas sobre un punto de control ($\bar{\omega},\bar{q},\bar{h_w}$) donde se tienen en cuenta pequeñas variaciones sobre ese punto representados por el símbolo $\sim$ sobre los estados. En este sentido, los estados y las entradas del sistema se expresan de la forma: 
 
 \begin{equation}
 	\begin{aligned}
@@ -1403,14 +1403,14 @@ No obstante, debe hacerse una distinción entre las entradas, las cuales corresp
 $$ T_c = T_{RW} +T_{mgt}$$
 Por otro lado, los torques externos no se consideran entradas ya que son perturbaciones a las que no se les ejerce control. Por lo tanto, son tratados en el término $u_d$. De esta manera, es posible expresar el espacio de estados de la siguiente forma:
  
-\begin{equation}
+\begin{equation}\label{eq:espacio_de_estados}
 	\begin{aligned}
 		& \dot{x}(t) =\mathrm{A}x(t)+ \mathrm{B}u(t)+ \Gamma u_d(t)
 %		& y(t) =\mathrm{C}x(t)+ \mathrm{D}y(t)		
 	\end{aligned}
 \end{equation}	
 \noindent Donde: 
-\begin{equation}
+\begin{equation}\label{eq:estados_y_entradas}
 	\begin{aligned}
 		& x(t) = \left[\begin{array}{c}
 			\omega \\
@@ -1527,7 +1527,35 @@ Donde $g$ se conoce como vector de Gibbs y corresponde a las primeras 3 componen
 	%	\epsilon_3
 	%\end{array}\right]
 \subsubsection{LQR}
-%Funcion de costo 
+\hfill \break
+El diseño de un regulador cuadrático lineal (LQR) está basado en el espacio de estados linealizado obtenido en \textbf{(\ref{eq:espacio_de_estados})} y su objetivo es llevar los estados \textbf{(\ref{eq:estados_y_entradas})} a un valor de referencia que asegure obtener una actitud de deseada. El proceso de diseño consiste en minimizar la función de costo dada por:
+
+\begin{equation}\label{eq:funcion_de_costo}
+	J=\int_{0}^{\infty}\left[x^{T}Qx+u^{T}Ru\right]dt
+\end{equation}
+
+Donde $x$ es el vector de estados, $A$ es la matriz de estados del sistema, $B$ es la matriz de entradas, $Q$ y $R$ son la matriz ponderada de coste de estado y la matriz ponderada de coste de entrada respectivamente. Dicha función de costo, puede ser interpretada entendiendo el término $x^{T}Qx$ como la penalización del mal rendimiento del controlador y el término $u^{T}Ru$ como la penalización por el esfuerzo de la acción de control. 
+
+Con el fin de minimizar la función de costo se calcula la matriz de ganancia $K$, la cual también nos permite expresar el control de realimentación de las entradas dado por:
+\begin{gather}\label{eq:K_entradas}
+	u = -R^{-1}B^{T}Px\\[10pt]
+	u = -Kx
+\end{gather}
+
+Donde $P$ es la solución simétrica positiva de la ecuación de Riccati:  
+\begin{equation}\label{eq:Ricatti}
+ 	0 = PA + A^{T}P +Q -PBR^{-1}BP
+\end{equation}
+La cual solo tiene solución si $A$ y $B$ son controlables. Para ello se puede usar la función de Matlab \textit{ctrb} que genera la matriz de controlabilidad dada por:
+
+\begin{equation}\label{eq:controlabilidad}
+	C_o =\left[\begin{array}{lllll}
+		B & AB & A^2B &\ldots & A^{n-1}B
+	\end{array}\right]
+\end{equation}
+El sistema es controlable si la matriz de controlabilidad $C_o$ tiene un rango total, es decir, el rango es igual al número de estados del modelo de espacio de estados. Por otro lado, para obtener la matriz de ganancias $K$ puede ser obtenida usando la función \textit{lqr} dada por $[K,P,E] = lqr(A,B,Q,R)$. De esta manera, $P$ es obtenida como solución a la \textbf{eq. (\ref{eq:Ricatti})} y $E$ son los valores propios en lazo cerrado $\lvert A-BK\rvert$ que deben garantizar la estabilidad. 
+
+
 \subsubsection{PID}
 \subsubsection{ÍNDICES DE DESEMPEÑO}
 
