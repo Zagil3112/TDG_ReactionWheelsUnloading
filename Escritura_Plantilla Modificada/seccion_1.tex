@@ -1330,7 +1330,7 @@ Tal como se mencionó en el planteamiento del problema, las estrategias de contr
 
 \begin{itemize}
 	 \item Tanto para el controlador PID y LQR, se evalúa una ley de control para desaturación que define el torque del actuador dado por la siguiente expresión:
-	 	\begin{equation}
+	 	\begin{equation}\label{eq:ley_de_control_sat}
 	 		\vec{\tau}_{mgt} = -k\Delta h =\vec{M}\times\vec{B} 
 	 	\end{equation} 
 	 Donde $k$ es la ganancia para el control de desaturación y $\Delta h$ es la diferencia entre el momento angular del satélite y el momento angular de las RW. La representación simplificada de este lazo de control puede evidenciarse en la \textbf{Fig. \ref{fig:desaturacionDiagrama}}.
@@ -1653,30 +1653,43 @@ Usando las herramientas \textit{Control System Designer} y \textit{PID Tuner} de
 \end{figure}
 
 % Implementacion 
+Ademas de verificar la ubicación de los polos, se fue haciendo un ajuste progresivo del controlador al evaluar individualmente sus componentes derivativa, integral y proporcional hasta dar con unas ganancias que permitieran la estabilidad con un bajo tiempo de asentamiento y poca sobreelongación máxima. La implementación en Simulink puede apreciarse en la \textbf{Fig. (\ref{fig:PID})}, de igual forma el modelo de desaturación que cumple la ley de control expresada en la \textbf{ec. (\ref{eq:ley_de_control_sat})} se evidencia en la \textbf{Fig. (\ref{fig:PID_deltaH})}.
 
 \begin{figure}[!h]
 	\begin{center}
 		\includegraphics[scale=0.4]{imagenes/controladores/PID.PNG}\\
 	\end{center}
-	\caption{Controlador PID en cascada.}
+	\caption{Implementación simplificada en Simulink del controlador de actitud y desaturación.}
 	\label{fig:PID}	 	
 \end{figure}
-
-
-
 
 \begin{figure}[!h]
 	\begin{center}
 		\includegraphics[scale=0.45]{imagenes/controladores/PID_deltaH.PNG}\\
 	\end{center}
-	\caption{Controlador PID en cascada.}
+	\caption{Modelo de desaturación según ley de control de $\Delta h$.}
 	\label{fig:PID_deltaH}	 	
-\end{figure}
-
-	 	
+\end{figure} 	
 
 
 \subsubsection{Índices de desempeño}
+\hfill \break
+Con el fin de comparar los diferentes controladores y sus métodos de desaturación, se establecieron indices de desempeño que involucren parámetros clave como el error de referencia, la potencia de los actuadores y la diferencia entre el momento angular del satélite y las RW. Lo anterior se expresa en la siguiente ecuación:
+\begin{equation}
+	Index = \int_{0}^{\infty} \left[K_{error}\lvert e_{ref}(t)\rvert + K_{\Delta h}\lvert \Delta h(t)\rvert +  K_{RW}\lvert P_{RW}(t)\rvert + K_{mgt}\lvert P_{mgt}(t)\rvert \right] dt
+\end{equation}
+
+Donde $K_{error}$, $K_{\Delta h}$, $K_{RW}$ y $K_{mgt}$ son las ganancias que permiten mantener cada término del índice de desempeño, en un orden de magnitud cercano para poder ser comparados. La implementación para su cálculo en Simulink se evidencia en la \textbf{Fig. (\ref{fig:indicesP})}
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[scale=0.35]{imagenes/controladores/indices de desempeño.PNG}\\
+	\end{center}
+	\caption{Implementación del cálculo de indices de desempeño.}
+	\label{fig:indicesP}	 	
+\end{figure}
+
+
 \subsubsection{Resumen controladores}
 
 

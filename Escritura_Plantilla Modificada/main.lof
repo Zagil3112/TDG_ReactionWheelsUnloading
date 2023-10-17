@@ -37,8 +37,9 @@
 \contentsline {figure}{\numberline {36}{\ignorespaces Controlador PID en cascada.\relax }}{67}{figure.caption.40}%
 \contentsline {figure}{\numberline {37}{\ignorespaces Sintonización PID en Control System Designer.\relax }}{68}{figure.caption.41}%
 \contentsline {figure}{\numberline {38}{\ignorespaces Herramienta PID Tuner para la sintonización controlador PID.\relax }}{68}{figure.caption.42}%
-\contentsline {figure}{\numberline {39}{\ignorespaces Controlador PID en cascada.\relax }}{69}{figure.caption.43}%
-\contentsline {figure}{\numberline {40}{\ignorespaces Controlador PID en cascada.\relax }}{69}{figure.caption.44}%
-\contentsline {figure}{\numberline {41}{\ignorespaces Imagen corporativa Institute of Electrical and Electronics Engineers (IEEE)\relax }}{72}{figure.caption.47}%
-\contentsline {figure}{\numberline {42}{\ignorespaces Logo Universidad de Antioquia\relax }}{73}{figure.caption.48}%
+\contentsline {figure}{\numberline {39}{\ignorespaces Implementación simplificada en Simulink del controlador de actitud y desaturación.\relax }}{69}{figure.caption.43}%
+\contentsline {figure}{\numberline {40}{\ignorespaces Modelo de desaturación según ley de control de $\Delta h$.\relax }}{69}{figure.caption.44}%
+\contentsline {figure}{\numberline {41}{\ignorespaces Implementación del cálculo de indices de desempeño.\relax }}{70}{figure.caption.45}%
+\contentsline {figure}{\numberline {42}{\ignorespaces Imagen corporativa Institute of Electrical and Electronics Engineers (IEEE)\relax }}{73}{figure.caption.48}%
+\contentsline {figure}{\numberline {43}{\ignorespaces Logo Universidad de Antioquia\relax }}{74}{figure.caption.49}%
 \contentsfinish 
