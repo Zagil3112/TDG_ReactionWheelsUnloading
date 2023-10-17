@@ -168,7 +168,7 @@ Gamma= [I^-1 zeros(3) zeros(3)]';
 
 
 %Choose Q and R
-scenario = 2;   %1 = cheap control
+scenario = 1;   %1 = cheap control
                 %2 = expensive control
                 %3 = ignore position
 
@@ -176,19 +176,20 @@ switch scenario
     case 1
         
         Q = eye(9);
-        % Q(6,6) = 1000;
-        R = [0.005];
+        %Q(6,6) = 1000;
+        Q(9,9) = 100;
+        R = [1];
         
     case 2
         Q = eye(9);
         % Q(6,6) = 1000;
-        R = [0.05];     
+        R = [0.1];     
      
         
     case 3
         %Only penalize the velocity state
         Q = diag([0.001 10]);
-        R = [1];
+        R = [100];
 
     case 4
         %Funcional 

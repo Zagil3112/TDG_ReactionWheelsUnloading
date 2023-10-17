@@ -1356,7 +1356,7 @@ Tal como se mencionó en el planteamiento del problema, las estrategias de contr
 
 
 
-\subsubsection{LINEALIZACIÓN Y ESPACIO DE ESTADOS}
+\subsubsection{Linealización y Espacio de Estados}
 \hfill \break
 Las ecuaciones dinámicas \textbf{(\ref{eq:modelo_dinamico})} y cinemáticas \textbf{(\ref{eq:modelo_cinematico})} conforman el espacio de estados que se evidencia en 
 \textbf{(\ref{eq:espacio_estados_non})}, donde $x$ son los estados definidos por la velocidad angular ($w$), cuaterniones ($q$) y el momento angular de las RW ($h_w$). 
@@ -1526,6 +1526,9 @@ Donde $g$ se conoce como vector de Gibbs y corresponde a las primeras 3 componen
 	%	\epsilon_2\\
 	%	\epsilon_3
 	%\end{array}\right]
+	
+
+
 \subsubsection{LQR}
 \hfill \break
 El diseño de un regulador cuadrático lineal (LQR) está basado en el espacio de estados linealizado obtenido en \textbf{(\ref{eq:espacio_de_estados})} y su objetivo es llevar los estados \textbf{(\ref{eq:estados_y_entradas})} a un valor de referencia que asegure obtener una actitud de deseada. El proceso de diseño consiste en minimizar la función de costo dada por:
@@ -1556,26 +1559,94 @@ La cual solo tiene solución si $A$ y $B$ son controlables. Para ello se puede u
 El sistema es controlable si la matriz de controlabilidad $C_o$ tiene un rango total, es decir, el rango es igual al número de estados del modelo de espacio de estados. Por otro lado, para obtener la matriz de ganancias $K$ puede ser obtenida usando la función \textit{lqr} dada por $[K,P,E] = lqr(A,B,Q,R)$. De esta manera, $P$ es obtenida como solución a la \textbf{eq. (\ref{eq:Ricatti})} y $E$ son los valores propios en lazo cerrado $\lvert A-BK\rvert$ que deben garantizar la estabilidad. 
 
 % Definir las matrices Q y R empleadas
+% Mencionar los indices de desempeño
+\paragraph{Diseño LQR}
+Partiendo de las definiciones anteriores, deben seleccionarse las matrices $R$ y $Q$, donde la primera refleja el peso que tendrá el desempeño de cada actuador (RW y Magnetorquers) y la segunda penaliza el error de cada uno de los estados. En este sentido, para seleccionar los pesos de estas matrices se realizaron diferentes pruebas, donde se determinó que los valores que mejores índices de desempeño presentan son los siguientes: 
 
-% Mostrar modelo
+\begin{equation}
+	\begin{gathered}
+		Q = I_{9x9};
+		\;Q_{9,9} = 100\\
+		R=[1]
+	\end{gathered}	
+\end{equation}
+
+La matriz $Q$ establece que todos los estados se penalizan por igual excepto la componente $Z$ del momento angular de las RW $h_w$. Por otro lado, aumentar la matriz $R$ implica una penalización en la acción de control, sin embargo, afectaba directamente el error del momento angular. Por tal motivo, se definió un valor de 1 para todos los actuadores.
+
+La matriz $K$ de ganancias es calculada con la función \textit{lqr} de Matlab, donde sus valores propios están ubicados en la zona real negativa:
+\begin{equation}
+	E =
+	\begin{bmatrix}
+		-0.50 \\
+		-0.50 \\
+		-0.50 \\
+		-2.24 \\
+		-2.24 \\
+		-2.24 \\
+		-133.07 \\
+		-145.10 \\
+		-164.60 \\
+	\end{bmatrix}
+\end{equation}
+
+En la \textbf{Fig. (\ref{fig:lqr})} puede apreciase la implementación en Simulink. Allí se evidencia que el lazo de control tiene como referencia a los cuaterniones en su aproximación de vectores de Gibbs, por lo tanto las entradas son de la forma:
+\begin{equation}\label{eq:expresionEntradas}
+	u_{[6\times1]} =-K_{[6\times9]}\;x_{[9\times1]} +K_{1[6\times3]}\left[\begin{array}{c}
+		g1\\
+		g2\\
+		g3
+	\end{array}\right]_{[3\times1]}
+\end{equation}
+
+Donde $K_1$ es la submatriz de K, la cual corresponde a las componentes que multiplican a los cuaterniones dentro del vector $x$ de estados. Por lo tanto, se tiene que: 
+\begin{equation}
+	\begin{aligned}
+		&K_1= K_{ij}\\ 
+		&4<i<6\\
+		&1<j<6 		
+	\end{aligned}	
+\end{equation}
+\newpage
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[scale=0.5]{imagenes/controladores/lqr.PNG}\\
+		\includegraphics[scale=0.6]{imagenes/controladores/lqr.PNG}\\
 	\end{center}
-	\caption{LQR simplificado y controlador en cascada con valor de referencia.}
+	\caption{LQR simplificado y controlador en cascada con valor de referencia $T_error$.}
 	\label{fig:lqr}	 	
 \end{figure}
 
+ Finalmente, en la implementación del lazo de control también puede apreciarse el controlador en cascada, el cual recibe su valor de referencia ($T_{error}$) como las componentes correspondientes al torque de los Magnetorquers como se mostró en \textbf{(\ref{eq:estados_y_entradas})} y en \textbf{(\ref{eq:expresionEntradas})}. Internamente, este bloque contiene el modelo de magnetorquers junto con un controlador PID como se evidencia en la \textbf{Fig. (\ref{fig:lqr_cascada})}.
+ 
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[scale=0.5]{imagenes/controladores/cascada.PNG}\\
+		\includegraphics[scale=0.45]{imagenes/controladores/cascada.PNG}\\
 	\end{center}
 	\caption{Controlador PID en cascada.}
 	\label{fig:lqr_cascada}	 	
 \end{figure}
+\newpage
 
 \subsubsection{PID}
-\subsubsection{ÍNDICES DE DESEMPEÑO}
+
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.45]{imagenes/controladores/PID.PNG}\\
+	\end{center}
+	\caption{Controlador PID en cascada.}
+	\label{fig:PID}	 	
+\end{figure}
+
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.45]{imagenes/controladores/PID_deltaH.PNG}\\
+	\end{center}
+	\caption{Controlador PID en cascada.}
+	\label{fig:PID_deltaH}	 	
+\end{figure}
+
+\subsubsection{Índices de desempeño}
+\subsubsection{Resumen controladores}
+
 
 
 
