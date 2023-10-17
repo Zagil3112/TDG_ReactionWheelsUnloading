@@ -1627,22 +1627,54 @@ Donde $K_1$ es la submatriz de K, la cual corresponde a las componentes que mult
 \newpage
 
 \subsubsection{PID}
+\hfill \break
+Usando las herramientas \textit{Control System Designer} y \textit{PID Tuner} de Simulink, fue posible sintonizar los diferentes controladores PID, tanto para el control de actitud como para la desaturación tal como se evidencia en las \textbf{Fig. (\ref{fig:PID_Tuning})} y \textbf{Fig. (\ref{fig:PID_Tuning})} respectivamente. 
 
-\begin{figure}[!ht]
+\begin{figure}[h]
+	\centering
+	\subfloat[Editor de Root Locus.]{
+		\label{fig:PID_Tuning1}
+		\includegraphics[width=0.37\textwidth]{imagenes/controladores/PID_tuning1_1.PNG}}
+	\subfloat[Respuesta al escalón para el control de actitud.]{
+		\label{fig:PID_Tuning2}
+		\includegraphics[width=0.382\textwidth]{imagenes/controladores/PID_tuning1_2.PNG}}
+	
+	\caption{Sintonización PID en Control System Designer.}
+	\label{fig:PID_Tuning}
+\end{figure}
+
+
+\begin{figure}[!h]
 	\begin{center}
-		\includegraphics[scale=0.45]{imagenes/controladores/PID.PNG}\\
+		\includegraphics[scale=0.32]{imagenes/controladores/PID_tuning2.PNG}\\
+	\end{center}
+	\caption{Herramienta PID Tuner para la sintonización controlador PID.}
+	\label{fig:PID_tuner}	 	
+\end{figure}
+
+% Implementacion 
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[scale=0.4]{imagenes/controladores/PID.PNG}\\
 	\end{center}
 	\caption{Controlador PID en cascada.}
 	\label{fig:PID}	 	
 \end{figure}
 
-\begin{figure}[!ht]
+
+
+
+\begin{figure}[!h]
 	\begin{center}
 		\includegraphics[scale=0.45]{imagenes/controladores/PID_deltaH.PNG}\\
 	\end{center}
 	\caption{Controlador PID en cascada.}
 	\label{fig:PID_deltaH}	 	
 \end{figure}
+
+	 	
+
 
 \subsubsection{Índices de desempeño}
 \subsubsection{Resumen controladores}
