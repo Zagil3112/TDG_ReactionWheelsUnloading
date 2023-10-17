@@ -1331,7 +1331,7 @@ Tal como se mencionó en el planteamiento del problema, las estrategias de contr
 \begin{itemize}
 	 \item Tanto para el controlador PID y LQR, se evalúa una ley de control para desaturación que define el torque del actuador dado por la siguiente expresión:
 	 	\begin{equation}\label{eq:ley_de_control_sat}
-	 		\vec{\tau}_{mgt} = -k\Delta h =\vec{M}\times\vec{B} 
+	 		\vec{\tau}_{mgt} = k\Delta h =\vec{M}\times\vec{B} 
 	 	\end{equation} 
 	 Donde $k$ es la ganancia para el control de desaturación y $\Delta h$ es la diferencia entre el momento angular del satélite y el momento angular de las RW. La representación simplificada de este lazo de control puede evidenciarse en la \textbf{Fig. \ref{fig:desaturacionDiagrama}}.
 	 
@@ -1628,7 +1628,7 @@ Donde $K_1$ es la submatriz de K, la cual corresponde a las componentes que mult
 
 \subsubsection{PID}
 \hfill \break
-Usando las herramientas \textit{Control System Designer} y \textit{PID Tuner} de Simulink, fue posible sintonizar los diferentes controladores PID, tanto para el control de actitud como para la desaturación tal como se evidencia en las \textbf{Fig. (\ref{fig:PID_Tuning})} y \textbf{Fig. (\ref{fig:PID_Tuning})} respectivamente. 
+Usando las herramientas \textit{Control System Designer} y \textit{PID Tuner} de Simulink, fue posible sintonizar los diferentes controladores PID, tanto para el control de actitud como para la desaturación, como se evidencia en las \textbf{Fig. (\ref{fig:PID_Tuning})} y \textbf{Fig. (\ref{fig:PID_Tuning})} respectivamente. 
 
 \begin{figure}[h]
 	\centering
@@ -1653,17 +1653,19 @@ Usando las herramientas \textit{Control System Designer} y \textit{PID Tuner} de
 \end{figure}
 
 % Implementacion 
-Ademas de verificar la ubicación de los polos, se fue haciendo un ajuste progresivo del controlador al evaluar individualmente sus componentes derivativa, integral y proporcional hasta dar con unas ganancias que permitieran la estabilidad con un bajo tiempo de asentamiento y poca sobreelongación máxima. La implementación en Simulink puede apreciarse en la \textbf{Fig. (\ref{fig:PID})}, de igual forma el modelo de desaturación que cumple la ley de control expresada en la \textbf{ec. (\ref{eq:ley_de_control_sat})} se evidencia en la \textbf{Fig. (\ref{fig:PID_deltaH})}.
+Ademas de verificar la ubicación de los polos, un ajuste progresivo del controlador fue realizado al evaluar individualmente sus componentes derivativa, integral y proporcional, hasta dar con unas ganancias que permitieran la estabilidad con un bajo tiempo de asentamiento y poca sobreelongación máxima. 
 
-\begin{figure}[!h]
+Finalmente, la implementación en Simulink para el control de actitud puede apreciarse en la \textbf{Fig. (\ref{fig:PID})}. De igual forma el modelo de desaturación que cumple la ley de control expresada en la \textbf{ec. (\ref{eq:ley_de_control_sat})} se evidencia en la \textbf{Fig. (\ref{fig:PID_deltaH})}.
+
+\begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[scale=0.4]{imagenes/controladores/PID.PNG}\\
+		\includegraphics[scale=0.37]{imagenes/controladores/PID.PNG}\\
 	\end{center}
 	\caption{Implementación simplificada en Simulink del controlador de actitud y desaturación.}
 	\label{fig:PID}	 	
 \end{figure}
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
 	\begin{center}
 		\includegraphics[scale=0.45]{imagenes/controladores/PID_deltaH.PNG}\\
 	\end{center}
@@ -1671,15 +1673,33 @@ Ademas de verificar la ubicación de los polos, se fue haciendo un ajuste progre
 	\label{fig:PID_deltaH}	 	
 \end{figure} 	
 
-
+\newpage
 \subsubsection{Índices de desempeño}
 \hfill \break
 Con el fin de comparar los diferentes controladores y sus métodos de desaturación, se establecieron indices de desempeño que involucren parámetros clave como el error de referencia, la potencia de los actuadores y la diferencia entre el momento angular del satélite y las RW. Lo anterior se expresa en la siguiente ecuación:
 \begin{equation}
-	Index = \int_{0}^{\infty} \left[K_{error}\lvert e_{ref}(t)\rvert + K_{\Delta h}\lvert \Delta h(t)\rvert +  K_{RW}\lvert P_{RW}(t)\rvert + K_{mgt}\lvert P_{mgt}(t)\rvert \right] dt
+	Index = \int_{0}^{\infty} K_{error}\lvert e_{ref}(t)\rvert + K_{\Delta h}\lvert \Delta h(t)\rvert +  K_{RW}\lvert P_{RW}(t)\rvert + K_{mgt}\lvert P_{mgt}(t)\rvert\;dt
 \end{equation}
 
-Donde $K_{error}$, $K_{\Delta h}$, $K_{RW}$ y $K_{mgt}$ son las ganancias que permiten mantener cada término del índice de desempeño, en un orden de magnitud cercano para poder ser comparados. La implementación para su cálculo en Simulink se evidencia en la \textbf{Fig. (\ref{fig:indicesP})}
+Donde $K_{error}$, $K_{\Delta h}$, $K_{RW}$ y $K_{mgt}$ son las ganancias que permiten mantener cada término del índice de desempeño, en un orden de magnitud cercano para poder ser comparados. Sus valores se recopilaron en la \textbf{Tabla \ref{table:ganancias_indices}}.
+
+\begin{table}[h]
+	\caption{\MakeUppercase{Ganancias indices de desempeño }}
+	\begin{center}
+		\begin{tabular}{ c c c}			
+			&  \textbf{Ganancias} &  \textbf{Valor}\\ \hline
+			$K_{error}$  &  Error de referencia & $71$ \\ 
+			$K_{\Delta h}$ &  Error $\Delta h$ & $132000$ \\ 
+			$K_{mgt}$ &  Potencia Magnetorquers & $0.1$ \\ 
+			$K_{RW}$ &  Potencia RW & $5$ \\ \hline			
+		\end{tabular}
+	\end{center}
+	\label{table:ganancias_indices}
+\end{table}
+
+
+
+La implementación para su cálculo en Simulink, tras cada simulación, se evidencia en la \textbf{Fig. (\ref{fig:indicesP})}
 
 \begin{figure}[!h]
 	\begin{center}
@@ -1689,39 +1709,74 @@ Donde $K_{error}$, $K_{\Delta h}$, $K_{RW}$ y $K_{mgt}$ son las ganancias que pe
 	\label{fig:indicesP}	 	
 \end{figure}
 
-
+\newpage
 \subsubsection{Resumen controladores}
+\hfill \break
+Debido a que el controlador PID se implementó tanto para el control de actitud como para el método de desaturación, se obtuvieron 3 controladores cuyas ganancias están recopiladas en la \textbf{Tabla \ref{table:gananciasPID}}.
 
+\begin{table}[h]
+	\caption{\MakeUppercase{Ganancias controladores PID }}
+	\begin{center}
+		\begin{tabular}{ c | c c c}
+			\textbf{Ganancia}&  \mbox{\boldmath$PID_1$} & \mbox{\boldmath$PID_2$} & \mbox{\boldmath$PID_3$}\\ \hline			
+			\textbf{P} &  $4500$ & $0$ & 3739538.59 \\ 
+			\textbf{I}  &  $800$ & $2538362.26$ &11683234637.87 \\ 
+			\textbf{D}  &  $8000$ & $0$ & -2886.42 \\
+			\textbf{N}  &  $100$ & $100$ & 1295.56\\ \hline
+			\textbf{Función} &  Control de actitud & Desaturación & Desaturación \\ 			
+		\end{tabular}
+	\end{center}
+	\label{table:gananciasPID}
+\end{table}
 
+Finalmente, se obtienen 4 diferentes estrategias de control al combinar los métodos para el control de actitud y la desaturación. En la \textbf{Tabla \ref{table:summary_controllers}} se recopilaron las mejores combinaciones que serán evaluadas en los diferencias escenarios y órbitas.
 
-
-
-
-
-
-%% Fuerzas externas
-
-%Aerodinámica
-% Magnetorques
-
-
+\begin{table}[h]
+	\caption{\MakeUppercase{Recopilación Controladores}}
+	\begin{center}
+		\begin{tabular}{ c c c c}
+			
+			ID&  \textbf{Control de actitud} &  \textbf{ Método de desaturación} & \textbf{Controlador desaturación}\\ \hline
+			1 &  $PID_1$ & $k\Delta h$ & $PID_2$\\ 
+			2 &  $LQR$ & $k\Delta h$ & $PID_2$\\ 
+			3 &  $LQR$ & Cascada & $PID_2$\\ 
+			4 &  $LQR$ & Cascada  & $PID_3$\\  \hline			
+		\end{tabular}
+	\end{center}
+	\label{table:summary_controllers}
+\end{table}
 \newpage
 %--------------------------
 \section{RESULTADOS}
+% Mostrar efecto de saturación 
 
-Descripción de los escenarios a evaluar:
 
-1- Equilibrio  
-2- Maniobra de giro
-3- Nadir (Rampa)
 
-Sujeto a 3 tipos de órbita 
+%Descripción de los escenarios a evaluar:
 
-1- 0°
-2- 20° (ISS)
-3- 90° (Polar)
+%1- Equilibrio  
+%2- Maniobra de giro
+%3- Nadir (Rampa)
+
+\begin{itemize}
+	\item Respuesta de equilibrio ante perturbaciones. 
+	\item Respuesta tipo escalón de un angulo deseado.
+	\item Respuesta tipo rampa para alcanzar una velocidad de rotación constante.
+\end{itemize} 
+
+% Imagen y parámetros orbitales 
+%Sujeto a 3 tipos de órbita 
+%
+%1- 0°
+%2- 20° (ISS)
+%3- 90° (Polar)
 %\section{ANÁLISIS DE ÓRBITAS}
 \subsubsection{Perfil de misión 1}
+
+%Orbita 1
+%Orbita 2
+%Orbita 3
+
 \subsubsection{Perfil de misión 2} 
 \subsubsection{Perfil de misión 3}  
 

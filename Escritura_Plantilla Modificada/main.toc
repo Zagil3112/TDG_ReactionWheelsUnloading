@@ -49,16 +49,16 @@
 \contentsline {paragraph}{\numberline {a}Diseño LQR}{65}{paragraph.9.0.2.1}%
 \contentsline {subsubsection}{\numberline {3}PID}{68}{subsubsection.9.0.3}%
 \contentsline {subsubsection}{\numberline {4}Índices de desempeño}{70}{subsubsection.9.0.4}%
-\contentsline {subsubsection}{\numberline {5}Resumen controladores}{70}{subsubsection.9.0.5}%
-\contentsline {section}{\numberline {X}RESULTADOS}{71}{section.10}%
-\contentsline {subsubsection}{\numberline {1}Perfil de misión 1}{71}{subsubsection.10.0.1}%
-\contentsline {subsubsection}{\numberline {2}Perfil de misión 2}{71}{subsubsection.10.0.2}%
-\contentsline {subsubsection}{\numberline {3}Perfil de misión 3}{71}{subsubsection.10.0.3}%
-\contentsline {section}{\numberline {XI}DISCUSIÓN}{75}{section.11}%
-\contentsline {section}{\numberline {XII}CONCLUSIONES}{76}{section.12}%
-\contentsline {section}{\numberline {XIII}RECOMENDACIONES}{77}{section.13}%
-\contentsline {section}{\numberline {XIII} REFERENCIAS}{78}{section.13}%
-\contentsline {subsection}{\numberline {} Anexo A. Autoarchivo en Repositorio y documentos de interés}{83}{section.13}%
-\contentsline {subsection}{\numberline {} Anexo B. Recortar y abreviar direcciones web largas}{84}{section.13}%
-\contentsline {subsection}{\numberline {} Anexo C. Incluir imágenes}{84}{section.13}%
+\contentsline {subsubsection}{\numberline {5}Resumen controladores}{71}{subsubsection.9.0.5}%
+\contentsline {section}{\numberline {X}RESULTADOS}{72}{section.10}%
+\contentsline {subsubsection}{\numberline {1}Perfil de misión 1}{72}{subsubsection.10.0.1}%
+\contentsline {subsubsection}{\numberline {2}Perfil de misión 2}{72}{subsubsection.10.0.2}%
+\contentsline {subsubsection}{\numberline {3}Perfil de misión 3}{72}{subsubsection.10.0.3}%
+\contentsline {section}{\numberline {XI}DISCUSIÓN}{76}{section.11}%
+\contentsline {section}{\numberline {XII}CONCLUSIONES}{77}{section.12}%
+\contentsline {section}{\numberline {XIII}RECOMENDACIONES}{78}{section.13}%
+\contentsline {section}{\numberline {XIII} REFERENCIAS}{79}{section.13}%
+\contentsline {subsection}{\numberline {} Anexo A. Autoarchivo en Repositorio y documentos de interés}{84}{section.13}%
+\contentsline {subsection}{\numberline {} Anexo B. Recortar y abreviar direcciones web largas}{85}{section.13}%
+\contentsline {subsection}{\numberline {} Anexo C. Incluir imágenes}{85}{section.13}%
 \contentsfinish 
