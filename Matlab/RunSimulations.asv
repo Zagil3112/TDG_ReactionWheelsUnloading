@@ -1,5 +1,5 @@
 %% Params
-t_sim = 17000;
+t_sim = 500;
 global plot_flag 
 plot_flag = false;
 %% Paths
@@ -32,17 +32,11 @@ LQR_deltaH_controller= sim(LQR_deltaH_path);
 % Yaw Error
 %groupPlots(t1, YawError1, t2, YawError2, t3, YawError3, t4, YawError4, "Yaw Error [rad]");
 
-groupPlots(t1, SC_omega1, t2, SC_omega2, t3, SC_omega3, t4, SC_omega4, "SC Omega [rad/s]");
-groupPlots(t1, YawError1, t2, YawError2, t3, YawError3, t4, YawError4, "Yaw Error [rad]");
-groupPlots(t1, RW_h1, t2, RW_h2, t3, RW_h3, t4, RW_h4, "RW Momento angular [Nms]");
+%groupPlots(t1, SC_omega1, t2, SC_omega2, t3, SC_omega3, t4, SC_omega4, "SC omega [rad/s]");
+%groupPlots(t1, YawError1, t2, YawError2, t3, YawError3, t4, YawError4, "Yaw Error [rad]");
 
 
-% plots3by1(t1,YawError1,SC_omega1,RW_h1)
-% plots3by1(t2,YawError2,SC_omega2,RW_h2)
-% plots3by1(t3,YawError3,SC_omega3,RW_h3)
-% plots3by1(t4,YawError4,SC_omega4,RW_h4)
-
-
+plots3by1(t1,YawError1,SC_omega1,RW_h1)
 
 
 
@@ -57,41 +51,40 @@ showPerformanceIndices(LQR_deltaH_controller,"LQR_deltaH_controller");
 %% Functions
 
 
-function plots3by1(t,param1,param2,param3)
-    figure()
+function plots3by1(t,param1,param2)
     subplot(1,3,1)
     plot(t,param1,'LineWidth', 3);
     grid on
-    title('Error Yaw [rad]')
+    title('Subplot 1')
     
     subplot(1,3,2)
     plot(t,param2,'LineWidth', 3);
     grid on
-    title('SC omega [rad/s]')
+    title('Subplot 2')
     
     subplot(1,3,3)
     plot(t,param3,'LineWidth', 3);
     grid on
-    title('RW Momento Angular [Nms]')
+    title('Subplot 3')
 
 end
 
 function groupPlots(t1, param1, t2, param2, t3, param3, t4, param4,PlotTitle)
     figure()
     
-    plot(t1,param1,'LineWidth', 1);
+    plot(t1,param1,'LineWidth', 3);
     hold on
     
-    plot(t2,param2,'LineWidth', 1);
+    plot(t2,param2,'LineWidth', 2);
     hold on
     
-    plot(t3,param3,'g','LineWidth', 1);
+    plot(t3,param3,'g','LineWidth', 2);
     hold on
     
     plot(t4,param4,'LineWidth', 1);
     hold on
     
-    legend("LQR cascade PID","PID delta H","LQR cascade I","LQR delta H",Location="best")
+    legend("LQR cascade PID","PID delta H","LQR cascade I","LQR delta H")
     
     title(PlotTitle)
     grid on

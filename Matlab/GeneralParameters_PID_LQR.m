@@ -1,3 +1,6 @@
+%Initial condition for SC Dynamics
+
+omegaZ_inicial = 0.29; %rad/s
 
 %Reaction Wheels
 La = 0.222e-3  ; %H 
@@ -176,9 +179,10 @@ switch scenario
     case 1
         
         Q = eye(9);
-        %Q(6,6) = 1000;
-        Q(9,9) = 100;
-        R = [1];
+        Q(6,6) = 2000;% quaternion z
+        Q(9,9) = 1; %  hz
+        Q(3,3) = 0.8; % omega z
+        R = [2];
         
     case 2
         Q = eye(9);
