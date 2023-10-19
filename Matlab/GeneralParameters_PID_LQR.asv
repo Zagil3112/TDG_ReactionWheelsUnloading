@@ -179,9 +179,10 @@ switch scenario
     case 1
         
         Q = eye(9);
-        %Q(6,6) = 1000;
-        Q(9,9) = 100;
-        R = [1];
+        Q(6,6) = 200;% quaternion z
+        Q(9,9) = 10; %  hz
+        Q(3,3) = 0.6; % omega z
+        R = [0.005];
         
     case 2
         Q = eye(9);

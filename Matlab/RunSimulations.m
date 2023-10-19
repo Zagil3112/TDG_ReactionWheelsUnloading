@@ -1,5 +1,5 @@
 %% Params
-t_sim = 17000;
+t_sim = 3000;
 global plot_flag 
 plot_flag = false;
 %% Paths
