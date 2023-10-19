@@ -7,7 +7,7 @@ orbit_path="orbit_polar";
 
 % magnetic_field= B_mag0 ;
 % magnetic_field= B_mag51 ;
-magnetic_field= B_mag90 ;
+magnetic_field= B_mag0 ;
 %B_mag51,B_mag90,B_mag0
 
 %% Paths
