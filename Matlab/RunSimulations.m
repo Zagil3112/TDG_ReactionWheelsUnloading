@@ -2,6 +2,10 @@
 t_sim = 3000;
 global plot_flag 
 plot_flag = false;
+global orbit_path
+orbit_path="orbit_zero";
+
+
 %% Paths
 LQR_PID_path = ".\Controladores\LQR\NonLinear\LQR_bloques_SS_LQR_cascada_PID_controller_NonLinear";
 PID_deltaH_path = ".\Controladores\PID\PID_mgtXY_loadingTest";
@@ -25,11 +29,11 @@ LQR_deltaH_controller= sim(LQR_deltaH_path);
 [t4,YawError4,SC_omega4,RW_h4,RW_torques4,Mgt_torques4] = GetControllerPlots(LQR_deltaH_controller,"LQR delta H controller");
 %% Plots
 
-groupPlots(t1, SC_omega1, t2, SC_omega2, t3, SC_omega3, t4, SC_omega4, "SC Omega [rad/s]");
-groupPlots(t1, YawError1, t2, YawError2, t3, YawError3, t4, YawError4, "Yaw Error [rad]");
-groupPlots(t1, RW_h1, t2, RW_h2, t3, RW_h3, t4, RW_h4, "RW Momento angular [Nms]");
-groupPlots(t1, RW_torques1, t2, RW_torques2, t3, RW_torques3, t4, RW_torques4, "RW Z axis torques [Nm]");
-groupPlots(t1, Mgt_torques1, t2, Mgt_torques2, t3, Mgt_torques3, t4, Mgt_torques4, "Mgt Z axis torques [Nm]");
+groupPlots(t1, SC_omega1, t2, SC_omega2, t3, SC_omega3, t4, SC_omega4, "SC Omega [rad/s]","sc_omega");
+groupPlots(t1, YawError1, t2, YawError2, t3, YawError3, t4, YawError4, "Yaw Error [rad]","yaw_error");
+groupPlots(t1, RW_h1, t2, RW_h2, t3, RW_h3, t4, RW_h4, "RW Momento angular [Nms]","RW_h");
+groupPlots(t1, RW_torques1, t2, RW_torques2, t3, RW_torques3, t4, RW_torques4, "RW Z axis torques [Nm]","RW_torques");
+groupPlots(t1, Mgt_torques1, t2, Mgt_torques2, t3, Mgt_torques3, t4, Mgt_torques4, "Mgt Z axis torques [Nm]","Mgt_torques");
 
 % plots3by1(t1,YawError1,SC_omega1,RW_h1)
 % plots3by1(t2,YawError2,SC_omega2,RW_h2)
@@ -70,7 +74,8 @@ function plots3by1(t,param1,param2,param3)
 
 end
 
-function groupPlots(t1, param1, t2, param2, t3, param3, t4, param4,PlotTitle)
+function groupPlots(t1, param1, t2, param2, t3, param3, t4, param4,PlotTitle,fileName)
+    global orbit_path
     figure()
     
     plot(t1,param1,'LineWidth', 1);
@@ -90,6 +95,16 @@ function groupPlots(t1, param1, t2, param2, t3, param3, t4, param4,PlotTitle)
     title(PlotTitle)
     grid on
     hold off
+
+
+    % Apply the export setup
+    matlab.graphics.exportsetup.Format = 'png';
+    matlab.graphics.exportsetup.Width = '24cm';
+    matlab.graphics.exportsetup.Height = '10cm';
+    matlab.graphics.exportsetup.Resolution = '600'; 
+
+    saveas(gcf,"./Resultados_imagenes/"+orbit_path+'/'+fileName+'.png')
+    saveas(gcf,"./Resultados_imagenes/"+orbit_path+'/'+fileName+'.fig')
 end
 
 function [t,YawError,SC_omega,RW_h,RW_torques,Mgt_torques] = GetControllerPlots(ControllerObject,ControllerName)
