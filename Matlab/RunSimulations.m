@@ -3,8 +3,12 @@ t_sim = 3000;
 global plot_flag 
 plot_flag = false;
 global orbit_path
-orbit_path="orbit_zero";
+orbit_path="orbit_polar";
 
+% magnetic_field= B_mag0 ;
+% magnetic_field= B_mag51 ;
+magnetic_field= B_mag90 ;
+%B_mag51,B_mag90,B_mag0
 
 %% Paths
 LQR_PID_path = ".\Controladores\LQR\NonLinear\LQR_bloques_SS_LQR_cascada_PID_controller_NonLinear";

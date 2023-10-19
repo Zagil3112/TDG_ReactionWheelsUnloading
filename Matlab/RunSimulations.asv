@@ -5,6 +5,10 @@ plot_flag = false;
 global orbit_path
 orbit_path="orbit_zero";
 
+% magnetic_field= B_mag0 ;
+magnetic_field= B_mag51 ;
+% magnetic_field= B_mag90 ;
+%B_mag51,B_mag90,B_mag0
 
 %% Paths
 LQR_PID_path = ".\Controladores\LQR\NonLinear\LQR_bloques_SS_LQR_cascada_PID_controller_NonLinear";
@@ -101,10 +105,10 @@ function groupPlots(t1, param1, t2, param2, t3, param3, t4, param4,PlotTitle,fil
     matlab.graphics.exportsetup.Format = 'png';
     matlab.graphics.exportsetup.Width = '24cm';
     matlab.graphics.exportsetup.Height = '10cm';
-    matlab.graphics.exportsetup.Resolution = '600';
-    matlab.graphics.exportsetup.Resolution 
+    matlab.graphics.exportsetup.Resolution = '600'; 
 
     saveas(gcf,"./Resultados_imagenes/"+orbit_path+'/'+fileName+'.png')
+    saveas(gcf,"./Resultados_imagenes/"+orbit_path+'/'+fileName+'.fig')
 end
 
 function [t,YawError,SC_omega,RW_h,RW_torques,Mgt_torques] = GetControllerPlots(ControllerObject,ControllerName)
