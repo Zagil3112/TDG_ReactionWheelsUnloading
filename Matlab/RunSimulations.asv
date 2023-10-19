@@ -1,5 +1,5 @@
 %% Params
-t_sim = 500;
+t_sim = 3000;
 global plot_flag 
 plot_flag = false;
 %% Paths
@@ -32,11 +32,17 @@ LQR_deltaH_controller= sim(LQR_deltaH_path);
 % Yaw Error
 %groupPlots(t1, YawError1, t2, YawError2, t3, YawError3, t4, YawError4, "Yaw Error [rad]");
 
-%groupPlots(t1, SC_omega1, t2, SC_omega2, t3, SC_omega3, t4, SC_omega4, "SC omega [rad/s]");
-%groupPlots(t1, YawError1, t2, YawError2, t3, YawError3, t4, YawError4, "Yaw Error [rad]");
+groupPlots(t1, SC_omega1, t2, SC_omega2, t3, SC_omega3, t4, SC_omega4, "SC Omega [rad/s]");
+groupPlots(t1, YawError1, t2, YawError2, t3, YawError3, t4, YawError4, "Yaw Error [rad]");
+groupPlots(t1, RW_h1, t2, RW_h2, t3, RW_h3, t4, RW_h4, "RW Momento angular [Nms]");
 
 
-plots3by1(t1,YawError1,SC_omega1,RW_h1)
+% plots3by1(t1,YawError1,SC_omega1,RW_h1)
+% plots3by1(t2,YawError2,SC_omega2,RW_h2)
+% plots3by1(t3,YawError3,SC_omega3,RW_h3)
+% plots3by1(t4,YawError4,SC_omega4,RW_h4)
+
+
 
 
 
@@ -51,47 +57,48 @@ showPerformanceIndices(LQR_deltaH_controller,"LQR_deltaH_controller");
 %% Functions
 
 
-function plots3by1(t,param1,param2)
+function plots3by1(t,param1,param2,param3)
+    figure()
     subplot(1,3,1)
     plot(t,param1,'LineWidth', 3);
     grid on
-    title('Subplot 1')
+    title('Error Yaw [rad]')
     
     subplot(1,3,2)
     plot(t,param2,'LineWidth', 3);
     grid on
-    title('Subplot 2')
+    title('SC omega [rad/s]')
     
     subplot(1,3,3)
     plot(t,param3,'LineWidth', 3);
     grid on
-    title('Subplot 3')
+    title('RW Momento Angular [Nms]')
 
 end
 
 function groupPlots(t1, param1, t2, param2, t3, param3, t4, param4,PlotTitle)
     figure()
     
-    plot(t1,param1,'LineWidth', 3);
+    plot(t1,param1,'LineWidth', 1);
     hold on
     
-    plot(t2,param2,'LineWidth', 2);
+    plot(t2,param2,'LineWidth', 1);
     hold on
     
-    plot(t3,param3,'g','LineWidth', 2);
+    plot(t3,param3,'g','LineWidth', 1);
     hold on
     
     plot(t4,param4,'LineWidth', 1);
     hold on
     
-    legend("LQR cascade PID","PID delta H","LQR cascade I","LQR delta H")
+    legend("LQR cascade PID","PID delta H","LQR cascade I","LQR delta H",Location="best")
     
     title(PlotTitle)
     grid on
     hold off
 end
 
-function [t,YawError,SC_omega,RW_h] = GetControllerPlots(ControllerObject,ControllerName)
+function [t,YawError,SC_omega,RW_h,RW_torques] = GetControllerPlots(ControllerObject,ControllerName)
     global plot_flag
     t = ControllerObject.Ref_Error.time;
     
@@ -128,6 +135,16 @@ function [t,YawError,SC_omega,RW_h] = GetControllerPlots(ControllerObject,Contro
         title(ControllerName+' RW H [Nms]')
         grid on
      end
+
+    % Mgt Torques Z 
+    Mgt_torques = ControllerObject.Mgt_torque.signals.values(:,3);
+     if (plot_flag)
+        figure()
+        plot(t, RW_torques, 'LineWidth', 3)
+        title(ControllerName+' RW Z torques [Nm]')
+        grid on
+     end
+
 end
 
 function showPerformanceIndices(ControllerObject,name)

@@ -16,26 +16,20 @@ LQR_I_controller= sim(LQR_I_path);
 LQR_deltaH_controller= sim(LQR_deltaH_path);
 
 %% LQR Cascade PID
-[t1,YawError1,SC_omega1,RW_h1] = GetControllerPlots(LQR_PID_controller,"LQR PID controller");
+[t1,YawError1,SC_omega1,RW_h1,RW_torques1,Mgt_torques1] = GetControllerPlots(LQR_PID_controller,"LQR PID controller");
 %% PID delta H 
-[t2,YawError2,SC_omega2,RW_h2] = GetControllerPlots(PID_deltaH_controller,"PID delta H controller");
+[t2,YawError2,SC_omega2,RW_h2,RW_torques2,Mgt_torques2] = GetControllerPlots(PID_deltaH_controller,"PID delta H controller");
 %% LQR Cascade I
-[t3,YawError3,SC_omega3,RW_h3] = GetControllerPlots(LQR_I_controller,"LQR I controller");
+[t3,YawError3,SC_omega3,RW_h3,RW_torques3,Mgt_torques3] = GetControllerPlots(LQR_I_controller,"LQR I controller");
 %% LQR Delta H 
-[t4,YawError4,SC_omega4,RW_h4] = GetControllerPlots(LQR_deltaH_controller,"LQR delta H controller");
+[t4,YawError4,SC_omega4,RW_h4,RW_torques4,Mgt_torques4] = GetControllerPlots(LQR_deltaH_controller,"LQR delta H controller");
 %% Plots
-
-% RW Torques
-
-%groupPlots(t1, RW_torques1, t2, RW_torques2, t3, RW_torques3, t4, RW_torques4, "RW Z axis torques [Nm]");
-
-% Yaw Error
-%groupPlots(t1, YawError1, t2, YawError2, t3, YawError3, t4, YawError4, "Yaw Error [rad]");
 
 groupPlots(t1, SC_omega1, t2, SC_omega2, t3, SC_omega3, t4, SC_omega4, "SC Omega [rad/s]");
 groupPlots(t1, YawError1, t2, YawError2, t3, YawError3, t4, YawError4, "Yaw Error [rad]");
 groupPlots(t1, RW_h1, t2, RW_h2, t3, RW_h3, t4, RW_h4, "RW Momento angular [Nms]");
-
+groupPlots(t1, RW_torques1, t2, RW_torques2, t3, RW_torques3, t4, RW_torques4, "RW Z axis torques [Nm]");
+groupPlots(t1, Mgt_torques1, t2, Mgt_torques2, t3, Mgt_torques3, t4, Mgt_torques4, "Mgt Z axis torques [Nm]");
 
 % plots3by1(t1,YawError1,SC_omega1,RW_h1)
 % plots3by1(t2,YawError2,SC_omega2,RW_h2)
@@ -98,7 +92,7 @@ function groupPlots(t1, param1, t2, param2, t3, param3, t4, param4,PlotTitle)
     hold off
 end
 
-function [t,YawError,SC_omega,RW_h] = GetControllerPlots(ControllerObject,ControllerName)
+function [t,YawError,SC_omega,RW_h,RW_torques,Mgt_torques] = GetControllerPlots(ControllerObject,ControllerName)
     global plot_flag
     t = ControllerObject.Ref_Error.time;
     
@@ -135,6 +129,16 @@ function [t,YawError,SC_omega,RW_h] = GetControllerPlots(ControllerObject,Contro
         title(ControllerName+' RW H [Nms]')
         grid on
      end
+
+    % Mgt Torques Z 
+    Mgt_torques = ControllerObject.Mgt_torque.signals.values(:,3);
+     if (plot_flag)
+        figure()
+        plot(t, Mgt_torques, 'LineWidth', 3)
+        title(ControllerName+' RW Z torques [Nm]')
+        grid on
+     end
+
 end
 
 function showPerformanceIndices(ControllerObject,name)
