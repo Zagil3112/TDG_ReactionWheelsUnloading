@@ -1,6 +1,9 @@
 %Initial condition for SC Dynamics
 
-omegaZ_inicial = 0.29; %rad/s
+omegaZ_inicial = 0.3; %rad/s
+% omegaZ_inicial = 0; %rad/s
+yaw_ref = 0; %deg
+
 
 %Reaction Wheels
 La = 0.222e-3  ; %H 
@@ -79,7 +82,7 @@ n_cal = n_layers*turns_per_layer; % # vueltas segun geometría
 % sys = ((Kt*(J*s+B))/(La*J*s^2+(Ra*J+La*B)*s+Ra*B+Kt*Ke));
 %%
 Error_ref_Gain = 71;
-DeltaH_error_Gain =3300*4*10; 
+DeltaH_error_Gain =120; 
 RW_power_Gain =5;
 Mgt_power_Gain = 0.1;
 
@@ -176,8 +179,7 @@ scenario = 2;   %1 = cheap control
                 %3 = ignore position
 
 switch scenario
-    case 1
-        
+    case 1        
         Q = eye(9);
         Q(6,6) = 200;% quaternion z
         Q(9,9) = 10; %  hz
@@ -192,9 +194,11 @@ switch scenario
         
     case 3
         %Only penalize the velocity state
-        Q = diag([0.001 10]);
-        R = [100];
-
+        Q = eye(9);
+        Q(6,6) = 2000;% quaternion z
+        Q(9,9) = 100; %  hz
+        Q(3,3) = 0.7; % omega z
+        R = [0.8];
     case 4
         %Funcional 
         Q = eye(9);
