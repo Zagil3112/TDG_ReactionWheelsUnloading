@@ -52,24 +52,22 @@ groupPlots(t1, Mgt_torques1, t2, Mgt_torques2, t3, Mgt_torques3, t4, Mgt_torques
 
 %% Performance Indices
 
-[Error_ref1,Error_deltaH1,RW1_power1,Mgt1_power1,Total1]= showPerformanceIndices(LQR_PID_controller,"LQR_PID_controller");
-[Error_ref2,Error_deltaH2,RW1_power2,Mgt1_power2,Total2]=showPerformanceIndices(PID_deltaH_controller,"PID_deltaH_controller");
-[Error_ref3,Error_deltaH3,RW1_power3,Mgt1_power3,Total3]=showPerformanceIndices(LQR_I_controller,"LQR_I_controller");
-[Error_ref4,Error_deltaH4,RW1_power4,Mgt1_power4,Total4]=showPerformanceIndices(LQR_deltaH_controller,"LQR_deltaH_controller");
-
-
-index_matrix = ["LQR_PID_controller",Error_ref1,Error_deltaH1,RW1_power1,Mgt1_power1,Total1;
-                "PID_deltaH_controller",Error_ref2,Error_deltaH2,RW1_power2,Mgt1_power2,Total2;
-                "LQR_I_controller",Error_ref3,Error_deltaH3,RW1_power3,Mgt1_power3,Total3;
-                "LQR_deltaH_controller",Error_ref4,Error_deltaH4,RW1_power4,Mgt1_power4,Total4];
-
-index_table = array2table(index_matrix,...
-    'VariableNames',{'Controller','Error Ref','Error DeltaH','RW Power','Mgt Power','Total'});
-
-display(index_table)
-writetable(index_table,"./Resultados_imagenes/"+profile+'/'+orbit_path+'/'+orbit_path+'_table.txt','Delimiter',' ');
+[Error_ref1,Error_deltaH1,RW1_power1,Mgt1_power1]= showPerformanceIndices(LQR_PID_controller,"LQR_PID_controller");
+[Error_ref2,Error_deltaH2,RW1_power2,Mgt1_power2]=showPerformanceIndices(PID_deltaH_controller,"PID_deltaH_controller");
+[Error_ref3,Error_deltaH3,RW1_power3,Mgt1_power3]=showPerformanceIndices(LQR_I_controller,"LQR_I_controller");
+[Error_ref4,Error_deltaH4,RW1_power4,Mgt1_power4]=showPerformanceIndices(LQR_deltaH_controller,"LQR_deltaH_controller");
 
 %% Functions
+
+index_matrix = ["LQR_PID_controller",Error_ref1,Error_deltaH1,RW1_power1,Mgt1_power1;
+                "PID_deltaH_controller",Error_ref2,Error_deltaH2,RW1_power2,Mgt1_power2;
+                "LQR_I_controller",Error_ref3,Error_deltaH3,RW1_power3,Mgt1_power3;
+                "LQR_deltaH_controller",Error_ref4,Error_deltaH4,RW1_power4,Mgt1_power4];
+
+index_table = array2table(index_matrix,...
+    'VariableNames',{'Controller','Error Ref','Error DeltaH','RW Power','Mgt Power'});
+
+display(index_table)
 
 function plots3by1(t,param1,param2,param3)
     figure()
@@ -113,11 +111,11 @@ function groupPlots(t1, param1, t2, param2, t3, param3, t4, param4,PlotTitle,fil
     hold off
 
 
-    % % Apply the export setup
-    % matlab.graphics.exportsetup.Format = 'png';
-    % matlab.graphics.exportsetup.Width = '24cm';
-    % matlab.graphics.exportsetup.Height = '10cm';
-    % matlab.graphics.exportsetup.Resolution = '600'; 
+    % Apply the export setup
+    matlab.graphics.exportsetup.Format = 'png';
+    matlab.graphics.exportsetup.Width = '24cm';
+    matlab.graphics.exportsetup.Height = '10cm';
+    matlab.graphics.exportsetup.Resolution = '600'; 
 
     saveas(gcf,"./Resultados_imagenes/"+profile+'/'+orbit_path+'/'+fileName+'.png')
     saveas(gcf,"./Resultados_imagenes/"+profile+'/'+orbit_path+'/'+fileName+'.fig')
@@ -172,14 +170,14 @@ function [t,YawError,SC_omega,RW_h,RW_torques,Mgt_torques] = GetControllerPlots(
 
 end
 
-function [Error_ref,Error_deltaH,RW_power,Mgt_power,Total]= showPerformanceIndices(ControllerObject,name)
+function [Error_ref,Error_deltaH,RW_power,Mgt_power]= showPerformanceIndices(ControllerObject,name)
     
     Error_ref = ControllerObject.performanceIndices.signals.values(end,1);
     Error_deltaH = ControllerObject.performanceIndices.signals.values(end,2);
     RW_power = ControllerObject.performanceIndices.signals.values(end,3);
     Mgt_power = ControllerObject.performanceIndices.signals.values(end,4);
-    Total = num2str(Error_ref+Error_deltaH+RW_power+Mgt_power);
+
     display("Performance Indices for "+name)
-    display("Total: "+Total)
+    display("Total: "+num2str(Error_ref+Error_deltaH+RW_power+Mgt_power))
     display(table(Error_ref,Error_deltaH,RW_power,Mgt_power))
 end

@@ -174,7 +174,7 @@ Gamma= [I^-1 zeros(3) zeros(3)]';
 
 
 %Choose Q and R
-scenario = 2;   %1 = cheap control
+scenario = 1;   %1 = cheap control
                 %2 = expensive control
                 %3 = ignore position
 
