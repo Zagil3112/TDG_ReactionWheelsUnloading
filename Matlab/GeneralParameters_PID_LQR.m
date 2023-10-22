@@ -1,8 +1,8 @@
 %Initial condition for SC Dynamics
 
-omegaZ_inicial = 0.3; %rad/s
+omegaZ_inicial = 0; %rad/s
 % omegaZ_inicial = 0; %rad/s
-yaw_ref = 0; %deg
+yaw_ref = -20; %deg
 
 
 %Reaction Wheels
@@ -174,8 +174,8 @@ Gamma= [I^-1 zeros(3) zeros(3)]';
 
 
 %Choose Q and R
-scenario = 1;   %1 = cheap control
-                %2 = expensive control
+scenario = 2;   %1 = Detumbling
+                %2 = Step
                 %3 = ignore position
 
 switch scenario

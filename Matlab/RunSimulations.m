@@ -1,14 +1,13 @@
 %% Params
-t_sim = 100;
+t_sim = 3000;
 global plot_flag orbit_path profile;
 
 plot_flag = false;
  
-orbit_path="orbit_polar";
-profile = "Detumbling";
-% magnetic_field= B_mag0 ;
-% magnetic_field= B_mag51 ;
-magnetic_field= B_mag90 ;
+orbit_path="orbit_iss";
+profile = "Step";
+magnetic_field= B_mag51;
+
 %B_mag51,B_mag90,B_mag0
 
 %% Paths
