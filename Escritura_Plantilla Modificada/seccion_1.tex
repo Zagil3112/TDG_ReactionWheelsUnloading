@@ -1747,26 +1747,28 @@ Finalmente, se obtienen 4 diferentes estrategias de control al combinar los mét
 \end{table}
 \newpage
 %--------------------------
+
 \section{RESULTADOS}
 % Mostrar efecto de saturación 
 \subsection{Fenómeno de Saturación}
 
-La saturación en RW puede evidenciarse en 
-
-\begin{figure}[!h]
+\begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[scale=0.6]{imagenes/resultados/Desaturation.PNG}\\
+		\includegraphics[scale=0.55]{imagenes/resultados/Desaturation.PNG}\\
 	\end{center}
 	\caption{Implementación del cálculo de indices de desempeño.}
 	\label{fig:saturacion}	 	
 \end{figure}
+La saturación en RW puede evidenciarse en 
+
+
 
 Con la acción de los magnetorquers...
 
 
 \begin{figure}[!h]
 	\begin{center}
-		\includegraphics[scale=0.6]{imagenes/resultados/Desaturation2.PNG}\\
+		\includegraphics[scale=0.55]{imagenes/resultados/Desaturation2.PNG}\\
 	\end{center}
 	\caption{Implementación del cálculo de indices de desempeño.}
 	\label{fig:desaturacion}	 	
@@ -1792,8 +1794,35 @@ Con la acción de los magnetorquers...
 %1- 0°
 %2- 20° (ISS)
 %3- 90° (Polar)
-%\section{ANÁLISIS DE ÓRBITAS}
-\subsubsection{Perfil de misión 1}
+\subsection{Simulaciones}
+\subsubsection{Perfil de misión 1 : Detumbling}
+
+
+
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{1.2\linewidth}
+		\includegraphics[width=\linewidth]{imagenes/resultados/Detumbling/orbit_zero/yaw_omega_h_zero.PNG}
+		\caption{Yellow color}
+		\label{fig:subfigA}
+	\end{subfigure}\\
+	\begin{subfigure}{1.2\linewidth}
+		\includegraphics[width=\linewidth]{imagenes/resultados/Detumbling/orbit_iss/yaw_omega_h_iss.PNG}
+		\caption{Red color}
+		\label{fig:subfigB}
+	\end{subfigure}\\
+	\begin{subfigure}{1.2\linewidth}
+		\includegraphics[width=\linewidth]{imagenes/resultados/Detumbling/orbit_polar/yaw_omega_h_polar.PNG}
+		\caption{Green color}
+		\label{fig:subfigC}
+	\end{subfigure}
+	\caption{Showing three cars in different colors horizontally.}
+	\label{fig:subfigures}
+\end{figure}
+
+
+
 
 %Orbita 1
 %\begin{figure}[!h]

@@ -52,14 +52,15 @@
 \contentsline {subsubsection}{\numberline {5}Resumen controladores}{71}{subsubsection.9.0.5}%
 \contentsline {section}{\numberline {X}RESULTADOS}{72}{section.10}%
 \contentsline {subsection}{\numberline {A}Fenómeno de Saturación}{72}{subsection.10.1}%
-\contentsline {subsubsection}{\numberline {1}Perfil de misión 1}{73}{subsubsection.10.1.1}%
-\contentsline {subsubsection}{\numberline {2}Perfil de misión 2}{73}{subsubsection.10.1.2}%
-\contentsline {subsubsection}{\numberline {3}Perfil de misión 3}{73}{subsubsection.10.1.3}%
-\contentsline {section}{\numberline {XI}DISCUSIÓN}{78}{section.11}%
-\contentsline {section}{\numberline {XII}CONCLUSIONES}{79}{section.12}%
-\contentsline {section}{\numberline {XIII}RECOMENDACIONES}{80}{section.13}%
-\contentsline {section}{\numberline {XIII} REFERENCIAS}{81}{section.13}%
-\contentsline {subsection}{\numberline {} Anexo A. Autoarchivo en Repositorio y documentos de interés}{86}{section.13}%
-\contentsline {subsection}{\numberline {} Anexo B. Recortar y abreviar direcciones web largas}{87}{section.13}%
-\contentsline {subsection}{\numberline {} Anexo C. Incluir imágenes}{87}{section.13}%
+\contentsline {subsection}{\numberline {B}Simulaciones}{74}{subsection.10.2}%
+\contentsline {subsubsection}{\numberline {1}Perfil de misión 1 : Detumbling}{74}{subsubsection.10.2.1}%
+\contentsline {subsubsection}{\numberline {2}Perfil de misión 2}{74}{subsubsection.10.2.2}%
+\contentsline {subsubsection}{\numberline {3}Perfil de misión 3}{74}{subsubsection.10.2.3}%
+\contentsline {section}{\numberline {XI}DISCUSIÓN}{79}{section.11}%
+\contentsline {section}{\numberline {XII}CONCLUSIONES}{80}{section.12}%
+\contentsline {section}{\numberline {XIII}RECOMENDACIONES}{81}{section.13}%
+\contentsline {section}{\numberline {XIII} REFERENCIAS}{82}{section.13}%
+\contentsline {subsection}{\numberline {} Anexo A. Autoarchivo en Repositorio y documentos de interés}{87}{section.13}%
+\contentsline {subsection}{\numberline {} Anexo B. Recortar y abreviar direcciones web largas}{88}{section.13}%
+\contentsline {subsection}{\numberline {} Anexo C. Incluir imágenes}{88}{section.13}%
 \contentsfinish 
