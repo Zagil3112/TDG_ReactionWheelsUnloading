@@ -1,15 +1,15 @@
 %% Params
-t_sim = 60;
+t_sim = 80;
 init_step=5;
-end_step=30;
+end_step=40;
 
 global plot_flag orbit_path profile;
 
 plot_flag = false;
  
-orbit_path="orbit_polar";
+orbit_path="orbit_zero";
 profile = "Step";
-magnetic_field= B_mag90;
+magnetic_field= B_mag0;
 
 %B_mag51,B_mag90,B_mag0
 
@@ -44,7 +44,9 @@ LQR_deltaH_controller= sim(LQR_deltaH_path);
 figure()
 subplot(1,3,1)
 groupPlots(t1, Yaw1, t2, Yaw2, t3, Yaw3, t4, Yaw4, "Yaw [deg]","yaw");
-
+t_ss = [0, init_step, end_step,t_sim]; % Time points
+y_ss = [0, yaw_ref, yaw_ref*2,yaw_ref*2]; % Corresponding y-values
+stairs(t_ss, y_ss);
 
 
 subplot(1,3,2)
@@ -169,7 +171,7 @@ function groupPlots(t1, param1, t2, param2, t3, param3, t4, param4,PlotTitle,fil
     ylabel(PlotTitle)
     xlabel("tiempo [s]")
     grid on
-    hold off
+    hold on
 
 
     % % Apply the export setup
