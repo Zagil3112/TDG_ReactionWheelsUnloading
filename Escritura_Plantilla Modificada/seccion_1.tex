@@ -1800,17 +1800,17 @@ Con la acción de los magnetorquers...
 \end{figure}
 
 \begin{table}[!ht]
-	\caption{\MakeUppercase{Parámetros Orbitales }}
+	\caption{\MakeUppercase{Parámetros Orbitales de las trayectorias a evaluar }}
 	\begin{center}
 		\begin{tabular}{ c c c c c}
 			
 			&  \textbf{Elemento orbital} &  \textbf{Ecuatorial} & \textbf{ISS }& \textbf{Polar}\\ \hline
-			\noindent$RAAN$& Ascensión recta del nodo ascendente & & &  \\
-			$\omega$& Argumento de perigeo & & & \\
-			$\nu$&Anomalía verdadera & & &\\
-			$i$&Inclinación & & &\\
-			$a$&Semi eje mayor & & &\\
-			$e$&Excentricidad &f &f & f \\ \hline			
+			\noindent$RAAN$& Ascensión recta del nodo ascendente [deg] &75.84 & 75.84 & 75.84 \\
+			$\omega$& Argumento de perigeo [deg] & 180& 180 & 180 \\
+			$\nu$&Anomalía verdadera[deg] &16.3 & 16.3 &16.3\\
+			$i$&Inclinación[deg] & 0 & 57 &98\\
+			$a$&Semi eje mayor [km] & 6978  & 6978&6978\\
+			$e$&Excentricidad &0.0004681 &0.0004681 & 0.0004681 \\ \hline			
 		\end{tabular}
 	\end{center}
 	\label{table:Parametros_orbitales}
@@ -1849,10 +1849,10 @@ Con la acción de los magnetorquers...
 	\begin{tabular}{r|lllll|l}
 		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{mgt}$}   & \mbox{\boldmath$P_{Rw}$}    & \textbf{Total}      \\ 
 		\hline
-		1                       & PID $\Delta h$ & 29.39  & 931.32     & 88.79  & 339.68 & 1389.19  \\
-		2                       & LQR $\Delta h$ & 291.75 & 926.60   & 332.94 & 340.04 & 1891.34  \\
-		3                       & LQR I          & 283.27 & 935.20     & 332.26 & 343.67 & 1894.41  \\
-		4                       & LQR PID        & 275.73& 933.24      & 320.65 & 340.40 & 1870.03  \\
+		1                       & PID $\Delta h$ & 29.33  & 709.51     & 88.83  & 346.15 & 1173.83  \\
+		2                       & LQR $\Delta h$ & 225.91 & 708.36     & 332.34 & 346.89 & 1613.49  \\
+		3                       & LQR I          & 227.33 & 714.92     & 331.37 & 345.31 & 1618.94  \\
+		4                       & LQR PID        & 234.43 & 711.95     & 319.50 & 348.44 & 1614.33  \\
 		\hline
 		%		\cline{1-2}\cline{4-7}
 	\end{tabular}
@@ -1871,10 +1871,10 @@ Con la acción de los magnetorquers...
 	\begin{tabular}{r|lllll|l}
 		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{mgt}$}   & \mbox{\boldmath$P_{Rw}$}    & \textbf{Total}      \\ 
 		\hline
-		1                       & PID $\Delta h$ & 29.39  & 931.32     & 88.79  & 339.68 & 1389.19  \\
-		2                       & LQR $\Delta h$ & 291.75 & 926.60   & 332.94 & 340.04 & 1891.34  \\
-		3                       & LQR I          & 283.27 & 935.20     & 332.26 & 343.67 & 1894.41  \\
-		4                       & LQR PID        & 275.73& 933.24      & 320.65 & 340.40 & 1870.03  \\
+		1                       & PID $\Delta h$ & 29.38 & 929.53& 88.88 & 414.89 & 1462.68  \\
+		2                       & LQR $\Delta h$ & 277.68 & 928.36 &332.43 &409.66 & 1948.14  \\
+		3                       & LQR I          & 282.22 & 932.90 &330.22 & 415.75 &1961.08  \\
+		4                       & LQR PID        & 326.09 & 932.21 & 327.58 & 399.09 & 1984.97  \\
 		\hline
 		%		\cline{1-2}\cline{4-7}
 	\end{tabular}

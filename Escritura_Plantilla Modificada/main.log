@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.10.11)  23 OCT 2023 10:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.10.11)  23 OCT 2023 17:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1386,7 +1386,7 @@ LaTeX Info: Redefining \% on input line 1.
 
 
 ] [12]
-<imagenes/planteamiento_del_problema/esquema_planteamiento.PNG, id=611, 760.340
+<imagenes/planteamiento_del_problema/esquema_planteamiento.PNG, id=612, 760.340
 62pt x 508.14844pt>
 File: imagenes/planteamiento_del_problema/esquema_planteamiento.PNG Graphic fil
 e (type png)
@@ -1396,20 +1396,20 @@ nto.PNG  used on input line 44.
 (pdftex.def)             Requested size: 380.16937pt x 254.0736pt.
  [13] [14 <./imagenes/planteamiento_del_problema/esquema_planteamiento.PNG>] [1
 5]
-<imagenes/justificacion/jaula.PNG, id=637, 315.42844pt x 313.9228pt>
+<imagenes/justificacion/jaula.PNG, id=638, 315.42844pt x 313.9228pt>
 File: imagenes/justificacion/jaula.PNG Graphic file (type png)
 <use imagenes/justificacion/jaula.PNG>
 Package pdftex.def Info: imagenes/justificacion/jaula.PNG  used on input line 8
 4.
 (pdftex.def)             Requested size: 205.02605pt x 204.0474pt.
  [16] [17 <./imagenes/justificacion/jaula.PNG>]
-<imagenes/marco_teorico/eyassat.PNG, id=653, 166.77692pt x 213.12276pt>
+<imagenes/marco_teorico/eyassat.PNG, id=654, 166.77692pt x 213.12276pt>
 File: imagenes/marco_teorico/eyassat.PNG Graphic file (type png)
 <use imagenes/marco_teorico/eyassat.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/eyassat.PNG  used on input line
  136.
 (pdftex.def)             Requested size: 150.09781pt x 191.80869pt.
-<imagenes/marco_teorico/adcs.PNG, id=654, 299.61937pt x 123.46124pt>
+<imagenes/marco_teorico/adcs.PNG, id=655, 299.61937pt x 123.46124pt>
 File: imagenes/marco_teorico/adcs.PNG Graphic file (type png)
 <use imagenes/marco_teorico/adcs.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/adcs.PNG  used on input line 14
@@ -1417,7 +1417,7 @@ Package pdftex.def Info: imagenes/marco_teorico/adcs.PNG  used on input line 14
 (pdftex.def)             Requested size: 269.65494pt x 111.11407pt.
 
 [18]
-<imagenes/marco_teorico/eyassat_axes.PNG, id=665, 333.49594pt x 246.1697pt>
+<imagenes/marco_teorico/eyassat_axes.PNG, id=666, 333.49594pt x 246.1697pt>
 File: imagenes/marco_teorico/eyassat_axes.PNG Graphic file (type png)
 <use imagenes/marco_teorico/eyassat_axes.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/eyassat_axes.PNG  used on input
@@ -1425,7 +1425,7 @@ Package pdftex.def Info: imagenes/marco_teorico/eyassat_axes.PNG  used on input
 (pdftex.def)             Requested size: 300.14357pt x 221.55066pt.
  [19 <./imagenes/marco_teorico/eyassat.PNG> <./imagenes/marco_teorico/adcs.PNG>
 ]
-<imagenes/marco_teorico/rw.PNG, id=675, 426.09187pt x 193.47281pt>
+<imagenes/marco_teorico/rw.PNG, id=676, 426.09187pt x 193.47281pt>
 File: imagenes/marco_teorico/rw.PNG Graphic file (type png)
 <use imagenes/marco_teorico/rw.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/rw.PNG  used on input line 176.
@@ -1433,26 +1433,26 @@ Package pdftex.def Info: imagenes/marco_teorico/rw.PNG  used on input line 176.
 (pdftex.def)             Requested size: 383.47913pt x 174.12392pt.
  [20 <./imagenes/marco_teorico/eyassat_axes.PNG> <./imagenes/marco_teorico/rw.P
 NG>] [21]
-<imagenes/marco_teorico/LVLH.PNG, id=697, 369.63094pt x 275.52937pt>
+<imagenes/marco_teorico/LVLH.PNG, id=698, 369.63094pt x 275.52937pt>
 File: imagenes/marco_teorico/LVLH.PNG Graphic file (type png)
 <use imagenes/marco_teorico/LVLH.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/LVLH.PNG  used on input line 21
 1.
 (pdftex.def)             Requested size: 258.73988pt x 192.86923pt.
-<imagenes/marco_teorico/marco_orbital.PNG, id=700, 411.78844pt x 275.52937pt>
+<imagenes/marco_teorico/marco_orbital.PNG, id=701, 411.78844pt x 275.52937pt>
 File: imagenes/marco_teorico/marco_orbital.PNG Graphic file (type png)
 <use imagenes/marco_teorico/marco_orbital.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/marco_orbital.PNG  used on inpu
 t line 222.
 (pdftex.def)             Requested size: 288.24992pt x 192.86923pt.
  [22]
-<imagenes/marco_teorico/marco_cuerpo.PNG, id=708, 420.06938pt x 311.66437pt>
+<imagenes/marco_teorico/marco_cuerpo.PNG, id=709, 420.06938pt x 311.66437pt>
 File: imagenes/marco_teorico/marco_cuerpo.PNG Graphic file (type png)
 <use imagenes/marco_teorico/marco_cuerpo.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/marco_cuerpo.PNG  used on input
  line 236.
 (pdftex.def)             Requested size: 294.04655pt x 218.16356pt.
-<imagenes/marco_teorico/orbital_cuerpo.PNG, id=709, 277.035pt x 156.585pt>
+<imagenes/marco_teorico/orbital_cuerpo.PNG, id=710, 277.035pt x 156.585pt>
 File: imagenes/marco_teorico/orbital_cuerpo.PNG Graphic file (type png)
 <use imagenes/marco_teorico/orbital_cuerpo.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/orbital_cuerpo.PNG  used on inp
@@ -1460,7 +1460,7 @@ ut line 245.
 (pdftex.def)             Requested size: 249.3292pt x 140.92519pt.
  [23 <./imagenes/marco_teorico/LVLH.PNG> <./imagenes/marco_teorico/marco_orbita
 l.PNG>]
-<imagenes/marco_teorico/ECI.PNG, id=720, 355.3275pt x 264.23718pt>
+<imagenes/marco_teorico/ECI.PNG, id=721, 355.3275pt x 264.23718pt>
 File: imagenes/marco_teorico/ECI.PNG Graphic file (type png)
 <use imagenes/marco_teorico/ECI.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/ECI.PNG  used on input line 256
@@ -1468,7 +1468,7 @@ Package pdftex.def Info: imagenes/marco_teorico/ECI.PNG  used on input line 256
 (pdftex.def)             Requested size: 248.72754pt x 184.96475pt.
  [24 <./imagenes/marco_teorico/marco_cuerpo.PNG> <./imagenes/marco_teorico/orbi
 tal_cuerpo.PNG>]
-<imagenes/marco_teorico/ECEF.PNG, id=730, 302.63063pt x 258.9675pt>
+<imagenes/marco_teorico/ECEF.PNG, id=731, 302.63063pt x 258.9675pt>
 File: imagenes/marco_teorico/ECEF.PNG Graphic file (type png)
 <use imagenes/marco_teorico/ECEF.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/ECEF.PNG  used on input line 26
@@ -1476,28 +1476,28 @@ Package pdftex.def Info: imagenes/marco_teorico/ECEF.PNG  used on input line 26
 (pdftex.def)             Requested size: 211.83998pt x 181.27599pt.
  [25 <./imagenes/marco_teorico/ECI.PNG> <./imagenes/marco_teorico/ECEF.PNG>] [2
 6]
-<imagenes/marco_teorico/angulos_euler.PNG, id=750, 287.57437pt x 219.06844pt>
+<imagenes/marco_teorico/angulos_euler.PNG, id=751, 287.57437pt x 219.06844pt>
 File: imagenes/marco_teorico/angulos_euler.PNG Graphic file (type png)
 <use imagenes/marco_teorico/angulos_euler.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/angulos_euler.PNG  used on inpu
 t line 341.
 (pdftex.def)             Requested size: 230.0598pt x 175.25497pt.
  [27 <./imagenes/marco_teorico/angulos_euler.PNG>]
-<imagenes/marco_teorico/gimbal.PNG, id=759, 221.32687pt x 162.6075pt>
+<imagenes/marco_teorico/gimbal.PNG, id=760, 221.32687pt x 162.6075pt>
 File: imagenes/marco_teorico/gimbal.PNG Graphic file (type png)
 <use imagenes/marco_teorico/gimbal.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/gimbal.PNG  used on input line 
 371.
 (pdftex.def)             Requested size: 177.06172pt x 130.08617pt.
  [28 <./imagenes/marco_teorico/gimbal.PNG>] [29]
-<imagenes/marco_teorico/lazo cerrado.PNG, id=780, 387.69844pt x 139.27031pt>
+<imagenes/marco_teorico/lazo cerrado.PNG, id=781, 387.69844pt x 139.27031pt>
 File: imagenes/marco_teorico/lazo cerrado.PNG Graphic file (type png)
 <use imagenes/marco_teorico/lazo cerrado.PNG>
 Package pdftex.def Info: imagenes/marco_teorico/lazo cerrado.PNG  used on input
  line 453.
 (pdftex.def)             Requested size: 310.15916pt x 111.41638pt.
  [30 <./imagenes/marco_teorico/lazo cerrado.PNG>]
-<imagenes/marco_teorico/leo.jpg, id=788, 228.35312pt x 175.15437pt>
+<imagenes/marco_teorico/leo.jpg, id=789, 228.35312pt x 175.15437pt>
 File: imagenes/marco_teorico/leo.jpg Graphic file (type jpg)
 <use imagenes/marco_teorico/leo.jpg>
 Package pdftex.def Info: imagenes/marco_teorico/leo.jpg  used on input line 470
@@ -1505,7 +1505,7 @@ Package pdftex.def Info: imagenes/marco_teorico/leo.jpg  used on input line 470
 (pdftex.def)             Requested size: 228.35255pt x 175.15395pt.
  [31 <./imagenes/marco_teorico/leo.jpg>]
 [32] [33] [34] [35]
-<imagenes/metodologia/grafico_metodologia.png, id=829, 268.00125pt x 578.91281p
+<imagenes/metodologia/grafico_metodologia.png, id=830, 268.00125pt x 578.91281p
 t>
 File: imagenes/metodologia/grafico_metodologia.png Graphic file (type png)
 <use imagenes/metodologia/grafico_metodologia.png>
@@ -1513,7 +1513,7 @@ Package pdftex.def Info: imagenes/metodologia/grafico_metodologia.png  used on
 input line 622.
 (pdftex.def)             Requested size: 214.40128pt x 463.13087pt.
  [36 <./imagenes/metodologia/grafico_metodologia.png>]
-<imagenes/modelo_dinamico/ref_system.PNG, id=836, 518.6878pt x 262.73157pt>
+<imagenes/modelo_dinamico/ref_system.PNG, id=837, 518.6878pt x 262.73157pt>
 File: imagenes/modelo_dinamico/ref_system.PNG Graphic file (type png)
 <use imagenes/modelo_dinamico/ref_system.PNG>
 Package pdftex.def Info: imagenes/modelo_dinamico/ref_system.PNG  used on input
@@ -1538,7 +1538,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 766--767
 
  []
 
-<imagenes/modelo_dinamico/dinamica_satelite.PNG, id=890, 758.08218pt x 359.8443
+<imagenes/modelo_dinamico/dinamica_satelite.PNG, id=891, 758.08218pt x 359.8443
 8pt>
 File: imagenes/modelo_dinamico/dinamica_satelite.PNG Graphic file (type png)
 <use imagenes/modelo_dinamico/dinamica_satelite.PNG>
@@ -1546,13 +1546,13 @@ Package pdftex.def Info: imagenes/modelo_dinamico/dinamica_satelite.PNG  used o
 n input line 805.
 (pdftex.def)             Requested size: 454.85281pt x 215.90828pt.
 [41] [42 <./imagenes/modelo_dinamico/dinamica_satelite.PNG>]
-<imagenes/modelo_dinamico/eyassat_armado.jpg, id=908, 4015.0pt x 3011.25pt>
+<imagenes/modelo_dinamico/eyassat_armado.jpg, id=909, 4015.0pt x 3011.25pt>
 File: imagenes/modelo_dinamico/eyassat_armado.jpg Graphic file (type jpg)
 <use imagenes/modelo_dinamico/eyassat_armado.jpg>
 Package pdftex.def Info: imagenes/modelo_dinamico/eyassat_armado.jpg  used on i
 nput line 826.
 (pdftex.def)             Requested size: 212.41261pt x 159.30142pt.
-<imagenes/modelo_dinamico/capas.jpeg, id=909, 1142.2675pt x 1011.78pt>
+<imagenes/modelo_dinamico/capas.jpeg, id=910, 1142.2675pt x 1011.78pt>
 File: imagenes/modelo_dinamico/capas.jpeg Graphic file (type jpg)
 <use imagenes/modelo_dinamico/capas.jpeg>
 Package pdftex.def Info: imagenes/modelo_dinamico/capas.jpeg  used on input lin
@@ -1560,19 +1560,19 @@ e 829.
 (pdftex.def)             Requested size: 180.3177pt x 159.71127pt.
  [43 <./imagenes/modelo_dinamico/eyassat_armado.jpg> <./imagenes/modelo_dinamic
 o/capas.jpeg>]
-<imagenes/modelo_dinamico/eyassat_medicion.jpg, id=918, 3011.25pt x 4015.0pt>
+<imagenes/modelo_dinamico/eyassat_medicion.jpg, id=919, 3011.25pt x 4015.0pt>
 File: imagenes/modelo_dinamico/eyassat_medicion.jpg Graphic file (type jpg)
 <use imagenes/modelo_dinamico/eyassat_medicion.jpg>
 Package pdftex.def Info: imagenes/modelo_dinamico/eyassat_medicion.jpg  used on
  input line 858.
 (pdftex.def)             Requested size: 146.32852pt x 195.06422pt.
-<imagenes/modelo_dinamico/placa_medicion.jpg, id=919, 3011.25pt x 4015.0pt>
+<imagenes/modelo_dinamico/placa_medicion.jpg, id=920, 3011.25pt x 4015.0pt>
 File: imagenes/modelo_dinamico/placa_medicion.jpg Graphic file (type jpg)
 <use imagenes/modelo_dinamico/placa_medicion.jpg>
 Package pdftex.def Info: imagenes/modelo_dinamico/placa_medicion.jpg  used on i
 nput line 861.
 (pdftex.def)             Requested size: 146.32852pt x 195.06422pt.
-<imagenes/modelo_dinamico/escenario.PNG, id=920, 499.8675pt x 667.74469pt>
+<imagenes/modelo_dinamico/escenario.PNG, id=921, 499.8675pt x 667.74469pt>
 File: imagenes/modelo_dinamico/escenario.PNG Graphic file (type png)
 <use imagenes/modelo_dinamico/escenario.PNG>
 Package pdftex.def Info: imagenes/modelo_dinamico/escenario.PNG  used on input 
@@ -1602,7 +1602,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 922--925
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [48]
-<imagenes/modelo_dinamico/motor.PNG, id=964, 198.9834pt x 130.086pt>
+<imagenes/modelo_dinamico/motor.PNG, id=965, 198.9834pt x 130.086pt>
 File: imagenes/modelo_dinamico/motor.PNG Graphic file (type png)
 <use imagenes/modelo_dinamico/motor.PNG>
 Package pdftex.def Info: imagenes/modelo_dinamico/motor.PNG  used on input line
@@ -1627,7 +1627,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1074--1077
 
  []
 
-<imagenes/modelo_dinamico/bloquesRW.PNG, id=988, 989.19562pt x 398.99063pt>
+<imagenes/modelo_dinamico/bloquesRW.PNG, id=989, 989.19562pt x 398.99063pt>
 File: imagenes/modelo_dinamico/bloquesRW.PNG Graphic file (type png)
 <use imagenes/modelo_dinamico/bloquesRW.PNG>
 Package pdftex.def Info: imagenes/modelo_dinamico/bloquesRW.PNG  used on input 
@@ -1638,7 +1638,7 @@ Overfull \hbox (22.56537pt too wide) in paragraph at lines 1082--1082
  [] 
  []
 
-<imagenes/modelo_dinamico/motorRW.jpg, id=992, 403.5075pt x 403.5075pt>
+<imagenes/modelo_dinamico/motorRW.jpg, id=993, 403.5075pt x 403.5075pt>
 File: imagenes/modelo_dinamico/motorRW.jpg Graphic file (type jpg)
 <use imagenes/modelo_dinamico/motorRW.jpg>
 Package pdftex.def Info: imagenes/modelo_dinamico/motorRW.jpg  used on input li
@@ -1649,20 +1649,20 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [51 <./imagenes/modelo_dinamico/bloquesRW.PNG>] [52 <./imagenes/modelo_dinamico
 /motorRW.jpg>]
-<imagenes/modelo_dinamico/magnetorquer.png, id=1012, 453.19313pt x 369.63094pt>
+<imagenes/modelo_dinamico/magnetorquer.png, id=1013, 453.19313pt x 369.63094pt>
 
 File: imagenes/modelo_dinamico/magnetorquer.png Graphic file (type png)
 <use imagenes/modelo_dinamico/magnetorquer.png>
 Package pdftex.def Info: imagenes/modelo_dinamico/magnetorquer.png  used on inp
 ut line 1144.
 (pdftex.def)             Requested size: 236.01561pt x 192.49683pt.
-<imagenes/modelo_dinamico/magnetorquers.jpg, id=1013, 3011.25pt x 4015.0pt>
+<imagenes/modelo_dinamico/magnetorquers.jpg, id=1014, 3011.25pt x 4015.0pt>
 File: imagenes/modelo_dinamico/magnetorquers.jpg Graphic file (type jpg)
 <use imagenes/modelo_dinamico/magnetorquers.jpg>
 Package pdftex.def Info: imagenes/modelo_dinamico/magnetorquers.jpg  used on in
 put line 1147.
 (pdftex.def)             Requested size: 146.32852pt x 195.06422pt.
-<imagenes/modelo_dinamico/medicion_mgt.jpg, id=1014, 4015.0pt x 3011.25pt>
+<imagenes/modelo_dinamico/medicion_mgt.jpg, id=1015, 4015.0pt x 3011.25pt>
 File: imagenes/modelo_dinamico/medicion_mgt.jpg Graphic file (type jpg)
 <use imagenes/modelo_dinamico/medicion_mgt.jpg>
 Package pdftex.def Info: imagenes/modelo_dinamico/medicion_mgt.jpg  used on inp
@@ -1674,7 +1674,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [53 <./imagenes/modelo_dinamico/magnetorquer.png> <./imagenes/modelo_dinamico/m
 agnetorquers.jpg>]
-<imagenes/modelo_dinamico/dimensiones_mgt.png, id=1024, 408.77719pt x 347.79938
+<imagenes/modelo_dinamico/dimensiones_mgt.png, id=1025, 408.77719pt x 347.79938
 pt>
 File: imagenes/modelo_dinamico/dimensiones_mgt.png Graphic file (type png)
 <use imagenes/modelo_dinamico/dimensiones_mgt.png>
@@ -1682,7 +1682,7 @@ Package pdftex.def Info: imagenes/modelo_dinamico/dimensiones_mgt.png  used on
 input line 1173.
 (pdftex.def)             Requested size: 286.14207pt x 243.4579pt.
  [54 <./imagenes/modelo_dinamico/medicion_mgt.jpg>]
-<imagenes/modelo_dinamico/bloquesMgt.PNG, id=1035, 1075.01625pt x 225.84375pt>
+<imagenes/modelo_dinamico/bloquesMgt.PNG, id=1036, 1075.01625pt x 225.84375pt>
 File: imagenes/modelo_dinamico/bloquesMgt.PNG Graphic file (type png)
 <use imagenes/modelo_dinamico/bloquesMgt.PNG>
 Package pdftex.def Info: imagenes/modelo_dinamico/bloquesMgt.PNG  used on input
@@ -1693,7 +1693,7 @@ Package pdftex.def Info: imagenes/modelo_dinamico/bloquesMgt.PNG  used on input
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [55 <./imagenes/modelo_dinamico/dimensiones_mgt.png>]
-<imagenes/modelo_dinamico/Elementos_orbitales.jpg, id=1042, 351.3125pt x 316.18
+<imagenes/modelo_dinamico/Elementos_orbitales.jpg, id=1043, 351.3125pt x 316.18
 124pt>
 File: imagenes/modelo_dinamico/Elementos_orbitales.jpg Graphic file (type jpg)
 <use imagenes/modelo_dinamico/Elementos_orbitales.jpg>
@@ -1702,13 +1702,13 @@ Package pdftex.def Info: imagenes/modelo_dinamico/Elementos_orbitales.jpg  used
 (pdftex.def)             Requested size: 210.78911pt x 189.7102pt.
  [56 <./imagenes/modelo_dinamico/bloquesMgt.PNG> <./imagenes/modelo_dinamico/El
 ementos_orbitales.jpg>]
-<imagenes/modelo_dinamico/flujo_campo.png, id=1050, 957.5775pt x 532.23843pt>
+<imagenes/modelo_dinamico/flujo_campo.png, id=1051, 957.5775pt x 532.23843pt>
 File: imagenes/modelo_dinamico/flujo_campo.png Graphic file (type png)
 <use imagenes/modelo_dinamico/flujo_campo.png>
 Package pdftex.def Info: imagenes/modelo_dinamico/flujo_campo.png  used on inpu
 t line 1243.
 (pdftex.def)             Requested size: 383.02422pt x 212.89159pt.
-<imagenes/modelo_dinamico/modelo_campoMagnetico.PNG, id=1052, 831.85782pt x 240
+<imagenes/modelo_dinamico/modelo_campoMagnetico.PNG, id=1053, 831.85782pt x 240
 .9pt>
 File: imagenes/modelo_dinamico/modelo_campoMagnetico.PNG Graphic file (type png
 )
@@ -1719,14 +1719,14 @@ ed on input line 1256.
 
 [57 <./imagenes/modelo_dinamico/flujo_campo.png>] [58 <./imagenes/modelo_dinami
 co/modelo_campoMagnetico.PNG>] [59]
-<imagenes/controladores/Diagrama_controlador.PNG, id=1073, 668.4975pt x 304.889
+<imagenes/controladores/Diagrama_controlador.PNG, id=1074, 668.4975pt x 304.889
 07pt>
 File: imagenes/controladores/Diagrama_controlador.PNG Graphic file (type png)
 <use imagenes/controladores/Diagrama_controlador.PNG>
 Package pdftex.def Info: imagenes/controladores/Diagrama_controlador.PNG  used 
 on input line 1340.
 (pdftex.def)             Requested size: 367.67476pt x 167.6895pt.
-<imagenes/controladores/Diagrama_controlador2.PNG, id=1075, 684.30656pt x 310.1
+<imagenes/controladores/Diagrama_controlador2.PNG, id=1076, 684.30656pt x 310.1
 5875pt>
 File: imagenes/controladores/Diagrama_controlador2.PNG Graphic file (type png)
 <use imagenes/controladores/Diagrama_controlador2.PNG>
@@ -1744,32 +1744,32 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 (hyperref)                than one, level fixed on input line 1439.
 
 [62] [63] [64] [65] [66]
-<imagenes/controladores/lqr.PNG, id=1144, 717.006pt x 343.83pt>
+<imagenes/controladores/lqr.PNG, id=1145, 717.006pt x 343.83pt>
 File: imagenes/controladores/lqr.PNG Graphic file (type png)
 <use imagenes/controladores/lqr.PNG>
 Package pdftex.def Info: imagenes/controladores/lqr.PNG  used on input line 161
 2.
 (pdftex.def)             Requested size: 430.20691pt x 206.29958pt.
-<imagenes/controladores/cascada.PNG, id=1148, 1045.65656pt x 322.20375pt>
+<imagenes/controladores/cascada.PNG, id=1149, 1045.65656pt x 322.20375pt>
 File: imagenes/controladores/cascada.PNG Graphic file (type png)
 <use imagenes/controladores/cascada.PNG>
 Package pdftex.def Info: imagenes/controladores/cascada.PNG  used on input line
  1622.
 (pdftex.def)             Requested size: 470.5411pt x 144.99034pt.
  [67 <./imagenes/controladores/lqr.PNG> <./imagenes/controladores/cascada.PNG>]
-<imagenes/controladores/PID_tuning1_1.PNG, id=1159, 504.38437pt x 609.77812pt>
+<imagenes/controladores/PID_tuning1_1.PNG, id=1160, 504.38437pt x 609.77812pt>
 File: imagenes/controladores/PID_tuning1_1.PNG Graphic file (type png)
 <use imagenes/controladores/PID_tuning1_1.PNG>
 Package pdftex.def Info: imagenes/controladores/PID_tuning1_1.PNG  used on inpu
 t line 1637.
 (pdftex.def)             Requested size: 174.64925pt x 211.14594pt.
-<imagenes/controladores/PID_tuning1_2.PNG, id=1160, 503.63156pt x 587.19376pt>
+<imagenes/controladores/PID_tuning1_2.PNG, id=1161, 503.63156pt x 587.19376pt>
 File: imagenes/controladores/PID_tuning1_2.PNG Graphic file (type png)
 <use imagenes/controladores/PID_tuning1_2.PNG>
 Package pdftex.def Info: imagenes/controladores/PID_tuning1_2.PNG  used on inpu
 t line 1640.
 (pdftex.def)             Requested size: 180.3177pt x 210.23376pt.
-<imagenes/controladores/PID_tuning2.PNG, id=1161, 956.82469pt x 590.205pt>
+<imagenes/controladores/PID_tuning2.PNG, id=1162, 956.82469pt x 590.205pt>
 File: imagenes/controladores/PID_tuning2.PNG Graphic file (type png)
 <use imagenes/controladores/PID_tuning2.PNG>
 Package pdftex.def Info: imagenes/controladores/PID_tuning2.PNG  used on input 
@@ -1777,13 +1777,13 @@ line 1649.
 (pdftex.def)             Requested size: 306.19016pt x 188.86945pt.
  [68 <./imagenes/controladores/PID_tuning1_1.PNG> <./imagenes/controladores/PID
 _tuning1_2.PNG> <./imagenes/controladores/PID_tuning2.PNG>]
-<imagenes/controladores/PID.PNG, id=1172, 1006.51031pt x 435.12563pt>
+<imagenes/controladores/PID.PNG, id=1173, 1006.51031pt x 435.12563pt>
 File: imagenes/controladores/PID.PNG Graphic file (type png)
 <use imagenes/controladores/PID.PNG>
 Package pdftex.def Info: imagenes/controladores/PID.PNG  used on input line 166
 2.
 (pdftex.def)             Requested size: 372.40298pt x 160.99396pt.
-<imagenes/controladores/PID_deltaH.PNG, id=1173, 1102.1175pt x 383.93437pt>
+<imagenes/controladores/PID_deltaH.PNG, id=1174, 1102.1175pt x 383.93437pt>
 File: imagenes/controladores/PID_deltaH.PNG Graphic file (type png)
 <use imagenes/controladores/PID_deltaH.PNG>
 Package pdftex.def Info: imagenes/controladores/PID_deltaH.PNG  used on input l
@@ -1796,7 +1796,7 @@ Overfull \hbox (23.91705pt too wide) in paragraph at lines 1670--1670
 
 [69 <./imagenes/controladores/PID.PNG> <./imagenes/controladores/PID_deltaH.PNG
 >]
-<imagenes/controladores/indices de desempeño.PNG, id=1182, 895.84688pt x 566.8
+<imagenes/controladores/indices de desempeño.PNG, id=1183, 895.84688pt x 566.8
 6781pt>
 File: imagenes/controladores/indices de desempeño.PNG Graphic file (type png)
 <use imagenes/controladores/indices de desempeño.PNG>
@@ -1812,21 +1812,21 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [71 <./imagenes/controladores/indices de desempeño.PNG>]
-<imagenes/resultados/Desaturation.PNG, id=1195, 724.98856pt x 566.8377pt>
+<imagenes/resultados/Desaturation.PNG, id=1196, 724.98856pt x 566.8377pt>
 File: imagenes/resultados/Desaturation.PNG Graphic file (type png)
 <use imagenes/resultados/Desaturation.PNG>
 Package pdftex.def Info: imagenes/resultados/Desaturation.PNG  used on input li
 ne 1757.
 (pdftex.def)             Requested size: 398.74493pt x 311.7617pt.
  [72 <./imagenes/resultados/Desaturation.PNG (PNG copy)>]
-<imagenes/resultados/Desaturation2.PNG, id=1200, 835.6821pt x 499.1448pt>
+<imagenes/resultados/Desaturation2.PNG, id=1201, 835.6821pt x 499.1448pt>
 File: imagenes/resultados/Desaturation2.PNG Graphic file (type png)
 <use imagenes/resultados/Desaturation2.PNG>
 Package pdftex.def Info: imagenes/resultados/Desaturation2.PNG  used on input l
 ine 1771.
 (pdftex.def)             Requested size: 459.62657pt x 274.53049pt.
  [73 <./imagenes/resultados/Desaturation2.PNG (PNG copy)>]
-<imagenes/resultados/orbitas.PNG, id=1206, 908.64468pt x 494.59781pt>
+<imagenes/resultados/orbitas.PNG, id=1207, 908.64468pt x 494.59781pt>
 File: imagenes/resultados/orbitas.PNG Graphic file (type png)
 <use imagenes/resultados/orbitas.PNG>
 Package pdftex.def Info: imagenes/resultados/orbitas.PNG  used on input line 17
@@ -1834,6 +1834,11 @@ Package pdftex.def Info: imagenes/resultados/orbitas.PNG  used on input line 17
 (pdftex.def)             Requested size: 499.75612pt x 272.02963pt.
 
 Overfull \hbox (27.72488pt too wide) in paragraph at lines 1796--1796
+ [] 
+ []
+
+
+Overfull \hbox (1.59645pt too wide) in paragraph at lines 1805--1815
  [] 
  []
 
@@ -1846,7 +1851,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<imagenes/resultados/Detumbling/orbit_zero/yaw_omega_h_zero.PNG, id=1207, 1280.
+<imagenes/resultados/Detumbling/orbit_zero/yaw_omega_h_zero.PNG, id=1208, 1280.
 50395pt x 463.0098pt>
 File: imagenes/resultados/Detumbling/orbit_zero/yaw_omega_h_zero.PNG Graphic fi
 le (type png)
@@ -1859,7 +1864,7 @@ Overfull \hbox (94.4048pt too wide) in paragraph at lines 1888--1892
  [][] 
  []
 
-<imagenes/resultados/Detumbling/orbit_iss/yaw_omega_h_iss.PNG, id=1208, 1280.38
+<imagenes/resultados/Detumbling/orbit_iss/yaw_omega_h_iss.PNG, id=1209, 1280.38
 35pt x 426.75435pt>
 File: imagenes/resultados/Detumbling/orbit_iss/yaw_omega_h_iss.PNG Graphic file
  (type png)
@@ -1872,7 +1877,7 @@ Overfull \hbox (94.4048pt too wide) in paragraph at lines 1893--1897
  [][] 
  []
 
-<imagenes/resultados/Detumbling/orbit_polar/yaw_omega_h_polar.PNG, id=1209, 128
+<imagenes/resultados/Detumbling/orbit_polar/yaw_omega_h_polar.PNG, id=1210, 128
 0.3835pt x 426.75435pt>
 File: imagenes/resultados/Detumbling/orbit_polar/yaw_omega_h_polar.PNG Graphic 
 file (type png)
@@ -1888,7 +1893,7 @@ Overfull \hbox (94.4048pt too wide) in paragraph at lines 1898--1903
 
 LaTeX Warning: Float too large for page by 44.7118pt on input line 1905.
 
-<imagenes/resultados/Step/orbit_zero/Compilado.PNG, id=1210, 1280.3835pt x 426.
+<imagenes/resultados/Step/orbit_zero/Compilado.PNG, id=1211, 1280.3835pt x 426.
 75435pt>
 File: imagenes/resultados/Step/orbit_zero/Compilado.PNG Graphic file (type png)
 
@@ -1901,7 +1906,7 @@ Overfull \hbox (94.4048pt too wide) in paragraph at lines 1913--1917
  [][] 
  []
 
-<imagenes/resultados/Step/orbit_iss/Compilado.PNG, id=1211, 1280.3835pt x 426.7
+<imagenes/resultados/Step/orbit_iss/Compilado.PNG, id=1212, 1280.3835pt x 426.7
 5435pt>
 File: imagenes/resultados/Step/orbit_iss/Compilado.PNG Graphic file (type png)
 <use imagenes/resultados/Step/orbit_iss/Compilado.PNG>
@@ -1913,7 +1918,7 @@ Overfull \hbox (94.4048pt too wide) in paragraph at lines 1918--1922
  [][] 
  []
 
-<imagenes/resultados/Step/orbit_polar/Compilado.PNG, id=1212, 1280.3835pt x 426
+<imagenes/resultados/Step/orbit_polar/Compilado.PNG, id=1213, 1280.3835pt x 426
 .75435pt>
 File: imagenes/resultados/Step/orbit_polar/Compilado.PNG Graphic file (type png
 )
@@ -1929,7 +1934,7 @@ Overfull \hbox (94.4048pt too wide) in paragraph at lines 1923--1928
 
 LaTeX Warning: Float too large for page by 28.69371pt on input line 1930.
 
-<imagenes/resultados/Nadir/orbit_zero/Compilado.PNG, id=1213, 1280.3835pt x 426
+<imagenes/resultados/Nadir/orbit_zero/Compilado.PNG, id=1214, 1280.3835pt x 426
 .75435pt>
 File: imagenes/resultados/Nadir/orbit_zero/Compilado.PNG Graphic file (type png
 )
@@ -1942,7 +1947,7 @@ Overfull \hbox (94.4048pt too wide) in paragraph at lines 1937--1941
  [][] 
  []
 
-<imagenes/resultados/Nadir/orbit_iss/Compilado.PNG, id=1214, 1280.3835pt x 426.
+<imagenes/resultados/Nadir/orbit_iss/Compilado.PNG, id=1215, 1280.3835pt x 426.
 75435pt>
 File: imagenes/resultados/Nadir/orbit_iss/Compilado.PNG Graphic file (type png)
 
@@ -1955,7 +1960,7 @@ Overfull \hbox (94.4048pt too wide) in paragraph at lines 1942--1946
  [][] 
  []
 
-<imagenes/resultados/Nadir/orbit_polar/Compilado.PNG, id=1215, 1280.50395pt x 4
+<imagenes/resultados/Nadir/orbit_polar/Compilado.PNG, id=1216, 1280.50395pt x 4
 26.8748pt>
 File: imagenes/resultados/Nadir/orbit_polar/Compilado.PNG Graphic file (type pn
 g)
@@ -1999,7 +2004,7 @@ esultados/Step/orbit_polar/Compilado.PNG (PNG copy)>] [80 <./imagenes/resultado
 s/Nadir/orbit_zero/Compilado.PNG (PNG copy)> <./imagenes/resultados/Nadir/orbit
 _iss/Compilado.PNG (PNG copy)> <./imagenes/resultados/Nadir/orbit_polar/Compila
 do.PNG (PNG copy)>]
-<imagenes/ieee_logo.jpg, id=1250, 593.21625pt x 332.74312pt>
+<imagenes/ieee_logo.jpg, id=1251, 593.21625pt x 332.74312pt>
 File: imagenes/ieee_logo.jpg Graphic file (type jpg)
 <use imagenes/ieee_logo.jpg>
 Package pdftex.def Info: imagenes/ieee_logo.jpg  used on input line 2043.
@@ -2007,7 +2012,7 @@ Package pdftex.def Info: imagenes/ieee_logo.jpg  used on input line 2043.
  [81
 
  <./imagenes/ieee_logo.jpg>]
-<imagenes/escudo_udea_solo.png, id=1257, 147.55125pt x 193.47281pt>
+<imagenes/escudo_udea_solo.png, id=1258, 147.55125pt x 193.47281pt>
 File: imagenes/escudo_udea_solo.png Graphic file (type png)
 <use imagenes/escudo_udea_solo.png>
 Package pdftex.def Info: imagenes/escudo_udea_solo.png  used on input line 2054
@@ -2106,9 +2111,9 @@ l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Personal/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Use
 rs/Personal/AppData/Local/Programs/MiKTeX/fonts/type1/public/starfont/strfnser.
 pfb>
-Output written on main.pdf (93 pages, 25303816 bytes).
+Output written on main.pdf (93 pages, 25304270 bytes).
 PDF statistics:
- 1547 PDF objects out of 1728 (max. 8388607)
+ 1548 PDF objects out of 1728 (max. 8388607)
  331 named destinations out of 1000 (max. 500000)
  857 words of extra memory for PDF output out of 10000 (max. 10000000)
 
