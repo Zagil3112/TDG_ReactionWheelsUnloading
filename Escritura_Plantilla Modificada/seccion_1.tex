@@ -1776,31 +1776,114 @@ Con la acción de los magnetorquers...
 
 
 \newpage
+\subsection{Simulaciones}
 %Descripción de los escenarios a evaluar:
 
-%1- Equilibrio  
-%2- Maniobra de giro
-%3- Nadir (Rampa)
-
 \begin{itemize}
-	\item Respuesta de equilibrio ante perturbaciones. 
+	\item Respuesta de equilibrio ante perturbaciones (Detumbling). 
 	\item Respuesta tipo escalón de un angulo deseado.
 	\item Respuesta tipo rampa para alcanzar una velocidad de rotación constante.
 \end{itemize} 
 
+
+
+
 % Imagen y parámetros orbitales 
 %Sujeto a 3 tipos de órbita 
-%
-%1- 0°
-%2- 20° (ISS)
-%3- 90° (Polar)
-\subsection{Simulaciones}
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[scale=0.55]{imagenes/resultados/orbitas.PNG}\\
+	\end{center}
+	\caption{Órbitas evaluadas en los diferentes perfiles de misión.}
+	\label{fig:orbitas_eval}	 	
+\end{figure}
+
+\begin{table}[!ht]
+	\caption{\MakeUppercase{Parámetros Orbitales }}
+	\begin{center}
+		\begin{tabular}{ c c c c c}
+			
+			&  \textbf{Elemento orbital} &  \textbf{Ecuatorial} & \textbf{ISS }& \textbf{Polar}\\ \hline
+			\noindent$RAAN$& Ascensión recta del nodo ascendente & & &  \\
+			$\omega$& Argumento de perigeo & & & \\
+			$\nu$&Anomalía verdadera & & &\\
+			$i$&Inclinación & & &\\
+			$a$&Semi eje mayor & & &\\
+			$e$&Excentricidad &f &f & f \\ \hline			
+		\end{tabular}
+	\end{center}
+	\label{table:Parametros_orbitales}
+\end{table}
+
+
+
 \subsubsection{Perfil de misión 1 : Detumbling}
 
+\paragraph{Órbita Ecuatorial}
+  
+% Tabla indices de desempeño
+\begin{table}[!h]
+	\label{table:Detumbling_ecuatorial}
+	\caption{\MakeUppercase{Indices de desempeño para órbita ecuatorial en maniobra de Detumbling}}
+	\centering
+	\begin{tabular}{r|lllll|l}
+		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{mgt}$}   & \mbox{\boldmath$P_{Rw}$}    & \textbf{Total}      \\ 
+		\hline
+		1                       & PID $\Delta h$ & 29.39  & 931.32     & 88.79  & 339.68 & 1389.19  \\
+		2                       & LQR $\Delta h$ & 291.75 & 926.60   & 332.94 & 340.04 & 1891.34  \\
+		3                       & LQR I          & 283.27 & 935.20     & 332.26 & 343.67 & 1894.41  \\
+		4                       & LQR PID        & 275.73& 933.24      & 320.65 & 340.40 & 1870.03  \\
+		\hline
+%		\cline{1-2}\cline{4-7}
+	\end{tabular}
+\end{table}
+
+\paragraph{Órbita ISS}
+
+% Tabla indices de desempeño
+\begin{table}[!h]
+	\label{table:Detumbling_iss}
+	\caption{\MakeUppercase{Indices de desempeño para órbita de la ISS en maniobra de Detumbling }}
+	\centering
+	\begin{tabular}{r|lllll|l}
+		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{mgt}$}   & \mbox{\boldmath$P_{Rw}$}    & \textbf{Total}      \\ 
+		\hline
+		1                       & PID $\Delta h$ & 29.39  & 931.32     & 88.79  & 339.68 & 1389.19  \\
+		2                       & LQR $\Delta h$ & 291.75 & 926.60   & 332.94 & 340.04 & 1891.34  \\
+		3                       & LQR I          & 283.27 & 935.20     & 332.26 & 343.67 & 1894.41  \\
+		4                       & LQR PID        & 275.73& 933.24      & 320.65 & 340.40 & 1870.03  \\
+		\hline
+		%		\cline{1-2}\cline{4-7}
+	\end{tabular}
+\end{table}
 
 
 
-\begin{figure}
+\paragraph{Órbita Polar}
+
+% Tabla indices de desempeño
+
+\begin{table}[!h]
+	\label{table:Detumbling_polar}
+	\caption{\MakeUppercase{Indices de desempeño para órbita polar en maniobra de Detumbling}}
+	\centering
+	\begin{tabular}{r|lllll|l}
+		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{mgt}$}   & \mbox{\boldmath$P_{Rw}$}    & \textbf{Total}      \\ 
+		\hline
+		1                       & PID $\Delta h$ & 29.39  & 931.32     & 88.79  & 339.68 & 1389.19  \\
+		2                       & LQR $\Delta h$ & 291.75 & 926.60   & 332.94 & 340.04 & 1891.34  \\
+		3                       & LQR I          & 283.27 & 935.20     & 332.26 & 343.67 & 1894.41  \\
+		4                       & LQR PID        & 275.73& 933.24      & 320.65 & 340.40 & 1870.03  \\
+		\hline
+		%		\cline{1-2}\cline{4-7}
+	\end{tabular}
+\end{table}
+
+
+% Graficas de las 3 orbitas
+
+\begin{figure}[!ht]
 	\centering
 	\begin{subfigure}{1.2\linewidth}
 		\includegraphics[width=\linewidth]{imagenes/resultados/Detumbling/orbit_zero/yaw_omega_h_zero.PNG}
@@ -1822,19 +1905,6 @@ Con la acción de los magnetorquers...
 \end{figure}
 
 
-
-
-%Orbita 1
-%\begin{figure}[!h]
-%	\begin{center}
-%		\includegraphics[scale=0.35]{imagenes/resultados/orbita_zero/yaw weeoe.PNG}\\
-%	\end{center}
-%	\caption{Implementación del cálculo de indices de desempeño.}
-%	\label{fig:indicesP}	 	
-%\end{figure}
-
-%Orbita 2
-%Orbita 3
 
 \subsubsection{Perfil de misión 2: Escalón}
 
