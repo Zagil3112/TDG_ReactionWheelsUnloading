@@ -2,7 +2,7 @@
 
 omegaZ_inicial = 0; %rad/s
 % omegaZ_inicial = 0; %rad/s
-yaw_ref = 20; %deg
+yaw_ref = 0; %deg
 
 
 %Reaction Wheels
@@ -45,7 +45,8 @@ SC_vel = sqrt(G*M_earth/R_earth); % [m/s]
 F_aero = 0.5*rho_atm*(SC_vel^2)*2.5*(0.192*0.192);
 pSR = 1353/3e8; 
 FSR = pSR*(1+0.6)*(0.192*0.192);
-
+T_orbital = 2*pi*sqrt((R_earth^3)/(G*M_earth));
+omega_zero= 2*pi/T_orbital;
 %% Torques Externos
 T_grav = (3*mu_earth/(2*R_earth^3))*abs(I(3,3)-I(2,2)); % Gradiente gravitacional [Nm]
 T_mag = (0.01)*B_earth; % Torque magnético [Nm]

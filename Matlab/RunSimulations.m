@@ -7,9 +7,9 @@ global plot_flag orbit_path profile;
 
 plot_flag = false;
  
-orbit_path="orbit_zero";
-profile = "Step";
-magnetic_field= B_mag0;
+orbit_path="orbit_polar";
+profile = "Nadir";
+magnetic_field= B_mag90;
 
 %B_mag51,B_mag90,B_mag0
 
@@ -44,14 +44,14 @@ LQR_deltaH_controller= sim(LQR_deltaH_path);
 figure()
 subplot(1,3,1)
 groupPlots(t1, Yaw1, t2, Yaw2, t3, Yaw3, t4, Yaw4, "Yaw [deg]","yaw");
-t_ss = [0, init_step, end_step,t_sim]; % Time points
-y_ss = [0, yaw_ref, yaw_ref*2,yaw_ref*2]; % Corresponding y-values
-stairs(t_ss, y_ss);
+% t_ss = [0, init_step, end_step,t_sim]; % Time points
+% y_ss = [0, yaw_ref, yaw_ref*2,yaw_ref*2]; % Corresponding y-values
+% stairs(t_ss, y_ss);
 
 
 subplot(1,3,2)
 groupPlots(t1, SC_omega1, t2, SC_omega2, t3, SC_omega3, t4, SC_omega4, "SC Omega [rad/s]","sc_omega");
-
+yline(omega_zero)
 
 subplot(1,3,3)
 groupPlots(t1, RW_h1, t2, RW_h2, t3, RW_h3, t4, RW_h4, "RW Momento angular [Nms]","RW_h");
