@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.10.11)  23 OCT 2023 20:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.10.11)  23 OCT 2023 23:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2067,13 +2067,13 @@ LaTeX Info: Redefining \% on input line 24.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 0E09192223DC918752E6F4521DF81727;12525.
+(rerunfilecheck)             Checksum: 47C3468902F384AC2664194F87243F6D;12633.
 Package rerunfilecheck Info: File `main.hd' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
  32200 strings out of 476315
- 629047 string characters out of 5785779
+ 629037 string characters out of 5785779
  1883068 words of memory out of 5000000
  51656 multiletter control sequences out of 15000+600000
  529246 words of font info for 92 fonts, out of 8000000 for 9000
@@ -2111,7 +2111,7 @@ l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Personal/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Use
 rs/Personal/AppData/Local/Programs/MiKTeX/fonts/type1/public/starfont/strfnser.
 pfb>
-Output written on main.pdf (96 pages, 25316059 bytes).
+Output written on main.pdf (96 pages, 25316105 bytes).
 PDF statistics:
  1563 PDF objects out of 1728 (max. 8388607)
  337 named destinations out of 1000 (max. 500000)

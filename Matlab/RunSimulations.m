@@ -8,9 +8,9 @@ global plot_flag orbit_path profile;
 plot_flag = false;
  
 orbit_path="orbit_polar";
-profile = "Nadir";
+profile = "Step";
 magnetic_field= B_mag90;
-
+% Detumbling
 %B_mag51,B_mag90,B_mag0
 
 %% Paths

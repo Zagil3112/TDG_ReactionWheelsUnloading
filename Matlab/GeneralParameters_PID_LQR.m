@@ -2,7 +2,7 @@
 
 omegaZ_inicial = 0; %rad/s
 % omegaZ_inicial = 0; %rad/s
-yaw_ref = 0; %deg
+yaw_ref = 20; %deg
 
 
 %Reaction Wheels

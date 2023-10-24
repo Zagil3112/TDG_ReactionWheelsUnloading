@@ -52,10 +52,10 @@
 \contentsline {subsubsection}{\numberline {5}Resumen controladores}{72}{subsubsection.9.0.5}%
 \contentsline {section}{\numberline {X}RESULTADOS}{73}{section.10}%
 \contentsline {subsection}{\numberline {A}Fenómeno de Saturación}{73}{subsection.10.1}%
-\contentsline {subsection}{\numberline {B}Simulaciones}{74}{subsection.10.2}%
+\contentsline {subsection}{\numberline {B}Definición de perfiles de misión}{74}{subsection.10.2}%
 \contentsline {subsection}{\numberline {C}Perfil de misión 1: Detumbling}{77}{subsection.10.3}%
 \contentsline {subsection}{\numberline {D}Perfil de misión 2: Escalón}{79}{subsection.10.4}%
-\contentsline {subsubsection}{\numberline {1}Perfil de misión 3 : Apuntado a Nadir}{81}{subsubsection.10.4.1}%
+\contentsline {subsection}{\numberline {E}Perfil de misión 3 : Apuntado a Nadir}{81}{subsection.10.5}%
 \contentsline {section}{\numberline {XI}DISCUSIÓN}{86}{section.11}%
 \contentsline {section}{\numberline {XII}CONCLUSIONES}{87}{section.12}%
 \contentsline {section}{\numberline {XIII}RECOMENDACIONES}{88}{section.13}%
