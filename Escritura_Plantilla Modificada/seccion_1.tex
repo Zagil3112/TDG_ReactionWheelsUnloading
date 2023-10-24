@@ -1756,53 +1756,57 @@ En primer lugar, el fenómeno de saturación fue evidenciado con el fin de visua
 
 \begin{figure}[!h]
 	\begin{center}
-		\includegraphics[scale=0.50]{imagenes/resultados/Desaturation.PNG}\\
+		\includegraphics[scale=0.55]{imagenes/resultados/Desaturation.PNG}\\
 	\end{center}
 	\caption{Saturación en ruedas de reacción y su efecto en el Yaw y momento angular.}
 	\label{fig:saturacion}	 	
 \end{figure}
 
-Una vez se tiene en cuenta el efecto de los magnetorquers y su correspondiente método de saturación, el ADCS puede mantener el ángulo de \textit{Yaw} sin incrementar el error y las ruedas de reacción vuelven a apagarse una vez se realiza la maniobra para alcanzar la actitud deseada. Este caso de desaturación se muestra en la \textbf{Fig. \ref{fig:desaturacion}}.
-
-\begin{figure}[!h]
+\begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[scale=0.5]{imagenes/resultados/Desaturation2.PNG}\\
+		\includegraphics[scale=0.55]{imagenes/resultados/Desaturation2.PNG}\\
 	\end{center}
 	\caption{Desaturación de RW empleando magnetorquers.}
 	\label{fig:desaturacion}	 	
 \end{figure}
 
+Una vez se tiene en cuenta el efecto de los magnetorquers y su correspondiente método de saturación, el ADCS puede mantener el ángulo de \textit{Yaw} sin incrementar el error y las ruedas de reacción vuelven a apagarse una vez se realiza la maniobra para alcanzar la actitud deseada. Este caso de desaturación se muestra en la \textbf{Fig. \ref{fig:desaturacion}}.
+
+
 
 \newpage
-\subsection{Simulaciones}
+\subsection{Definición de perfiles de misión}
 %Descripción de los escenarios a evaluar:
 Con el fin de dar solución al planteamiento del problema, se evalúa el desempeño de los controladores en los diferentes escenarios planteados:
 \begin{itemize}
 	\item \textbf{Fase de \textit{Detumbling}}: Se refiere a la etapa inicial donde se tiene en cuenta una velocidad angular inicial. Esto de debe a las condiciones iniciales que comúnmente enfrentan los satélites al ser desplegados en LEO. Recurriendo a \cite{Ofodile2019}, se tomó un valor de referencia de $\omega_{o} = 0.29\,rad/s$.
 	 
-	\item \textbf{Respuesta tipo escalón}: Se establece una referencia para un ángulo de \textit{Yaw} deseado. Para las simulaciones se tomó un valor de $20$ grados donde este se duplica al cabo de unos segundos para tener un doble escalón. 
-	\item \textbf{Apuntamiento hacia el Nadir}: Con el fin de simular un apuntamiento constante a la tierra se evalúa una respuesta tipo rampa para alcanzar una velocidad de rotación constante.
-	Para ello se determinó el periodo de la órbita con la expresión:
+	\item \textbf{Respuesta tipo escalón}: Se establece una referencia para un ángulo de \textit{Yaw} deseado. Para las simulaciones se tomó un valor de $20$ grados donde este se duplica al cabo de unos segundos para tener un doble escalón.
+	\newpage 
+	\item \textbf{Apuntamiento hacia el Nadir}: Con el fin de simular un apuntamiento constante a la tierra se evalúa una respuesta tipo rampa para alcanzar una velocidad de rotación constante que corresponda con la velocidad angular de la órbita. Para ello se determinó el periodo orbital $T_o$ y la velocidad angular con las expresiones:
 	\begin{gather}
-		T_o = 2\pi\sqrt{\frac{a^3}{GM_{tierra}}}\\
-		\omega =
+		T_o = 2\pi\sqrt{\frac{a^3}{GM}}\\
+		\omega = \frac{2\pi}{T_o} = 0.0635\,deg/s 
 	\end{gather}
 	
+	Donde $a$, $G$ y $M$ son el semi eje mayor, la constante de gravitación y la masa de la tierra respectivamente.
 \end{itemize} 
 
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[scale=0.40]{imagenes/resultados/orbitas.PNG}\\
+	\end{center}
+	\caption{Órbitas evaluadas en los diferentes perfiles de misión representadas en STK\textsuperscript{\tiny\textregistered}}
+	\label{fig:orbitas_eval}	 	
+\end{figure}
 
+Por otro lado, los perfiles de misión mencionados anteriormente se evalúan en 3 órbitas diferentes con el fin de comparar el rendimiento de los magnetorquers según el campo magnético que atraviese el satélite. La representación de las órbitas puede apreciarse en la \textbf{Fig. \ref{fig:orbitas_eval}} y sus elementos orbitales se consignaron en la \textbf{Tabla \ref{table:Parametros_orbitales}}.
 
 
 % Imagen y parámetros orbitales 
 %Sujeto a 3 tipos de órbita 
 
-\begin{figure}[!h]
-	\begin{center}
-		\includegraphics[scale=0.55]{imagenes/resultados/orbitas.PNG}\\
-	\end{center}
-	\caption{Órbitas evaluadas en los diferentes perfiles de misión.}
-	\label{fig:orbitas_eval}	 	
-\end{figure}
+
 
 \begin{table}[!ht]
 	\caption{\MakeUppercase{Parámetros Orbitales de las trayectorias a evaluar }}
@@ -1821,13 +1825,11 @@ Con el fin de dar solución al planteamiento del problema, se evalúa el desempe
 	\label{table:Parametros_orbitales}
 \end{table}
 
-
-
-\subsubsection{Perfil de misión 1 : Detumbling}
-
-\paragraph{Órbita Ecuatorial}
-  
-% Tabla indices de desempeño
+A continuación se mostrarán los resultados de ángulo de \textit{Yaw}, velocidad angular del satélite y momento angular de las RW para los 3 perfiles de misión en sus respectivas órbitas. Adicionalmente, se recopilaron los indices de desempeño de los controladores que son de utilidad para su comparación. 
+\newpage
+\subsection{Perfil de misión 1: Detumbling}
+% Tabla indices de desempeño ecuatorial Detumbling
+ 
 \begin{table}[!h]
 	\label{table:Detumbling_ecuatorial}
 	\caption{\MakeUppercase{Indices de desempeño para órbita ecuatorial en maniobra de Detumbling}}
@@ -1844,9 +1846,8 @@ Con el fin de dar solución al planteamiento del problema, se evalúa el desempe
 	\end{tabular}
 \end{table}
 
-\paragraph{Órbita ISS}
 
-% Tabla indices de desempeño
+% Tabla indices de desempeño ISS Detumbling
 \begin{table}[!h]
 	\label{table:Detumbling_iss}
 	\caption{\MakeUppercase{Indices de desempeño para órbita de la ISS en maniobra de Detumbling }}
@@ -1863,11 +1864,7 @@ Con el fin de dar solución al planteamiento del problema, se evalúa el desempe
 	\end{tabular}
 \end{table}
 
-
-
-\paragraph{Órbita Polar}
-
-% Tabla indices de desempeño
+% Tabla indices de desempeño Polar Detumbling 
 
 \begin{table}[!h]
 	\label{table:Detumbling_polar}
@@ -1884,57 +1881,109 @@ Con el fin de dar solución al planteamiento del problema, se evalúa el desempe
 		%		\cline{1-2}\cline{4-7}
 	\end{tabular}
 \end{table}
+\clearpage
 
-
-% Graficas de las 3 orbitas
+% Graficas de las 3 orbitas Detumbling
 
 \begin{figure}[!ht]
 	\centering
 	\begin{subfigure}{1.2\linewidth}
 		\includegraphics[width=\linewidth]{imagenes/resultados/Detumbling/orbit_zero/yaw_omega_h_zero.PNG}
-		\caption{Yellow color}
-		\label{fig:subfigA}
+		\caption{Órbita ecuatorial}
+		\label{fig:orbita_ecuatorial_Detumbling}
 	\end{subfigure}\\
 	\begin{subfigure}{1.2\linewidth}
 		\includegraphics[width=\linewidth]{imagenes/resultados/Detumbling/orbit_iss/yaw_omega_h_iss.PNG}
-		\caption{Red color}
-		\label{fig:subfigB}
+		\caption{Órbita ISS}
+		\label{fig:orbita_iss_Detumbling}
 	\end{subfigure}\\
 	\begin{subfigure}{1.2\linewidth}
 		\includegraphics[width=\linewidth]{imagenes/resultados/Detumbling/orbit_polar/yaw_omega_h_polar.PNG}
-		\caption{Green color}
-		\label{fig:subfigC}
+		\caption{Órbita polar}
+		\label{fig:orbita_polar_Detumbling}
 	\end{subfigure}
-	\caption{Showing three cars in different colors horizontally.}
-	\label{fig:subfigures}
+	\caption{Ángulo de Yaw, velocidad angular del S/C y momento angular de las RW para el perfil de misión de Detumbling}
+	\label{fig:Detumbling_ecuatorial}
 \end{figure}
+\clearpage
+\subsection{Perfil de misión 2: Escalón}
+
+\begin{table}[!h]
+	\label{table:step_ecuatorial}
+	\caption{\MakeUppercase{Indices de desempeño para órbita ecuatorial en respuesta del escalón}}
+	\centering
+	\begin{tabular}{r|lllll|l}
+		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{mgt}$}   & \mbox{\boldmath$P_{Rw}$}    & \textbf{Total}      \\ 
+		\hline
+		1                       & PID $\Delta h$ & 29.39  & 931.32     & 88.79  & 339.68 & 1389.19  \\
+		2                       & LQR $\Delta h$ & 291.75 & 926.60   & 332.94 & 340.04 & 1891.34  \\
+		3                       & LQR I          & 283.27 & 935.20     & 332.26 & 343.67 & 1894.41  \\
+		4                       & LQR PID        & 275.73& 933.24      & 320.65 & 340.40 & 1870.03  \\
+		\hline
+		%		\cline{1-2}\cline{4-7}
+	\end{tabular}
+\end{table}
 
 
+% Tabla indices de desempeño ISS Step
+\begin{table}[!h]
+	\label{table:step_iss}
+	\caption{\MakeUppercase{Indices de desempeño para órbita de la ISS en respuesta del escalón }}
+	\centering
+	\begin{tabular}{r|lllll|l}
+		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{mgt}$}   & \mbox{\boldmath$P_{Rw}$}    & \textbf{Total}      \\ 
+		\hline
+		1                       & PID $\Delta h$ & 29.33  & 709.51     & 88.83  & 346.15 & 1173.83  \\
+		2                       & LQR $\Delta h$ & 225.91 & 708.36     & 332.34 & 346.89 & 1613.49  \\
+		3                       & LQR I          & 227.33 & 714.92     & 331.37 & 345.31 & 1618.94  \\
+		4                       & LQR PID        & 234.43 & 711.95     & 319.50 & 348.44 & 1614.33  \\
+		\hline
+		%		\cline{1-2}\cline{4-7}
+	\end{tabular}
+\end{table}
 
-\subsubsection{Perfil de misión 2: Escalón}
+% Tabla indices de desempeño Polar Step 
 
+\begin{table}[!h]
+	\label{table:step_polar}
+	\caption{\MakeUppercase{Indices de desempeño para órbita polar en respuesta del escalón}}
+	\centering
+	\begin{tabular}{r|lllll|l}
+		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{mgt}$}   & \mbox{\boldmath$P_{Rw}$}    & \textbf{Total}      \\ 
+		\hline
+		1                       & PID $\Delta h$ & 29.38 & 929.53& 88.88 & 414.89 & 1462.68  \\
+		2                       & LQR $\Delta h$ & 277.68 & 928.36 &332.43 &409.66 & 1948.14  \\
+		3                       & LQR I          & 282.22 & 932.90 &330.22 & 415.75 &1961.08  \\
+		4                       & LQR PID        & 326.09 & 932.21 & 327.58 & 399.09 & 1984.97  \\
+		\hline
+		%		\cline{1-2}\cline{4-7}
+	\end{tabular}
+\end{table}
+\clearpage
+
+% Gráficas para Escalón
 \begin{figure}
 	\centering
 	\begin{subfigure}{1.2\linewidth}
 		\includegraphics[width=\linewidth]{imagenes/resultados/Step/orbit_zero/Compilado.PNG}
-		\caption{Yellow color}
+		\caption{Órbita ecuatorial}
 		\label{fig:step_zero}
 	\end{subfigure}\\
 	\begin{subfigure}{1.2\linewidth}
 		\includegraphics[width=\linewidth]{imagenes/resultados/Step/orbit_iss/Compilado.PNG}
-		\caption{Red color}
+		\caption{Órbita ISS}
 		\label{fig:step_iss}
 	\end{subfigure}\\
 	\begin{subfigure}{1.2\linewidth}
 		\includegraphics[width=\linewidth]{imagenes/resultados/Step/orbit_polar/Compilado.PNG}
-		\caption{Green color}
+		\caption{Órbita Polar}
 		\label{fig:step_polar}
 	\end{subfigure}
-	\caption{Showing three cars in different colors horizontally.}
+	\caption{Ángulo de Yaw, velocidad angular del S/C y momento angular de las RW para el perfil de misión escalón.}
 	\label{fig:step}
 \end{figure}
- 
-\subsubsection{Perfil de misión 3 : Apuntado a Nadir}
+\clearpage
+\subsection{Perfil de misión 3 : Apuntado a Nadir}
 
 
 \begin{figure}
