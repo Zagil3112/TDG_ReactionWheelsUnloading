@@ -1985,28 +1985,81 @@ A continuación se mostrarán los resultados de ángulo de \textit{Yaw}, velocid
 \clearpage
 \subsection{Perfil de misión 3 : Apuntado a Nadir}
 
+\begin{table}[!h]
+	\label{table:nadir_ecuatorial}
+	\caption{\MakeUppercase{Indices de desempeño para órbita ecuatorial en apuntamiento Nadir}}
+	\centering
+	\begin{tabular}{r|lllll|l}
+		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{mgt}$}   & \mbox{\boldmath$P_{Rw}$}    & \textbf{Total}      \\ 
+		\hline
+		1                       & PID $\Delta h$ & 0.00094 &0.0039& 0.04033& 2.01 &2.06  \\
+		2                       & LQR $\Delta h$ & 0.95 & 0.0046& 0.00071& 2.075& 3.03  \\
+		3                       & LQR I          & 0.903 &0.180 &0.00063 &2.059 &3.14  \\
+		4                       & LQR PID        & 0.903& 0.181 &0.00063 &11.42 &12.51  \\
+		\hline
+		%		\cline{1-2}\cline{4-7}
+	\end{tabular}
+\end{table}
 
+
+% Tabla indices de desempeño ISS Nadir
+\begin{table}[!h]
+	\label{table:nadir_iss}
+	\caption{\MakeUppercase{Indices de desempeño para órbita de la ISS en apuntamiento Nadir}}
+	\centering
+	\begin{tabular}{r|lllll|l}
+		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{mgt}$}   & \mbox{\boldmath$P_{Rw}$}    & \textbf{Total}      \\ 
+		\hline
+		1                       & PID $\Delta h$ &0.00094 &0.0038 &0.040 &2.49& 2.54  \\
+		2                       & LQR $\Delta h$ & 0.95 &0.0036751& 0.00069 &2.46 &3.42  \\
+		3                       & LQR I          & 0.90 &0.18007 &0.000629 &2.43 &3.51 \\
+		4                       & LQR PID        & 0.90 &0.18031 &0.000631& 1.6284 &2.71  \\
+		\hline
+		%		\cline{1-2}\cline{4-7}
+	\end{tabular}
+\end{table}
+
+% Tabla indices de desempeño Polar Nadir 
+
+\begin{table}[!h]
+	\label{table:nadir_polar}
+	\caption{\MakeUppercase{Indices de desempeño para órbita polar en apuntamiento Nadir}}
+	\centering
+	\begin{tabular}{r|lllll|l}
+		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{mgt}$}   & \mbox{\boldmath$P_{Rw}$}    & \textbf{Total}      \\ 
+		\hline
+		1                       & PID $\Delta h$ & 0.00096& 0.0037& 0.040 &3.47 &3.52  \\
+		2                       & LQR $\Delta h$ & 0.952 &0.0035& 0.00069 &3.48 &4.44 \\
+		3                       & LQR I          & 0.903& 0.18& 0.000643& 4.55& 5.63\\
+		4                       & LQR PID        & 0.903 &0.18& 0.000604& 4.35 &5.43 \\
+		\hline
+		%		\cline{1-2}\cline{4-7}
+	\end{tabular}
+\end{table}
+\clearpage
+
+%Graficas Nadir
 \begin{figure}
 	\centering
 	\begin{subfigure}{1.2\linewidth}
-		\includegraphics[width=\linewidth]{imagenes/resultados/Nadir/orbit_zero/Compilado.PNG}
-		\caption{Yellow color}
+		\includegraphics[width=\linewidth]{imagenes/resultados/Nadir/orbit_zero/Compilado2.PNG}
+		\caption{Órbita ecuatorial}
 		\label{fig:nadir_zero}
 	\end{subfigure}\\
 	\begin{subfigure}{1.2\linewidth}
-		\includegraphics[width=\linewidth]{imagenes/resultados/Nadir/orbit_iss/Compilado.PNG}
-		\caption{Red color}
+		\includegraphics[width=\linewidth]{imagenes/resultados/Nadir/orbit_iss/Compilado2.PNG}
+		\caption{Órbita ISS}
 		\label{fig:nadir_iss}
 	\end{subfigure}\\
 	\begin{subfigure}{1.2\linewidth}
-		\includegraphics[width=\linewidth]{imagenes/resultados/Nadir/orbit_polar/Compilado.PNG}
-		\caption{Green color}
+		\includegraphics[width=\linewidth]{imagenes/resultados/Nadir/orbit_polar/Compilado2.PNG}
+		\caption{Órbita Polar}
 		\label{fig:nadir_polar}
 	\end{subfigure}
-	\caption{Showing three cars in different colors horizontally.}
+	\caption{Ángulo de Yaw, velocidad angular del S/C y momento angular de las RW para el perfil de misión apuntamiento Nadir.}
 	\label{fig:nadir}
 \end{figure}  
-
+\clearpage
 
 En los resultados se comunican los hallazgos y descubrimientos del estudio. Se incluyen tablas, figuras, diagramas y demás material demostrativo.
 

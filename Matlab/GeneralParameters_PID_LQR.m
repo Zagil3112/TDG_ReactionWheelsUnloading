@@ -2,7 +2,7 @@
 
 omegaZ_inicial = 0; %rad/s
 % omegaZ_inicial = 0; %rad/s
-yaw_ref = 20; %deg
+yaw_ref = 0; %deg
 
 
 %Reaction Wheels
@@ -175,7 +175,7 @@ Gamma= [I^-1 zeros(3) zeros(3)]';
 
 
 %Choose Q and R
-scenario = 2;   %1 = Detumbling
+scenario = 1;   %1 = Detumbling
                 %2 = Step
                 %3 = ignore position
 
