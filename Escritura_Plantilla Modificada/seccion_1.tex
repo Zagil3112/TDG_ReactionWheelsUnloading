@@ -2161,7 +2161,9 @@ A pesar de que el controlador PID fue diseñado netamente a partir de un modelo 
 	\label{table:gananciasLQR}
 \end{table}
 % Detumbling %Nadir
-No obstante, en estos escenarios cabe destacar que el PID presentó mejor desempeño en el \textit{Detumbling}, con una notoria disminución del error de referencia y el consumo de potencia de los magnetorquers. En cambio, para el apuntamiento en el Nadir, se presentó un desempeño muy similar para todos los controladores en cada una de las órbitas. Así mismo, es de notar que en este escenario, el momento angular de las RW, este se estabiliza en un valor 3 veces mayor con el método de $k\Delta h$ respecto al método de desaturación del controlador cascada \textbf{(Fig. \ref{fig:nadir})}, donde el primero presenta mayores oscilaciones. Sin embargo, estos valores de estabilización son del orden de $10^{-5}$. 
+No obstante, en estos escenarios cabe destacar que el PID presentó mejor desempeño en el \textit{Detumbling}, con una notoria disminución del error de referencia y el consumo de potencia de los magnetorquers. En cambio, para el apuntamiento en el Nadir, se presentó un desempeño muy similar para todos los controladores en cada una de las órbitas, donde se alcanzó la velocidad angular deseada en $<0.5\;s$. Cabe anotar que el PID presentó mas oscilaciones para alcanzar esta velocidad pero tardó menos tiempo en estabilizarse.
+
+Así mismo, es de notar que en este escenario, el momento angular de las RW, este se estabiliza en un valor 3 veces mayor con el método de $k\Delta h$ respecto al método de desaturación del controlador cascada \textbf{(Fig. \ref{fig:nadir})}, donde el primero presenta mayores oscilaciones. Sin embargo, estos valores de estabilización son del orden de $10^{-5}$. 
 
 %Escalon
 Por otro lado, donde mejor desempeño presentó el LQR fue en la respuesta escalón como se evidencia en la \textbf{Fig. \ref{fig:step}}. Es notorio que el PID presenta mayor sobre impulso en el ángulo de \textit{Yaw}. Para lograr estos resultados se optó por una matriz $Q$ de estados mas homogénea pero fue necesario aumentar la acción de control disminuyendo el valor de la matriz $R$ de la siguiente manera:  
@@ -2171,7 +2173,7 @@ Por otro lado, donde mejor desempeño presentó el LQR fue en la respuesta escal
 		R=[0.1]
 	\end{gathered}	
 \end{equation}
-Finalmente, para este perfil de misión se destaca que el método de desaturación basado en la ley de control $k\Delta h$, presenta una disminución del momento angular respecto al método de cascada en 2 órdenes de magnitud, como se ve en las tablas de dicha sección.
+Finalmente, para este perfil de misión se destaca que, el método de desaturación basado en la ley de control $k\Delta h$, presenta una disminución del momento angular respecto al método de cascada en 2 órdenes de magnitud, como se ve en las tablas de dicha sección.
 
 %--------------------------
 \section{CONCLUSIONES}
@@ -2182,6 +2184,7 @@ Tal como se evidenció en la \textbf{Fig. \ref{fig:saturacion}}, la saturación 
 
 No obstante, se reconoce que el modelo EyasSat es un picosatélite diseñado para pruebas en tierra con fines académicos, por lo que rendimientos similares no esperan ser encontrados en satélites de la misma categoría debido a la limitación de 1 grado de libertad. Aun así, las estrategias de control presentadas demostraron satisfacer los requerimientos tanto para el control de actitud como para la desaturación de las RW en los 3 escenarios planteados.
 
+%Poca variación entre las órbitas - potencia Mgt
 
 \newpage
 %--------------------------
