@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.10.11)  23 OCT 2023 17:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.10.11)  23 OCT 2023 18:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1396,7 +1396,7 @@ nto.PNG  used on input line 44.
 (pdftex.def)             Requested size: 380.16937pt x 254.0736pt.
  [13] [14 <./imagenes/planteamiento_del_problema/esquema_planteamiento.PNG>] [1
 5]
-<imagenes/justificacion/jaula.PNG, id=638, 315.42844pt x 313.9228pt>
+<imagenes/justificacion/jaula.PNG, id=639, 315.42844pt x 313.9228pt>
 File: imagenes/justificacion/jaula.PNG Graphic file (type png)
 <use imagenes/justificacion/jaula.PNG>
 Package pdftex.def Info: imagenes/justificacion/jaula.PNG  used on input line 8
@@ -1812,33 +1812,34 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [71 <./imagenes/controladores/indices de desempeño.PNG>]
-<imagenes/resultados/Desaturation.PNG, id=1196, 724.98856pt x 566.8377pt>
+<imagenes/resultados/Desaturation.PNG, id=1197, 724.98856pt x 566.8377pt>
 File: imagenes/resultados/Desaturation.PNG Graphic file (type png)
 <use imagenes/resultados/Desaturation.PNG>
 Package pdftex.def Info: imagenes/resultados/Desaturation.PNG  used on input li
-ne 1757.
-(pdftex.def)             Requested size: 398.74493pt x 311.7617pt.
- [72 <./imagenes/resultados/Desaturation.PNG (PNG copy)>]
-<imagenes/resultados/Desaturation2.PNG, id=1201, 835.6821pt x 499.1448pt>
+ne 1759.
+(pdftex.def)             Requested size: 362.4934pt x 283.41815pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<imagenes/resultados/Desaturation2.PNG, id=1199, 835.6821pt x 499.1448pt>
 File: imagenes/resultados/Desaturation2.PNG Graphic file (type png)
 <use imagenes/resultados/Desaturation2.PNG>
 Package pdftex.def Info: imagenes/resultados/Desaturation2.PNG  used on input l
-ine 1771.
-(pdftex.def)             Requested size: 459.62657pt x 274.53049pt.
- [73 <./imagenes/resultados/Desaturation2.PNG (PNG copy)>]
-<imagenes/resultados/orbitas.PNG, id=1207, 908.64468pt x 494.59781pt>
+ine 1769.
+(pdftex.def)             Requested size: 417.84003pt x 249.5718pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[72]
+<imagenes/resultados/orbitas.PNG, id=1205, 908.64468pt x 494.59781pt>
 File: imagenes/resultados/orbitas.PNG Graphic file (type png)
 <use imagenes/resultados/orbitas.PNG>
 Package pdftex.def Info: imagenes/resultados/orbitas.PNG  used on input line 17
-96.
+95.
 (pdftex.def)             Requested size: 499.75612pt x 272.02963pt.
 
-Overfull \hbox (27.72488pt too wide) in paragraph at lines 1796--1796
- [] 
- []
-
-
-Overfull \hbox (1.59645pt too wide) in paragraph at lines 1805--1815
+Overfull \hbox (27.72488pt too wide) in paragraph at lines 1795--1795
  [] 
  []
 
@@ -1846,152 +1847,161 @@ Overfull \hbox (1.59645pt too wide) in paragraph at lines 1805--1815
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+Overfull \hbox (1.59645pt too wide) in paragraph at lines 1804--1814
+ [] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[73 <./imagenes/resultados/Desaturation.PNG (PNG copy)>]
+
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<imagenes/resultados/Detumbling/orbit_zero/yaw_omega_h_zero.PNG, id=1208, 1280.
+<imagenes/resultados/Detumbling/orbit_zero/yaw_omega_h_zero.PNG, id=1212, 1280.
 50395pt x 463.0098pt>
 File: imagenes/resultados/Detumbling/orbit_zero/yaw_omega_h_zero.PNG Graphic fi
 le (type png)
 <use imagenes/resultados/Detumbling/orbit_zero/yaw_omega_h_zero.PNG>
 Package pdftex.def Info: imagenes/resultados/Detumbling/orbit_zero/yaw_omega_h_
-zero.PNG  used on input line 1889.
+zero.PNG  used on input line 1888.
 (pdftex.def)             Requested size: 566.43604pt x 204.81293pt.
 
-Overfull \hbox (94.4048pt too wide) in paragraph at lines 1888--1892
+Overfull \hbox (94.4048pt too wide) in paragraph at lines 1887--1891
  [][] 
  []
 
-<imagenes/resultados/Detumbling/orbit_iss/yaw_omega_h_iss.PNG, id=1209, 1280.38
+<imagenes/resultados/Detumbling/orbit_iss/yaw_omega_h_iss.PNG, id=1213, 1280.38
 35pt x 426.75435pt>
 File: imagenes/resultados/Detumbling/orbit_iss/yaw_omega_h_iss.PNG Graphic file
  (type png)
 <use imagenes/resultados/Detumbling/orbit_iss/yaw_omega_h_iss.PNG>
 Package pdftex.def Info: imagenes/resultados/Detumbling/orbit_iss/yaw_omega_h_i
-ss.PNG  used on input line 1894.
+ss.PNG  used on input line 1893.
 (pdftex.def)             Requested size: 566.43604pt x 188.79483pt.
 
-Overfull \hbox (94.4048pt too wide) in paragraph at lines 1893--1897
+Overfull \hbox (94.4048pt too wide) in paragraph at lines 1892--1896
  [][] 
  []
 
-<imagenes/resultados/Detumbling/orbit_polar/yaw_omega_h_polar.PNG, id=1210, 128
+<imagenes/resultados/Detumbling/orbit_polar/yaw_omega_h_polar.PNG, id=1214, 128
 0.3835pt x 426.75435pt>
 File: imagenes/resultados/Detumbling/orbit_polar/yaw_omega_h_polar.PNG Graphic 
 file (type png)
 <use imagenes/resultados/Detumbling/orbit_polar/yaw_omega_h_polar.PNG>
 Package pdftex.def Info: imagenes/resultados/Detumbling/orbit_polar/yaw_omega_h
-_polar.PNG  used on input line 1899.
+_polar.PNG  used on input line 1898.
 (pdftex.def)             Requested size: 566.43604pt x 188.79483pt.
 
-Overfull \hbox (94.4048pt too wide) in paragraph at lines 1898--1903
+Overfull \hbox (94.4048pt too wide) in paragraph at lines 1897--1902
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 44.7118pt on input line 1905.
+LaTeX Warning: Float too large for page by 44.7118pt on input line 1904.
 
-<imagenes/resultados/Step/orbit_zero/Compilado.PNG, id=1211, 1280.3835pt x 426.
+<imagenes/resultados/Step/orbit_zero/Compilado.PNG, id=1215, 1280.3835pt x 426.
 75435pt>
 File: imagenes/resultados/Step/orbit_zero/Compilado.PNG Graphic file (type png)
 
 <use imagenes/resultados/Step/orbit_zero/Compilado.PNG>
 Package pdftex.def Info: imagenes/resultados/Step/orbit_zero/Compilado.PNG  use
-d on input line 1914.
+d on input line 1913.
 (pdftex.def)             Requested size: 566.43604pt x 188.79483pt.
 
-Overfull \hbox (94.4048pt too wide) in paragraph at lines 1913--1917
+Overfull \hbox (94.4048pt too wide) in paragraph at lines 1912--1916
  [][] 
  []
 
-<imagenes/resultados/Step/orbit_iss/Compilado.PNG, id=1212, 1280.3835pt x 426.7
+<imagenes/resultados/Step/orbit_iss/Compilado.PNG, id=1216, 1280.3835pt x 426.7
 5435pt>
 File: imagenes/resultados/Step/orbit_iss/Compilado.PNG Graphic file (type png)
 <use imagenes/resultados/Step/orbit_iss/Compilado.PNG>
 Package pdftex.def Info: imagenes/resultados/Step/orbit_iss/Compilado.PNG  used
- on input line 1919.
+ on input line 1918.
 (pdftex.def)             Requested size: 566.43604pt x 188.79483pt.
 
-Overfull \hbox (94.4048pt too wide) in paragraph at lines 1918--1922
+Overfull \hbox (94.4048pt too wide) in paragraph at lines 1917--1921
  [][] 
  []
 
-<imagenes/resultados/Step/orbit_polar/Compilado.PNG, id=1213, 1280.3835pt x 426
+<imagenes/resultados/Step/orbit_polar/Compilado.PNG, id=1217, 1280.3835pt x 426
 .75435pt>
 File: imagenes/resultados/Step/orbit_polar/Compilado.PNG Graphic file (type png
 )
 <use imagenes/resultados/Step/orbit_polar/Compilado.PNG>
 Package pdftex.def Info: imagenes/resultados/Step/orbit_polar/Compilado.PNG  us
-ed on input line 1924.
+ed on input line 1923.
 (pdftex.def)             Requested size: 566.43604pt x 188.79483pt.
 
-Overfull \hbox (94.4048pt too wide) in paragraph at lines 1923--1928
+Overfull \hbox (94.4048pt too wide) in paragraph at lines 1922--1927
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 28.69371pt on input line 1930.
+LaTeX Warning: Float too large for page by 28.69371pt on input line 1929.
 
-<imagenes/resultados/Nadir/orbit_zero/Compilado.PNG, id=1214, 1280.3835pt x 426
+[74 <./imagenes/resultados/Desaturation2.PNG (PNG copy)>]
+<imagenes/resultados/Nadir/orbit_zero/Compilado.PNG, id=1222, 1280.3835pt x 426
 .75435pt>
 File: imagenes/resultados/Nadir/orbit_zero/Compilado.PNG Graphic file (type png
 )
 <use imagenes/resultados/Nadir/orbit_zero/Compilado.PNG>
 Package pdftex.def Info: imagenes/resultados/Nadir/orbit_zero/Compilado.PNG  us
-ed on input line 1938.
+ed on input line 1937.
 (pdftex.def)             Requested size: 566.43604pt x 188.79483pt.
 
-Overfull \hbox (94.4048pt too wide) in paragraph at lines 1937--1941
+Overfull \hbox (94.4048pt too wide) in paragraph at lines 1936--1940
  [][] 
  []
 
-<imagenes/resultados/Nadir/orbit_iss/Compilado.PNG, id=1215, 1280.3835pt x 426.
+<imagenes/resultados/Nadir/orbit_iss/Compilado.PNG, id=1223, 1280.3835pt x 426.
 75435pt>
 File: imagenes/resultados/Nadir/orbit_iss/Compilado.PNG Graphic file (type png)
 
 <use imagenes/resultados/Nadir/orbit_iss/Compilado.PNG>
 Package pdftex.def Info: imagenes/resultados/Nadir/orbit_iss/Compilado.PNG  use
-d on input line 1943.
+d on input line 1942.
 (pdftex.def)             Requested size: 566.43604pt x 188.79483pt.
 
-Overfull \hbox (94.4048pt too wide) in paragraph at lines 1942--1946
+Overfull \hbox (94.4048pt too wide) in paragraph at lines 1941--1945
  [][] 
  []
 
-<imagenes/resultados/Nadir/orbit_polar/Compilado.PNG, id=1216, 1280.50395pt x 4
+<imagenes/resultados/Nadir/orbit_polar/Compilado.PNG, id=1224, 1280.50395pt x 4
 26.8748pt>
 File: imagenes/resultados/Nadir/orbit_polar/Compilado.PNG Graphic file (type pn
 g)
 <use imagenes/resultados/Nadir/orbit_polar/Compilado.PNG>
 Package pdftex.def Info: imagenes/resultados/Nadir/orbit_polar/Compilado.PNG  u
-sed on input line 1948.
+sed on input line 1947.
 (pdftex.def)             Requested size: 566.43604pt x 188.82857pt.
 
-Overfull \hbox (94.4048pt too wide) in paragraph at lines 1947--1952
+Overfull \hbox (94.4048pt too wide) in paragraph at lines 1946--1951
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 28.72745pt on input line 1954.
+LaTeX Warning: Float too large for page by 28.72745pt on input line 1953.
 
-[74 <./imagenes/resultados/orbitas.PNG>]
 
 LaTeX Warning: Reference `table:prob_milenio' on page 75 undefined on input lin
-e 1962.
+e 1961.
 
 
 LaTeX Warning: Reference `fig:hiperbolica' on page 75 undefined on input line 1
-962.
+961.
 
-[75]
-Underfull \hbox (badness 10000) in paragraph at lines 2001--2001
+[75 <./imagenes/resultados/orbitas.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 2000--2000
 []|\OT1/cmr/m/n/12 Vietnam y
  []
 
 
-Underfull \hbox (badness 1708) in paragraph at lines 2011--2012
+Underfull \hbox (badness 1708) in paragraph at lines 2010--2011
 []|\OT1/cmr/m/n/12 Escuela Po-lit^^Secni-ca Fe-de-ral de
  []
 
@@ -2004,18 +2014,18 @@ esultados/Step/orbit_polar/Compilado.PNG (PNG copy)>] [80 <./imagenes/resultado
 s/Nadir/orbit_zero/Compilado.PNG (PNG copy)> <./imagenes/resultados/Nadir/orbit
 _iss/Compilado.PNG (PNG copy)> <./imagenes/resultados/Nadir/orbit_polar/Compila
 do.PNG (PNG copy)>]
-<imagenes/ieee_logo.jpg, id=1251, 593.21625pt x 332.74312pt>
+<imagenes/ieee_logo.jpg, id=1255, 593.21625pt x 332.74312pt>
 File: imagenes/ieee_logo.jpg Graphic file (type jpg)
 <use imagenes/ieee_logo.jpg>
-Package pdftex.def Info: imagenes/ieee_logo.jpg  used on input line 2043.
+Package pdftex.def Info: imagenes/ieee_logo.jpg  used on input line 2042.
 (pdftex.def)             Requested size: 296.60739pt x 166.37114pt.
  [81
 
  <./imagenes/ieee_logo.jpg>]
-<imagenes/escudo_udea_solo.png, id=1258, 147.55125pt x 193.47281pt>
+<imagenes/escudo_udea_solo.png, id=1262, 147.55125pt x 193.47281pt>
 File: imagenes/escudo_udea_solo.png Graphic file (type png)
 <use imagenes/escudo_udea_solo.png>
-Package pdftex.def Info: imagenes/escudo_udea_solo.png  used on input line 2054
+Package pdftex.def Info: imagenes/escudo_udea_solo.png  used on input line 2053
 .
 (pdftex.def)             Requested size: 147.55087pt x 193.47234pt.
  [82
@@ -2072,10 +2082,10 @@ Package rerunfilecheck Info: File `main.hd' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 32186 strings out of 476315
- 628775 string characters out of 5785779
+ 32195 strings out of 476315
+ 628914 string characters out of 5785779
  1884068 words of memory out of 5000000
- 51648 multiletter control sequences out of 15000+600000
+ 51656 multiletter control sequences out of 15000+600000
  529246 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  103i,24n,111p,1380b,1250s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2111,9 +2121,9 @@ l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Personal/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Use
 rs/Personal/AppData/Local/Programs/MiKTeX/fonts/type1/public/starfont/strfnser.
 pfb>
-Output written on main.pdf (93 pages, 25304270 bytes).
+Output written on main.pdf (93 pages, 25309387 bytes).
 PDF statistics:
- 1548 PDF objects out of 1728 (max. 8388607)
- 331 named destinations out of 1000 (max. 500000)
+ 1552 PDF objects out of 1728 (max. 8388607)
+ 332 named destinations out of 1000 (max. 500000)
  857 words of extra memory for PDF output out of 10000 (max. 10000000)
 

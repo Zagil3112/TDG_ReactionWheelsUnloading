@@ -40,9 +40,9 @@
 \contentsline {figure}{\numberline {39}{\ignorespaces Implementación simplificada en Simulink del controlador de actitud y desaturación.\relax }}{69}{figure.caption.43}%
 \contentsline {figure}{\numberline {40}{\ignorespaces Modelo de desaturación según ley de control de $\Delta h$.\relax }}{69}{figure.caption.44}%
 \contentsline {figure}{\numberline {41}{\ignorespaces Implementación del cálculo de indices de desempeño.\relax }}{71}{figure.caption.46}%
-\contentsline {figure}{\numberline {42}{\ignorespaces Implementación del cálculo de indices de desempeño.\relax }}{72}{figure.caption.49}%
-\contentsline {figure}{\numberline {43}{\ignorespaces Implementación del cálculo de indices de desempeño.\relax }}{73}{figure.caption.50}%
-\contentsline {figure}{\numberline {44}{\ignorespaces Órbitas evaluadas en los diferentes perfiles de misión.\relax }}{74}{figure.caption.51}%
+\contentsline {figure}{\numberline {42}{\ignorespaces Saturación en ruedas de reacción y su efecto en el Yaw y momento angular.\relax }}{73}{figure.caption.49}%
+\contentsline {figure}{\numberline {43}{\ignorespaces Desaturación de RW empleando magnetorquers.\relax }}{74}{figure.caption.50}%
+\contentsline {figure}{\numberline {44}{\ignorespaces Órbitas evaluadas en los diferentes perfiles de misión.\relax }}{75}{figure.caption.51}%
 \contentsline {figure}{\numberline {45}{\ignorespaces Showing three cars in different colors horizontally.\relax }}{78}{figure.caption.56}%
 \contentsline {figure}{\numberline {46}{\ignorespaces Showing three cars in different colors horizontally.\relax }}{79}{figure.caption.57}%
 \contentsline {figure}{\numberline {47}{\ignorespaces Showing three cars in different colors horizontally.\relax }}{80}{figure.caption.58}%

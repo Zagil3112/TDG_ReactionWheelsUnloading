@@ -60,45 +60,45 @@ Too many commas in name 1 of "Blanke, M., & Larsen, M. B" for entry Blanke2010
 while executing---line 2687 of file ieeeudea.bst
 
 Done.
-You've used 33 entries,
+You've used 34 entries,
             4853 wiz_defined-function locations,
-            1156 strings with 14556 characters,
-and the built_in function-call counts, 19921 in all, are:
-= -- 1704
-> -- 592
-< -- 60
-+ -- 285
-- -- 152
-* -- 1057
-:= -- 3326
-add.period$ -- 65
-call.type$ -- 33
-change.case$ -- 38
-chr.to.int$ -- 117
-cite$ -- 37
-duplicate$ -- 1395
-empty$ -- 1636
-format.name$ -- 213
-if$ -- 4362
+            1162 strings with 14829 characters,
+and the built_in function-call counts, 21005 in all, are:
+= -- 1791
+> -- 629
+< -- 68
++ -- 304
+- -- 160
+* -- 1118
+:= -- 3474
+add.period$ -- 67
+call.type$ -- 34
+change.case$ -- 39
+chr.to.int$ -- 139
+cite$ -- 38
+duplicate$ -- 1464
+empty$ -- 1723
+format.name$ -- 223
+if$ -- 4617
 int.to.chr$ -- 1
-int.to.str$ -- 34
-missing$ -- 259
-newline$ -- 145
-num.names$ -- 99
-pop$ -- 785
+int.to.str$ -- 35
+missing$ -- 270
+newline$ -- 148
+num.names$ -- 102
+pop$ -- 816
 preamble$ -- 1
-purify$ -- 33
+purify$ -- 34
 quote$ -- 2
-skip$ -- 1480
+skip$ -- 1561
 stack$ -- 0
-substring$ -- 292
-swap$ -- 808
-text.length$ -- 9
+substring$ -- 344
+swap$ -- 860
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 435
+type$ -- 451
 warning$ -- 4
-while$ -- 78
+while$ -- 83
 width$ -- 0
-write$ -- 378
+write$ -- 389
 (There were 4 error messages)

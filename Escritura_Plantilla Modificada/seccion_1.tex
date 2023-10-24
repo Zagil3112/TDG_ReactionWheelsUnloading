@@ -33,7 +33,7 @@ Ya que el rendimiento de los magnetorquers depende de su interacción con el cam
 
 Ademas de eliminar el exceso de momento angular, dichas estrategias de desaturación, simultáneamente deben permitir que el satélite alcance una actitud deseada en el marco de referencia del cuerpo ante diferentes respuestas:
 \begin{itemize}
-	\item Respuesta de equilibrio ante perturbaciones. 
+	\item Fase de \textit{Detumbling}. 
 	\item Respuesta tipo escalón de un angulo deseado.
 	\item Respuesta tipo rampa para alcanzar una velocidad de rotación constante.
 \end{itemize} 
@@ -1752,25 +1752,23 @@ Finalmente, se obtienen 4 diferentes estrategias de control al combinar los mét
 % Mostrar efecto de saturación 
 \subsection{Fenómeno de Saturación}
 
-\begin{figure}[!ht]
-	\begin{center}
-		\includegraphics[scale=0.55]{imagenes/resultados/Desaturation.PNG}\\
-	\end{center}
-	\caption{Implementación del cálculo de indices de desempeño.}
-	\label{fig:saturacion}	 	
-\end{figure}
-La saturación en RW puede evidenciarse en 
-
-
-
-Con la acción de los magnetorquers...
-
+En primer lugar, el fenómeno de saturación fue evidenciado con el fin de visualizar cualitativa-mente el efecto de los magnetorquers en la desaturación. En la \textbf{Fig. \ref{fig:saturacion}} se muestra la respuesta del sistema de ADCS ante un escalón de $-20$ grados en $t=2000\,s$. Debido a que el satélite experimenta torques de perturbaciones $T_{ext} >0$ el torque que deben realizar las RW es negativo, por otro lado, como se sabe que $\tau = \dot{h}$, el momento angular empieza a aumentar con una pendiente negativa conforme pasa el tiempo. Finalmente, es evidente que a medida que las RW se acercan a su nivel de saturación el error del \textit{Yaw} empieza a aumentar como se muestra en la gráfica superior.
 
 \begin{figure}[!h]
 	\begin{center}
-		\includegraphics[scale=0.55]{imagenes/resultados/Desaturation2.PNG}\\
+		\includegraphics[scale=0.50]{imagenes/resultados/Desaturation.PNG}\\
 	\end{center}
-	\caption{Implementación del cálculo de indices de desempeño.}
+	\caption{Saturación en ruedas de reacción y su efecto en el Yaw y momento angular.}
+	\label{fig:saturacion}	 	
+\end{figure}
+
+Una vez se tiene en cuenta el efecto de los magnetorquers y su correspondiente método de saturación, el ADCS puede mantener el ángulo de \textit{Yaw} sin incrementar el error y las ruedas de reacción vuelven a apagarse una vez se realiza la maniobra para alcanzar la actitud deseada. Este caso de desaturación se muestra en la \textbf{Fig. \ref{fig:desaturacion}}.
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[scale=0.5]{imagenes/resultados/Desaturation2.PNG}\\
+	\end{center}
+	\caption{Desaturación de RW empleando magnetorquers.}
 	\label{fig:desaturacion}	 	
 \end{figure}
 
@@ -1778,11 +1776,18 @@ Con la acción de los magnetorquers...
 \newpage
 \subsection{Simulaciones}
 %Descripción de los escenarios a evaluar:
-
+Con el fin de dar solución al planteamiento del problema, se evalúa el desempeño de los controladores en los diferentes escenarios planteados:
 \begin{itemize}
-	\item Respuesta de equilibrio ante perturbaciones (Detumbling). 
-	\item Respuesta tipo escalón de un angulo deseado.
-	\item Respuesta tipo rampa para alcanzar una velocidad de rotación constante.
+	\item \textbf{Fase de \textit{Detumbling}}: Se refiere a la etapa inicial donde se tiene en cuenta una velocidad angular inicial. Esto de debe a las condiciones iniciales que comúnmente enfrentan los satélites al ser desplegados en LEO. Recurriendo a \cite{Ofodile2019}, se tomó un valor de referencia de $\omega_{o} = 0.29\,rad/s$.
+	 
+	\item \textbf{Respuesta tipo escalón}: Se establece una referencia para un ángulo de \textit{Yaw} deseado. Para las simulaciones se tomó un valor de $20$ grados donde este se duplica al cabo de unos segundos para tener un doble escalón. 
+	\item \textbf{Apuntamiento hacia el Nadir}: Con el fin de simular un apuntamiento constante a la tierra se evalúa una respuesta tipo rampa para alcanzar una velocidad de rotación constante.
+	Para ello se determinó el periodo de la órbita con la expresión:
+	\begin{gather}
+		T_o = 2\pi\sqrt{\frac{a^3}{GM_{tierra}}}\\
+		\omega =
+	\end{gather}
+	
 \end{itemize} 
 
 
