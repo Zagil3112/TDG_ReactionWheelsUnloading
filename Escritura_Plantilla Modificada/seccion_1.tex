@@ -1404,9 +1404,9 @@ Las ecuaciones dinámicas \textbf{\eqref{eq:modelo_dinamico}} y cinemáticas \te
 				\dot{\boldsymbol{q}} \\
 				\dot{\boldsymbol{h_{w}}}
 			\end{array}\right]}_{\dot{x}}=\underbrace{\left[\begin{array}{c}
-				{\mathrm{I}}^{-1}\left(T_{\mathrm{ext}}+T_{c}-{\mathrm{S}}(\omega)\left({\mathrm{I}} \omega_{b}+h_{\mathrm{w}}\right)\right) \\
-				\frac{1}{2} {\Omega} \boldsymbol{q} \\
-				T_{RW}
+				{\boldsymbol{I}}^{-1}\left(\boldsymbol{T_{ext}}+\boldsymbol{T_{c}}-{\mathrm{S}}(\boldsymbol{\omega)}\left({\boldsymbol{I}} \boldsymbol{\omega_{b}}+\boldsymbol{h_{w}}\right)\right) \\
+				\frac{1}{2} \boldsymbol{\Omega}\boldsymbol{q} \\
+				\boldsymbol{T_{RW}}
 			\end{array}\right]}_{f(x,u)}\\[10pt]
 		& \underbrace{\left[\begin{array}{c}
 				\boldsymbol{\omega} \\
@@ -1429,13 +1429,13 @@ Sin embargo, la naturaleza de las ecuaciones de $f(x,u)$ es no lineal. Por lo ta
 
 \begin{equation}
 	\begin{aligned}
-		& x(t) =\bar{x}(t)+ \tilde{x}(t) \\
-		& u(t) =\bar{u}(t)+ \tilde{u}(t) 		
+		& \boldsymbol{x(t)} =\boldsymbol{\bar{x}(t)}+ \boldsymbol{\tilde{x}(t)} \\
+		& \boldsymbol{u(t)} =\boldsymbol{\bar{u}(t)}+ \boldsymbol{\tilde{u}(t)} 		
 	\end{aligned}
 \end{equation}	
 
 No obstante, debe hacerse una distinción entre las entradas, las cuales corresponden a los torques que afectan la dinámica del sistema. El torque de control $T_c$ está definido por la contribución de los torques generados por las RW y los magnetorquers:
-$$ T_c = T_{RW} +\tau_{mgt}$$
+$$ \boldsymbol{T_c} = \boldsymbol{T_{RW}} +\boldsymbol{\tau_{mgt}}$$
 Por otro lado, los torques externos no se consideran entradas ya que son perturbaciones a las que no se les ejerce control. Por lo tanto, son tratados en el término $u_d$. De esta manera, es posible expresar el espacio de estados de la siguiente forma:
  
 \begin{equation}\label{eq:espacio_de_estados}
@@ -1447,26 +1447,26 @@ Por otro lado, los torques externos no se consideran entradas ya que son perturb
 \noindent Donde: 
 \begin{equation}\label{eq:estados_y_entradas}
 	\begin{aligned}
-		& x(t) = \left[\begin{array}{c}
+		& \boldsymbol{x(t)} = \left[\begin{array}{c}
 			\boldsymbol{\omega} \\
 			\boldsymbol{q} \\
-			h_{w}
+			\boldsymbol{h_{w}}
 		\end{array}\right];
-		& u(t) = \left[\begin{array}{c}
-			T_{RW} \\
-			\tau_{mgt}
+		& \boldsymbol{u(t)} = \left[\begin{array}{c}
+			\boldsymbol{T_{RW}} \\
+			\boldsymbol{\tau_{mgt}}
 		\end{array}\right]; 
-		&\;u_d(t) = \left[\begin{array}{c}
-			T_{ext} \\		
+		&\;\boldsymbol{u_d(t)} = \left[\begin{array}{c}
+			\boldsymbol{T_{ext}} \\		
 		\end{array}\right]		
 	\end{aligned}
 \end{equation}
 
 \begin{equation}
 	\begin{aligned}		
-		&\mathrm{A}_{ij}= \frac{\partial f_i}{\partial x_j};	
-		&\mathrm{B}_{ij}= \frac{\partial f_i}{\partial u_j};	
-		&\;\Gamma_{ij}= \frac{\partial f_i}{\partial u_{d_j}}				
+		&\boldsymbol{A}_{ij}= \frac{\partial f_i}{\partial x_j};	
+		&\boldsymbol{B}_{ij}= \frac{\partial f_i}{\partial u_j};	
+		&\;\boldsymbol{\Gamma}_{ij}= \frac{\partial f_i}{\partial u_{d_j}}				
 	\end{aligned}
 \end{equation}
 Donde $i$ es el número de ecuaciones del modelo y $j$ el número de estados o entradas. Con el fin de hallar las matrices $A$, $B$ y $\Gamma$ debe determinarse una expresión linealizada para los términos de $f(x,u)$, constituidos por las ecuaciones dinámicas y cinemáticas.
@@ -1475,7 +1475,7 @@ Donde $i$ es el número de ecuaciones del modelo y $j$ el número de estados o e
 \hfill \break
 Según el procedimiento planteado en \cite{Andresen2005}, se parte de la ecuación dinámica \textbf{\eqref{eq:modelo_dinamico}} :
 $$
- \dot{\omega_b}=I^{-1}\left[-S(\omega)\left(I \omega_b+h_w\right)+T_{ext}+T_c\right]
+ \boldsymbol{\dot{\omega_b}}=\boldsymbol{I}^{-1}\left[-S(\boldsymbol{\omega})\left(\boldsymbol{I} \boldsymbol{\omega_b}+\boldsymbol{h_w}\right)+\boldsymbol{T_{ext}}+\boldsymbol{T_c}\right]
 $$
 
 y se escoge un punto de operación $\boldsymbol{\bar{\omega}}$ para el sistema y se modela con pequeñas variaciones $\boldsymbol{\tilde{\omega}}$ en dicho punto de operación. Esto se expresa en:
@@ -1489,7 +1489,7 @@ y se escoge un punto de operación $\boldsymbol{\bar{\omega}}$ para el sistema y
 Tomando la \textbf{ecn. \eqref{eq:modelo_dinamico}} es posible considerar $T_{ext}$ como una constante al rededor del punto de control de un marco de tiempo $\Delta t$. Por lo tanto, $\boldsymbol{\dot{\omega}}$ se puede expresar como una función de $\boldsymbol{\omega}$, $\boldsymbol{T_c}$ y $\boldsymbol{h_w}$. De esta manera, es posible linealizar usando la expansión de Taylor de primer orden, obteniendo la siguiente expresión:
 
 \begin{equation}\label{eq:modelo_dinamico_linealizado}
-	\dot{\omega_b}=I^{-1}\left[S(I\bar{\omega}-S(\bar{\omega})I+S(\bar{h_w})\right]\tilde{\omega}-I^{-1}S(\bar{\omega})\tilde{h_w}+I^{-1}\left(T_{RW}+T_{mgt}\right)
+	\boldsymbol{\dot{\omega_b}}=\boldsymbol{I}^{-1}\left[S(I\bar{\omega}-S(\bar{\omega})I+S(\bar{h_w})\right]\tilde{\omega}-I^{-1}S(\bar{\omega})\tilde{h_w}+I^{-1}\left(T_{RW}+T_{mgt}\right)
 \end{equation}
 
 \paragraph{Linealiazión de la ecuación cinemática}
@@ -1532,26 +1532,26 @@ Siguiendo un procedimiento similar al anterior, se tiene que $dq$ es la orientac
 \noindent Recurriendo a \cite{Blanke2010}, se tiene que $\frac{d}{dt}q_4 = 0$ y $S(\omega)dg =0$. Por lo tanto:
 
 \begin{equation}\label{eq:modelo_cinematico_linealizado}
-	\dot{\tilde{g}} = -\frac{1}{2}S(\omega)\tilde{g}+\frac{1}{2}q_4I\omega = \frac{1}{2}I\tilde{\omega}
+	\boldsymbol{\dot{\tilde{g}}} = -\frac{1}{2}S(\boldsymbol{\omega})\tilde{g}+\frac{1}{2}q_4\boldsymbol{I}\boldsymbol{\omega} = \frac{1}{2}I\tilde{\boldsymbol{\omega}}
 \end{equation}
 
-Donde $g$ se conoce como vector de Gibbs y corresponde a las primeras 3 componentes vectoriales de un cuaternion. Finalmente, recurriendo a las ecuaciones \textbf{\eqref{eq:modelo_dinamico_linealizado}} y \textbf{\eqref{eq:modelo_cinematico_linealizado}}, las matrices $A$, $B$ y $\Gamma$ pueden ser expresadas como :
+Donde $g$ se conoce como vector de Gibbs y corresponde a las primeras 3 componentes vectoriales de un cuaternion. Finalmente, recurriendo a las ecuaciones \textbf{\eqref{eq:modelo_dinamico_linealizado}} y \textbf{\eqref{eq:modelo_cinematico_linealizado}}, las matrices $\boldsymbol{A}$, $\boldsymbol{B}$ y $\boldsymbol{\Gamma}$ pueden ser expresadas como :
 
 \begin{gather}
-	A = \left[\begin{array}{ccc}
-		 I^{-1}\left[S(I\bar{\omega})-S(\bar{\omega})I+S(\bar{h_w})\right]& 0_{3x3} & -IS(\bar{\omega)}\\
-		\frac{1}{2}I & 0_{3x3} & 0_{3x3} \\
-		 0_{3x3}& 0_{3x3} & 0_{3x3}
+	\boldsymbol{A} = \left[\begin{array}{ccc}
+		 I^{-1}\left[S(\boldsymbol{I}\bar{\boldsymbol{\omega}})-S(\bar{\boldsymbol{\omega}})\boldsymbol{I}+S(\boldsymbol{\bar{h_w}})\right]& \boldsymbol{0_{3x3}} & -\boldsymbol{I}S(\boldsymbol{\bar{\omega)}}\\
+		\frac{1}{2}\boldsymbol{I} & \boldsymbol{0_{3x3}} & \boldsymbol{0_{3x3}} \\
+		 \boldsymbol{0_{3x3}}&\boldsymbol{0_{3x3}} & \boldsymbol{0_{3x3}}
 	\end{array}\right] \label{eq:matrizA}\\[10pt]
-	B= \left[\begin{array}{cc}
-		I^{-1}&I^{-1}  \\
-		0_{3x3}& 0_{3x3}  \\
-		-I& 0_{3x3}
+	\boldsymbol{B}= \left[\begin{array}{cc}
+		\boldsymbol{I^{-1}}&\boldsymbol{I^{-1}}  \\
+		\boldsymbol{0_{3x3}}& \boldsymbol{0_{3x3}}  \\
+		-\boldsymbol{I}& \boldsymbol{0_{3x3}}
 	\end{array}\right]\label{eq:matrizB}\\[10pt]			
-	\Gamma =\left[\begin{array}{c}
-		I^{-1}  \\
-		0_{3x3} \\
-		0_{3x3}
+	\boldsymbol{\Gamma} =\left[\begin{array}{c}
+		\boldsymbol{I^{-1}}  \\
+		\boldsymbol{0_{3x3}} \\
+		\boldsymbol{0_{3x3}}
 	\end{array}\right] \label{eq:matrizGamma}				
 \end{gather}
  
@@ -1569,46 +1569,46 @@ Donde $g$ se conoce como vector de Gibbs y corresponde a las primeras 3 componen
 El diseño de un regulador cuadrático lineal (LQR) está basado en el espacio de estados linealizado obtenido en \textbf{\eqref{eq:espacio_de_estados}} y su objetivo es llevar los estados \textbf{\eqref{eq:estados_y_entradas}} a un valor de referencia que asegure obtener una actitud de deseada. El proceso de diseño consiste en minimizar la función de costo dada por:
 
 \begin{equation}\label{eq:funcion_de_costo}
-	J=\int_{0}^{\infty}\left[x^{T}Qx+u^{T}Ru\right]dt
+	\boldsymbol{J}=\int_{0}^{\infty}\left[\boldsymbol{x^{T}Qx}+\boldsymbol{u^{T}Ru}\right]dt
 \end{equation}
 
-Donde $x$ es el vector de estados, $A$ es la matriz de estados del sistema, $B$ es la matriz de entradas, $Q$ y $R$ son la matriz ponderada de coste de estado y la matriz ponderada de coste de entrada respectivamente. Dicha función de costo, puede ser interpretada entendiendo el término $x^{T}Qx$ como la penalización del mal rendimiento del controlador y el término $u^{T}Ru$ como la penalización por el esfuerzo de la acción de control. 
+Donde $\boldsymbol{x}$ es el vector de estados, $\boldsymbol{A}$ es la matriz de estados del sistema, $\boldsymbol{B}$ es la matriz de entradas, $\boldsymbol{Q}$ y $\boldsymbol{R}$ son la matriz ponderada de coste de estado y la matriz ponderada de coste de entrada respectivamente. Dicha función de costo, puede ser interpretada entendiendo el término $\boldsymbol{x^{T}Qx}$ como la penalización del mal rendimiento del controlador y el término $\boldsymbol{u^{T}Ru}$ como la penalización por el esfuerzo de la acción de control. 
 
-Con el fin de minimizar la función de costo se calcula la matriz de ganancia $K$, la cual también nos permite expresar el control de realimentación de las entradas dado por:
+Con el fin de minimizar la función de costo se calcula la matriz de ganancia $\boldsymbol{K}$, la cual también nos permite expresar el control de realimentación de las entradas dado por:
 \begin{gather}\label{eq:K_entradas}
-	u = -R^{-1}B^{T}Px\\[10pt]
-	u = -Kx
+	\boldsymbol{u} = -\boldsymbol{R^{-1}B^{T}Px}\\[10pt]
+	\boldsymbol{u} = -\boldsymbol{Kx}
 \end{gather}
 
 Donde $P$ es la solución simétrica positiva de la ecuación de Riccati:  
 \begin{equation}\label{eq:Ricatti}
- 	0 = PA + A^{T}P +Q -PBR^{-1}BP
+ 	0 = \boldsymbol{PA + A^{T}P +Q -PBR^{-1}BP}
 \end{equation}
 La cual solo tiene solución si $A$ y $B$ son controlables. Para ello se puede usar la función de Matlab \textit{ctrb} que genera la matriz de controlabilidad dada por:
 
 \begin{equation}\label{eq:controlabilidad}
-	C_o =\left[\begin{array}{lllll}
-		B & AB & A^2B &\ldots & A^{n-1}B
+	\boldsymbol{C_o} =\left[\begin{array}{lllll}
+		\boldsymbol{B} & \boldsymbol{AB} & \boldsymbol{A^2B} &\ldots & \boldsymbol{A^{n-1}B}
 	\end{array}\right]
 \end{equation}
-El sistema es controlable si la matriz de controlabilidad $C_o$ tiene un rango total, es decir, el rango es igual al número de estados del modelo de espacio de estados. Por otro lado, para obtener la matriz de ganancias $K$ puede ser obtenida usando la función \textit{lqr} dada por $[K,P,E] = lqr(A,B,Q,R)$. De esta manera, $P$ es obtenida como solución a la \textbf{ecn. \eqref{eq:Ricatti}} y $E$ son los valores propios en lazo cerrado $\lvert A-BK\rvert$ que deben garantizar la estabilidad. 
+El sistema es controlable si la matriz de controlabilidad $\boldsymbol{C_o}$ tiene un rango total, es decir, el rango es igual al número de estados del modelo de espacio de estados. Por otro lado, para obtener la matriz de ganancias $\boldsymbol{K}$ puede ser obtenida usando la función \textit{lqr} dada por $[K,P,E] = lqr(A,B,Q,R)$. De esta manera, $\boldsymbol{P}$ es obtenida como solución a la \textbf{ecn. \eqref{eq:Ricatti}} y $E$ son los valores propios en lazo cerrado de $\lvert \boldsymbol{A-BK}\rvert$ que deben garantizar la estabilidad. 
 
 % Definir las matrices Q y R empleadas
 % Mencionar los indices de desempeño
 \paragraph{Diseño LQR}
-Partiendo de las definiciones anteriores, deben seleccionarse las matrices $R$ y $Q$, donde la primera refleja el peso que tendrá el desempeño de cada actuador (RW y Magnetorquers) y la segunda penaliza el error de cada uno de los estados. En este sentido, para seleccionar los pesos de estas matrices se realizaron diferentes pruebas, donde se determinó que los valores que mejores índices de desempeño presentan son los siguientes: 
+Partiendo de las definiciones anteriores, deben seleccionarse las matrices $\boldsymbol{R}$ y $\boldsymbol{Q}$, donde la primera refleja el peso que tendrá el desempeño de cada actuador (RW y magnetorquers) y la segunda penaliza el error de cada uno de los estados. En este sentido, para seleccionar los pesos de estas matrices se realizaron diferentes pruebas, donde se determinó que los valores que mejores índices de desempeño presentan son los siguientes: 
 
 \begin{equation}
 	\begin{gathered}
-		Q = I_{9x9};
-		\;Q_{9,9} = 100\\
-		R=[1]
+		\boldsymbol{Q} = \boldsymbol{I_{9x9}};
+		\;\boldsymbol{Q_{9,9}} = 100\\
+		\boldsymbol{R}=[1]
 	\end{gathered}	
 \end{equation}
 
-La matriz $Q$ establece que todos los estados se penalizan por igual excepto la componente $Z$ del momento angular de las RW $h_w$. Por otro lado, aumentar la matriz $R$ implica una penalización en la acción de control, sin embargo, afectaba directamente el error del momento angular. Por tal motivo, se definió un valor de 1 para todos los actuadores.
+La matriz $Q$ establece que todos los estados se penalizan por igual excepto la componente $Z$ del momento angular de las RW $\boldsymbol{h_w}$. Por otro lado, aumentar la matriz $R$ implica una penalización en la acción de control, sin embargo, afectaba directamente el error del momento angular. Por tal motivo, se definió un valor de 1 para todos los actuadores.
 
-La matriz $K$ de ganancias es calculada con la función \textit{lqr} de Matlab, donde sus valores propios están ubicados en la zona real negativa:
+La matriz $\boldsymbol{K}$ de ganancias es calculada con la función \textit{lqr} de Matlab, donde sus valores propios están ubicados en la zona real negativa:
 \begin{equation}
 	E =
 	\begin{bmatrix}
@@ -1626,17 +1626,17 @@ La matriz $K$ de ganancias es calculada con la función \textit{lqr} de Matlab, 
 
 En la \textbf{Fig. (\ref{fig:lqr})} puede apreciase la implementación en Simulink. Allí se evidencia que el lazo de control tiene como referencia a los cuaterniones en su aproximación de vectores de Gibbs, por lo tanto las entradas son de la forma:
 \begin{equation}\label{eq:expresionEntradas}
-	u_{[6\times1]} =-K_{[6\times9]}\;x_{[9\times1]} +K_{1[6\times3]}\left[\begin{array}{c}
+	\boldsymbol{u_{[6\times1]}} =-\boldsymbol{K_{[6\times9]}\;x_{[9\times1]}} +\boldsymbol{K_{1[6\times3]}}\left[\begin{array}{c}
 		g1\\
 		g2\\
 		g3
 	\end{array}\right]_{[3\times1]}
 \end{equation}
 
-Donde $K_1$ es la submatriz de K, la cual corresponde a las componentes que multiplican a los cuaterniones dentro del vector $x$ de estados. Por lo tanto, se tiene que: 
+Donde $\boldsymbol{K_1}$ es la submatriz de K, la cual corresponde a las componentes que multiplican a los cuaterniones dentro del vector $\boldsymbol{x}$ de estados. Por lo tanto, se tiene que: 
 \begin{equation}
 	\begin{aligned}
-		&K_1= K_{ij}\\ 
+		&\boldsymbol{K_1}= \boldsymbol{K_{ij}}\\ 
 		&4<i<6\\
 		&1<j<6 		
 	\end{aligned}	
@@ -1650,7 +1650,7 @@ Donde $K_1$ es la submatriz de K, la cual corresponde a las componentes que mult
 	\label{fig:lqr}	 	
 \end{figure}
 
- Finalmente, en la implementación del lazo de control también puede apreciarse el controlador en cascada, el cual recibe su valor de referencia ($T_{error}$) como las componentes correspondientes al torque de los Magnetorquers como se mostró en \textbf{\eqref{eq:estados_y_entradas}} y en \textbf{(\ref{eq:expresionEntradas})}. Internamente, este bloque contiene el modelo de magnetorquers junto con un controlador PID como se evidencia en la \textbf{Fig. (\ref{fig:lqr_cascada})}.
+ Finalmente, en la implementación del lazo de control también puede apreciarse el controlador en cascada, el cual recibe su valor de referencia ($\boldsymbol{T_{error}}$) como las componentes correspondientes al torque de los magnetorquers como se mostró en \textbf{\eqref{eq:estados_y_entradas}} y en las ecuaciones \textbf{\eqref{eq:expresionEntradas}}. Internamente, este bloque contiene el modelo de magnetorquers junto con un controlador PID como se evidencia en la \textbf{Fig. (\ref{fig:lqr_cascada})}.
  
 \begin{figure}[!ht]
 	\begin{center}
@@ -1663,7 +1663,7 @@ Donde $K_1$ es la submatriz de K, la cual corresponde a las componentes que mult
 
 \subsubsection{PID}
 \hfill \break
-Usando las herramientas \textit{Control System Designer} y \textit{PID Tuner} de Simulink, fue posible sintonizar los diferentes controladores PID, tanto para el control de actitud como para la desaturación, como se evidencia en las \textbf{Fig. (\ref{fig:PID_Tuning})} y \textbf{Fig. (\ref{fig:PID_Tuning})} respectivamente. 
+Usando las herramientas \textit{Control System Designer} y \textit{PID Tuner} de Matlab-Simulink, fue posible sintonizar los diferentes controladores PID, tanto para el control de actitud como para la desaturación, como se evidencia en las \textbf{Fig. (\ref{fig:PID_Tuning1})} y \textbf{Fig. (\ref{fig:PID_Tuning2})} respectivamente. 
 
 \begin{figure}[h]
 	\centering
@@ -1688,7 +1688,7 @@ Usando las herramientas \textit{Control System Designer} y \textit{PID Tuner} de
 \end{figure}
 
 % Implementacion 
-Ademas de verificar la ubicación de los polos, un ajuste progresivo del controlador fue realizado al evaluar individualmente sus componentes derivativa, integral y proporcional, hasta dar con unas ganancias que permitieran la estabilidad con un bajo tiempo de asentamiento y poca sobreelongación máxima. 
+Ademas de verificar la ubicación de los polos, un ajuste progresivo del controlador fue realizado al evaluar individualmente sus componentes derivativa, integral y proporcional, hasta dar con unas ganancias que permitieran la estabilidad con un bajo tiempo de estabilización y poca sobreimpulso máximo. 
 
 Finalmente, la implementación en Simulink para el control de actitud puede apreciarse en la \textbf{Fig. (\ref{fig:PID})}. De igual forma el modelo de desaturación que cumple la ley de control expresada en la \textbf{ecn. \eqref{eq:ley_de_control_sat}} se evidencia en la \textbf{Fig. (\ref{fig:PID_deltaH})}.
 
