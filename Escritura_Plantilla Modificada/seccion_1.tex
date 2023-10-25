@@ -200,14 +200,15 @@ Son ampliamente utilizadas ya que sólo requieren energía eléctrica para funci
 
 \subsubsection{Magnetorquers.}
 
-Por su parte, estos dispositivos utilizan bobinas magnéticas o electroimanes para generar momentos dipolares magnéticos, producen un par proporcional y perpendicular al campo magnético variable de la Tierra \cite{Rycroft1997}. Esto puede representar un desafío ya que la magnitud del campo geomagnético varía con el tiempo y su desempeño disminuye a medida que aumenta la altura de la órbita como se ve en la \textbf{ecn \eqref{eq:torque_mgt}}, donde $B$ es la constante magnética terrestre y corresponde a $B=m/R^3$, donde $m = 7.96*10^{15}$    $Wb/m$   y R es la distancia al centro de la tierra. De esta manera, se tiene una expresión para la magnitud del torque: 
+Por su parte, estos dispositivos utilizan bobinas magnéticas o electroimanes para generar momentos dipolares magnéticos, producen un par proporcional y perpendicular al campo magnético variable de la Tierra \cite{Rycroft1997}. Esto puede representar un desafío ya que la magnitud del campo geomagnético varía con el tiempo y su desempeño disminuye a medida que aumenta la altura de la órbita, como se ve en la \textbf{ecn \eqref{eq:torque_mgt}}, donde $B$ es la constante magnética terrestre y corresponde a $B=m/R^3$, donde $m = 7.96*10^{15}$    $Wb/m$   y R es la distancia desde el centro de la tierra hasta el centro de masa del vehículo. De esta manera, se tiene una expresión para la magnitud del torque: 
 
 \begin{equation}\label{eq:torque_mgt}
 	\vec{\tau} = \vec{M}\times\vec{B}	
 \end{equation}
 
 
-Donde $\vec{\tau}$ es el torque creado, $\vec{B}$ es el vector de campo geomagnético, y $\vec{M}$ es el momento dipolar magnético generado por el magnetorquer especificado en $Amperios\cdot vuelta\cdot m^2$. No obstante, los electroimanes tienen la ventaja de no tener piezas móviles, ya que sólo necesitan un magnetómetro para detectar el campo y una varilla electromagnética enrollada en cada eje. Como utilizan los campos magnéticos naturales de la Tierra, son menos eficaces en órbitas altas donde disminuye la magnitud del campo.
+Donde $\vec{\tau}$ es el torque generado por el magnetorquer, $\vec{B}$ es el vector de campo geomagnético, y $\vec{M}$ es el momento dipolar magnético generado por el magnetorquer especificado en $Amperios\cdot vuelta\cdot m^2$. No obstante, los electroimanes tienen la ventaja de no tener piezas móviles, ya que sólo necesitan un magnetómetro para detectar el campo y una varilla electromagnética enrollada en cada eje. Como utilizan los campos magnéticos naturales de la Tierra, son menos eficaces en órbitas altas donde disminuye la magnitud del campo.
+
 Por otro lado, según Wertz y Larson \cite{Wertz1999} , en el diseño de un ADCS, normalmente se requiere conocer la ubicación del centro de masa o gravedad (CG), así como los elementos de la matriz de inercia: los momentos y productos de inercia en torno a ejes de referencia elegidos. La dirección de los ejes principales, aquellos ejes para los que la matriz de inercia es diagonal y los productos de inercia son cero, también son de interés. Por último, es necesario saber cómo cambian estas propiedades con el tiempo, a medida que se utiliza combustible u otros componentes se desplazan o despliegan.
 
 Por otro lado, la medición de la posición se realiza mediante dos sensores solares, situados en la parte superior e inferior del EyasSat, y un sensor solar diferencial-posicional (compuesto por dos células fotovoltaicas) \cite{Ritchey2004}. En este sentido, es posible realizar pruebas de actitud recurriendo a un control de lazo cerrado de un grado de libertad. 
@@ -216,7 +217,7 @@ Por otro lado, la medición de la posición se realiza mediante dos sensores sol
 
 \subsubsection{Marcos de referencia}
 \hfill \break
-El primer paso para analizar y diseñar un sistema de control de actitud es definir los sistemas de referencia de coordenadas con los que trabajar, lo cual permite describir la actitud de un satélite como una desviación con respecto a un sistema de referencia elegido. Hay tres marcos de referencia comunes utilizados para la descripción de la actitud: Marco de referencia orbital (ORF), el marco de referencia centrado en el cuerpo (BRF) y el marco de referencia centrado en la tierra (ECI). 
+El primer paso para analizar y diseñar un sistema de control de actitud es definir los sistemas de referencia de coordenadas con los cuales se pretende trabajar, esto  permite describir la actitud de un satélite como una desviación con respecto a un sistema de referencia elegido. Hay tres marcos de referencia comunes utilizados para la descripción de la actitud: Marco de referencia orbital (ORF), el marco de referencia centrado en el cuerpo (BRF), el marco de referencia centrado en la tierra (ECI) y el marco alineado con el plano de la horizontal local (LVLH). 
 
 \paragraph{Marco de referencia alineado con el plano de la horizontal local (LVLH):} Se define este sistema como aquel que tiene su origen justo por debajo de la proyección del centro de gravedad del vehículo sobre la superficie de la Tierra. Se orienta de tal manera que el eje $Z$ apunta en dirección al norte
 geográfico, el eje $Y$ apunta al este geográfico y el eje $X$ apunta “hacia arriba”
@@ -232,20 +233,20 @@ Tierra tal como se observa el la \textbf{Fig. \ref{fig:LVLH}}.
 	\footnotesize{Nota. Fuente \cite{cornelisse1979rocket}}
 \end{figure}
 
-\paragraph{Marco de Referencia Orbital (ORF):} Es un marco no inercial donde el origen coincide con el CG del satélite. El eje $X_o$ apunta hacia el centro de la Tierra (nadir). El eje $Y_o$ apunta en la dirección de la velocidad tangencialmente a la órbita. El eje $Z_o$ completa el sistema usando la regla de la mano derecha como se muestra en la \textbf{Fig. \ref{fig:marco_orbital}}.
+\paragraph{Marco de Referencia Orbital (ORF):} Es un marco no inercial donde el origen coincide con el CG del satélite. El eje $X_o$ apunta hacia el centro de la Tierra (nadir). El eje $Y_o$ apunta en la dirección de la velocidad tangencialmente a la órbita. El eje $Z_o$ completa el sistema usando la regla de la mano derecha, como se muestra en la \textbf{Fig. \ref{fig:marco_orbital}}.
 
 \begin{figure}[!ht]
 	\begin{center}
 		\includegraphics[scale=0.7]{imagenes/marco_teorico/marco_orbital.PNG}\\
 	\end{center}
-	\caption{ Marco Orbital.}
+	\caption{ Marco Orbital\cite{Andresen2005}.}
 	\label{fig:marco_orbital}
-	\footnotesize{Nota. Fuente \cite{Andresen2005}}
+%	\footnotesize{Nota. Fuente }
 \end{figure}
 
 
 
-\paragraph{Marco de Referencia centrado en el cuerpo (BRF):}Se fija con respecto al centro de masa del satélite \textbf({Fig. \ref{fig:marco_cuerpo}}). Se utiliza para determinar la orientación de los instrumentos a bordo. Si algunos de los instrumentos a bordo dependen de de la orientación del satélite, por ejemplo una cámara, es conveniente definir el BRF con uno de los ejes paralelos al campo de visión de este instrumento. Por otro lado, la orientación del satélite se describe en relación con el marco orbital como se ve en la \textbf{Fig. \ref{fig:marco_orbital_cuerpo}}.
+\paragraph{Marco de Referencia centrado en el cuerpo (BRF):}Se fija con respecto al centro de masa del satélite \textbf({Fig. \ref{fig:marco_cuerpo}}). Se utiliza para determinar la orientación de los instrumentos a bordo. Si algunos de los instrumentos a bordo dependen de la orientación del satélite, por ejemplo una cámara, es conveniente definir el BRF con uno de los ejes paralelos al campo de visión de este instrumento. Por otro lado, la orientación del satélite se describe en relación con el marco orbital como se ve en la \textbf{Fig. \ref{fig:marco_orbital_cuerpo}}.
 
 
 \begin{figure}[!ht]
@@ -261,9 +262,9 @@ Tierra tal como se observa el la \textbf{Fig. \ref{fig:LVLH}}.
 	\begin{center}
 		\includegraphics[scale=0.9]{imagenes/marco_teorico/orbital_cuerpo.PNG}\\
 	\end{center}
-	\caption{ Marco de referencia centrado en el cuerpo y marco orbital}
+	\caption{ Marco de referencia centrado en el cuerpo y marco orbital \cite{Karatas2006}}
 	\label{fig:marco_orbital_cuerpo}
-		\footnotesize{Nota. Fuente \cite{Karatas2006}}
+%		\footnotesize{Nota. Fuente}
 \end{figure}
 
 \paragraph{Marco de Referencia centrado en la tierra (ECI):}Este marco está fijo en el espacio, por lo que es un marco de referencia no acelerado que permite la aplicación de las Leyes de Newton, donde su origen está situado en el centro de la Tierra. El eje Z apunta hacia el Polo Norte, el eje X hacia el Equinoccio de Primavera y el eje Y completa el sistema de coordenadas cartesianas como se ve en la \textbf{Fig. \ref{fig:ECI}}.
@@ -272,12 +273,12 @@ Tierra tal como se observa el la \textbf{Fig. \ref{fig:LVLH}}.
  	\begin{center}
  		\includegraphics[scale=0.7]{imagenes/marco_teorico/ECI.PNG}\\
  	\end{center}
- 	\caption{ Marco de referencia inercial centrado en la tierra (ECI)}
+ 	\caption{ Marco de referencia inercial centrado en la tierra (ECI) \cite{Andresen2005}.}
  	\label{fig:ECI}
- 	\footnotesize{Nota. Fuente \cite{Andresen2005}}
+% 	\footnotesize{Nota. Fuente}
  \end{figure}
  
-Cuando se requiere considerar la rotación de la tierra, se recurre a un marco centrado y unido a la tierra (ECEF). Éste también se encuentra en el centro de la Tierra, sin embargo, los ejes X e Y giran con la tierra respecto al marco ECI alrededor del eje Z. El eje X apunta hacia la intersección del meridiano de Greenwich y el Ecuador. Finalmente, el eje Y completa el sistema siguiendo la regla de la mano derecha como se ve en la \textbf{Fig.\ref{fig:ECEF}}.
+Cuando se requiere considerar la rotación de la tierra, se recurre a un marco centrado y unido a la tierra (ECEF). Este también se encuentra en el centro de la Tierra, sin embargo, los ejes X e Y giran con la tierra respecto al marco ECI alrededor del eje Z. El eje X apunta hacia la intersección del meridiano de Greenwich y el Ecuador. Finalmente, el eje Y completa el sistema siguiendo la regla de la mano derecha, como se ve en la \textbf{Fig.\ref{fig:ECEF}}.
 
 
  \begin{figure}[!ht]
@@ -289,7 +290,7 @@ Cuando se requiere considerar la rotación de la tierra, se recurre a un marco c
 	\footnotesize{Nota. Fuente \cite{Andresen2005}}
 \end{figure}
 
-Estos marcos de coordenadas permiten describir la actitud en términos de la orientación del BRF con respecto al ORF o ECI. Para ello se utiliza la representación de cuaterniones o ángulos de Euler en una matriz de cosenos directores (DCM) o matriz de transformación. Esta matriz permite transformar vectores de un sistema de referencia a otro como se verá en la siguiente sección.
+Estos marcos de coordenadas permiten describir la actitud del vehículo en términos de la orientación del BRF con respecto al ORF o ECI. Para ello se utiliza la representación de cuaterniones o ángulos de Euler en una matriz de cosenos directores (DCM) o matriz de transformación. Esta matriz permite transformar vectores de un sistema de referencia a otro como se verá en la siguiente sección.
 
 \subsubsection{Transformación de marcos de referencia}
 \hfill \break
@@ -311,7 +312,7 @@ marco de coordenadas (designado por "from") a otro marco de coordenadas (designa
 		
 \end{itemize}
 
-En este sentido, se puede definir una expresión general para la transformación de coordenadas en 3 ejes. Para expresar el vector $\vec{v}$ en el marco $XYZ$ y se quiere expresar en el marco $UVW$ se tiene que:
+En este sentido, se puede definir una expresión general para la transformación de coordenadas en 3 ejes. Para expresar el vector $\vec{v}$ del marco $XYZ$ en el marco $UVW$ se tiene que:
 
 $$
 \left[\begin{array}{c}
@@ -1548,7 +1549,7 @@ Donde $g$ se conoce como vector de Gibbs y corresponde a las primeras 3 componen
 
 \subsubsection{LQR}
 \hfill \break
-El diseño de un regulador cuadrático lineal (LQR) está basado en el espacio de estados linealizado obtenido en \textbf{(\ref{eq:espacio_de_estados})} y su objetivo es llevar los estados \textbf{(\ref{eq:estados_y_entradas})} a un valor de referencia que asegure obtener una actitud de deseada. El proceso de diseño consiste en minimizar la función de costo dada por:
+El diseño de un regulador cuadrático lineal (LQR) está basado en el espacio de estados linealizado obtenido en \textbf{\eqref{eq:espacio_de_estados}} y su objetivo es llevar los estados \textbf{\eqref{eq:estados_y_entradas}} a un valor de referencia que asegure obtener una actitud de deseada. El proceso de diseño consiste en minimizar la función de costo dada por:
 
 \begin{equation}\label{eq:funcion_de_costo}
 	J=\int_{0}^{\infty}\left[x^{T}Qx+u^{T}Ru\right]dt
@@ -1573,7 +1574,7 @@ La cual solo tiene solución si $A$ y $B$ son controlables. Para ello se puede u
 		B & AB & A^2B &\ldots & A^{n-1}B
 	\end{array}\right]
 \end{equation}
-El sistema es controlable si la matriz de controlabilidad $C_o$ tiene un rango total, es decir, el rango es igual al número de estados del modelo de espacio de estados. Por otro lado, para obtener la matriz de ganancias $K$ puede ser obtenida usando la función \textit{lqr} dada por $[K,P,E] = lqr(A,B,Q,R)$. De esta manera, $P$ es obtenida como solución a la \textbf{eq. (\ref{eq:Ricatti})} y $E$ son los valores propios en lazo cerrado $\lvert A-BK\rvert$ que deben garantizar la estabilidad. 
+El sistema es controlable si la matriz de controlabilidad $C_o$ tiene un rango total, es decir, el rango es igual al número de estados del modelo de espacio de estados. Por otro lado, para obtener la matriz de ganancias $K$ puede ser obtenida usando la función \textit{lqr} dada por $[K,P,E] = lqr(A,B,Q,R)$. De esta manera, $P$ es obtenida como solución a la \textbf{ecn. \eqref{eq:Ricatti}} y $E$ son los valores propios en lazo cerrado $\lvert A-BK\rvert$ que deben garantizar la estabilidad. 
 
 % Definir las matrices Q y R empleadas
 % Mencionar los indices de desempeño
@@ -1632,7 +1633,7 @@ Donde $K_1$ es la submatriz de K, la cual corresponde a las componentes que mult
 	\label{fig:lqr}	 	
 \end{figure}
 
- Finalmente, en la implementación del lazo de control también puede apreciarse el controlador en cascada, el cual recibe su valor de referencia ($T_{error}$) como las componentes correspondientes al torque de los Magnetorquers como se mostró en \textbf{(\ref{eq:estados_y_entradas})} y en \textbf{(\ref{eq:expresionEntradas})}. Internamente, este bloque contiene el modelo de magnetorquers junto con un controlador PID como se evidencia en la \textbf{Fig. (\ref{fig:lqr_cascada})}.
+ Finalmente, en la implementación del lazo de control también puede apreciarse el controlador en cascada, el cual recibe su valor de referencia ($T_{error}$) como las componentes correspondientes al torque de los Magnetorquers como se mostró en \textbf{\eqref{eq:estados_y_entradas}} y en \textbf{(\ref{eq:expresionEntradas})}. Internamente, este bloque contiene el modelo de magnetorquers junto con un controlador PID como se evidencia en la \textbf{Fig. (\ref{fig:lqr_cascada})}.
  
 \begin{figure}[!ht]
 	\begin{center}
@@ -1672,7 +1673,7 @@ Usando las herramientas \textit{Control System Designer} y \textit{PID Tuner} de
 % Implementacion 
 Ademas de verificar la ubicación de los polos, un ajuste progresivo del controlador fue realizado al evaluar individualmente sus componentes derivativa, integral y proporcional, hasta dar con unas ganancias que permitieran la estabilidad con un bajo tiempo de asentamiento y poca sobreelongación máxima. 
 
-Finalmente, la implementación en Simulink para el control de actitud puede apreciarse en la \textbf{Fig. (\ref{fig:PID})}. De igual forma el modelo de desaturación que cumple la ley de control expresada en la \textbf{ec. (\ref{eq:ley_de_control_sat})} se evidencia en la \textbf{Fig. (\ref{fig:PID_deltaH})}.
+Finalmente, la implementación en Simulink para el control de actitud puede apreciarse en la \textbf{Fig. (\ref{fig:PID})}. De igual forma el modelo de desaturación que cumple la ley de control expresada en la \textbf{ecn. \eqref{eq:ley_de_control_sat}} se evidencia en la \textbf{Fig. (\ref{fig:PID_deltaH})}.
 
 \begin{figure}[!ht]
 	\begin{center}
