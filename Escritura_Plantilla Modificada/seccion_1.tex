@@ -128,66 +128,79 @@ Validar computacionalmente una estrategia de control de actitud para el nanosat�
 %--------------------------
 \section{MARCO TEÓRICO}
 
-\subsection{CubeSat y EyasSat}
+\subsection{Concepto CubeSat}
 El concepto CubeSat se refiere a un nanosatélite estándar cuyo diseño fue propuesto por los profesores Jordi Puig-Suari, de la Universidad Politécnica Estatal de California, y Bob Twiggs, de la Universidad de Stanford en 1999. Corresponde a un pequeño satélite constituido por unidades (U) con forma de cubo de 10 cm y una masa de hasta 1.3 kilogramos \cite{Lan2013}. Son ampliamente utilizados alrededor el mundo por universidades ya que representan una alternativa para desplegar cargas científicas en el espacio con un presupuesto inferior a los 100.000 dólares \cite{opc:Satcatalog}. 
-No obstante, también son diseñados con fines educativos para que los estudiantes se familiaricen con los principales sistemas que componen estos vehículos espaciales y puedan hacer pruebas de integración y rendimiento en un aula de clase. En este sentido, surge el CubeSat EyasSat \cite{Barnhart2005} como parte de un programa de entrenamiento del Departamento de Astronáutica de la Academia de las Fuerzas Aéreas de Estados Unidos (USAFA). El EyasSat \textbf{(Fig. \ref{fig:eyassat})}, se centra en seis subsistemas de los que constan la mayoría de los satélites. Estos subsistemas son: estructuras, potencia, comunicación y tratamiento de datos, control y determinación de actitud (ADCS), propulsión y sistemas térmicos. No obstante, el diseño modular del EyasSat permite la integración y mejora de subsistemas adicionales que pueden ampliar sus capacidades. Por ejemplo, \cite{Groenewald2014} propone una nueva versión del ADCS, sistema de particular interés en esta investigación, el cual se extiende a tres ejes y permite la capacidad de ser probado en un cojinete de aire.
+No obstante, también son diseñados con fines educativos para que los estudiantes se familiaricen con los principales sistemas que componen estos vehículos espaciales y puedan hacer pruebas de integración y rendimiento en un aula de clase. En este sentido, surge el CubeSat EyasSat \cite{Barnhart2005} como parte de un programa de entrenamiento del Departamento de Astronáutica de la Academia de las Fuerzas Aéreas de Estados Unidos (USAFA). El EyasSat \textbf{(Fig. \ref{fig:eyassat})}, se centra en seis subsistemas de los que constan la mayoría de los satélites. Estos subsistemas son: estructuras, potencia, comunicación y tratamiento de datos, control y determinación de actitud (ADCS), propulsión y sistemas térmicos. No obstante, el diseño modular del EyasSat permite la integración y mejora de subsistemas adicionales que pueden ampliar sus capacidades. Por ejemplo, Groenewald\cite{Groenewald2014} propone una nueva versión del ADCS, sistema de particular interés en esta investigación, el cual se extiende a tres ejes y permite la capacidad de ser probado en un cojinete de aire.
 
 
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[scale=0.9]{imagenes/marco_teorico/eyassat.PNG}\\
+		\includegraphics[scale=0.40]{imagenes/marco_teorico/eyassat.PNG}\\
 	\end{center}
 	\caption{CubeSat de entrenamiento EyasSat.}
 	\label{fig:eyassat}
 	%	\footnotesize{Nota. Fuente \url{https://www.ieee.org/}.} %\citep{lib:apa}.
 \end{figure}
 
+A continuación se dará una breve descripción del sistema de determinación y control de actitud (ADCS) del EyasSat.
 \subsection{Sistema de determinación y control de actitud (ADCS)}
 
-Este sistema se encarga de estabilizar y orientar el vehículo en las direcciones deseadas durante la misión a pesar de los torques de perturbaciones externos que actúan sobre él. Para ello es necesario que el vehículo determine su actitud mediante sensores, y la controle, mediante actuadores.
+Este sistema se encarga de estabilizar y orientar el vehículo en las direcciones deseadas durante la misión a pesar de los torques de perturbaciones externos que actúan sobre él. Para ello es necesario que el vehículo determine su actitud mediante sensores, y la controle mediante actuadores.
 
-\begin{figure}[!ht]
-	\begin{center}
-		\includegraphics[scale=0.9]{imagenes/marco_teorico/adcs.PNG}\\
-	\end{center}
+%\begin{figure}[!ht]
+%	\begin{center}
+%		\includegraphics[scale=1.5]{imagenes/marco_teorico/adcs.PNG}\\
+%	\end{center}
+%	\caption{ADCS EyasSat.}
+%	\label{fig:adcs}
+%	%	\footnotesize{Nota. Fuente \url{https://www.ieee.org/}.} %\citep{lib:apa}.
+%\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\subfloat[Hardware del ADCS.]{
+		\label{f:hardware_adcs}
+		\includegraphics[width=0.45\textwidth]{imagenes/marco_teorico/adcs2.png}}
+	\subfloat[Tarjeta integrada de la rueda de reacción EyasSat ]{
+		\label{f:RW_eyassat}
+		\includegraphics[width=0.45\textwidth]{imagenes/marco_teorico/RW_eyassat.png}}	
 	\caption{ADCS EyasSat.}
-	\label{fig:adcs}
-	%	\footnotesize{Nota. Fuente \url{https://www.ieee.org/}.} %\citep{lib:apa}.
+	\label{fig:ADCS_eyassat}
 \end{figure}
 
-El Módulo ADCS del EyasSat \textbf{(Fig. \ref{fig:adcs})}, se compone de dos tipos de actuadores: una rueda de reacción en el eje Z y dos magnetorquers en el eje X e Y respectivamente. En la \textbf{Fig. \ref{fig:eyassat_axes}} se evidencian los ejes coordenados en el marco del cuerpo.
-Por otro lado, la medición de la posición se realiza mediante dos sensores solares (situados en la parte superior e inferior del EyasSat) y un sensor solar diferencial-posicional (compuesto por dos células fotovoltaicas) \cite{Ritchey2004}. En este sentido, es posible realizar pruebas de actitud recurriendo a un control de lazo cerrado de un grado de libertad. 
+El Módulo ADCS del EyasSat \textbf{(Fig. \ref{fig:ADCS_eyassat})}, se compone de dos tipos de actuadores: una rueda de reacción en el eje Z y dos magnetorquers en el eje X e Y respectivamente. En la \textbf{Fig. \ref{fig:eyassat_axes}} se evidencian los ejes coordenados en el marco del cuerpo.
+
 
 \begin{figure}[!ht]
 	\begin{center}
 		\includegraphics[scale=0.9]{imagenes/marco_teorico/eyassat_axes.PNG}\\
 	\end{center}
-	\caption{ Ejes coordenados del EyasSat}
+	\caption{ Ejes coordenados del EyasSat\cite{Groenewald2014}}
 	\label{fig:eyassat_axes}
-	\footnotesize{Nota. Fuente \cite{Groenewald2014}}
+%	\footnotesize{Nota. Fuente }
 \end{figure}
 
 
-\subsubsection{Ruedas de reacción}
+\subsubsection{Ruedas de reacción (RW).}
 
-Las ruedas de reacción (RW) son motores de alto torque acoplados a rotores de gran inercia. Permiten reposicionar vehículos espaciales y satélites controlables mientras están en órbita ya que contienen energía rotacional, almacenada mediante la conservación del momento angular, y pueden activar el intercambio de momento para proporcionar estabilidad a una nave espacial o al satélite.
+Son motores de alto torque acoplados a rotores de gran inercia. Permiten reposicionar vehículos espaciales y satélites controlables mientras están en órbita ya que contienen energía rotacional, almacenada mediante la conservación del momento angular, y pueden activar el intercambio de momento para proporcionar estabilidad a una nave espacial o al satélite.
 
 
 \begin{figure}[!ht]
 	\begin{center}
 		\includegraphics[scale=0.9]{imagenes/marco_teorico/rw.PNG}\\
 	\end{center}
-	\caption{ Efecto de RW en la velocidad $\omega$ de un satélite.}
+	\caption{ Efecto de RW en la velocidad $\omega$ de un satélite\cite{opc:Charles2019}.}
 	\label{fig:rw_diagram}
-	\footnotesize{Nota. Fuente \cite{opc:Charles2019}}
+%	\footnotesize{Nota. Fuente }
 \end{figure}
 
 Como puede apreciarse en la \textbf{Fig. \ref{fig:rw_diagram}}, en cuanto cambia la velocidad de rotación $\omega$ de la nave espacial, la RW desencadena una contra rotación del satélite, en la misma proporción, a través de la conservación del momento angular. Dicha contra rotación se produce a lo largo de un único eje, por lo que, para tener un control completo del sistema, es necesario recurrir a ensambles de tres ruedas de reacción.
 Son ampliamente utilizadas ya que sólo requieren energía eléctrica para funcionar y no necesitan actuadores externos de torque como cohetes o propelentes. Pueden asegurar el control de actitud en tres ejes de forma autónoma. Además, las ruedas de reacción pueden gestionar la orientación de un satélite o nave espacial con una precisión superior a otros dispositivos. Se trata de un elemento crítico para las misiones espaciales tanto de acción como de observación que requieren una precisión de apuntamiento muy elevada.
 
-\subsubsection{Magnetorquers}
+\subsubsection{Magnetorquers.}
 
-Por su parte, estos dispositivos utilizan bobinas magnéticas o electroimanes para generar momentos dipolares magnéticos, producen un par proporcional (y perpendicular) al campo magnético variable de la Tierra \cite{Rycroft1997}. Esto puede representar un desafío ya que la magnitud del campo geomagnético varia con el tiempo y su desempeño disminuye a medida que aumenta la altura de la órbita como se ve en la La eq. \ref{eq:torque_mgt} , donde $\vec{B}$ es la constante magnética terrestre y corresponde a $ \vec{B}=m/R^3$, donde $m = 7.96*10^{15}$    $Wb/m$   y R es la distancia al centro de la tierra. De esta manera, se tiene una expresión para la magnitud del torque: 
+Por su parte, estos dispositivos utilizan bobinas magnéticas o electroimanes para generar momentos dipolares magnéticos, producen un par proporcional y perpendicular al campo magnético variable de la Tierra \cite{Rycroft1997}. Esto puede representar un desafío ya que la magnitud del campo geomagnético varía con el tiempo y su desempeño disminuye a medida que aumenta la altura de la órbita como se ve en la \textbf{ecn \eqref{eq:torque_mgt}}, donde $B$ es la constante magnética terrestre y corresponde a $B=m/R^3$, donde $m = 7.96*10^{15}$    $Wb/m$   y R es la distancia al centro de la tierra. De esta manera, se tiene una expresión para la magnitud del torque: 
 
 \begin{equation}\label{eq:torque_mgt}
 	\vec{\tau} = \vec{M}\times\vec{B}	
@@ -196,6 +209,8 @@ Por su parte, estos dispositivos utilizan bobinas magnéticas o electroimanes pa
 
 Donde $\vec{\tau}$ es el torque creado, $\vec{B}$ es el vector de campo geomagnético, y $\vec{M}$ es el momento dipolar magnético generado por el magnetorquer especificado en $Amperios\cdot vuelta\cdot m^2$. No obstante, los electroimanes tienen la ventaja de no tener piezas móviles, ya que sólo necesitan un magnetómetro para detectar el campo y una varilla electromagnética enrollada en cada eje. Como utilizan los campos magnéticos naturales de la Tierra, son menos eficaces en órbitas altas donde disminuye la magnitud del campo.
 Por otro lado, según Wertz y Larson \cite{Wertz1999} , en el diseño de un ADCS, normalmente se requiere conocer la ubicación del centro de masa o gravedad (CG), así como los elementos de la matriz de inercia: los momentos y productos de inercia en torno a ejes de referencia elegidos. La dirección de los ejes principales, aquellos ejes para los que la matriz de inercia es diagonal y los productos de inercia son cero, también son de interés. Por último, es necesario saber cómo cambian estas propiedades con el tiempo, a medida que se utiliza combustible u otros componentes se desplazan o despliegan.
+
+Por otro lado, la medición de la posición se realiza mediante dos sensores solares, situados en la parte superior e inferior del EyasSat, y un sensor solar diferencial-posicional (compuesto por dos células fotovoltaicas) \cite{Ritchey2004}. En este sentido, es posible realizar pruebas de actitud recurriendo a un control de lazo cerrado de un grado de libertad. 
 
 \subsection{Fundamentos de dinámica de satélites}
 
@@ -379,7 +394,7 @@ Los ángulos de Euler pueden provocar singularidades en determinados ángulos cu
 
 Por este motivo, es mas conveniente usar los cuaterniones, ya que son una mejor representación sin singularidades y sin funciones trigonométricas en la matriz de transformación \cite{wertz1978spacecraft}. En este sentido, el conjunto de cuaterniones consta de cuatro parámetros, que se definen en términos del eje de Euler. El teorema de rotación del eje propio de Euler establece que la rotación finita de un cuerpo rígido con un punto fijo puede expresarse mediante una única rotación alrededor de algún eje fijo.
 
-Este eje fijo, el eje de Euler, se representa mediante un vector unitario de componentes imaginarias $\hat{e} =(e_x,e_y,e_z)$ y una componente real $\eta$ donde $\Phi$ es el  ángulo de rotación sobre el eje de Euler. Esta representación se define como se evidencia desde la eq. (\ref{eq:cuaterniones}).
+Este eje fijo, el eje de Euler, se representa mediante un vector unitario de componentes imaginarias $\hat{e} =(e_x,e_y,e_z)$ y una componente real $\eta$ donde $\Phi$ es el  ángulo de rotación sobre el eje de Euler. Esta representación se define como se evidencia desde la \textbf{ecn. \eqref{eq:cuaterniones}}.
 
 \begin{equation}
 	\eta = cos\left(\frac{\Phi}{2}\right),
@@ -412,7 +427,7 @@ Este eje fijo, el eje de Euler, se representa mediante un vector unitario de com
 %	q_4 = cos\left(\dfrac{\Phi}{2}\right)\label{eq:q4}\\[10pt]
 %\end{gather}
 
-Donde se cumple que $\eta^2 + \epsilon_1^2+ \epsilon_2^2+ \epsilon_3^2 =1 $. Por otro lado, si se quiere pasar de ángulos de Euler a cuaterniones puede hacerse siguiendo la expresión (\ref{eq:euler2quat}).
+Donde se cumple que $\eta^2 + \epsilon_1^2+ \epsilon_2^2+ \epsilon_3^2 =1 $. Por otro lado, si se quiere pasar de ángulos de Euler a cuaterniones puede hacerse siguiendo la expresión \textbf{\eqref{eq:euler2quat}}.
 
 \begin{equation}
 q=\left[\begin{array}{c}
@@ -429,7 +444,7 @@ q=\left[\begin{array}{c}
 \end{equation}
 
 
-La transformacion de cuaterniones a angulos de Euler puede ser calculada con la expresión (\ref{eq:quat2euler}).
+La transformacion de cuaterniones a angulos de Euler puede ser calculada con la expresión \textbf{\eqref{eq:quat2euler}}.
 
 \begin{equation}
 	\begin{gathered}
@@ -667,20 +682,20 @@ En la dinámica rotacional, dos cantidades fundamentales de interés son el mome
 	H_{t}=\sum r_i \times m_i v_i\\
 \end{equation}
 
-Si aplicamos las eq.(\ref{eq:velocidad}) y eq.(\ref{eq:aceleracion}) con $V =\frac{\mathrm{d} {R}}{\mathrm{d} t}$ y si suponemos que 1) el origen del marco de rotación se encuentra en el centro de masa del cuerpo ($\sum m_i\rho_i =0$), y 2) los vectores de posición $\rho_i$ están fijos en el marco del cuerpo, es decir, tenemos un cuerpo rígido $\frac{\mathrm{d} {\rho}}{\mathrm{d} t} =0$ . Se obtiene el momento angular total así:
+Si aplicamos las \textbf{ecn.\eqref{eq:velocidad}} y \textbf{ecn.\eqref{eq:aceleracion}} con $V =\frac{\mathrm{d} {R}}{\mathrm{d} t}$ y si suponemos que 1) el origen del marco de rotación se encuentra en el centro de masa del cuerpo ($\sum m_i\rho_i =0$), y 2) los vectores de posición $\rho_i$ están fijos en el marco del cuerpo, es decir, tenemos un cuerpo rígido $\frac{\mathrm{d} {\rho}}{\mathrm{d} t} =0$ . Se obtiene el momento angular total así:
 
 \begin{equation}\label{eq:H_total}
 H_{t}=\left(\sum m_i\right)R\times V +\sum m_i \rho_i\times\frac{\mathrm{d} {\rho_i}}{\mathrm{d} t} = H_{orb} + H_b \\
 \end{equation}
 
-El primer término de la derecha es el momento angular del cuerpo rígido debido a su velocidad traslacional V en el marco de inercia. El segundo término es el momento angular del cuerpo debido a su velocidad de rotación alrededor de su propio centro de masa. La eq. (\ref{eq:H_total}) provee un importante resultado ya que indica que, en un cuerpo rígido, es posible escoger un marco de coordenadas que desacopla el momento angular del cuerpo y del momento angular orbital.
-Por tal motivo, el análisis se centrará únicamente en el segundo término, donde la eq.(\ref{eq:variacion_rho}) se simplificaría de la siguiente manera: 
+El primer término de la derecha es el momento angular del cuerpo rígido debido a su velocidad traslacional V en el marco de inercia. El segundo término es el momento angular del cuerpo debido a su velocidad de rotación alrededor de su propio centro de masa. La \textbf{ecn.\eqref{eq:H_total}} provee un importante resultado ya que indica que, en un cuerpo rígido, es posible escoger un marco de coordenadas que desacopla el momento angular del cuerpo y del momento angular orbital.
+Por tal motivo, el análisis se centrará únicamente en el segundo término, donde la \textbf{ecn.\eqref{eq:variacion_rho}} se simplificaría de la siguiente manera: 
 
 \begin{equation}\label{eq:variacion_rho_simplificada}
 	\frac{\mathrm{d} \rho_j}{\mathrm{d} t}=\omega\times\rho_i
 \end{equation}
 
-De esta manera, a partir de la eq.(\ref{eq:H_total}) tenemos que el momento angular en el marco del cuerpo es:
+De esta manera, a partir de la \textbf{ecn.\eqref{eq:H_total}} tenemos que el momento angular en el marco del cuerpo es:
 
 \begin{equation}\label{eq:H_total_simplificada}
 	H=\sum m_i\rho_i\times\frac{\mathrm{d} {\rho_i}}{\mathrm{d} t} =
@@ -699,7 +714,7 @@ Donde $I$ es una matriz real y simétrica, llamada matriz de inercia, con compon
  \end{aligned}
  $$
  
- La eq.(\ref{eq:H_total_simplificada}) nos indica que el momento angular total depende de la matriz de inercia del cubesat y del vector de velocidades angulares. Sin embargo, es necesario introducir el efecto de las ruedas de reacción, las cuales también disponen de un momento angular $h_w$. Por lo tanto, se tiene a partir de la eq.(\ref{eq:H_total_simplificada}) que: 
+ La \textbf{ecn.\eqref{eq:H_total_simplificada}} nos indica que el momento angular total depende de la matriz de inercia del CubeSat y del vector de velocidades angulares. Sin embargo, es necesario introducir el efecto de las ruedas de reacción, las cuales también disponen de un momento angular $h_w$. Por lo tanto, se tiene a partir de la \textbf{ecn.\eqref{eq:H_total_simplificada}} que: 
  
  \begin{equation}\label{eq:H_total_RW}
  	H = I\omega_b + h_w
@@ -719,7 +734,7 @@ En este sentido, el torque neto de fuerzas externas es:
 \end{equation}
  
  
- Al expandir la expresión para la aceleración tal como se hizo en la eq.(\ref{eq:aceleracion}), se tiene que :
+ Al expandir la expresión para la aceleración tal como se hizo en la \textbf{ecn.\eqref{eq:aceleracion}}, se tiene que :
  
  \begin{equation}
  	T_{ext}= \frac{\mathrm{d} H}{\mathrm{d} t} = \left(\frac{\mathrm{d} H}{\mathrm{d} t}\right)_{body} + \omega \times H 	
@@ -731,7 +746,7 @@ En este sentido, el torque neto de fuerzas externas es:
  	 \left(\frac{\mathrm{d} H}{\mathrm{d} t}\right)_{body} = T_{ext}-\omega \times \left(I\omega + h_w\right) 	
  \end{equation}
  
- Análogamente, se puede obtener otra expresión para el cambio de momento angular al derivar la \textbf{eq.(\ref{eq:H_total_RW})} respecto al tiempo :
+ Análogamente, se puede obtener otra expresión para el cambio de momento angular al derivar la \textbf{ecn.\eqref{eq:H_total_RW}} respecto al tiempo :
  
  \begin{equation}\label{eq:H_dot_2}
  	\dot{H_b} = \left(\frac{\mathrm{d} H}{\mathrm{d} t}\right)_{body} = 
@@ -744,7 +759,7 @@ Tomando el principio del intercambio de momentos, se tiene que el momento angula
 	\dot{h_w} = T_c  	
 \end{equation}
 
-Al igualar las ecuaciones (\ref{eq:H_dot_1}) y (\ref{eq:H_dot_2}) se obtiene una expresión para las aceleraciones angulares, conocida como ecuación dinámica de Newton-Euler, la cual consolida el modelo dinámico del CubeSat:
+Al igualar las ecuaciones \textbf{\eqref{eq:H_dot_1}} y \textbf{\eqref{eq:H_dot_2}} se obtiene una expresión para las aceleraciones angulares, conocida como ecuación dinámica de Newton-Euler, la cual consolida el modelo dinámico del CubeSat:
 
 
 \begin{equation}\label{eq:modelo_dinamico}
@@ -776,7 +791,7 @@ $\mathbf{h_w}=\left[\begin{array}{l}h_x \\ h_y \\ h_z\end{array}\right]:$ Vector
 \end{gather}
 
 
-Finalmente, usando las componentes del vector de velocidades angulares es posible determinar la actitud del CubeSat. La interpretación de los ángulos de Euler es más intuitiva, pero para evitar que surjan singularidades, los cuaterniones resultan mas convenientes para los cálculos de simulación \cite{Steyn2011}. La ecuación diferencial cinemática de los cuaterniones está descrita en la  \textbf{eq.(\ref{eq:modelo_cinematico})}: 
+Finalmente, usando las componentes del vector de velocidades angulares es posible determinar la actitud del CubeSat. La interpretación de los ángulos de Euler es más intuitiva, pero para evitar que surjan singularidades, los cuaterniones resultan mas convenientes para los cálculos de simulación \cite{Steyn2011}. La ecuación diferencial cinemática de los cuaterniones está descrita en la  \textbf{ecn.\eqref{eq:modelo_cinematico}}: 
 
 \begin{equation}\label{eq:modelo_cinematico}
 	\dot{\mathbf{q}}=\frac{1}{2} \Omega \mathbf{q} \\
@@ -799,7 +814,7 @@ Donde:
 	$
 \end{center}
 
-En la \textbf{Fig. \ref{fig:din_sc}} se evidencia la implementación de la \textbf{eq.(\ref{eq:modelo_dinamico})} en Simulink, donde se tienen como salidas tanto las ecuaciones cinemáticas, que relacionan velocidades angulares $\omega$, como las ecuaciones dinámicas, las cuales determinan la actitud del satélite por medio de los cuaterniones $q$.
+En la \textbf{Fig. \ref{fig:din_sc}} se evidencia la implementación de la \textbf{ecn.\eqref{eq:modelo_dinamico}} en Simulink, donde se tienen como salidas tanto las ecuaciones cinemáticas, que relacionan velocidades angulares $\omega$, como las ecuaciones dinámicas, las cuales determinan la actitud del satélite por medio de los cuaterniones $q$.
 
 
 \begin{figure}[!h]
@@ -811,7 +826,7 @@ En la \textbf{Fig. \ref{fig:din_sc}} se evidencia la implementación de la \text
 	\textit{}
 \end{figure}
 
-En la siguiente sección se profundizará en como determinar parámetros fundamentales del modelo dinámico, sintetizado en la eq. (\ref{eq:modelo_dinamico}), como la matriz de inercia del EyasSat, el modelo de los actuadores del ADCS y el cálculo de perturbaciones. 
+En la siguiente sección se profundizará en como determinar parámetros fundamentales del modelo dinámico, sintetizado en la \textbf{ecn.\eqref{eq:modelo_dinamico}}, como la matriz de inercia del EyasSat, el modelo de los actuadores del ADCS y el cálculo de perturbaciones. 
 
 \newpage
 \subsection{PROPIEDADES INERCIALES}
@@ -890,7 +905,7 @@ Tal como se mencionó en la sección de ambiente espacial en LEO, las cuatro fue
 
 Dichas perturbaciones son representadas como fuerzas que actúan sobre el vehículo, sin embargo, cuando no actúan sobre el centro de masa, se producen torques externos que alteran la actitud y que deben ser tenidos en cuenta por el ADCS.
 
-Existen algunos autores \cite{zapf2006robust}\cite{Andresen2005} que modelan las perturbaciones en función de la posición y actitud del vehículo a lo largo de su órbita. Sin embargo, para este trabajo se hizo una simplificación similar a la propuesta por P.S Bayod \cite{tes:Sorolla2019}, en la cual se parte de cada una de las ecuaciones de perturbaciones, extraídas de \cite{hughes2012spacecraft}, donde se evalúa el valor máximo de dicha perturbación. Como resultado, es posible sumar los torques externos como una constante, los cuales serán incluidos en la \textbf{eq. \ref{eq:modelo_dinamico}} del modelo dinámico.
+Existen algunos autores \cite{zapf2006robust}\cite{Andresen2005} que modelan las perturbaciones en función de la posición y actitud del vehículo a lo largo de su órbita. Sin embargo, para este trabajo se hizo una simplificación similar a la propuesta por P.S Bayod \cite{tes:Sorolla2019}, en la cual se parte de cada una de las ecuaciones de perturbaciones, extraídas de \cite{hughes2012spacecraft}, donde se evalúa el valor máximo de dicha perturbación. Como resultado, es posible sumar los torques externos como una constante, los cuales serán incluidos en la \textbf{ecn. \eqref{eq:modelo_dinamico}} del modelo dinámico.
 
 \subsubsection{Torque Gravitacional}
 \hfill \break
@@ -914,7 +929,7 @@ $$T_g = 6.737\cdot10^{-9} Nm$$
 
 \subsubsection{Torque Magnético}
 \hfill \break
-Similarmente a como lo expresa la \textbf{eq. \ref{eq:torque_mgt}}, el torque magnético generado por el satélite está dado por:
+Similarmente a como lo expresa la \textbf{ecn. \eqref{eq:torque_mgt}}, el torque magnético generado por el satélite está dado por:
 
 \begin{equation}
 	T_m = \vec{m_{sat}}\times\vec{B}\label{eq:torque_mag}	
@@ -984,7 +999,7 @@ $$
 \noindent$C_{R}$: es el coeficiente de reflectividad, el cual también puede ser expresado como: $C_R = 1+q$. De \cite{mcclain2001fundamentals} se obtiene un valor tipico de $q =0.6$ para satélites.\\
 $i$: es el ángulo de incidencia del sol hacia la superficie del satélite.\\
 $A$: es el área superficial del satélite $= \left(0.192\,m\right)^2$.\\
-Dado que se busca obtener el peor escenario, el ángulo de incidencia será $i=0$, donde se maximiza la \textbf{eq. \ref{eq:fuerza_radiacion}}. En este sentido, una vez obtenida la ecuación de la fuerza de radiación, se calcula un torque a la misma distancia del centro de masas que en la sección anterior. Por lo tanto, se tiene que: 
+Dado que se busca obtener el peor escenario, el ángulo de incidencia será $i=0$, donde se maximiza la \textbf{ecn. \eqref{eq:fuerza_radiacion}}. En este sentido, una vez obtenida la ecuación de la fuerza de radiación, se calcula un torque a la misma distancia del centro de masas que en la sección anterior. Por lo tanto, se tiene que: 
  $$
  \begin{aligned}
  	& T_{SR} = F_{SR}\times\left(\overline{CP} - \overline{CG}\right)\\
@@ -1059,7 +1074,7 @@ $J$: es el momento de inercia total del rotor y la carga.\\
 $\omega$: es la velocidad angular del motor.\\ 
 $B$: es el coeficiente de fricción.\\ 
 
-Por otro lado, se asume que existe relación proporcional entre $e(t)$ y $\omega$ a través de la constante de campo $K_e$ \textbf{(eq. \ref{eq:constante_campo})}. Asi mismo, se supone una relación proporcional entre el torque mecánico y la corriente por medio de la constante de torque $K_t$ \textbf{(eq. \ref{eq:constante_torque})}
+Por otro lado, se asume que existe relación proporcional entre $e(t)$ y $\omega$ a través de la constante de campo $K_e$ \textbf{\eqref{eq:constante_campo}}. Así mismo, se supone una relación proporcional entre el torque mecánico y la corriente por medio de la constante de torque $K_t$ \textbf{\eqref{eq:constante_torque}}
 
 \begin{gather}
 	e(t) = K_e\,\omega(t)\label{eq:constante_campo}\\[10pt]
@@ -1067,7 +1082,7 @@ Por otro lado, se asume que existe relación proporcional entre $e(t)$ y $\omega
 \end{gather}
 
 % eq y mostrar la eq de tranferencia de torque 
-Finalmente, realizando la transformada de Laplace de las ecuaciones \textbf{(\ref{eq:armadura})} a \textbf{(\ref{eq:constante_torque})} se pueden obtener las funciones de transferencia para la corriente $i(s)$, $\omega(s)$ y el torque del motor $T_m(s)$ expresadas por. 
+Finalmente, realizando la transformada de Laplace de las ecuaciones \textbf{\eqref{eq:armadura}} a \textbf{\eqref{eq:constante_torque}} se pueden obtener las funciones de transferencia para la corriente $i(s)$, $\omega(s)$ y el torque del motor $T_m(s)$ expresadas por. 
 
 \begin{gather}
 	\frac{T_m(s)}{v(s)}= \frac{K_t\left(Js+B\right)}{LJs^2 + \left(RJ+LB\right)s +RB+K_tK_e}\label{eq:trans_torque_voltaje}\\[10pt]	
@@ -1077,7 +1092,7 @@ Finalmente, realizando la transformada de Laplace de las ecuaciones \textbf{(\re
 \\
 %Diagrama de bloques
 
-En la \textbf{Fig. \ref{fig:bloquesRW}} se muestra la implementación del modelo de ruedas de reacción en Simulink. Ademas se calcular el torque y la corriente, dicho modelo calcula el momento angular $h_{RW}$ según la \textbf{eq (\ref{eq:torque_h})}.
+En la \textbf{Fig. \ref{fig:bloquesRW}} se muestra la implementación del modelo de ruedas de reacción en Simulink. Ademas se calcular el torque y la corriente, dicho modelo calcula el momento angular $h_{RW}$ según la \textbf{ecn. \eqref{eq:torque_h}}.
 
 \begin{figure}[h]
 	\begin{center}
@@ -1123,7 +1138,7 @@ Debido a que los manuales técnicos del EyasSat no especifican el modelo preciso
 
 \subsection{MODELO MAGNETORQUERS}
 % Ecuacion/Diagrama de torque
-Recordando la \textbf{eq (\ref{eq:torque_mgt})}, donde se tiene que $\vec{\tau} =\vec{M}\times\vec{B}$, el momento dipolar $\vec{M}$ puede expresarse como:
+Recordando la \textbf{ecn.\eqref{eq:torque_mgt}}, donde se tiene que $\vec{\tau} =\vec{M}\times\vec{B}$, el momento dipolar $\vec{M}$ puede expresarse como:
 
 \begin{gather}
 	\vec{M} = nIA\hat{n}\label{eq:momento_dipolar}\\[10pt]
@@ -1135,7 +1150,7 @@ $n$: es el número de vueltas de la bobina.\\
 $I$: es la corriente que pasa por el magnetorquer.\\
 $A$: es el área del magnetorquer en la dirección normal de la bobina. $\hat{n}$.
 
-Tal como se muestra en la \textbf{Fig. \ref{fig:magnetorquers}a} , el momento dipolar tratará de alinearse con la resultante del campo magnético debido al torque generado, el cual es proporcional a la corriente, al numero de vueltas y al área como lo indica la \textbf{eq (\ref{eq:torque_mgt_completa})}.
+Tal como se muestra en la \textbf{Fig. \ref{fig:magnetorquers}a} , el momento dipolar tratará de alinearse con la resultante del campo magnético debido al torque generado, el cual es proporcional a la corriente, al numero de vueltas y al área como lo indica la \textbf{ecn. \eqref{eq:torque_mgt_completa}}.
 
 La \textbf{Fig. \ref{fig:magnetorquers}b} muestra los actuadores reales del EyasSat, los cuales están dispuestos en los ejes $X$ e $Y$. Con el fin de determinar las propiedades mencionadas anteriormente, se realizaron mediciones de inductancia y resistencia como se muestra en la \textbf{Fig. \ref{fig:medicionH}}
 
@@ -1307,7 +1322,7 @@ C_{ENU}^{NED}=\left[\begin{array}{ccc}
 \end{array}\right]
 $$
 
-Finalmente, usando las propiedades \textbf{(\ref{eq:transformada1})} y \textbf{(\ref{eq:transformada2})}, descritas en la sección de transformación de marcos de referencia, se tiene que:
+Finalmente, usando las propiedades \textbf{\eqref{eq:transformada1}} y \textbf{\eqref{eq:transformada2}}, descritas en la sección de transformación de marcos de referencia, se tiene que:
 
 \begin{gather}
 	C_{BRF}^{NED} = \left(C_{ENU}^{BRF}\right)^T\,C_{ENU}^{NED}\\[10pt]
@@ -1360,8 +1375,8 @@ Tal como se mencionó en el planteamiento del problema, las estrategias de contr
 
 \subsubsection{Linealización y Espacio de Estados}
 \hfill \break
-Las ecuaciones dinámicas \textbf{(\ref{eq:modelo_dinamico})} y cinemáticas \textbf{(\ref{eq:modelo_cinematico})} conforman el espacio de estados que se evidencia en 
-\textbf{(\ref{eq:espacio_estados_non})}, donde $x$ son los estados definidos por la velocidad angular ($w$), cuaterniones ($q$) y el momento angular de las RW ($h_w$). 
+Las ecuaciones dinámicas \textbf{\eqref{eq:modelo_dinamico}} y cinemáticas \textbf{\eqref{eq:modelo_cinematico}} conforman el espacio de estados que se evidencia en 
+\textbf{\eqref{eq:espacio_estados_non}}, donde $x$ son los estados definidos por la velocidad angular ($w$), cuaterniones ($q$) y el momento angular de las RW ($h_w$). 
 %Sistema no lineal 
 
 \begin{equation}\label{eq:espacio_estados_non}
@@ -1440,7 +1455,7 @@ Con el fin de hallar las matrices $A$, $B$ y $\Gamma$ debe determinarse una expr
 
 \paragraph{Linealiazión de la ecuación dinámica}
 \hfill \break
-Según el procedimiento planteado en \cite{Andresen2005}, se parte de la ecuación dinámica \textbf{(\ref{eq:modelo_dinamico})} :
+Según el procedimiento planteado en \cite{Andresen2005}, se parte de la ecuación dinámica \textbf{\eqref{eq:modelo_dinamico}} :
 $$
  \dot{\omega_b}=I^{-1}\left[-S(\omega)\left(I \omega_b+h_w\right)+T_{ext}+T_c\right]
 $$
@@ -1453,7 +1468,7 @@ y se escoge un punto de operación $\bar{\omega}$ para el sistema y se modela co
 	\end{aligned}	 
 \end{equation}
 
-Tomando la \textbf{eq. (\ref{eq:modelo_dinamico})} es posible considerar $T_{ext}$ como una constante al rededor del punto de control de un marco de tiempo $\Delta t$. Por lo tanto, $\dot{\omega}$ se puede expresar como una función de $\omega$, $T_c$ y $h_w$. De esta manera, es posible linealizar usando la expansión de Taylor de primer orden, obteniendo la siguiente expresión:
+Tomando la \textbf{ecn. \eqref{eq:modelo_dinamico}} es posible considerar $T_{ext}$ como una constante al rededor del punto de control de un marco de tiempo $\Delta t$. Por lo tanto, $\dot{\omega}$ se puede expresar como una función de $\omega$, $T_c$ y $h_w$. De esta manera, es posible linealizar usando la expansión de Taylor de primer orden, obteniendo la siguiente expresión:
 
 \begin{equation}\label{eq:modelo_dinamico_linealizado}
 	\dot{\omega_b}=I^{-1}\left[S(I\bar{\omega}-S(\bar{\omega})I+S(\bar{h_w})\right]\tilde{\omega}-I^{-1}S(\bar{\omega})\tilde{h_w}+I^{-1}\left(T_{RW}+T_{mgt}\right)
@@ -1502,7 +1517,7 @@ Siguiendo un procedimiento similar al anterior, se tiene que $dq$ es la orientac
 	\dot{\tilde{g}} = -\frac{1}{2}S(\omega)\tilde{g}+\frac{1}{2}q_4I\omega = \frac{1}{2}I\tilde{\omega}
 \end{equation}
 
-Donde $g$ se conoce como vector de Gibbs y corresponde a las primeras 3 componentes vectoriales de un cuaternion. Finalmente, recurriendo a las ecuaciones \textbf{(\ref{eq:modelo_dinamico_linealizado})} y \textbf{(\ref{eq:modelo_cinematico_linealizado})}, las matrices $A$, $B$ y $\Gamma$ pueden ser expresadas como :
+Donde $g$ se conoce como vector de Gibbs y corresponde a las primeras 3 componentes vectoriales de un cuaternion. Finalmente, recurriendo a las ecuaciones \textbf{\eqref{eq:modelo_dinamico_linealizado}} y \textbf{\eqref{eq:modelo_cinematico_linealizado}}, las matrices $A$, $B$ y $\Gamma$ pueden ser expresadas como :
 
 \begin{gather}
 	A = \left[\begin{array}{ccc}
