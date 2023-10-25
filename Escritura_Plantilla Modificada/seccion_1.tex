@@ -50,7 +50,7 @@ Ademas de eliminar el exceso de momento angular, dichas estrategias de desaturac
 
 \section{ESTADO DEL ARTE}
 
-La desaturación de ruedas de reacción es un problema común en los satélites, incluidos los Cubesats, que pueden llevar a una pérdida de control de actitud. La ley de producto cruzado (CCPL) es una solución clásica en ingeniería comúnmente utilizado para resolver este paradigma desde una aproximación lineal \cite{Tregouet2015}. Pero en los últimos años se han desarrollado diferentes controladores que involucran sistemas no lineales.
+La desaturación de ruedas de reacción es un problema común en los satélites, incluidos los Cubesats, que pueden llevar a una pérdida de control de actitud. La ley de producto cruzado es una solución clásica en ingeniería comúnmente utilizado para resolver este paradigma desde una aproximación lineal \cite{Tregouet2015}. Pero en los últimos años se han desarrollado diferentes controladores que involucran sistemas no lineales.
 Sin embargo, tal como se expresa en \cite{Yang2017}, el problema de control de actitud y la saturación de ruedas de reacción es comúnmente abordado como temas separados desde el punto de vista de diseño, por lo cual, no existen tantos artículos en los que se incluyan ambos objetivos. En su trabajo se propone un método de diseño de un LQR periódico variable en el tiempo donde se incluyen los torques generados por gradientes gravitacionales y los efectos periódicos del campo geomagnético alrededor de la órbita. Además, señala que los artículos existentes no suelen estos efectos mencionados anteriormente.
 Por otro lado, Yang menciona esfuerzos como el de \cite{Tregouet2015} , en el cual se estudió al mismo tiempo el problema de la estabilización y el de desaturación de ruedas de reacción. A su vez se consideró la variación temporal del campo magnético en el marco del cuerpo (BRF), y su marco de referencia era el marco inercial (ECI). Sin embargo, para una nave espacial en LEO que utiliza el campo geomagnético, el marco de referencia más idóneo es el marco local vertical local horizontal (LVLH). Además, su diseño se compone de dos bucles, que es esencialmente una idea de tratar con el control de actitud y la desaturación en consideraciones separadas.
 En esa misma línea, de Angelis \cite{Angelis2016} propuso un controlador proporcional heurístico y utilizó una función de Lyapunov para probar que el controlador puede simultáneamente estabilizar la nave espacial con respecto al marco LVLH y lograr la desaturación de ruedas de reacción. Pero este método de diseño no tiene en cuenta el efecto variable en el tiempo del campo geomagnético en el marco del cuerpo.
@@ -1835,7 +1835,7 @@ A continuación se mostrarán los resultados de ángulo de \textit{Yaw}, velocid
 	\caption{\MakeUppercase{Indices de desempeño para órbita ecuatorial en maniobra de Detumbling}}
 	\centering
 	\begin{tabular}{r|lllll|l}
-		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{mgt}$}   & \mbox{\boldmath$P_{Rw}$}    & \textbf{Total}      \\ 
+		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{RW}$}   & \mbox{\boldmath$P_{mgt}$}    & \textbf{Total}      \\ 
 		\hline
 		1                       & PID $\Delta h$ & 29.39  & 931.32     & 88.79  & 339.68 & 1389.19  \\
 		2                       & LQR $\Delta h$ & 291.75 & 926.60   & 332.94 & 340.04 & 1891.34  \\
@@ -1853,7 +1853,7 @@ A continuación se mostrarán los resultados de ángulo de \textit{Yaw}, velocid
 	\caption{\MakeUppercase{Indices de desempeño para órbita de la ISS en maniobra de Detumbling }}
 	\centering
 	\begin{tabular}{r|lllll|l}
-		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{mgt}$}   & \mbox{\boldmath$P_{Rw}$}    & \textbf{Total}      \\ 
+		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{RW}$}   & \mbox{\boldmath$P_{mgt}$}    & \textbf{Total}      \\ 
 		\hline
 		1                       & PID $\Delta h$ & 29.33  & 709.51     & 88.83  & 346.15 & 1173.83  \\
 		2                       & LQR $\Delta h$ & 225.91 & 708.36     & 332.34 & 346.89 & 1613.49  \\
@@ -1871,7 +1871,7 @@ A continuación se mostrarán los resultados de ángulo de \textit{Yaw}, velocid
 	\caption{\MakeUppercase{Indices de desempeño para órbita polar en maniobra de Detumbling}}
 	\centering
 	\begin{tabular}{r|lllll|l}
-		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{mgt}$}   & \mbox{\boldmath$P_{Rw}$}    & \textbf{Total}      \\ 
+		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{RW}$}   & \mbox{\boldmath$P_{mgt}$}    & \textbf{Total}      \\ 
 		\hline
 		1                       & PID $\Delta h$ & 29.38 & 929.53& 88.88 & 414.89 & 1462.68  \\
 		2                       & LQR $\Delta h$ & 277.68 & 928.36 &332.43 &409.66 & 1948.14  \\
@@ -1912,7 +1912,7 @@ A continuación se mostrarán los resultados de ángulo de \textit{Yaw}, velocid
 	\caption{\MakeUppercase{Indices de desempeño para órbita ecuatorial en respuesta del escalón}}
 	\centering
 	\begin{tabular}{r|lllll|l}
-		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{mgt}$}   & \mbox{\boldmath$P_{Rw}$}    & \textbf{Total}      \\ 
+		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{RW}$}   & \mbox{\boldmath$P_{Mgt}$}    & \textbf{Total}      \\ 
 		\hline
 		1                       & PID $\Delta h$ & 155.78 & 0.0046 &83.26 &1.85 &240.91  \\
 		2                       & LQR $\Delta h$ & 120.31 & 0.0043     &64.12   &1.83    & 186.27  \\
@@ -1929,7 +1929,7 @@ A continuación se mostrarán los resultados de ángulo de \textit{Yaw}, velocid
 	\caption{\MakeUppercase{Indices de desempeño para órbita de la ISS en respuesta del escalón }}
 	\centering
 	\begin{tabular}{r|lllll|l}
-		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{mgt}$}   & \mbox{\boldmath$P_{Rw}$}    & \textbf{Total}      \\ 
+		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{RW}$}   & \mbox{\boldmath$P_{Mgt}$}    & \textbf{Total}      \\ 
 		\hline
 		1                       & PID $\Delta h$ & 155.97 & 0.0061& 83.34 & 2.76& 242.08  \\
 		2                       & LQR $\Delta h$ & 120.55 & 0.0046 &64.25 &2.41 & 187.21  \\
@@ -1946,7 +1946,7 @@ A continuación se mostrarán los resultados de ángulo de \textit{Yaw}, velocid
 	\caption{\MakeUppercase{Indices de desempeño para órbita polar en respuesta del escalón}}
 	\centering
 	\begin{tabular}{r|lllll|l}
-		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{mgt}$}   & \mbox{\boldmath$P_{Rw}$}    & \textbf{Total}      \\ 
+		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{RW}$}   & \mbox{\boldmath$P_{Mgt}$}    & \textbf{Total}      \\ 
 		\hline
 		1                       & PID $\Delta h$ & 155.99& 0.0019& 83.06 &6.90 &245.96  \\
 		2                       & LQR $\Delta h$ & 120.43 & 0.002 & 64.18 &7.35 &191.97  \\
@@ -1987,9 +1987,9 @@ A continuación se mostrarán los resultados de ángulo de \textit{Yaw}, velocid
 	\caption{\MakeUppercase{Indices de desempeño para órbita ecuatorial en apuntamiento Nadir}}
 	\centering
 	\begin{tabular}{r|lllll|l}
-		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{mgt}$}   & \mbox{\boldmath$P_{Rw}$}    & \textbf{Total}      \\ 
+		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{RW}$}   & \mbox{\boldmath$P_{Mgt}$}    & \textbf{Total}      \\ 
 		\hline
-		1                       & PID $\Delta h$ & 0.00094 &0.0039& 0.04033& 2.01 &2.06  \\
+		1                       & PID $\Delta h$ & 0.00094 &0.0039& 0.040& 2.01 &2.06  \\
 		2                       & LQR $\Delta h$ & 0.95 & 0.0046& 0.00071& 2.075& 3.03  \\
 		3                       & LQR I          & 0.903 &0.180 &0.00063 &2.059 &3.14  \\
 		4                       & LQR PID        & 0.903& 0.181 &0.00063 &11.42 &12.51  \\
@@ -2005,7 +2005,7 @@ A continuación se mostrarán los resultados de ángulo de \textit{Yaw}, velocid
 	\caption{\MakeUppercase{Indices de desempeño para órbita de la ISS en apuntamiento Nadir}}
 	\centering
 	\begin{tabular}{r|lllll|l}
-		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{mgt}$}   & \mbox{\boldmath$P_{Rw}$}    & \textbf{Total}      \\ 
+		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{RW}$}   & \mbox{\boldmath$P_{Mgt}$}    & \textbf{Total}      \\ 
 		\hline
 		1                       & PID $\Delta h$ &0.00094 &0.0038 &0.040 &2.49& 2.54  \\
 		2                       & LQR $\Delta h$ & 0.95 &0.0036751& 0.00069 &2.46 &3.42  \\
@@ -2023,7 +2023,7 @@ A continuación se mostrarán los resultados de ángulo de \textit{Yaw}, velocid
 	\caption{\MakeUppercase{Indices de desempeño para órbita polar en apuntamiento Nadir}}
 	\centering
 	\begin{tabular}{r|lllll|l}
-		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{mgt}$}   & \mbox{\boldmath$P_{Rw}$}    & \textbf{Total}      \\ 
+		\multicolumn{1}{l|}{\textbf{ID}} & \textbf{Controlador}                  & \mbox{\boldmath$e_{ref}$}   & \mbox{\boldmath$\Delta h$} & \mbox{\boldmath$P_{RW}$}   & \mbox{\boldmath$P_{Mgt}$}    & \textbf{Total}      \\ 
 		\hline
 		1                       & PID $\Delta h$ & 0.00096& 0.0037& 0.040 &3.47 &3.52  \\
 		2                       & LQR $\Delta h$ & 0.952 &0.0035& 0.00069 &3.48 &4.44 \\
@@ -2163,7 +2163,7 @@ A pesar de que el controlador PID fue diseñado netamente a partir de un modelo 
 % Detumbling %Nadir
 No obstante, en estos escenarios cabe destacar que el PID presentó mejor desempeño en el \textit{Detumbling}, con una notoria disminución del error de referencia y el consumo de potencia de los magnetorquers. En cambio, para el apuntamiento en el Nadir, se presentó un desempeño muy similar para todos los controladores en cada una de las órbitas, donde se alcanzó la velocidad angular deseada en $<0.5\;s$. Cabe anotar que el PID presentó mas oscilaciones para alcanzar esta velocidad pero tardó menos tiempo en estabilizarse.
 
-Así mismo, es de notar que en este escenario, el momento angular de las RW, este se estabiliza en un valor 3 veces mayor con el método de $k\Delta h$ respecto al método de desaturación del controlador cascada \textbf{(Fig. \ref{fig:nadir})}, donde el primero presenta mayores oscilaciones. Sin embargo, estos valores de estabilización son del orden de $10^{-5}$. 
+Así mismo, es de notar que en este escenario, el momento angular de las RW, este se estabiliza en un valor 3 veces mayor con el método de $k\Delta h$ respecto al método de desaturación del controlador cascada \textbf{(Fig. \ref{fig:nadir})}, donde el primero presenta mayores oscilaciones. Sin embargo, ambos valores de estabilización son del orden de $10^{-5}$. 
 
 %Escalon
 Por otro lado, donde mejor desempeño presentó el LQR fue en la respuesta escalón como se evidencia en la \textbf{Fig. \ref{fig:step}}. Es notorio que el PID presenta mayor sobre impulso en el ángulo de \textit{Yaw}. Para lograr estos resultados se optó por una matriz $Q$ de estados mas homogénea pero fue necesario aumentar la acción de control disminuyendo el valor de la matriz $R$ de la siguiente manera:  
@@ -2180,20 +2180,25 @@ Finalmente, para este perfil de misión se destaca que, el método de desaturaci
 
 %Son las interpretaciones finales que recopilan los datos de la investigación, describe lo que se obtuvo, qué se logró y cuáles son los resultados. Guardan relación directa con lo que se mencionó en el planteamiento del problema. Pueden confirmar las hipótesis.
 
-Tal como se evidenció en la \textbf{Fig. \ref{fig:saturacion}}, la saturación de RW puede afectar significativamente el control sobre la actitud sobre un picosatélite, hasta el punto de ocasionar velocidades angulares sobre el sistema que lleven a un estado permanente de inestabilidad. Con las condiciones en que se realizaron las pruebas y para el CubeSat EyasSat se estimaría alcanzar una saturación máxima en 2 órbitas aproximadamente. En esta situación no se tendría control sobre el eje $Z$ a no ser de que se cuente con algún método de desaturación.
+Tal como se evidenció en la \textbf{Fig. \ref{fig:saturacion}}, la saturación de RW puede afectar significativamente el control sobre la actitud sobre un picosatélite, hasta el punto de ocasionar velocidades angulares sobre el sistema que lleven a un estado permanente de inestabilidad. Con las condiciones en que se realizaron las pruebas y para el CubeSat EyasSat se estimaría alcanzar una saturación máxima en 2 órbitas aproximadamente. En esta situación, no se tendría control sobre el eje $Z$ a no ser de que se cuente con algún método de desaturación.
 
 No obstante, se reconoce que el modelo EyasSat es un picosatélite diseñado para pruebas en tierra con fines académicos, por lo que rendimientos similares no esperan ser encontrados en satélites de la misma categoría debido a la limitación de 1 grado de libertad. Aun así, las estrategias de control presentadas demostraron satisfacer los requerimientos tanto para el control de actitud como para la desaturación de las RW en los 3 escenarios planteados.
 
-%Poca variación entre las órbitas - potencia Mgt
+%Poca variación entre las órbitas
+Finalmente, se observa que el campo magnético de las diferentes órbitas no representa una variación significativa en el rendimiento de los controladores. Esto se debe en parte a que el EyasSat solo dispone magnetorquers en el eje $X$ y $Y$, por lo tanto, solo las componentes $B_x$ y $B_y$ del campo pueden producir torques en el eje $Z$ que es donde se requiere reducir el momento angular de las RW. Es este sentido, el desempeño dependerá de las condiciones iniciales de actitud, donde se presenten componentes del campo magnético mas favorables para satisfacer el producto cruz.
+
 
 \newpage
 %--------------------------
 \section{RECOMENDACIONES}
 
+
 %Las recomendaciones son las futuras y posibles líneas de investigación que llevarán a resolver problemas relacionados con la presente investigación.
 
 % Ley de control basada en omega y cuaterniones 
+En primer lugar, aumentar el número de controladores podría complementar el estudio del desempeño de estrategias de control. Así mismo, se podría recurrir a leyes de control que contemplen las ecuaciones cinemáticas y dinámicas al mismo tiempo, es decir, usar como referencia no solo los cuaterniones sino también las velocidades angulares. En \cite{Blanke2010} las entradas del sistema tienen la forma de $u =-K_pq_e -K_{pd}\omega$, donde se desea obtener una actitud $q_e$ con una velocidad $\omega$. De esta manera un controlador del ADCS puede ser mas versátil para todo tipo de escenarios. 
 
-% Nadir cambio de coordenadas
+Por otro lado, se podría incluir un modelamiento astrodinámico de la trayectoria del CubeSat, donde se propaguen las coordenadas de la órbita según las condiciones iniciales y se modelen las perturbaciones según la posición y la actitud del satélite. Adicionalmente, con el fin de realizar una implementación en un banco de pruebas para el control de actitud en tierra, será necesario modelar las perturbaciones por fricción de los puntos de apoyo y/o de la estructura del sistema.
 
-%Estimación de perturbaciones por fricción para banco de pruebas 
+Finalmente, se plantea como linea futura de investigación, la integración de las estrategias de control en un banco de pruebas que contemple los efectos de una jaula de Helmholtz para simular los campos geomagnéticos. Para ello, será necesario una sintonización y optimización de los controladores al igual que su diseño en el tiempo discreto.
+

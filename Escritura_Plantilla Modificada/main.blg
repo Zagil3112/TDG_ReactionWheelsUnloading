@@ -12,8 +12,6 @@ A level-1 auxiliary file: referencias.aux
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: ieeeudea.bst
 Reallocating 'name_of_file' (item size: 1) to 5 items.
-Reallocating 'name_of_file' (item size: 1) to 11 items.
-A level-1 auxiliary file: anexos.aux
 original is an illegal style-file command---line 7 of file ieeeudea.bst
  :  original
  :           starting code base and algorithms obtained from the output of Patrick W. Daly's makebst package as well as from prior versions of
@@ -24,23 +22,23 @@ Reallocating 'wiz_functions' (item size: 4) to 6000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: refe.bib
 Warning--entry type for "Groenewald2014" isn't style-file defined
---line 473 of file refe.bib
+--line 479 of file refe.bib
 Warning--entry type for "Steyn2011" isn't style-file defined
---line 501 of file refe.bib
+--line 507 of file refe.bib
 Warning--entry type for "Lan2013" isn't style-file defined
---line 509 of file refe.bib
+--line 515 of file refe.bib
 Warning--entry type for "Barnhart2005" isn't style-file defined
---line 527 of file refe.bib
+--line 533 of file refe.bib
 Warning--entry type for "Ritchey2004" isn't style-file defined
---line 541 of file refe.bib
+--line 547 of file refe.bib
 Warning--entry type for "Rycroft1997" isn't style-file defined
---line 560 of file refe.bib
+--line 566 of file refe.bib
 Warning--entry type for "Andresen2005" isn't style-file defined
---line 568 of file refe.bib
+--line 574 of file refe.bib
 Warning--entry type for "Karatas2006" isn't style-file defined
---line 576 of file refe.bib
+--line 582 of file refe.bib
 Warning--entry type for "Blanke2010" isn't style-file defined
---line 727 of file refe.bib
+--line 733 of file refe.bib
 -- IEEEtranN.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -51,7 +49,6 @@ Reallocating 'global_strs' (item size: 1) to 4000000 items.
 Too many commas in name 1 of "Blanke, M., & Larsen, M. B" for entry Blanke2010
 while executing---line 2673 of file ieeeudea.bst
 Warning--empty journal in Venturini2018
-Warning--missing publisher in Kaplan1976
 Warning--empty journal in Giesselman2006
 Warning--empty journal in zapf2006robust
 Too many commas in name 1 of "Blanke, M., & Larsen, M. B" for entry Blanke2010
@@ -62,43 +59,43 @@ while executing---line 2687 of file ieeeudea.bst
 Done.
 You've used 34 entries,
             4853 wiz_defined-function locations,
-            1162 strings with 14829 characters,
-and the built_in function-call counts, 21005 in all, are:
-= -- 1791
+            1165 strings with 14915 characters,
+and the built_in function-call counts, 21373 in all, are:
+= -- 1851
 > -- 629
-< -- 68
+< -- 71
 + -- 304
 - -- 160
-* -- 1118
-:= -- 3474
-add.period$ -- 67
+* -- 1130
+:= -- 3525
+add.period$ -- 68
 call.type$ -- 34
 change.case$ -- 39
 chr.to.int$ -- 139
-cite$ -- 38
-duplicate$ -- 1464
-empty$ -- 1723
+cite$ -- 37
+duplicate$ -- 1499
+empty$ -- 1727
 format.name$ -- 223
-if$ -- 4617
+if$ -- 4711
 int.to.chr$ -- 1
 int.to.str$ -- 35
-missing$ -- 270
+missing$ -- 273
 newline$ -- 148
 num.names$ -- 102
-pop$ -- 816
+pop$ -- 813
 preamble$ -- 1
 purify$ -- 34
 quote$ -- 2
-skip$ -- 1561
+skip$ -- 1601
 stack$ -- 0
-substring$ -- 344
-swap$ -- 860
-text.length$ -- 10
+substring$ -- 363
+swap$ -- 895
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 451
-warning$ -- 4
-while$ -- 83
+type$ -- 459
+warning$ -- 3
+while$ -- 84
 width$ -- 0
-write$ -- 389
+write$ -- 393
 (There were 4 error messages)
