@@ -350,7 +350,7 @@ $$
 
 \subsubsection{Ángulos de Euler}
 \hfill \break
-La actitud de un vehículo puede representarse mediante los ángulos de roll ($\phi$), pitch ($\theta$) y yaw ($\psi$). Estos ángulos representan las rotaciones consecutivas sobre los ejes $X$, $Y$ y $Z$ con el fin de pasar de un marco a otro \textbf{(Fig.\ref{fig:angulosEuler})}. El orden en que estas rotaciones son efectuadas tienen efectos en la matriz de rotación.
+La actitud de un vehículo puede representarse mediante los ángulos de roll ($\phi$), pitch ($\theta$) y yaw ($\psi$). Estos ángulos representan las rotaciones consecutivas sobre los ejes $X$, $Y$ y $Z$ con el fin de pasar de un marco de referencia a otro \textbf{(Fig.\ref{fig:angulosEuler})}. El orden en que estas rotaciones son efectuadas tienen efectos en la matriz de rotación.
 
 
 
@@ -358,9 +358,9 @@ La actitud de un vehículo puede representarse mediante los ángulos de roll ($\
 	\begin{center}
 		\includegraphics[scale=0.8]{imagenes/marco_teorico/angulos_euler.PNG}\\
 	\end{center}
-	\caption{ Ángulos de Euler : Roll-Pitch-Yaw }
+	\caption{ Ángulos de Euler : Roll-Pitch-Yaw \cite{tes:Sorolla2019} }
 	\label{fig:angulosEuler}
-	\footnotesize{Nota. Fuente \cite{tes:Sorolla2019}}
+%	\footnotesize{Nota. Fuente }
 \end{figure}
 
  Debido a que el problema discutido en este trabajo se restringió para solo un grado de libertad, solo basta realizar una rotacion de un ángulo $\phi$ en el eje $Z_o$ del marco orbital (ORF) para pasar al marco del cuerpo (BRF) como se vió en la  \textbf{Fig. \ref{fig:marco_cuerpo}}. Lo anterior puede lograrse con la matriz de transformación $R_{B}^{O}$:
@@ -388,14 +388,14 @@ Los ángulos de Euler pueden provocar singularidades en determinados ángulos cu
 	\begin{center}
 		\includegraphics[scale=0.8]{imagenes/marco_teorico/gimbal.PNG}\\
 	\end{center}
-	\caption{ Gimbal compuesto por 3 cardanes, en esta configuración se presenta el bloqueo de 1 grado de libertad. }
+	\caption{ Gimbal compuesto por tres cardanes, en esta configuración se presenta el bloqueo de un grado de libertad. }
 	\label{fig:gimbal}
 %	\footnotesize{Nota. Fuente \cite{tes:Sorolla2019}}
 \end{figure}
 
 Por este motivo, es mas conveniente usar los cuaterniones, ya que son una mejor representación sin singularidades y sin funciones trigonométricas en la matriz de transformación \cite{wertz1978spacecraft}. En este sentido, el conjunto de cuaterniones consta de cuatro parámetros, que se definen en términos del eje de Euler. El teorema de rotación del eje propio de Euler establece que la rotación finita de un cuerpo rígido con un punto fijo puede expresarse mediante una única rotación alrededor de algún eje fijo.
 
-Este eje fijo, el eje de Euler, se representa mediante un vector unitario de componentes imaginarias $\hat{e} =(e_x,e_y,e_z)$ y una componente real $\eta$ donde $\Phi$ es el  ángulo de rotación sobre el eje de Euler. Esta representación se define como se evidencia desde la \textbf{ecn. \eqref{eq:cuaterniones}}.
+Este eje fijo, el eje de Euler, se representa mediante un vector unitario de componentes imaginarias $(e_x,e_y,e_z)$ y una componente real $\eta$, como se evidencia desde la \textbf{ecn. \eqref{eq:cuaterniones}}. 
 
 \begin{equation}
 	\eta = cos\left(\frac{\Phi}{2}\right),
@@ -419,16 +419,7 @@ Este eje fijo, el eje de Euler, se representa mediante un vector unitario de com
 	\end{array}\right] 
 	\label{eq:cuaterniones}
 \end{equation}
-
-%\begin{gather}
-%%	$q1 = e_x sin(\Phi /2)$\label{eq:q1}\\[10pt]
-%	q_1 = e_x sin\left(\dfrac{\Phi}{2}\right)\label{eq:q1}\\[10pt]
-%	q_2 = e_y sin\left(\dfrac{\Phi}{2}\right)\label{eq:q2}\\[10pt]
-%	q_3 = e_z sin\left(\dfrac{\Phi}{2}\right)\label{eq:q3}\\[10pt]
-%	q_4 = cos\left(\dfrac{\Phi}{2}\right)\label{eq:q4}\\[10pt]
-%\end{gather}
-
-Donde se cumple que $\eta^2 + \epsilon_1^2+ \epsilon_2^2+ \epsilon_3^2 =1 $. Por otro lado, si se quiere pasar de ángulos de Euler a cuaterniones puede hacerse siguiendo la expresión \textbf{\eqref{eq:euler2quat}}.
+Donde $\Phi$ es el  ángulo de rotación sobre el eje de Euler y $q$ es el vector de cuaterniones. Además, se cumple que $\eta^2 + \epsilon_1^2+ \epsilon_2^2+ \epsilon_3^2 =1 $. Por otro lado, si se quiere pasar de ángulos de Euler a cuaterniones puede hacerse siguiendo la expresión \textbf{\eqref{eq:euler2quat}} donde $\phi\,$,$\psi$ y $\theta$ corresponden a los ángulos de Euler.
 
 \begin{equation}
 q=\left[\begin{array}{c}
@@ -450,7 +441,7 @@ La transformacion de cuaterniones a angulos de Euler puede ser calculada con la 
 \begin{equation}
 	\begin{gathered}
 		\phi=\operatorname{atan}\left(2\left(q_2 q_3+\eta q_1\right),\left(\eta^2-q_1^2-q_2^2-q_3^2\right)\right) \\
-		\theta=\operatorname{asin}\left(\left(q_1 q_3-\eta q_2\right)\right) \\
+		\theta=\operatorname{asin}\left(q_1 q_3-\eta q_2\right) \\
 		\psi=\operatorname{atan}\left(2\left(q_1 q_2+\eta q_3\right),\left(\eta^2+q_1^2-q_2^2-q_3^2\right)\right)
 	\end{gathered}\label{eq:quat2euler}
 \end{equation}
@@ -468,7 +459,7 @@ Así mismo, los sistemas en lazo cerrado tienen la habilidad de rechazar perturb
 
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[scale=0.8]{imagenes/marco_teorico/lazo cerrado.PNG}\\
+		\includegraphics[scale=0.5]{imagenes/marco_teorico/lazo cerrado.PNG}\\
 	\end{center}
 	\caption{  Sistema en lazo cerrado con perturbaciones externas }
 	\label{fig:feedback}
@@ -487,18 +478,19 @@ La órbita baja (LEO, por sus siglas en inglés) es una región del espacio que 
 	\begin{center}
 		\includegraphics[scale=1]{imagenes/marco_teorico/leo.jpg}\\
 	\end{center}
-	\caption{  Órbita baja (LEO)}
+	\caption{  Órbita baja (LEO)\cite{opc:LEO}}
 	\label{fig:leo}
-		\footnotesize{Nota. Fuente \cite{opc:LEO}}
+%		\footnotesize{Nota. Fuente }
 \end{figure}
 
 Los gradientes de gravedad son causados por la variación de la fuerza de gravedad a medida que el satélite se mueve a través de diferentes regiones del campo gravitacional. Esta variación decrece con el radio de la órbita a razón de $1/r^2$ por la ley de Newton. En este sentido, la parte baja de un satélite experimenta una atracción mayor que su parte superior, causando momentos de torsión no deseados y que tienden a alinear el eje del vehículo de menor inercia con el plano local vertical (LVLH) \cite{griffin2004space}, lo que puede afectar su orientación y estabilidad.
 
-Por otro lado, el arrastre aerodinámico es causado por la interacción del satélite con la alta atmósfera, este arrastre genera un torque debido al desfase entre el centro de masa y el centro de presión del CubeSat. Por su parte, el campo geomagnético puede afectar la orientación y el control de los vehículos debido a los torques magnéticos. Estos últimos aparecen gracias a los lazos de corriente que generan dipolos y magnetizaciones residuales sobre el satélite\cite{Giesselman2006}. Adicionalmente, pueden presentarse otro tipo de perturbaciones debido a la radiación solar, ya que los fotones son desprendidos cuando se presenta actividad y erupciones en el sol.
+Por otro lado, el arrastre aerodinámico es causado por la interacción del satélite con la alta atmósfera, este arrastre genera un torque debido al desfase entre el centro de masa y el centro de presión del CubeSat. Por su parte, el campo geomagnético puede afectar la orientación y el control de los vehículos debido a los torques magnéticos. Estos últimos aparecen gracias a los lazos de corriente que generan dipolos y magnetizaciones residuales sobre el satélite \cite{Giesselman2006}. Adicionalmente, pueden presentarse otro tipo de perturbaciones debido a la radiación solar, ya que los fotones son desprendidos cuando se presenta actividad y erupciones en el sol.
 
-Estos factores pueden afectar el sistema de control en LEO de diversas maneras. Por ejemplo, los gradientes de gravedad y el arrastre aerodinámico pueden causar momentos de torsión no deseados, lo que puede añade energía al sistema en forma de momento angular, afectando la precisión del sistema de control.
+Estos factores pueden afectar el sistema de control en LEO de diversas maneras. Por ejemplo, los gradientes de gravedad y el arrastre aerodinámico pueden causar momentos de torsión no deseados, lo que puede ir añadiendo energía al sistema en forma de momento angular, afectando la precisión del sistema de control.
  
 Para mitigar estos efectos, se utilizan diversas técnicas de control, como el control de actitud, que utiliza dispositivos como los ya mencionados magnetorquers, ruedas de reacción y propulsores para controlar la orientación. También se pueden utilizar técnicas de control adaptativo y control predictivo para compensar los efectos del arrastre aerodinámico y los gradientes de gravedad \cite{Junkins1997}.
+
 Dado que el desempeño del ADCS se ve influenciado por las condiciones del ambiente espacial, es necesario conocer las particularidades de la órbita donde se encontrará el CubeSat. De esta manera, es posible incluir estos parámetros en el modelo dinámico y en los controladores que se evaluarán. 
 
 
@@ -588,17 +580,17 @@ Dado que el desempeño del ADCS se ve influenciado por las condiciones del ambie
 %En la metodología se establecen los enfoques de investigación, esto es, cuantitativo, cualitativo o mixto.
 La estrategia metodológica tiene un enforque cuantitativo, ya que toma como punto de partida un fenómeno, que puede ser amplio en el campo de la dinámica de satélites, pero que se acota cada vez más según se definen las preguntas de investigación, su alcance y su definición de variables. Por otro lado, se define un conocimiento mínimo, consolidado en el marco teórico, y una revisión de los métodos e investigaciones que se han realizado hasta el momento, consignado en el estado del arte.
 En este sentido, el desarrollo de este trabajo de grado se divide en tres etapas:
-\subsection{Modelo dinámico} 
+\subsection{Modelo dinámico}\label{sub:modelo_din}
 Primero es necesario interpretar el fenómeno de estudio, partiendo de la realidad y llevándola a un entorno matemático que permita su simulación. Para ello se recurre a un modelo dinámico, constituido por las ecuaciones diferenciales involucradas en el fenómeno físico y sus propiedades inerciales.
 De esta manera se pretende resolver las siguientes preguntas: ¿Cuál es el marco de referencia idóneo para plantear las ecuaciones del modelo dinámico? ¿De qué manera se puede comprobar que el modelo dinámico se acerca al modelamiento real del fenómeno? ¿Qué torques internos y externos deben tenerse en cuenta según las necesidades del proyecto?
-Para ello se plantean las siguientes actividades:
+Para ello se realizaron las siguientes actividades:
 \begin{enumerate}[label=\alph*)]
 	
 	\item Recopilación y comprensión de modelos dinámicos similares al caso de estudio según el estado del arte. Para esto se consultarán diversas fuentes de libros, bases de datos y revistas indexadas.
 	
 	\item Adaptación de dichos modelos para la construcción de un modelo propio: se parte de un modelo simple y se hacen suposiciones como: orbita circular, campo magnético constante, simetrías, etc.
 	
-	\item Simulación realizando ajustes de parámetros usando la herramienta computacional de Matlab Simulink: se busca conocer el comportamiento del modelo dinámico que corresponda a la realidad.
+	\item Simulación realizando ajustes de parámetros usando la herramienta computacional de Matlab Simulink, con lo cual, se busca conocer el comportamiento del modelo dinámico que corresponda a la realidad.
 
 	
 \end{enumerate}
@@ -606,29 +598,28 @@ Para ello se plantean las siguientes actividades:
 
 
 \subsection{Diseño de estrategia de control} 
-Una vez se tiene un modelo dinámico, se realizarán simulaciones con diferentes estrategias de control que garanticen condiciones de estabilidad e incluyan la desaturación de ruedas de reacción. 
-De tal manera que, en la medida que se realicen y se desarrollen las simulaciones esta etapa se responderán las preguntas: ¿Qué estrategia de control es la que más se emplea actualmente? ¿Qué deficiencias tiene?, comparando la estrategia de control de referencia ¿cómo se desempeñan los otros controladores? Para esto se proponen las siguientes actividades y experimentos:
+Una vez se tiene un modelo dinámico, se realizaron simulaciones con diferentes estrategias de control que garanticen condiciones de estabilidad e incluyan la desaturación de ruedas de reacción. 
+De tal manera que, en la medida que se realicen y se desarrollen las simulaciones, en esta etapa se responderán las preguntas: ¿Qué estrategia de control es la que más se emplea actualmente? ¿Qué deficiencias tiene?, y al comparar con una estrategia de control de referencia se responderá la pregunta ¿cómo se desempeñan los otros controladores? Para esto se realizaron las siguientes actividades y experimentos:
 
 \begin{enumerate}[label=\alph*)]
 	
 	\item	Búsqueda bibliográfica de controladores para justificar para identificar aquellos que comúnmente utilizados para hacer frente al fenómeno de estudio. De esta manera, se seleccionará el controlador más usado para usarlo como punto de comparación. 
-	\item	Definir índices de desempeño del comportamiento de los controladores justificando la incorporación de las diferentes variables que hacen parte de este, teniendo en cuenta parámetros como el consumo energético, el tiempo de reacción y error en estado estable.
-	\item	Diseño y simulación de controladores de actitud con desaturación de RW, como por ejemplo LQR, PID, anti wind up Multi agente, modelo predictivo, static input allocation.
-	\item	Definir escenarios: Se plantearán diferentes escenarios correspondientes a un uso específico del cubesat, donde el objetivo varía según la órbita o el perfil de misión. De esta manera se evaluará el desempeño de los controladores para distintas aplicaciones, como un apuntamiento constante hacia una base terrena, disminución de consumo energético o aumento en la respuesta para alcanzar la estabilidad.
-	\item	Realizar pruebas con los diferentes controladores en los diferentes escenarios propuestos y compararlos a partir de sus índices de desempeño.
+	\item	Planteamiento de índices de desempeño del comportamiento de los controladores justificando la incorporación de las diferentes variables que hacen parte de este, teniendo en cuenta parámetros como el consumo energético, el tiempo de reacción y error en estado estable.
+	\item	Diseño y simulación de controladores de actitud con desaturación de RW, como por ejemplo LQR y PID.
+	\item	Definición de escenarios de operación: Se plantearon diferentes escenarios correspondientes a un uso específico del CubeSat, donde el objetivo varía según la órbita o el perfil de misión. De esta manera se evaluó el desempeño de los controladores para distintas aplicaciones, como un apuntamiento constante hacia una base terrena, disminución de consumo energético o aumento en la respuesta para alcanzar la estabilidad.
+	\item	Realización pruebas con los diferentes controladores en los diferentes escenarios propuestos y comparación a partir de sus índices de desempeño.
 	
 	
 \end{enumerate}
  
  \subsection{Análisis de órbitas} 
 
-Como se mencionó en la sección de modelo dinámico, este parte de realizar suposiciones y simplificaciones. Algunas de estas conciernen la órbita y las perturbaciones del medio ambiente espacial. En esta etapa se quiere determinar la influencia de ciertos parámetros orbitales de la órbita baja, sus correspondientes intensidades de campo geomagnético y como éstas afectan el desempeño de los magnetorquers en el fenómeno de desaturación.  
-Luego de implementar condiciones de ambiente espacial, las simulaciones deberían dilucidar las siguientes preguntas: ¿En qué órbitas de presenta un mejor desempeño por parte de los magnetorquers y con cual controlador? ¿Qué tipo de perfil de misiones son las más indicadas para los controladores seleccionados? Para ello se plantean las siguientes actividades y experimentos:
+Como se mencionó en la sección \ref{sub:modelo_din} de modelo dinámico, este parte de realizar suposiciones y simplificaciones. Algunas de estas conciernen la órbita y las perturbaciones del medio ambiente espacial. En esta etapa se determinó la influencia de ciertos parámetros orbitales de la órbita baja, sus correspondientes intensidades de campo geomagnético y cómo éstas afectan el desempeño de los magnetorquers en el fenómeno de desaturación.  
+Luego de implementar condiciones de ambiente espacial, las simulaciones deberían dilucidar las siguientes preguntas: ¿En qué órbitas de presenta un mejor desempeño por parte de los magnetorquers y con cual controlador? ¿Qué tipo de perfil de misiones son las más indicadas para los controladores seleccionados? Para ello se realizaron las siguientes actividades y experimentos:
 \begin{enumerate}[label=\alph*)]
 	
-	\item	Integrar las intensidades de campo magnético terrestre según una órbita deseada en el modelo dinámico, a partir de recursos como el paquete SEET del software multifísico STK o su alternativa de código abierto GMAT, entre otros de uso libre. 
-	\item	Nuevamente realizar pruebas y comparaciones de los controladores de actitud con desaturación de RW basados en los índices de desempeño. De esta manera, se evalúan diferentes escenarios donde se varían espacial y temporalmente algunos parámetros orbitales como la inclinación, excentricidad y la variación del campo geomagnético.
-	
+	\item	Integración las intensidades de campo magnético terrestre según una órbita deseada en el modelo dinámico a partir de funciones integradas de Matlab. 
+	\item	Nuevamente se realizaron pruebas y comparaciones de los controladores de actitud, que incluyen la desaturación de RW, basados en los índices de desempeño. De esta manera, se evaluaron diferentes escenarios donde se variaron algunos parámetros orbitales como la inclinación, excentricidad y la variación del campo geomagnético.	
 	
 \end{enumerate}
 
@@ -647,7 +638,7 @@ Finalmente, el esquema de la estrategia metodológica puede apreciarse en la Fig
 
 \newpage
 \section{MODELO DINÁMICO}
-La de actitud de una nave espacial como un CubeSat puede ser representada por las ecuaciones dinámicas de Newton-Euler, las cuales describen los efectos de los torques externos e internos que modifican la aceleración del satélite. Para llegar a dichas ecuaciones se parte de la dinámica rotacional tal como se describen en \cite{Griffin2004}.
+La dinámica de una nave espacial como un CubeSat puede ser representada por las ecuaciones dinámicas de Newton-Euler, las cuales describen los efectos de los torques externos e internos que modifican la aceleración del satélite. Para llegar a dichas ecuaciones se parte de la dinámica rotacional tal como se describen en \cite{Griffin2004}.
 
 \begin{figure}[!h]
 	\begin{center}
@@ -661,23 +652,27 @@ La de actitud de una nave espacial como un CubeSat puede ser representada por la
 La Fig.\ref{fig:rot_frame} muestra la geometría esencial del sistema. Se tiene el vector de posición $\rho$ en el marco del cuerpo en rotación, si se desea conocer su variación en el tiempo respecto al marco inercial se tiene:
 
 \begin{equation}\label{eq:variacion_rho}
-	\left(\frac{\mathrm{d} \rho}{\mathrm{d} t}\right)_i=\left(\frac{\mathrm{d} \rho}{\mathrm{d} t}\right)_b+\omega \times \boldsymbol{\rho}
+	\left(\frac{\mathrm{d} \rho}{\mathrm{d} t}\right)_i=\left(\frac{\mathrm{d} \rho}{\mathrm{d} t}\right)_b+\boldsymbol{\omega} \times \boldsymbol{\rho}
 \end{equation}
 
-Donde $\omega$ es la velocidad angular en el marco del cuerpo. Por otro lado, se requieren determinar el vector posición $\vec{r}$ y sus derivadas $\vec{v}$ y $\vec{a}$. Del sistema vectorial se tiene una relación entre r y p:
+Donde $\boldsymbol{\omega}$ es la velocidad angular en el marco del cuerpo. Por otro lado, se requieren determinar el vector posición $\underline{r}$ y sus derivadas $\vec{v}$ y $\vec{a}$.
+
+Del sistema vectorial se tiene una relación entre $\underline{r}$ y $\underline{\rho}$:
 
 \begin{equation}\label{eq:suma_vectores}
 	r = R + \rho
 \end{equation}
 
-De esta manera, velocidad y la aceleración pueden ser determinadas: 
+Donde $R$ es el vector posición del marco rotante. De esta manera, velocidad y la aceleración pueden ser determinadas: 
 
 \begin{gather}
 		\boldsymbol{v}=\left(\frac{\mathrm{d} \boldsymbol{r}}{\mathrm{d} t}\right)_i=\frac{\mathrm{d} \boldsymbol{R}}{\mathrm{d} t}+\left(\frac{\mathrm{d} \boldsymbol{\rho}}{\mathrm{d} t}\right)_b+\omega \times \boldsymbol{\rho}\label{eq:velocidad}\\[10pt]			
 		\boldsymbol{a}=\left(\frac{\mathrm{d}^2 \boldsymbol{r}}{\mathrm{d} t^2}\right)_i=\frac{\mathrm{d}^2 \boldsymbol{R}}{\mathrm{d} t^2}+\left(\frac{\mathrm{d}^2 \boldsymbol{\rho}}{\mathrm{d} t^2}\right)_b+2 \omega \times\left(\frac{\mathrm{d} \boldsymbol{\rho}}{\mathrm{d} t}\right)_b+\frac{\mathrm{d} \omega}{\mathrm{d} t} \times \boldsymbol{\rho}+\omega \times(\omega \times \boldsymbol{\rho})\label{eq:aceleracion}				
 \end{gather}
 
-En la dinámica rotacional, dos cantidades fundamentales de interés son el momento de inercia y el momento angular. El momento angular de una colección de puntos de masa es el momento de su momento lineal alrededor de un origen definido. A partir de Fig.\ref{fig:rot_frame}, el momento angular de la masa mi alrededor del origen en el sistema de inercial es:
+En la dinámica rotacional, dos cantidades fundamentales de interés son el momento de inercia y el momento angular. El momento angular de una colección de puntos de masa es el momento de su momento lineal alrededor de un origen definido.
+
+A partir de Fig.\ref{fig:rot_frame}, si se supone hay un cuerpo rígido en el centro del marco rotante con una masa $m_i$, su momento angular alrededor del origen en el sistema de inercial es:
 
 \begin{equation}
 	H_{t}=\sum r_i \times m_i v_i\\
@@ -689,8 +684,8 @@ Si aplicamos las \textbf{ecn.\eqref{eq:velocidad}} y \textbf{ecn.\eqref{eq:acele
 H_{t}=\left(\sum m_i\right)R\times V +\sum m_i \rho_i\times\frac{\mathrm{d} {\rho_i}}{\mathrm{d} t} = H_{orb} + H_b \\
 \end{equation}
 
-El primer término de la derecha es el momento angular del cuerpo rígido debido a su velocidad traslacional V en el marco de inercia. El segundo término es el momento angular del cuerpo debido a su velocidad de rotación alrededor de su propio centro de masa. La \textbf{ecn.\eqref{eq:H_total}} provee un importante resultado ya que indica que, en un cuerpo rígido, es posible escoger un marco de coordenadas que desacopla el momento angular del cuerpo y del momento angular orbital.
-Por tal motivo, el análisis se centrará únicamente en el segundo término, donde la \textbf{ecn.\eqref{eq:variacion_rho}} se simplificaría de la siguiente manera: 
+El primer término de la derecha es el momento angular del cuerpo rígido debido a su velocidad traslacional $V$ en el marco de inercia. El segundo término es el momento angular del cuerpo debido a su velocidad de rotación alrededor de su propio centro de masa. La \textbf{ecn.\eqref{eq:H_total}} provee un importante resultado ya que indica que, en un cuerpo rígido, es posible escoger un marco de coordenadas que desacopla el momento angular del cuerpo del momento angular orbital.
+Por tal motivo, el análisis se centrará únicamente en el segundo término, donde la \textbf{ecn.\eqref{eq:variacion_rho}} se simplifica de la siguiente manera: 
 
 \begin{equation}\label{eq:variacion_rho_simplificada}
 	\frac{\mathrm{d} \rho_j}{\mathrm{d} t}=\omega\times\rho_i
@@ -699,7 +694,7 @@ Por tal motivo, el análisis se centrará únicamente en el segundo término, do
 De esta manera, a partir de la \textbf{ecn.\eqref{eq:H_total}} tenemos que el momento angular en el marco del cuerpo es:
 
 \begin{equation}\label{eq:H_total_simplificada}
-	H=\sum m_i\rho_i\times\frac{\mathrm{d} {\rho_i}}{\mathrm{d} t} =
+	H_b=\sum m_i\rho_i\times\frac{\mathrm{d} {\rho_i}}{\mathrm{d} t} =
 	 \sum m_i\rho_i \times(\omega \times \rho_i) = I\omega \\
 \end{equation}
 Donde $I$ es una matriz real y simétrica, llamada matriz de inercia, con componentes: 
@@ -715,10 +710,10 @@ Donde $I$ es una matriz real y simétrica, llamada matriz de inercia, con compon
  \end{aligned}
  $$
  
- La \textbf{ecn.\eqref{eq:H_total_simplificada}} nos indica que el momento angular total depende de la matriz de inercia del CubeSat y del vector de velocidades angulares. Sin embargo, es necesario introducir el efecto de las ruedas de reacción, las cuales también disponen de un momento angular $h_w$. Por lo tanto, se tiene a partir de la \textbf{ecn.\eqref{eq:H_total_simplificada}} que: 
+ La \textbf{ecn.\eqref{eq:H_total_simplificada}} indica que el momento angular total depende de la matriz de inercia del CubeSat y del vector de velocidades angulares. Sin embargo, es necesario introducir el efecto de las ruedas de reacción, las cuales también disponen de un momento angular $h_w$. Por lo tanto, se tiene a partir de la \textbf{ecn.\eqref{eq:H_total_simplificada}} que: 
  
  \begin{equation}\label{eq:H_total_RW}
- 	H = I\omega_b + h_w
+ 	H_b = I\omega_b + h_w
  \end{equation}
  
  Por otro lado, el efecto de los torques externos se incluye al considerar una fuerza $F_i$ aplicada en una posición $\rho_i$ en las coordenadas del marco del cuerpo. Esta fuerza tiene un efecto dado por: 
@@ -738,19 +733,19 @@ En este sentido, el torque neto de fuerzas externas es:
  Al expandir la expresión para la aceleración tal como se hizo en la \textbf{ecn.\eqref{eq:aceleracion}}, se tiene que :
  
  \begin{equation}
- 	T_{ext}= \frac{\mathrm{d} H}{\mathrm{d} t} = \left(\frac{\mathrm{d} H}{\mathrm{d} t}\right)_{body} + \omega \times H 	
+ 	T_{ext}= \frac{\mathrm{d} H}{\mathrm{d} t} = \frac{\mathrm{d} H_b}{\mathrm{d} t} + \omega \times H 	
  \end{equation}
  
- O visto de otra manera, asumiendo un marco fijo del cuerpo con ejes principales, se puede expresar el cambio del momento angular como el efecto de los torques y el producto cruz entre la velocidad angular y el momento angular total del sistema.
+ O visto de otra manera, asumiendo un marco fijo del cuerpo con ejes principales, se puede expresar el cambio del momento angular del cuerpo como el efecto de los torques y el producto cruz entre la velocidad angular y el momento angular total del sistema.
  
   \begin{equation}\label{eq:H_dot_1}
- 	 \left(\frac{\mathrm{d} H}{\mathrm{d} t}\right)_{body} = T_{ext}-\omega \times \left(I\omega + h_w\right) 	
+ 	 \frac{\mathrm{d} H_b}{\mathrm{d} t} = T_{ext}-\omega \times \left(I\omega + h_w\right) 	
  \end{equation}
  
- Análogamente, se puede obtener otra expresión para el cambio de momento angular al derivar la \textbf{ecn.\eqref{eq:H_total_RW}} respecto al tiempo :
+ Análogamente, se puede obtener otra expresión para el cambio de momento angular del cuerpo al derivar la \textbf{ecn.\eqref{eq:H_total_RW}} respecto al tiempo :
  
  \begin{equation}\label{eq:H_dot_2}
- 	\dot{H_b} = \left(\frac{\mathrm{d} H}{\mathrm{d} t}\right)_{body} = 
+ 	\dot{H_b} = \frac{\mathrm{d} H_b}{\mathrm{d} t} = 
  	I\frac{\mathrm{d} \omega_b}{\mathrm{d} t} + \dot{h_w}  	
  \end{equation}
  
@@ -763,25 +758,37 @@ Tomando el principio del intercambio de momentos, se tiene que el momento angula
 Al igualar las ecuaciones \textbf{\eqref{eq:H_dot_1}} y \textbf{\eqref{eq:H_dot_2}} se obtiene una expresión para las aceleraciones angulares, conocida como ecuación dinámica de Newton-Euler, la cual consolida el modelo dinámico del CubeSat:
 
 
-\begin{equation}\label{eq:modelo_dinamico}
-	\begin{aligned}
-		& \frac{d \omega_b}{d t}=I^{-1}\left[-\omega_b \times\left(I \omega_b+h_w\right)+T_{ext}+T_c\right]\\[10pt]
-		& \dot{\omega_b}=I^{-1}\left[-S(\omega)\left(I \omega_b+h_w\right)+T_{ext}+T_c\right]
-	\end{aligned}
+\begin{equation}\label{eq:modelo_dinamico}	
+	 \frac{d \omega_b}{d t} = I^{-1}\left[-\omega_b \times\left(I \omega_b+h_w\right)+T_{ext}+T_c\right]	
 \end{equation}
 
-donde:
-$$
+\noindent Donde:\\
+$
 \mathbf{I}=\left[\begin{array}{ccc}
 	I_{x x} & I_{x y} & I_{x z} \\
 	I_{y x} & I_{y y} & I_{y z} \\
 	I_{z x} & I_{z y} & I_{z z}
 \end{array}\right]:\text { Matriz de inercia del CubeSat }
-$$
+$
 
 $\mathbf{\omega_b}=\left[\begin{array}{l}\omega_x \\ \omega_y \\ \omega_z\end{array}\right]:$ Vector de velocidad angular del satélite en el marco del cuerpo.\\[5pt]	
 
 $\mathbf{h_w}=\left[\begin{array}{l}h_x \\ h_y \\ h_z\end{array}\right]:$ Vector de momento de angular de las RW.\\[10pt]	
+
+La \textbf{ecn. \eqref{eq:modelo_dinamico}} puede reescribirse usando el operador skew-simétrico del vector de velocidades angulares, el cual está dado por:\\[5pt] 
+$$
+S(w) =\left[\begin{array}{ccc}
+	0 & -\omega_z & \omega_y \\
+	\omega_z & 0 & -\omega_x \\
+	-\omega_y & \omega_x & 0
+\end{array}\right]
+$$\\[5pt]
+En este sentido, se obtiene la \textbf{ecn. \eqref{eq:modelo_dinamico_skew}}:
+ 
+\begin{equation}\label{eq:modelo_dinamico_skew}
+	 \dot{\omega_b}=I^{-1}\left[-S(\omega)\left(I \omega_b+h_w\right)+T_{ext}+T_c\right]
+\end{equation}
+
 
 \noindent Realizando las respectivas multiplicaciones matriciales, se tienen las ecuaciones en cada eje:
 

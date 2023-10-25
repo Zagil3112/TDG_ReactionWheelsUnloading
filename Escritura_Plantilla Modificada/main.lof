@@ -9,12 +9,12 @@
 \contentsline {figure}{\numberline {8}{\ignorespaces Marco Orbital\cite {Andresen2005}.\relax }}{24}{figure.caption.8}%
 \contentsline {figure}{\numberline {9}{\ignorespaces Marco de referencia centrado en el cuerpo. Adicionalmente se observan los ángulos roll ($\phi $), pitch ($\theta $) y yaw ($\psi $)\relax }}{25}{figure.caption.9}%
 \contentsline {figure}{\numberline {10}{\ignorespaces Marco de referencia centrado en el cuerpo y marco orbital \cite {Karatas2006}\relax }}{25}{figure.caption.10}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Marco de referencia inercial centrado en la tierra (ECI)\relax }}{26}{figure.caption.11}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Marco de referencia inercial centrado en la tierra (ECI) \cite {Andresen2005}.\relax }}{26}{figure.caption.11}%
 \contentsline {figure}{\numberline {12}{\ignorespaces Marco de referencia fijo centrado en la tierra (ECEF)\relax }}{27}{figure.caption.12}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Ángulos de Euler : Roll-Pitch-Yaw \relax }}{29}{figure.caption.13}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Gimbal compuesto por 3 cardanes, en esta configuración se presenta el bloqueo de 1 grado de libertad. \relax }}{29}{figure.caption.14}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Ángulos de Euler : Roll-Pitch-Yaw \cite {tes:Sorolla2019} \relax }}{29}{figure.caption.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Gimbal compuesto por tres cardanes, en esta configuración se presenta el bloqueo de un grado de libertad. \relax }}{29}{figure.caption.14}%
 \contentsline {figure}{\numberline {15}{\ignorespaces Sistema en lazo cerrado con perturbaciones externas \relax }}{31}{figure.caption.15}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Órbita baja (LEO)\relax }}{32}{figure.caption.16}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Órbita baja (LEO)\cite {opc:LEO}\relax }}{32}{figure.caption.16}%
 \contentsline {figure}{\numberline {17}{\ignorespaces Diagrama estrategia metodológica\relax }}{37}{figure.caption.17}%
 \contentsline {figure}{\numberline {18}{\ignorespaces Variación en el tiempo de un marco de referencia rotante\relax }}{38}{figure.caption.18}%
 \contentsline {figure}{\numberline {19}{\ignorespaces Implementación modelo dinámico en Simulink.\relax }}{43}{figure.caption.19}%
