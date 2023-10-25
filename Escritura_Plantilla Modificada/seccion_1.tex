@@ -19,7 +19,7 @@ En este sentido, se propone evaluar estrategias de control de actitud que incorp
 
 %Se refiere al interrogante que lleva al investigador a buscar respuestas concretas. Es la definición del problema que aborda con la investigación. 
 
-El fenómeno de desaturación de ruedas de reacción será abordado en un picosatélite tipo CubeSat \textbf{(Fig. \ref{fig:diagrama_problema})}, particularmente en el modelo EyasSat, el cual está equipado con:
+El fenómeno de desaturación de ruedas de reacción será abordado en un nanosatélite tipo CubeSat \textbf{(Fig. \ref{fig:diagrama_problema})}, particularmente en el modelo EyasSat, el cual está equipado con:
 
 \begin{itemize}
 
@@ -949,7 +949,7 @@ Similarmente a como lo expresa la \textbf{ecn. \eqref{eq:torque_mgt}}, el torque
 $\vec{m_{sat}}$ : es el dipolo residual del satélite.\\
 $\vec{B}$: es la estimación del campo magnético terrestre para una órbita circular.\\
 
-Debido a que el dipolo residual solo puede ser determinado experimentalmente, se tomará un valor de referencia de $0.01$ $\mathrm{Am^2}$ usado en \cite{Giesselman2006}, donde desarrollan el cálculo  para un picosatélite similar al EyasSat.\\
+Debido a que el dipolo residual solo puede ser determinado experimentalmente, se tomará un valor de referencia de $0.01$ $\mathrm{Am^2}$ usado en \cite{Giesselman2006}, donde desarrollan el cálculo  para un nanosatélite similar al EyasSat.\\
 Adicionalmente, el campo geomagnético puede ser estimado por:
 \begin{equation}
 	\vec{B} = \frac{2M}{R^3}\label{eq:campoMagnetico}
@@ -1310,10 +1310,10 @@ La transformación de intensidades de campo magnético está dada por:
 	\end{array}\right]_{NED}	
 \end{equation}
 
-Para hallar la matriz $C_{BRF}^{NED}$, se remite a \cite{grewal2007global} donde se define la matriz:
+Para hallar la matriz $\boldsymbol{C_{BRF}^{NED}}$, se remite a \cite{grewal2007global} donde se define la matriz:
 
 $$
-C_{ENU}^{BRF}=\left[\begin{array}{ccc}
+\boldsymbol{C_{ENU}^{BRF}}=\left[\begin{array}{ccc}
 	S_Y C_P & C_R C_Y+S_R S_Y S_P & -S_R C_Y+C_R S_Y S_P \\
 	C_Y C_P & -C_R S_Y+S_R C_Y S_P & S_R S_Y+C_R C_Y S_P \\
 	S_P & -S_R C_P & -C_R C_P
@@ -1333,7 +1333,7 @@ $$
 
 Por otro lado, se conoce la transformación del marco $NED$ al $ENU$ :
 $$
-C_{ENU}^{NED}=\left[\begin{array}{ccc}
+\boldsymbol{C_{ENU}^{NED}}=\left[\begin{array}{ccc}
 	0 &1 &0 \\
 	1 & 0 & 0 \\
 	0 & 0 &-1
@@ -1343,8 +1343,8 @@ $$
 Finalmente, usando las propiedades \textbf{\eqref{eq:transformada1}} y \textbf{\eqref{eq:transformada2}}, descritas en la sección \ref{sub_sub:transformada} de transformación de marcos de referencia, se tiene que:
 
 \begin{gather}
-	C_{BRF}^{NED} = \left(C_{ENU}^{BRF}\right)^T\,C_{ENU}^{NED}\\[10pt]
-	C_{BRF}^{NED} = C_{BRF}^{ENU}\,C_{ENU}^{NED}
+	\boldsymbol{C_{BRF}^{NED}} = \boldsymbol{\left(C_{ENU}^{BRF}\right)^T\,C_{ENU}^{NED}}\\[10pt]
+	\boldsymbol{C_{BRF}^{NED}} = \boldsymbol{C_{BRF}^{ENU}\,C_{ENU}^{NED}}
 \end{gather}
 	
 
@@ -1366,7 +1366,7 @@ Tal como se mencionó en el planteamiento del problema, las estrategias de contr
 \begin{itemize}
 	 \item Tanto para el controlador PID como para el controlador LQR, se evalúa una ley de control para desaturación que define el torque del actuador dado por la siguiente expresión:
 	 	\begin{equation}\label{eq:ley_de_control_sat}
-	 		\vec{\tau} = k\Delta h =\vec{M}\times\vec{B} 
+	 		\boldsymbol{\vec{\tau}} = k\boldsymbol{\Delta h} =\boldsymbol{\vec{M}\times\vec{B}} 
 	 	\end{equation} 
 	 Donde $k$ es la ganancia para el control de desaturación y $\Delta h$ es la diferencia entre el momento angular del satélite y el momento angular de las RW. La representación simplificada de este lazo de control puede evidenciarse en la \textbf{Fig. \ref{fig:desaturacionDiagrama}}.
 	 
@@ -1488,8 +1488,12 @@ y se escoge un punto de operación $\boldsymbol{\bar{\omega}}$ para el sistema y
 
 Tomando la \textbf{ecn. \eqref{eq:modelo_dinamico}} es posible considerar $T_{ext}$ como una constante al rededor del punto de control de un marco de tiempo $\Delta t$. Por lo tanto, $\boldsymbol{\dot{\omega}}$ se puede expresar como una función de $\boldsymbol{\omega}$, $\boldsymbol{T_c}$ y $\boldsymbol{h_w}$. De esta manera, es posible linealizar usando la expansión de Taylor de primer orden, obteniendo la siguiente expresión:
 
+%\begin{equation}\label{eq:modelo_dinamico_linealizado}
+%	\boldsymbol{\dot{\omega_b}}=\boldsymbol{I}^{-1}\left[S(\boldsymbol{I\bar{\omega}}-S(\boldsymbol{\bar{\omega}})I+S(\bar{h_w})\right]\tilde{\omega}-I^{-1}S(\bar{\omega})\tilde{h_w}+I^{-1}\left(T_{RW}+T_{mgt}\right)
+%\end{equation}
+
 \begin{equation}\label{eq:modelo_dinamico_linealizado}
-	\boldsymbol{\dot{\omega_b}}=\boldsymbol{I}^{-1}\left[S(I\bar{\omega}-S(\bar{\omega})I+S(\bar{h_w})\right]\tilde{\omega}-I^{-1}S(\bar{\omega})\tilde{h_w}+I^{-1}\left(T_{RW}+T_{mgt}\right)
+	\boldsymbol{\dot{\omega_b}}=\boldsymbol{I}^{-1}\left[S(\boldsymbol{I\bar{\omega}}-S(\boldsymbol{\bar{\omega})I}+S(\bar{\boldsymbol{h_w}})\right]\tilde{\boldsymbol{\omega}}-\boldsymbol{I}^{-1}S(\bar{\boldsymbol{\omega}})\tilde{\boldsymbol{h_w}}+\boldsymbol{I}^{-1}\left(\boldsymbol{T_{RW}}+\boldsymbol{\tau_{mgt}}\right)
 \end{equation}
 
 \paragraph{Linealiazión de la ecuación cinemática}
@@ -1688,7 +1692,7 @@ Usando las herramientas \textit{Control System Designer} y \textit{PID Tuner} de
 \end{figure}
 
 % Implementacion 
-Ademas de verificar la ubicación de los polos, un ajuste progresivo del controlador fue realizado al evaluar individualmente sus componentes derivativa, integral y proporcional, hasta dar con unas ganancias que permitieran la estabilidad con un bajo tiempo de estabilización y poca sobreimpulso máximo. 
+Ademas de verificar la ubicación de los polos, un ajuste progresivo del controlador fue realizado al evaluar individualmente sus componentes derivativa, integral y proporcional, hasta dar con unas ganancias que permitieran la estabilidad con un bajo tiempo de estabilización y poco sobreimpulso máximo. 
 
 Finalmente, la implementación en Simulink para el control de actitud puede apreciarse en la \textbf{Fig. (\ref{fig:PID})}. De igual forma el modelo de desaturación que cumple la ley de control expresada en la \textbf{ecn. \eqref{eq:ley_de_control_sat}} se evidencia en la \textbf{Fig. (\ref{fig:PID_deltaH})}.
 
@@ -1787,7 +1791,7 @@ Finalmente, se obtienen 4 diferentes estrategias de control al combinar los mét
 % Mostrar efecto de saturación 
 \subsection{Fenómeno de Saturación}
 
-En primer lugar, el fenómeno de saturación fue evidenciado con el fin de visualizar cualitativa-mente el efecto de los magnetorquers en la desaturación. En la \textbf{Fig. \ref{fig:saturacion}} se muestra la respuesta del sistema de ADCS ante un escalón de $-20$ grados en $t=2000\,s$. Debido a que el satélite experimenta torques de perturbaciones $T_{ext} >0$ el torque que deben realizar las RW es negativo, por otro lado, como se sabe que $\tau = \dot{h}$, el momento angular empieza a aumentar con una pendiente negativa conforme pasa el tiempo. Finalmente, es evidente que a medida que las RW se acercan a su nivel de saturación el error del \textit{Yaw} empieza a aumentar como se muestra en la gráfica superior.
+En primer lugar, el fenómeno de saturación pudo ser evidenciado con el fin de visualizar cualitativa-mente el efecto de los magnetorquers en la desaturación. En la \textbf{Fig. \ref{fig:saturacion}} se muestra la respuesta del ADCS ante un escalón de $-20$ grados en $t=2000\,s$. Debido a que el satélite experimenta torques de perturbaciones $T_{ext} >0$ el torque que deben realizar las RW es negativo, por otro lado, como se sabe que $\tau = \dot{h}$, el momento angular empieza a aumentar con una pendiente negativa conforme pasa el tiempo. Finalmente, es evidente que a medida que las RW se acercan a su nivel de saturación, el error del \textit{Yaw} empieza a aumentar como se muestra en la gráfica superior de la \textbf{Fig. \ref{fig:saturacion}}.
 
 \begin{figure}[!h]
 	\begin{center}
@@ -1805,7 +1809,7 @@ En primer lugar, el fenómeno de saturación fue evidenciado con el fin de visua
 	\label{fig:desaturacion}	 	
 \end{figure}
 
-Una vez se tiene en cuenta el efecto de los magnetorquers y su correspondiente método de saturación, el ADCS puede mantener el ángulo de \textit{Yaw} sin incrementar el error y las ruedas de reacción vuelven a apagarse una vez se realiza la maniobra para alcanzar la actitud deseada. Este caso de desaturación se muestra en la \textbf{Fig. \ref{fig:desaturacion}}.
+Una vez se tiene en cuenta el efecto de los magnetorquers y su correspondiente método de saturación, el ADCS puede mantener el ángulo de \textit{Yaw} sin incrementar el error, por su parte, las ruedas de reacción vuelven a apagarse una vez se realiza la maniobra alcanzando la actitud deseada.La desaturación se muestra en la \textbf{Fig. \ref{fig:desaturacion}}.
 
 
 
@@ -1819,8 +1823,8 @@ Con el fin de dar solución al planteamiento del problema, se evalúa el desempe
 	\item \textbf{Respuesta tipo escalón}: Se establece una referencia para un ángulo de \textit{Yaw} deseado. Para las simulaciones se tomó un valor de $20$ grados donde este se duplica al cabo de unos segundos para tener un doble escalón.
 	\newpage 
 	\item \textbf{Apuntamiento hacia el Nadir}: Con el fin de simular un apuntamiento constante a la tierra se evalúa una respuesta tipo rampa para alcanzar una velocidad de rotación constante que corresponda con la velocidad angular de la órbita. Para ello se determinó el periodo orbital $T_o$ y la velocidad angular con las expresiones:
-	\begin{gather}
-		T_o = 2\pi\sqrt{\frac{a^3}{GM}}\\
+	\begin{gather}\label{eq:periodo_orbital}
+		T_o = 2\pi\sqrt{\frac{a^3}{GM}}\\ 
 		\omega = \frac{2\pi}{T_o} = 0.0635\,deg/s 
 	\end{gather}
 	
@@ -1941,7 +1945,7 @@ A continuación se mostrarán los resultados de ángulo de \textit{Yaw}, velocid
 	\label{fig:Detumbling_ecuatorial}
 \end{figure}
 \clearpage
-\subsection{Perfil de misión 2: Escalón}
+\subsection{Perfil de misión 2: Escalón}\label{sub:escalon}
 
 \begin{table}[!h]\label{table:step_ecuatorial}	
 	\caption{\MakeUppercase{Indices de desempeño para órbita ecuatorial en respuesta del escalón}}
@@ -2179,7 +2183,7 @@ A continuación se mostrarán los resultados de ángulo de \textit{Yaw}, velocid
 %La discusión es la interpretación crítica y el análisis de los resultados, que surgen de las preguntas de investigación.
 
 %Diseño de controladores 
-A pesar de que el controlador PID fue diseñado netamente a partir de un modelo no lineal, los controladores LQR que parten de una linealización, presentan un desempeño equiparable en el modelo no lineal, incluso cuando los estados se alejan del punto de control. No obstante, respecto a la función de costo del LQR, se halló que las matrices $R$ y $Q$ deben ser ajustadas según el perfil de misión que se quiera evaluar, ya que, su desempeño puede ser inferior al PID en algunos escenarios. En este sentido, se determinó que para los perfiles de misión de \textit{Detumbling} y apuntamiento hacia el Nadir, las matrices que mejor respuesta generan son aquellos donde se penalizan mas el cuaternion del eje $Z$ y el momento angular del eje $Z$. Sin embargo, para llegar a un estado de equilibrio mas rápido en el ángulo de \textit{Yaw}, es necesario establecer una flexibilidad en la velocidad angular. Por lo tanto se tiene que:
+A pesar de que el controlador PID fue diseñado netamente a partir de un modelo no lineal, los controladores LQR que parten de una linealización de espacio de estados, presentan un desempeño equiparable al modelo no lineal, incluso cuando los estados se alejan del punto de control. No obstante, respecto a la función de costo del LQR, se halló que las matrices $\boldsymbol{R}$ y $\boldsymbol{Q}$ deben ser ajustadas según el perfil de misión que se quiera evaluar, ya que, su desempeño puede ser inferior al PID en algunos escenarios. En este sentido, se determinó que para los perfiles de misión de \textit{Detumbling} y apuntamiento hacia el Nadir, las matrices que mejor respuesta generan son aquellos donde se penalizan mas el cuaternion del eje $Z$ y el momento angular del eje $Z$. Sin embargo, para llegar a un estado de equilibrio mas rápido en el ángulo de \textit{Yaw}, es necesario establecer una flexibilidad en la velocidad angular. Por lo tanto, se tiene que los valores de dichas matrices deben ser:
 
 \begin{table}[!ht]
 	\caption{\MakeUppercase{Matrices Q y R para determinar función de costo en el LQR }}
@@ -2196,31 +2200,31 @@ A pesar de que el controlador PID fue diseñado netamente a partir de un modelo 
 	\label{table:gananciasLQR}
 \end{table}
 % Detumbling %Nadir
-No obstante, en estos escenarios cabe destacar que el PID presentó mejor desempeño en el \textit{Detumbling}, con una notoria disminución del error de referencia y el consumo de potencia de los magnetorquers. En cambio, para el apuntamiento en el Nadir, se presentó un desempeño muy similar para todos los controladores en cada una de las órbitas, donde se alcanzó la velocidad angular deseada en $<0.5\;s$. Cabe anotar que el PID presentó mas oscilaciones para alcanzar esta velocidad pero tardó menos tiempo en estabilizarse.
+No obstante, en estos escenarios cabe destacar que el PID presentó mejor desempeño en \textit{Detumbling}, con una notoria disminución del error de referencia y el consumo de potencia de los magnetorquers. En cambio, para el apuntamiento en el Nadir, se presentó un desempeño muy similar para todos los controladores en cada una de las órbitas, donde se alcanzó la velocidad angular deseada en $t<0.5\;s$. Cabe anotar que el PID presentó mas oscilaciones para alcanzar esta velocidad pero tardó menos tiempo en estabilizarse.
 
-Así mismo, es de notar que en este escenario, el momento angular de las RW, este se estabiliza en un valor 3 veces mayor con el método de $k\Delta h$ respecto al método de desaturación del controlador cascada \textbf{(Fig. \ref{fig:nadir})}, donde el primero presenta mayores oscilaciones. Sin embargo, ambos valores de estabilización son del orden de $10^{-5}$. 
+Así mismo, se resalta que en el escenario de apuntamiento de Nadir, el momento angular de las RW, se estabiliza en un valor tres veces mayor con el método de $k\Delta h$ respecto al método de desaturación del controlador cascada \textbf{(Fig. \ref{fig:nadir})}, donde el primero presenta mayores oscilaciones. Sin embargo, ambos valores de estabilización son del orden de $10^{-5}$. 
 
 %Escalon
-Por otro lado, donde mejor desempeño presentó el LQR fue en la respuesta escalón como se evidencia en la \textbf{Fig. \ref{fig:step}}. Es notorio que el PID presenta mayor sobre impulso en el ángulo de \textit{Yaw}. Para lograr estos resultados se optó por una matriz $Q$ de estados mas homogénea pero fue necesario aumentar la acción de control disminuyendo el valor de la matriz $R$ de la siguiente manera:  
+Por otro lado, donde mejor desempeño presentó el LQR fue en la respuesta escalón como se evidencia en la \textbf{Fig. \ref{fig:step}}. Es notorio que el PID presenta mayor sobre impulso en el ángulo de \textit{Yaw}. Para lograr estos resultados se optó por una matriz $\boldsymbol{Q}$ de estados mas homogénea pero fue necesario aumentar la acción de control disminuyendo el valor de la matriz $\boldsymbol{R}$ de la siguiente manera:  
 \begin{equation}
 	\begin{gathered}
-		Q = I_{9x9};		
-		R=[0.1]
+		\boldsymbol{Q = I_{9x9}};		
+		\boldsymbol{R}=[0.1]
 	\end{gathered}	
 \end{equation}
-Finalmente, para este perfil de misión se destaca que, el método de desaturación basado en la ley de control $k\Delta h$, presenta una disminución del momento angular respecto al método de cascada en 2 órdenes de magnitud, como se ve en las tablas de dicha sección.
+Finalmente, para este perfil de misión de respuesta al escalón, se destaca que, el método de desaturación basado en la ley de control $k\Delta h$, presenta una disminución del momento angular respecto al método de cascada en 2 órdenes de magnitud, como se ve en las tablas de la sección \ref{sub:escalon}.
 
 %--------------------------
 \section{CONCLUSIONES}
 
 %Son las interpretaciones finales que recopilan los datos de la investigación, describe lo que se obtuvo, qué se logró y cuáles son los resultados. Guardan relación directa con lo que se mencionó en el planteamiento del problema. Pueden confirmar las hipótesis.
 
-Tal como se evidenció en la \textbf{Fig. \ref{fig:saturacion}}, la saturación de RW puede afectar significativamente el control sobre la actitud sobre un picosatélite, hasta el punto de ocasionar velocidades angulares sobre el sistema que lleven a un estado permanente de inestabilidad. Con las condiciones en que se realizaron las pruebas y para el CubeSat EyasSat se estimaría alcanzar una saturación máxima en 2 órbitas aproximadamente. En esta situación, no se tendría control sobre el eje $Z$ a no ser de que se cuente con algún método de desaturación.
+Tal como se evidenció en la \textbf{Fig. \ref{fig:saturacion}}, la saturación de RW puede afectar significativamente el control sobre la actitud sobre un nanosatélite, hasta el punto de ocasionar velocidades angulares sobre el sistema que lleven a un estado permanente de inestabilidad. Con las condiciones en que se realizaron las pruebas y para el CubeSat EyasSat se estimaría alcanzar una saturación máxima en 2 órbitas aproximadamente como se mostró en la \textbf{Fig. \ref{fig:saturacion}} y teniendo en cuenta el periodo orbital calculado en \textbf{\eqref{eq:periodo_orbital}}. En esta situación, no se tendría control sobre el eje $Z$ a no ser de que se cuente con algún método de desaturación como los presentados en este trabajo.
 
-No obstante, se reconoce que el modelo EyasSat es un picosatélite diseñado para pruebas en tierra con fines académicos, por lo que rendimientos similares no esperan ser encontrados en satélites de la misma categoría debido a la limitación de 1 grado de libertad. Aun así, las estrategias de control presentadas demostraron satisfacer los requerimientos tanto para el control de actitud como para la desaturación de las RW en los 3 escenarios planteados.
+No obstante, se reconoce que el modelo EyasSat es un nanosatélite diseñado para pruebas en tierra con fines académicos, por lo que rendimientos similares no esperan ser encontrados en satélites de la misma categoría debido a la limitación de 1 grado de libertad. Aun así, las estrategias de control presentadas demostraron satisfacer los requerimientos tanto para el control de actitud como para la desaturación de las RW en los 3 escenarios planteados.
 
 %Poca variación entre las órbitas
-Finalmente, se observa que el campo magnético de las diferentes órbitas no representa una variación significativa en el rendimiento de los controladores. Esto se debe en parte a que el EyasSat solo dispone magnetorquers en el eje $X$ y $Y$, por lo tanto, solo las componentes $B_x$ y $B_y$ del campo pueden producir torques en el eje $Z$ que es donde se requiere reducir el momento angular de las RW. Es este sentido, el desempeño dependerá de las condiciones iniciales de actitud, donde se presenten componentes del campo magnético mas favorables para satisfacer el producto cruz.
+Finalmente, se observa que el campo magnético de las diferentes órbitas no representa una variación significativa en el rendimiento de los controladores. Esto se debe, en parte, a que el EyasSat solo dispone magnetorquers en el eje $X$ y $Y$, por lo que solo las componentes $B_x$ y $B_y$ del campo pueden producir torques en el eje $Z$ que es donde se requiere reducir el momento angular de las RW. Es este sentido, el desempeño dependerá de las condiciones iniciales de actitud, donde se presenten componentes del campo magnético mas favorables para satisfacer el producto cruz.
 
 
 \newpage
@@ -2231,9 +2235,9 @@ Finalmente, se observa que el campo magnético de las diferentes órbitas no rep
 %Las recomendaciones son las futuras y posibles líneas de investigación que llevarán a resolver problemas relacionados con la presente investigación.
 
 % Ley de control basada en omega y cuaterniones 
-En primer lugar, aumentar el número de controladores podría complementar el estudio del desempeño de estrategias de control. Así mismo, se podría recurrir a leyes de control que contemplen las ecuaciones cinemáticas y dinámicas al mismo tiempo, es decir, usar como referencia no solo los cuaterniones sino también las velocidades angulares. En \cite{Blanke2010} las entradas del sistema tienen la forma de $u =-K_pq_e -K_{pd}\omega$, donde se desea obtener una actitud $q_e$ con una velocidad $\omega$. De esta manera un controlador del ADCS puede ser mas versátil para todo tipo de escenarios. 
+En primer lugar, aumentar el número de controladores podría complementar el estudio del desempeño de estrategias de control. Así mismo, se podría recurrir a leyes de control que contemplen las ecuaciones cinemáticas y dinámicas al mismo tiempo, es decir, usar como referencia no solo los cuaterniones sino también las velocidades angulares. En \cite{Blanke2010} las entradas del sistema tienen la forma de $\boldsymbol{u} =-\boldsymbol{K_pq_e} -\boldsymbol{K_{pd}\omega}$, donde se desea obtener una actitud $q_e$ con una velocidad $\omega$ usando las matrices de ganancias $\boldsymbol{K_p}$ y $\boldsymbol{K_{pd}}$. De esta manera un controlador del ADCS puede ser mas versátil para todo tipo de escenarios al permitir alcanzar una actitud determinada con un mayor margen de velocidades angulares. 
 
 Por otro lado, se podría incluir un modelamiento astrodinámico de la trayectoria del CubeSat, donde se propaguen las coordenadas de la órbita según las condiciones iniciales y se modelen las perturbaciones según la posición y la actitud del satélite. Adicionalmente, con el fin de realizar una implementación en un banco de pruebas para el control de actitud en tierra, será necesario modelar las perturbaciones por fricción de los puntos de apoyo y/o de la estructura del sistema.
 
-Finalmente, se plantea como linea futura de investigación, la integración de las estrategias de control en un banco de pruebas que contemple los efectos de una jaula de Helmholtz para simular los campos geomagnéticos. Para ello, será necesario una sintonización y optimización de los controladores al igual que su diseño en el tiempo discreto.
+Finalmente, se plantea como linea futura de investigación, la integración de las estrategias de control en un banco de pruebas que contemple los efectos de una jaula de Helmholtz para simular los campos geomagnéticos. Para ello, será necesario una sintonización y optimización de los controladores al igual que su diseño en el tiempo discreto que permita la implementación de las estrategias de control en diferentes microcontroladores o cualquier tarjeta de desarrollo.
 
