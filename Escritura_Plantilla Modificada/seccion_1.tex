@@ -143,7 +143,7 @@ No obstante, también son diseñados con fines educativos para que los estudiant
 \end{figure}
 
 A continuación se dará una breve descripción del sistema de determinación y control de actitud (ADCS) del EyasSat.
-\subsection{Sistema de determinación y control de actitud (ADCS)}
+\subsection{Sistema de determinación y control de actitud (ADCS)}\label{sub:adcs}
 
 Este sistema se encarga de estabilizar y orientar el vehículo en las direcciones deseadas durante la misión a pesar de los torques de perturbaciones externos que actúan sobre él. Para ello es necesario que el vehículo determine su actitud mediante sensores, y la controle mediante actuadores.
 
@@ -292,7 +292,7 @@ Cuando se requiere considerar la rotación de la tierra, se recurre a un marco c
 
 Estos marcos de coordenadas permiten describir la actitud del vehículo en términos de la orientación del BRF con respecto al ORF o ECI. Para ello se utiliza la representación de cuaterniones o ángulos de Euler en una matriz de cosenos directores (DCM) o matriz de transformación. Esta matriz permite transformar vectores de un sistema de referencia a otro como se verá en la siguiente sección.
 
-\subsubsection{Transformación de marcos de referencia}
+\subsubsection{Transformación de marcos de referencia}\label{sub_sub:transformada}
 \hfill \break
 Según la notación y formulación presentada en \cite{grewal2007global},  $C_{to}^{from}$ denota una matriz de transformación de coordenadas desde un
 marco de coordenadas (designado por "from") a otro marco de coordenadas (designado por "to"). Por ejemplo $C_{BRF}^{ORF}$ denota la matriz de transformación de coordenadas desde el marco orbital al marco centrado en el cuerpo. Las matrices de transformación de coordenadas cumplen algunas propiedades útiles como:
@@ -469,7 +469,7 @@ Así mismo, los sistemas en lazo cerrado tienen la habilidad de rechazar perturb
 
 Para comprender y controlar sistemas complejos, es preciso obtener modelos matemáticos cuantitativos de dichos sistemas. Es necesario, pues, analizar las relaciones entre las variables del sistema y obtener un modelo matemático. Dado que los sistemas considerados son dinámicos, las ecuaciones descriptivas suelen ser ecuaciones diferenciales. Además, si estas ecuaciones se pueden linealizar, es posible utilizar la transformada de Laplace para simplificar el método de solución. En la práctica, debido a la complejidad de los sistemas y nuestro desconocimiento de todos los factores relevantes, se hace necesaria la introducción de suposiciones relativas al funcionamiento del sistema. Por lo tanto, a menudo resultará útil considerar el sistema físico, expresar y linealizar el sistema.
  
-\subsection{Ambiente espacial en LEO}
+\subsection{Ambiente espacial en LEO}\label{sub:Leo_amb}
 
 La órbita baja (LEO, por sus siglas en inglés) es una región del espacio que se encuentra a una altitud de aproximadamente 160 a 2000 kilómetros sobre la superficie de la Tierra, como se muestra en la \textbf{Fig.\ref{fig:leo}}. Los satélites en LEO experimentan diversas condiciones ambientales, incluyendo gradientes de gravedad, arrastre aerodinámico, presión solar y el campo magnético terrestre. 
 
@@ -761,8 +761,8 @@ Al igualar las ecuaciones \textbf{\eqref{eq:H_dot_1}} y \textbf{\eqref{eq:H_dot_
 \begin{equation}\label{eq:modelo_dinamico}	
 	 \frac{d \omega_b}{d t} = I^{-1}\left[-\omega_b \times\left(I \omega_b+h_w\right)+T_{ext}+T_c\right]	
 \end{equation}
-
-\noindent Donde:\\
+\newpage
+\noindent Donde:\\[5pt]
 $
 \mathbf{I}=\left[\begin{array}{ccc}
 	I_{x x} & I_{x y} & I_{x z} \\
@@ -771,9 +771,9 @@ $
 \end{array}\right]:\text { Matriz de inercia del CubeSat }
 $
 
-$\mathbf{\omega_b}=\left[\begin{array}{l}\omega_x \\ \omega_y \\ \omega_z\end{array}\right]:$ Vector de velocidad angular del satélite en el marco del cuerpo.\\[5pt]	
+$\boldsymbol{\omega_b}=\left[\begin{array}{l}\omega_x \\ \omega_y \\ \omega_z\end{array}\right]:$ Vector de velocidad angular del satélite en el marco del cuerpo.\\[5pt]	
 
-$\mathbf{h_w}=\left[\begin{array}{l}h_x \\ h_y \\ h_z\end{array}\right]:$ Vector de momento de angular de las RW.\\[10pt]	
+$\boldsymbol{h_w}=\left[\begin{array}{l}h_x \\ h_y \\ h_z\end{array}\right]:$ Vector de momento de angular de las RW.\\[10pt]	
 
 La \textbf{ecn. \eqref{eq:modelo_dinamico}} puede reescribirse usando el operador skew-simétrico del vector de velocidades angulares, el cual está dado por:\\[5pt] 
 $$
@@ -799,7 +799,9 @@ En este sentido, se obtiene la \textbf{ecn. \eqref{eq:modelo_dinamico_skew}}:
 \end{gather}
 
 
-Finalmente, usando las componentes del vector de velocidades angulares es posible determinar la actitud del CubeSat. La interpretación de los ángulos de Euler es más intuitiva, pero para evitar que surjan singularidades, los cuaterniones resultan mas convenientes para los cálculos de simulación \cite{Steyn2011}. La ecuación diferencial cinemática de los cuaterniones está descrita en la  \textbf{ecn.\eqref{eq:modelo_cinematico}}: 
+Finalmente, usando las componentes del vector de velocidades angulares es posible determinar la actitud del CubeSat.
+
+ La interpretación de los ángulos de Euler es más intuitiva, pero para evitar que surjan singularidades, los cuaterniones resultan más convenientes para los cálculos de simulación \cite{Steyn2011}. La ecuación diferencial cinemática de los cuaterniones está descrita en la  \textbf{ecn.\eqref{eq:modelo_cinematico}}: 
 
 \begin{equation}\label{eq:modelo_cinematico}
 	\dot{\mathbf{q}}=\frac{1}{2} \Omega \mathbf{q} \\
@@ -809,7 +811,7 @@ Donde:
  
 
 \begin{center}
-	$\Omega$ = $\left[\begin{array}{cccc}
+	$\boldsymbol{\Omega}$ = $\left[\begin{array}{cccc}
 		0 & w_z & -w_y & w_x \\
 		-w_z & 0 & w_x & w_y \\
 		w_y & -w_x & 0 & w_z \\
@@ -822,7 +824,7 @@ Donde:
 	$
 \end{center}
 
-En la \textbf{Fig. \ref{fig:din_sc}} se evidencia la implementación de la \textbf{ecn.\eqref{eq:modelo_dinamico}} en Simulink, donde se tienen como salidas tanto las ecuaciones cinemáticas, que relacionan velocidades angulares $\omega$, como las ecuaciones dinámicas, las cuales determinan la actitud del satélite por medio de los cuaterniones $q$.
+En la \textbf{Fig. \ref{fig:din_sc}} se evidencia la implementación de la \textbf{ecn.\eqref{eq:modelo_dinamico}} en Simulink, donde se tienen como salidas tanto las ecuaciones cinemáticas, que relacionan velocidades angulares $\boldsymbol{\omega}$, como las ecuaciones dinámicas, las cuales determinan la actitud del satélite por medio de los cuaterniones $\boldsymbol{q}$.
 
 
 \begin{figure}[!h]
@@ -834,14 +836,13 @@ En la \textbf{Fig. \ref{fig:din_sc}} se evidencia la implementación de la \text
 	\textit{}
 \end{figure}
 
-En la siguiente sección se profundizará en como determinar parámetros fundamentales del modelo dinámico, sintetizado en la \textbf{ecn.\eqref{eq:modelo_dinamico}}, como la matriz de inercia del EyasSat, el modelo de los actuadores del ADCS y el cálculo de perturbaciones. 
+En la siguiente sección se profundizará en cómo determinar parámetros fundamentales del modelo dinámico, sintetizado en la \textbf{ecn.\eqref{eq:modelo_dinamico}}, como la matriz de inercia del EyasSat, el modelo de los actuadores del ADCS y el cálculo de perturbaciones. 
 
-\newpage
 \subsection{PROPIEDADES INERCIALES}
 
 %Fotos y diseño CAD
 
-Con el fin de obtener la matriz de inercia del EyasSat se realizó un CAD en el software Inventor\textsuperscript{\tiny\textregistered}. Para ello se desarmó el Cubesat con el fin de conocer las dimensiones de las tarjetas integradas donde se encuentran los diferentes subsistemas \textbf{(Fig. \ref{fig:eyassat_lab})}. De igual forma, como se evidencia en la \textbf{Fig. \ref{fig:mediciones}}, los pesos de cada tarjeta fueron registrados para realizar el cálculo de la matriz de inercia a partir de la distribución de masa de los componentes.
+Con el fin de obtener la matriz de inercia del EyasSat se realizó un modelo CAD en el software Inventor\textsuperscript{\tiny\textregistered}. Para ello se desarmó el Cubesat con el fin de conocer las dimensiones de las tarjetas integradas donde se encuentran los diferentes subsistemas \textbf{(Fig. \ref{fig:eyassat_lab})}. De igual forma, como se evidencia en la \textbf{Fig. \ref{fig:mediciones}}, los pesos de cada tarjeta fueron registrados para realizar el cálculo de la matriz de inercia a partir de la distribución de masa de los componentes.
 
 
 \begin{figure}[h]
@@ -857,13 +858,13 @@ Con el fin de obtener la matriz de inercia del EyasSat se realizó un CAD en el 
 	\label{fig:eyassat_lab}
 \end{figure}
 
-Como resultado de este ejercicio, se determinó que el EyasSat tiene una masa total de $3.705$ $kg$ y los valores de la diagonal principal de la matriz de inercia se calcularon como se evidencia en la \textbf{Tabla \ref{table:inercia_eyassat}}.
+Como resultado de este ejercicio, se determinó que el EyasSat tiene una masa total de 3.705 kg y los valores de la diagonal principal de la matriz de inercia se calcularon como se evidencia en la \textbf{Tabla \ref{table:inercia_eyassat}}.
 \begin{table}[h]
 	\caption{\MakeUppercase{Inercias EyasSat}}
 	\begin{center}
 		\begin{tabular}{ c c}
 			
-			Componente & Inercia [$kg\cdot m^2$] \\ \hline
+			Componente & Inercia [$\mathrm{kg}\cdot \mathrm{m}^2$] \\ \hline
 			$I_{xx}$ &  $3.361\cdot10^{-2}$ \\ 
 			$I_{yy}$ &  $3.082\cdot10^{-2}$ \\ 
 			$I_{zz}$ &  $2.717\cdot10^{-2}$ \\ \hline
@@ -903,7 +904,7 @@ Debido a que la inercia se midió a partir del centro de masa, los productos de 
 \subsection{MODELADO DE PERTURBACIONES}
 
 % Mencionar tipos de perturbaciones y el calculo de peor escenario para el Eyassat
-Tal como se mencionó en la sección de ambiente espacial en LEO, las cuatro fuentes principales de perturbaciones son: 
+Tal como se mencionó en la sección \ref{sub:Leo_amb} del ambiente espacial en LEO, las cuatro fuentes principales de perturbaciones son: 
 \begin{itemize}
 	\item Gradiente gravitacional.
 	\item Aerodinámico. 
@@ -920,20 +921,20 @@ Existen algunos autores \cite{zapf2006robust}\cite{Andresen2005} que modelan las
 El torque gravitacional máximo puede ser expresado por:
 
 \begin{equation}
-T_g = \frac{3\mu_\mathTerra}{2R^3}\,\lvert I_{zz} -I_{yy}\,\rvert sin(2\theta)\label{eq:torque_grav}
+T_g = \frac{3\mu_\mathTerra}{2R^3}\,\lvert I_{zz} -I_{yy}\,\rvert sen(2\theta)\label{eq:torque_grav}
 \end{equation}
 
 \noindent Donde:\\
 $T_g$: es el torque gravitatorio máximo.\\
-$\mu$: es el parámetro gravitatorio de la Tierra $(3,986$ $10^{14}$ $ m^3/s^2)$\\
-$R$: es el radio de la órbita $(6370 + 500)$ $10^3$ $m$.\\
+$\mu$: es el parámetro gravitatorio de la Tierra $(3,986$ $10^{14}$ $ \mathrm{m^3/s^2})$\\
+$R$: es el radio de la tierra mas la altura de la órbita $(6370 + 500)\times10^3$ m.\\
 $\theta$: es la desviación máxima del eje $Z_o$ en el marco ORF.\\
-$Izz, Iyy$: son los momentos de inercia sobre los ejes $Z_b$ e $Y_b$.\\
+$I{zz}, I{yy}$: son los momentos de inercia sobre los ejes $Z_b$ e $Y_b$.\\
 
 \noindent Tomando el valor máximo donde el torque actúa con un brazo a $45°$, entonces 
-$$sin(2\theta) = 1$$
+$$sen(2\theta) = 1$$
 Por lo tanto, reemplazando los valores se obtiene que: 
-$$T_g = 6.737\cdot10^{-9} Nm$$
+$$T_g = 6.737\times10^{-9} \mathrm{Nm}$$
 
 \subsubsection{Torque Magnético}
 \hfill \break
@@ -948,13 +949,13 @@ Similarmente a como lo expresa la \textbf{ecn. \eqref{eq:torque_mgt}}, el torque
 $\vec{m_{sat}}$ : es el dipolo residual del satélite.\\
 $\vec{B}$: es la estimación del campo magnético terrestre para una órbita circular.\\
 
-Debido a que el dipolo residual solo puede ser determinado experimentalmente, se tomará un valor de referencia de $0.01\,A $ $m^2$ usado en \cite{Giesselman2006}, donde desarrollan el cálculo  para un picosatélite similar al EyasSat.\\
+Debido a que el dipolo residual solo puede ser determinado experimentalmente, se tomará un valor de referencia de $0.01$ $\mathrm{Am^2}$ usado en \cite{Giesselman2006}, donde desarrollan el cálculo  para un picosatélite similar al EyasSat.\\
 Adicionalmente, el campo geomagnético puede ser estimado por:
 \begin{equation}
 	\vec{B} = \frac{2M}{R^3}\label{eq:campoMagnetico}
 \end{equation}
-Donde $M$ es el momento magnético terrestre ($M = 7.96\cdot10^{15}\:tesla\:m^3$) y el radio de la órbita $R$ es igual a $(6370 + 500)$ $10^3$ $m$. como en el cálculo anterior. Por consiguiente, el torque magnético es igual a:
-$$T_m = 4.91\cdot10^{-7} Nm$$
+Donde $M$ es el momento magnético terrestre ($M = 7.96\times10^{15}\:\mathrm{T\:m^3}$) y el radio de la órbita $R$ es igual a $(6370 + 500)\times10^3$ m como en el cálculo anterior. Por consiguiente, el torque magnético es igual a:
+$$T_m = 4.91\times10^{-7} \mathrm{Nm}$$
 	
 
 \subsubsection{Torque Aerodinámico}
@@ -969,11 +970,11 @@ La fuerza aerodinámica que experimenta el EyasSat, en una órbita determinada, 
 $\rho$: es la densidad atmosférica\\
 $V$: Velocidad del satélite \\
 $C_d$: Coeficiente de arrastre $\approx$ 2.5.\\
-$A$: Área superficial de incidencia $= \left(0.192\,m\right)^2$.\\
+$A$: Área superficial del EyasSat $= \left(0.192\,\mathrm{m}\right)^2$.\\
 Para estimar la densidad del aire a 500 $km$ de altitud puede consultarse \cite{wertz2001mission} donde se obtiene que:
- $$\rho \approx 1.7\cdot10^{-11} kg/m^3$$
+ $$\rho \approx 1.7\times10^{-11} \mathrm{kg/m^3}$$
  Por otro lado, la velocidad lineal de un cuerpo que se encuentra en una órbita circular puede estimarse con la expresión:
- $$ V = \sqrt{\frac{GM}{R}} = \sqrt{\frac{6.67\,10^{-6}\times\,5.97\,10^{24}}{6370\,10^3 +500\,10^3}} =7613.27\,m/s $$
+ $$ V = \sqrt{\frac{GM}{R}} = \sqrt{\frac{6.67\,10^{-6}\times\,5.97\,10^{24}}{6370\,10^3 +500\,10^3}} =7613.27\,\mathrm{m/s}$$
 
 Finalmente, dado que la fuerza aerodinámica se aplica sobre el centro de presión, y éste tiene un desfase respecto al centro de masa, se genera un torque con un brazo equivalente a la distancia entre el C.G y el C.P. Por lo tanto, se tiene la expresión:
 
@@ -981,7 +982,7 @@ $$
 \begin{aligned}
 		& T_{aero} = F_{aero}\times\left(\overline{CP} - \overline{CG}\right)\\
 		& T_{aero} = \frac{1}{2}\rho\,V^2\,C_{d}\,A\times\left(0.05\right) \\
-		& T_{aero} =2.27\cdot10^{-6} Nm
+		& T_{aero} =2.27\times^{-6} \mathrm{Nm}
 \end{aligned}
 $$		
 
@@ -991,7 +992,7 @@ $$
 Para calcular esta perturbación se procede de manera similar respecto al torque aerodinámico. Primero se calcula la fuerza por radiación solar que se ejerce sobre el CubeSat, la cual viene dada por: 
 
 \begin{equation}\label{eq:fuerza_radiacion}
-	F_{SR} = -p_{SR}\,C_{R}\,A\,cos\,i	
+	F_{SR} = -p_{SR}\,C_{R}\,A\,cos\,\lambda	
 \end{equation}
 
 \noindent Donde:\\
@@ -999,26 +1000,26 @@ $p_{SR}$: es la densidad fuerza de presión solar por unidad de área, la cual s
 
 $$
 \begin{aligned}
-	& SF = 1.353\,W/m^2\\
-	& p_{SR} = \frac{SF}{c} = \frac{1353}{3\cdot10^{8}}=4.51\cdot10^{-6}\,N/m^2	
+	& SF = 1.353\,\mathrm{W/m^2}\\
+	& p_{SR} = \frac{SF}{c} = \frac{1353}{3\times10^{8}}=4.51\times10^{-6}\,\mathrm{N/m^2}	
 \end{aligned}
 $$
 \\
-\noindent$C_{R}$: es el coeficiente de reflectividad, el cual también puede ser expresado como: $C_R = 1+q$. De \cite{mcclain2001fundamentals} se obtiene un valor tipico de $q =0.6$ para satélites.\\
-$i$: es el ángulo de incidencia del sol hacia la superficie del satélite.\\
-$A$: es el área superficial del satélite $= \left(0.192\,m\right)^2$.\\
+\noindent$C_{R}$: es el coeficiente de reflectividad, el cual también puede ser expresado como: $C_R = 1+q_r$. De \cite{mcclain2001fundamentals} se obtiene un valor tipico de $q_r =0.6$ para satélites.\\
+$\lambda$: es el ángulo de incidencia del sol hacia la superficie del satélite.\\
+$A$: es el área superficial del EyasSat $= \left(0.192\,\mathrm{m}\right)^2$.\\
 Dado que se busca obtener el peor escenario, el ángulo de incidencia será $i=0$, donde se maximiza la \textbf{ecn. \eqref{eq:fuerza_radiacion}}. En este sentido, una vez obtenida la ecuación de la fuerza de radiación, se calcula un torque a la misma distancia del centro de masas que en la sección anterior. Por lo tanto, se tiene que: 
  $$
  \begin{aligned}
- 	& T_{SR} = F_{SR}\times\left(\overline{CP} - \overline{CG}\right)\\
- 	& T_{SR} = p_{SR}\,C_{R}\,A\,cos\,i\times\left(0.05\right) \\
- 	& T_{SR} =1.33\cdot10^{-8} Nm
+ 	& T_{SR} = \lvert F_{SR}\rvert\times\left(\overline{CP} - \overline{CG}\right)\\
+ 	& T_{SR} = p_{SR}\,C_{R}\,A\,cos\,\lambda\times\left(0.05\right) \\
+ 	& T_{SR} =1.33\times10^{-8} \mathrm{Nm}
  \end{aligned}
  $$
 %\newpage
 \subsubsection{Perturbaciones totales}
 \hfill \break
-Al recopilar y sumar las magnitudes de los torques de perturbación, como se evidencia en la \textbf{Tabla \ref{table:pertubaciones}}, se obtiene el torque total $T_{ext} = 2.78\cdot10^{-6}$. 
+Al recopilar y sumar las magnitudes de los torques de perturbación, como se evidencia en la \textbf{Tabla \ref{table:pertubaciones}}, se obtiene el torque total $T_{ext} = 2.78\times10^{-6}$. 
 
 \begin{table}[h]
 	\caption{\MakeUppercase{Torques externos de perturbación }}
@@ -1026,11 +1027,11 @@ Al recopilar y sumar las magnitudes de los torques de perturbación, como se evi
 		\begin{tabular}{ c c c}
 			
 			 &  \textbf{Perturbación} &  \textbf{Magnitud [Nm]}\\ \hline
-			$T_g$ &  Torque Gravitacional & $6.73\cdot10^{-9}$ \\ 
-			$T_m$ &  Torque Magnético & $4.91\cdot10^{-7}$ \\ 
-			$T_{aero}$ &  Torque Aerodinámico & $2.27\cdot10^{-6}$ \\ 
-			$T_{SR}$ &  Torque  Radiación Solar& $1.33\cdot10^{-8}$ \\ \hline
-			\mbox{\boldmath$T_{ext}$} &  \textbf{Total}& \mbox{\boldmath$2.78\cdot10^{-6}$} \\
+			$T_g$ &  Torque Gravitacional & $6.73\times10^{-9}$ \\ 
+			$T_m$ &  Torque Magnético & $4.91\times10^{-7}$ \\ 
+			$T_{aero}$ &  Torque Aerodinámico & $2.27\times10^{-6}$ \\ 
+			$T_{SR}$ &  Torque  Radiación Solar& $1.33\times10^{-8}$ \\ \hline
+			\mbox{\boldmath$T_{ext}$} &  \textbf{Total}& \mbox{\boldmath$2.78\times10^{-6}$} \\
 		\end{tabular}
 	\end{center}
 	\label{table:pertubaciones}
@@ -1039,14 +1040,14 @@ Al recopilar y sumar las magnitudes de los torques de perturbación, como se evi
 Dado que el problema solo contempla 1 grado de libertad en el eje Z, las perturbaciones se pueden escribir en notación vectorial como:
 
 \begin{equation}\label{eq:torquePerturbacionVec}
-	\mathbf{T_{ext}}=\left[\begin{array}{lll}
+	\boldsymbol{T_{ext}}=\left[\begin{array}{lll}
 		0 & 0 & T_{ext}
 	\end{array}\right]
 \end{equation}
 
 \subsection{MODELO DE RUEDAS DE REACCIÓN}
 
-Como se mencionó en la sección del ADCS, las ruedas de reacción son motores de alta inercia. Por lo tanto, su modelamiento parte de un circuito de armadura para motores DC. El objetivo es obtener una expresión que relacione el voltaje de entrada con el torque de salida, es decir, determinar su función de transferencia. De igual forma, la corriente que consuma el motor también será un parámetro de utilidad para determinar los índices de desempeño de los controladores, por lo que es de interés obtener también su función de transferencia.
+Como se mencionó en la sección \ref{sub:adcs} del ADCS, las ruedas de reacción son motores de alta inercia. Por lo tanto, su modelamiento parte de un circuito de armadura para motores DC. El objetivo es obtener una expresión que relacione el voltaje de entrada con el torque de salida, es decir, determinar su función de transferencia. De igual forma, la corriente que consuma el motor también será un parámetro de utilidad para determinar los índices de desempeño de los controladores, por lo que es de interés obtener también su función de transferencia.
  
 % Circuito de armadura
 \begin{figure}[h]
@@ -1062,47 +1063,48 @@ Como se mencionó en la sección del ADCS, las ruedas de reacción son motores d
 A partir de la \textbf{Fig. \ref{fig:motordc}} puede realizarse un análisis de malla del circuito de armadura:
 
 \begin{equation}\label{eq:armadura}
-	L\frac{di(t)}{dt} =v(t) -Ri(t) -e(t)
+	L\frac{di(t)}{dt} =v(t) -R_ei(t) -e(t)
 \end{equation}
 
 \noindent Donde:\\
- $e(t)$: es voltaje inducido en la armadura a través del flujo de campo fijo ("Fixed field").\\
- $R$: es la resistencia eléctrica.\\
- $L$: es la inductancia eléctrica.\\ 
+$i(t)$: es la corriente del circuito.
+$e(t)$: es voltaje inducido en la armadura a través del flujo de campo fijo ("Fixed field").\\
+$R_e$: es la resistencia eléctrica.\\
+$L$: es la inductancia eléctrica.\\ 
  
  Por su parte, la ecuación mecánica del rotor viene dada por el modelo:
 
 \begin{equation}\label{eq:torque_dc}
-	J\frac{d\omega(t)}{dt} = T_{m}(t)-B\omega
+	J\frac{d\omega_m(t)}{dt} = T_{m}(t)-B_f\omega
 \end{equation}
 
 \noindent Donde:\\
 $T_{m}(t)$: es el torque generado por el motor.\\
 $J$: es el momento de inercia total del rotor y la carga.\\
-$\omega$: es la velocidad angular del motor.\\ 
-$B$: es el coeficiente de fricción.\\ 
+$\omega_m$: es la velocidad angular del motor.\\ 
+$B_f$: es el coeficiente de fricción.\\ 
 
-Por otro lado, se asume que existe relación proporcional entre $e(t)$ y $\omega$ a través de la constante de campo $K_e$ \textbf{\eqref{eq:constante_campo}}. Así mismo, se supone una relación proporcional entre el torque mecánico y la corriente por medio de la constante de torque $K_t$ \textbf{\eqref{eq:constante_torque}}
+Por otro lado, se asume que existe relación proporcional entre $e(t)$ y $\omega_m$ a través de la constante de campo $K_e$ \textbf{\eqref{eq:constante_campo}}. Así mismo, se supone una relación proporcional entre el torque mecánico y la corriente por medio de la constante de torque $K_t$ \textbf{\eqref{eq:constante_torque}}
 
 \begin{gather}
-	e(t) = K_e\,\omega(t)\label{eq:constante_campo}\\[10pt]
+	e(t) = K_e\,\omega_m(t)\label{eq:constante_campo}\\[10pt]
 	T_m(t) = K_t\,i(t)\label{eq:constante_torque}
 \end{gather}
 
 % eq y mostrar la eq de tranferencia de torque 
-Finalmente, realizando la transformada de Laplace de las ecuaciones \textbf{\eqref{eq:armadura}} a \textbf{\eqref{eq:constante_torque}} se pueden obtener las funciones de transferencia para la corriente $i(s)$, $\omega(s)$ y el torque del motor $T_m(s)$ expresadas por. 
+Finalmente, realizando la transformada de Laplace de las ecuaciones \textbf{\eqref{eq:armadura}} a \textbf{\eqref{eq:constante_torque}} se pueden obtener las funciones de transferencia para la corriente $i(s)$, $\omega(s)$ y el torque del motor $T_m(s)$ expresadas por: 
 
 \begin{gather}
-	\frac{T_m(s)}{v(s)}= \frac{K_t\left(Js+B\right)}{LJs^2 + \left(RJ+LB\right)s +RB+K_tK_e}\label{eq:trans_torque_voltaje}\\[10pt]	
-	\frac{i(s)}{v(s)}= \frac{Js+B}{LJs^2 + \left(RJ+LB\right)s +RB+K_tK_e}\label{eq:trans_i_voltaje}\\[10pt]
-	\frac{\omega(s)}{v(s)}= \frac{K_t}{LJs^2 + \left(RJ+LB\right)s +RB+K_tK_e}\label{eq:trans_omega_voltaje}
+	\frac{T_m(s)}{v(s)}= \frac{K_t\left(Js+B_f\right)}{LJs^2 + \left(R_eJ+LB_f\right)s +R_eB_f+K_tK_e}\label{eq:trans_torque_voltaje}\\[10pt]	
+	\frac{i(s)}{v(s)}= \frac{Js+B_f}{LJs^2 + \left(R_eJ+LB_f\right)s +R_eB_f+K_tK_e}\label{eq:trans_i_voltaje}\\[10pt]
+	\frac{\omega(s)}{v(s)}= \frac{K_t}{LJs^2 + \left(R_eJ+LB_f\right)s +R_eB_f+K_tK_e}\label{eq:trans_omega_voltaje}
 \end{gather}
 \\
 %Diagrama de bloques
 
-En la \textbf{Fig. \ref{fig:bloquesRW}} se muestra la implementación del modelo de ruedas de reacción en Simulink. Ademas se calcular el torque y la corriente, dicho modelo calcula el momento angular $h_{RW}$ según la \textbf{ecn. \eqref{eq:torque_h}}.
+En la \textbf{Fig. \ref{fig:bloquesRW}} se muestra la implementación del modelo de ruedas de reacción en Simulink. Ademas de calcular el torque y la corriente, dicho modelo calcula el momento angular $h_{RW}$ según la \textbf{ecn. \eqref{eq:torque_h}}.
 
-\begin{figure}[h]
+\begin{figure}[!ht]
 	\begin{center}
 		\includegraphics[scale=0.5]{imagenes/modelo_dinamico/bloquesRW.PNG}\\
 	\end{center}
@@ -1115,13 +1117,13 @@ En la \textbf{Fig. \ref{fig:bloquesRW}} se muestra la implementación del modelo
 Debido a que los manuales técnicos del EyasSat no especifican el modelo preciso del motor empleado para las RW. Se seleccionaron los parámetros electromecánicos del motor A-max 22 \textbf{(Fig. \ref{fig:motorRW})}, el cual fue empleado en el trabajo de Groenewald y Steyn \cite{Groenewald2014}. Dichos parámetros pueden se consultados en la \textbf{Tabla \ref{table:motorRW}}.
 
 
-\begin{figure}[h]
+\begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[scale=0.35]{imagenes/modelo_dinamico/motorRW.jpg}\\
+		\includegraphics[scale=0.5]{imagenes/modelo_dinamico/motorRW.jpg}\\
 	\end{center}
-	\caption{Motor sin escobillas A-max 22.}
+	\caption{Motor sin escobillas A-max 22\cite{maxon2023}.}
 	\label{fig:motorRW}
-	\footnotesize{Nota. Fuente \cite{maxon2023}}
+%	\footnotesize{Nota. Fuente }
 \end{figure}
 
 \begin{table}[!ht]
@@ -1130,35 +1132,40 @@ Debido a que los manuales técnicos del EyasSat no especifican el modelo preciso
 		\begin{tabular}{ c c c}
 			
 			&  \textbf{Parámetro} &  \textbf{Valor}\\ \hline
-			$R$ &  Resistencia $(\Omega)$ & 3.36\\ 
-			$L$ &  Inductancia $(mH)$ & 0.222\\ 
-			$K_t$ &  Constante de torque $(Nm/A)$ & $8.55\cdot10^{-3}$ \\ 
-			$K_e$ &  Constante de campo $(V/rad/s)$& $(1/1120)\cdot(60/2\pi)$ \\ 
-			$B$ &  Coeficiente de fricción $(Nm/rad/s)$& $(1/438)\cdot(60/2\pi)\cdot10^{-3}$ \\
-			$J$ &  Inercia total $(kg\,m^2)$& $7.157\cdot10^{-5}$ \\  
-			$T_{max}$ & Torque máximo $(Nm)$ & $6.27\cdot10^{-3}$ \\
-			$V_{max}$ & Voltaje máximo $(V)$ & $6$ \\
+			$R_e$ &  Resistencia eléctrica$(\Omega)$ & 3.36\\ 
+			$L$ &  Inductancia (mH) & 0.222\\ 
+			$K_t$ &  Constante de torque (Nm/A) & $8.55\times10^{-3}$ \\ 
+			$K_e$ &  Constante de campo (V/rad/s)& $(1/1120)\cdot(60/2\pi)$ \\ 
+			$B_f$ &  Coeficiente de fricción (Nm/rad/s)& $(1/438)\cdot(60/2\pi)\times10^{-3}$ \\
+			$J$ &  Inercia total $\mathrm{(kg\,m^2)}$& $7.157\times10^{-5}$ \\  
+			$T_{max}$ & Torque máximo (Nm) & $6.27\times10^{-3}$ \\
+			$V_{max}$ & Voltaje máximo (V) & $6$ \\
 			$\omega_{max}$ & RPM máximas & $3940$ \\ \hline
 		\end{tabular}
 	\end{center}
 	\label{table:motorRW}
 \end{table}
-
+\clearpage
 \subsection{MODELO MAGNETORQUERS}
 % Ecuacion/Diagrama de torque
 Recordando la \textbf{ecn.\eqref{eq:torque_mgt}}, donde se tiene que $\vec{\tau} =\vec{M}\times\vec{B}$, el momento dipolar $\vec{M}$ puede expresarse como:
 
-\begin{gather}
-	\vec{M} = nIA\hat{n}\label{eq:momento_dipolar}\\[10pt]
-	\vec{\tau} = nIA\,\hat{n}\times\vec{B}\label{eq:torque_mgt_completa}
-\end{gather}
+\begin{equation}\label{eq:momento_dipolar}
+	\vec{M} = nIA_{mgt}\hat{n}	
+\end{equation}
+
+Entonces, el torque generado por el magnetorquer se reescribe como:
+
+\begin{equation}\label{eq:momento_dipolar_completa}
+	\vec{\tau} = nIA_{mgt}\,\hat{n}\times\vec{B}	
+\end{equation}
 
 \noindent Donde:\\
 $n$: es el número de vueltas de la bobina.\\
 $I$: es la corriente que pasa por el magnetorquer.\\
-$A$: es el área del magnetorquer en la dirección normal de la bobina. $\hat{n}$.
+$A_{mgt}$: es el área del magnetorquer en la dirección normal de la bobina. $\hat{n}$.
 
-Tal como se muestra en la \textbf{Fig. \ref{fig:magnetorquers}a} , el momento dipolar tratará de alinearse con la resultante del campo magnético debido al torque generado, el cual es proporcional a la corriente, al numero de vueltas y al área como lo indica la \textbf{ecn. \eqref{eq:torque_mgt_completa}}.
+Tal como se muestra en la \textbf{Fig. \ref{fig:magnetorquers}a} , el momento dipolar tratará de alinearse con la resultante del campo magnético debido al torque generado, el cual es proporcional a la corriente, al numero de vueltas y al área, como lo indica la \textbf{ecn. \eqref{eq:momento_dipolar_completa}}.
 
 La \textbf{Fig. \ref{fig:magnetorquers}b} muestra los actuadores reales del EyasSat, los cuales están dispuestos en los ejes $X$ e $Y$. Con el fin de determinar las propiedades mencionadas anteriormente, se realizaron mediciones de inductancia y resistencia como se muestra en la \textbf{Fig. \ref{fig:medicionH}}
 
@@ -1211,15 +1218,15 @@ De esta manera, en la \textbf{Tabla \ref{table:Mgt}} se recopilaron los parámet
 		\begin{tabular}{ c c c}
 			
 			&  \textbf{Parámetro} &  \textbf{Valor}\\ \hline
-			$\vec{M}$ &  Momento magnético nominal $(Am^2)$ & 0.2834\\ 
-			$T_{max}$ &  Torque máximo $(Nm)$ & $1.843\cdot10^{-5}$ \\ 
-			$R$ &  Resistencia $(\Omega)$& $30$ \\ 
-			$\diameter_{b}$ &  Diámetro bobina $(cm)$& $2$ \\
-			$\diameter_{c}$ &  Diámetro núcleo $(cm)$& $0.77$ \\
-			$\diameter_{w}$ &  Calibre cable $(cm)$& $0.03$ \\  
-			$L_{b}$ & Longitud bobina $(cm)$ & $7.92$ \\
+			$\vec{M}$ &  Momento magnético nominal $\mathrm{(Am^2)}$ & 0.2834\\ 
+			$T_{max}$ &  Torque máximo (Nm) & $1.843\times10^{-5}$ \\ 
+			$R_{mgt}$ &  Resistencia del magnetorquer $(\Omega)$& $30$ \\ 
+			$\diameter_{b}$ &  Diámetro bobina (cm)& $2$ \\
+			$\diameter_{c}$ &  Diámetro núcleo (cm)& $0.77$ \\
+			$\diameter_{w}$ &  Calibre cable (cm)& $0.03$ \\  
+			$L_{b}$ & Longitud bobina (cm) & $7.92$ \\
 			$N_{b}$ & Número de vueltas de bobina  & $5412$ \\
-			$L$ & Inductancia $(H)$ & $0.585$ \\ \hline
+			$L_{mgt}$ & Inductancia (H) & $0.585$ \\ \hline
 			
 		\end{tabular}
 	\end{center}
@@ -1245,32 +1252,35 @@ Con el fin de evaluar el desempeño de los magnetorquers en diferentes órbitas 
 
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[scale=0.6]{imagenes/modelo_dinamico/Elementos_orbitales.jpg}\\
-	\end{center}
-	\caption{Elementos orbitales.}
-	\label{fig:elementosOrbitales}
-	\textit{}
-\end{figure}
-	 
-La lógica de este procedimiento se ilustra en el diagrama de flujo de la \textbf{Fig. \ref{fig:flujoCampo}}, el cual inicia definiendo los parámetros orbitales, mostrados en la \textbf{Fig. \ref{fig:elementosOrbitales}}, donde:
-
-\noindent$RAAN$: ascensión recta del nodo ascendente.  \\
-$\omega$: argumento de perigeo. \\
-$\nu$: anomalía verdadera\\
-$i$: inclinación \\
-$a$: semi-eje mayor \\
-$e$: excentricidad.
-	 
-% Diagrama de flujo : 
-Posteriormente, estos parámetros son usados por el propagador para determinar las coordenadas $XYZ$ de la órbita, en el marco $ECI$. Luego estas coordenadas son convertidas en latitud, longitud y altura ya que la función \textit{igrfmagm} de Matlab recibe estos parámetros de entrada. Dicha función se encarga de calcular las intensidades de campo para cada punto de la órbita, sin embargo, estas intensidades en encuentran en el marco LVLH.
-\begin{figure}[!ht]
-	\begin{center}
 		\includegraphics[scale=0.4]{imagenes/modelo_dinamico/flujo_campo.png}\\
 	\end{center}
 	\caption{Diagrama de flujo para cálculo de intensidades de campo para una órbita determinada.}
 	\label{fig:flujoCampo}
 	\textit{}
 \end{figure}
+
+
+	 
+La lógica de este procedimiento se ilustra en el diagrama de flujo de la \textbf{Fig. \ref{fig:flujoCampo}}, el cual inicia definiendo los parámetros orbitales, mostrados en la \textbf{Fig. \ref{fig:elementosOrbitales}}, donde:
+
+\noindent$RAAN$: ascensión recta del nodo ascendente.  \\
+$\omega_{orb}$: argumento de perigeo. \\
+$\nu$: anomalía verdadera\\
+$i_{orb}$: inclinación \\
+$a$: semi-eje mayor \\
+$e$: excentricidad.
+\newpage
+% Diagrama de flujo : 
+Posteriormente, estos parámetros son usados por el propagador para determinar las coordenadas $XYZ$ de la órbita, en el marco $ECI$. Luego estas coordenadas son convertidas en latitud, longitud y altura ya que la función \textit{igrfmagm} de Matlab recibe estos parámetros de entrada. Dicha función se encarga de calcular las intensidades de campo para cada punto de la órbita, sin embargo, estas intensidades en encuentran en el marco LVLH.
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[scale=0.6]{imagenes/modelo_dinamico/Elementos_orbitales.jpg}\\
+	\end{center}
+	\caption{Elementos orbitales.}
+	\label{fig:elementosOrbitales}
+	\textit{}
+\end{figure}
+
 % 4. Transformacion de coordenadas NED a BRF 
 Hasta este punto, los pasos anteriores se realizan en Matlab con el fin de ahorrar capacidad de computo y disminuir los tiempos de simulación. Sin embargo, para poder transformar las intensidades de campo del marco LVLH/NED al marco BRF se requiere conocer los ángulos de Euler ($RPY$) en cada punto de la órbita. Por tal motivo, la implementación de Simulink  \textbf{(Fig. \ref{fig:modeloB})}  recibe el vector de campos magnéticos LVLH y realiza la transformación de marcos de referencia usando la actitud instantánea del satélite.
 
@@ -1285,7 +1295,7 @@ Hasta este punto, los pasos anteriores se realizan en Matlab con el fin de ahorr
 	\textit{}
 \end{figure}
 
-La transformación de de intensidades de campo magnético está dada por: 
+La transformación de intensidades de campo magnético está dada por: 
 \begin{equation}	
 	\left[\begin{array}{c}
 		B_x\\
@@ -1312,12 +1322,12 @@ $$
 Donde :
 $$
 \begin{aligned}
-	S_R & =\sin (R), \\
-	C_R & =\cos (R), \\
-	S_P & =\sin (P), \\
-	C_P & =\cos (P), \\
-	S_Y & =\sin (Y), \\
-	C_Y & =\cos (Y),
+	S_R & =\sin (Roll), \\
+	C_R & =\cos (Roll), \\
+	S_P & =\sin (Picth), \\
+	C_P & =\cos (Pitch), \\
+	S_Y & =\sin (Yaw), \\
+	C_Y & =\cos (Yaw),
 \end{aligned}
 $$
 
@@ -1330,7 +1340,7 @@ C_{ENU}^{NED}=\left[\begin{array}{ccc}
 \end{array}\right]
 $$
 
-Finalmente, usando las propiedades \textbf{\eqref{eq:transformada1}} y \textbf{\eqref{eq:transformada2}}, descritas en la sección de transformación de marcos de referencia, se tiene que:
+Finalmente, usando las propiedades \textbf{\eqref{eq:transformada1}} y \textbf{\eqref{eq:transformada2}}, descritas en la sección \ref{sub_sub:transformada} de transformación de marcos de referencia, se tiene que:
 
 \begin{gather}
 	C_{BRF}^{NED} = \left(C_{ENU}^{BRF}\right)^T\,C_{ENU}^{NED}\\[10pt]
@@ -1351,12 +1361,12 @@ Finalmente, usando las propiedades \textbf{\eqref{eq:transformada1}} y \textbf{\
 \newpage
 \section{DISEÑO CONTROLADORES}
 
-Tal como se mencionó en el planteamiento del problema, las estrategias de control tienen como objetivos desaturar las RW a la vez que permiten que el EyasSat alcance una actitud determinada ante diferentes respuestas. En cuanto al control de actitud se diseñaron dos controladores, PID y LQR, los cuales determinan el voltaje que  debe suministrar el subsistema de potencia a las RW. Por otro lado, la desaturación se logra por medio de la acción de control de los magnetorquers, la cual se rige por dos métodos diferentes dependiendo del controlador de actitud:
+Tal como se mencionó en el planteamiento del problema, las estrategias de control tienen como objetivos desaturar las RW a la vez que permiten que el EyasSat alcance una actitud determinada ante diferentes respuestas. En cuanto al control de actitud se diseñaron dos controladores con estructuras PID y LQR, los cuales determinan el voltaje que  debe suministrar el subsistema de potencia a las RW. Por otro lado, la desaturación se logra por medio de la acción de control de los magnetorquers, la cual se rige por dos métodos diferentes dependiendo del controlador de actitud:
 
 \begin{itemize}
-	 \item Tanto para el controlador PID y LQR, se evalúa una ley de control para desaturación que define el torque del actuador dado por la siguiente expresión:
+	 \item Tanto para el controlador PID como para el controlador LQR, se evalúa una ley de control para desaturación que define el torque del actuador dado por la siguiente expresión:
 	 	\begin{equation}\label{eq:ley_de_control_sat}
-	 		\vec{\tau}_{mgt} = k\Delta h =\vec{M}\times\vec{B} 
+	 		\vec{\tau} = k\Delta h =\vec{M}\times\vec{B} 
 	 	\end{equation} 
 	 Donde $k$ es la ganancia para el control de desaturación y $\Delta h$ es la diferencia entre el momento angular del satélite y el momento angular de las RW. La representación simplificada de este lazo de control puede evidenciarse en la \textbf{Fig. \ref{fig:desaturacionDiagrama}}.
 	 
@@ -1384,38 +1394,38 @@ Tal como se mencionó en el planteamiento del problema, las estrategias de contr
 \subsubsection{Linealización y Espacio de Estados}
 \hfill \break
 Las ecuaciones dinámicas \textbf{\eqref{eq:modelo_dinamico}} y cinemáticas \textbf{\eqref{eq:modelo_cinematico}} conforman el espacio de estados que se evidencia en 
-\textbf{\eqref{eq:espacio_estados_non}}, donde $x$ son los estados definidos por la velocidad angular ($w$), cuaterniones ($q$) y el momento angular de las RW ($h_w$). 
+\textbf{\eqref{eq:espacio_estados_non}}, donde $\boldsymbol{x}$ son los estados definidos por la velocidad angular ($\boldsymbol{\omega}$), cuaterniones ($\boldsymbol{q}$) y el momento angular de las RW ($h_w$). 
 %Sistema no lineal 
 
 \begin{equation}\label{eq:espacio_estados_non}
 	\begin{aligned}
 		& \underbrace{\left[\begin{array}{c}
-				\dot{\omega} \\
-				\dot{q} \\
-				\dot{h_{w}}
+				\dot{\boldsymbol{\omega}} \\
+				\dot{\boldsymbol{q}} \\
+				\dot{\boldsymbol{h_{w}}}
 			\end{array}\right]}_{\dot{x}}=\underbrace{\left[\begin{array}{c}
 				{\mathrm{I}}^{-1}\left(T_{\mathrm{ext}}+T_{c}-{\mathrm{S}}(\omega)\left({\mathrm{I}} \omega_{b}+h_{\mathrm{w}}\right)\right) \\
-				\frac{1}{2} {\Omega} q \\
+				\frac{1}{2} {\Omega} \boldsymbol{q} \\
 				T_{RW}
 			\end{array}\right]}_{f(x,u)}\\[10pt]
 		& \underbrace{\left[\begin{array}{c}
-				\omega \\
-				q \\
-				h_{w}
+				\boldsymbol{\omega} \\
+				\boldsymbol{q} \\
+				\boldsymbol{h_{w}}
 			\end{array}\right]}_y=\underbrace{\left[\begin{array}{ccc}
-				\underline{1}_{3 \times 3} & \underline{0}_{3 \times 4} & \underline{0}_{3 \times 3}\\
-				\underline{0}_{4 \times 3} & \underline{1}_{4 \times 4} & \underline{0}_{4 \times 3} \\
-				\underline{0}_{3 \times 3} & \underline{0}_{3 \times 4} & \underline{1}_{3 \times 3}
+				\boldsymbol{\underline{1}_{3 \times 3}} & \boldsymbol{\underline{0}_{3 \times 4}} & \boldsymbol{\underline{0}_{3 \times 3}}\\
+				\boldsymbol{\underline{0}_{4 \times 3}} & \boldsymbol{\underline{1}_{4 \times 4}} & \boldsymbol{\underline{0}_{4 \times 3}} \\
+				\boldsymbol{\underline{0}_{3 \times 3}} & \boldsymbol{\underline{0}_{3 \times 4}} & \boldsymbol{\underline{1}_{3 \times 3}}
 			\end{array}\right]}_{{\mathrm{C}}} \underbrace{\left[\begin{array}{c}
-				\omega \\
-				q \\
-				h_{w}
+				\boldsymbol{\omega}\\
+				\boldsymbol{q} \\
+				\boldsymbol{h_{w}}
 			\end{array}\right]}_x
 	\end{aligned}	
 \end{equation}
 
 % Linealizacion
-Sin embargo, la naturaleza de las ecuaciones de $f(x,u)$ es no lineal. Por lo tanto, con el fin de diseñar los controladores, estas ecuaciones deben ser linealizadas sobre un punto de control ($\bar{\omega},\bar{q},\bar{h_w}$) donde se tienen en cuenta pequeñas variaciones sobre ese punto representados por el símbolo $\sim$ sobre los estados. En este sentido, los estados y las entradas del sistema se expresan de la forma: 
+Sin embargo, la naturaleza de las ecuaciones de $f(x,u)$ es no lineal. Por lo tanto, con el fin de diseñar los controladores, estas ecuaciones deben ser linealizadas sobre un punto de control ($\boldsymbol{\bar{\omega}},\boldsymbol{\bar{q}},\bar{h_w}$) donde se tienen en cuenta pequeñas variaciones sobre ese punto representados por el símbolo $\sim$ sobre los estados. En este sentido, los estados y las entradas del sistema se expresan de la forma: 
 
 \begin{equation}
 	\begin{aligned}
@@ -1425,12 +1435,12 @@ Sin embargo, la naturaleza de las ecuaciones de $f(x,u)$ es no lineal. Por lo ta
 \end{equation}	
 
 No obstante, debe hacerse una distinción entre las entradas, las cuales corresponden a los torques que afectan la dinámica del sistema. El torque de control $T_c$ está definido por la contribución de los torques generados por las RW y los magnetorquers:
-$$ T_c = T_{RW} +T_{mgt}$$
+$$ T_c = T_{RW} +\tau_{mgt}$$
 Por otro lado, los torques externos no se consideran entradas ya que son perturbaciones a las que no se les ejerce control. Por lo tanto, son tratados en el término $u_d$. De esta manera, es posible expresar el espacio de estados de la siguiente forma:
  
 \begin{equation}\label{eq:espacio_de_estados}
 	\begin{aligned}
-		& \dot{x}(t) =\mathrm{A}x(t)+ \mathrm{B}u(t)+ \Gamma u_d(t)
+		& \boldsymbol{\dot{x}(t)} =\boldsymbol{Ax(t)}+ \boldsymbol{Bu(t)}+ \boldsymbol{\Gamma u_d(t)}
 %		& y(t) =\mathrm{C}x(t)+ \mathrm{D}y(t)		
 	\end{aligned}
 \end{equation}	
@@ -1438,13 +1448,13 @@ Por otro lado, los torques externos no se consideran entradas ya que son perturb
 \begin{equation}\label{eq:estados_y_entradas}
 	\begin{aligned}
 		& x(t) = \left[\begin{array}{c}
-			\omega \\
-			q \\
+			\boldsymbol{\omega} \\
+			\boldsymbol{q} \\
 			h_{w}
 		\end{array}\right];
 		& u(t) = \left[\begin{array}{c}
 			T_{RW} \\
-			T_{mgt}
+			\tau_{mgt}
 		\end{array}\right]; 
 		&\;u_d(t) = \left[\begin{array}{c}
 			T_{ext} \\		
@@ -1456,10 +1466,10 @@ Por otro lado, los torques externos no se consideran entradas ya que son perturb
 	\begin{aligned}		
 		&\mathrm{A}_{ij}= \frac{\partial f_i}{\partial x_j};	
 		&\mathrm{B}_{ij}= \frac{\partial f_i}{\partial u_j};	
-		&\;\Gamma_{ij}= \frac{\partial f_i}{\partial u_{d_j}}		
+		&\;\Gamma_{ij}= \frac{\partial f_i}{\partial u_{d_j}}				
 	\end{aligned}
 \end{equation}
-Con el fin de hallar las matrices $A$, $B$ y $\Gamma$ debe determinarse una expresión linealizada para los términos de $f(x,u)$, constituidos por las ecuaciones dinámicas y cinemáticas.
+Donde $i$ es el número de ecuaciones del modelo y $j$ el número de estados o entradas. Con el fin de hallar las matrices $A$, $B$ y $\Gamma$ debe determinarse una expresión linealizada para los términos de $f(x,u)$, constituidos por las ecuaciones dinámicas y cinemáticas.
 
 \paragraph{Linealiazión de la ecuación dinámica}
 \hfill \break
@@ -1468,15 +1478,15 @@ $$
  \dot{\omega_b}=I^{-1}\left[-S(\omega)\left(I \omega_b+h_w\right)+T_{ext}+T_c\right]
 $$
 
-y se escoge un punto de operación $\bar{\omega}$ para el sistema y se modela con pequeñas variaciones $\tilde{\omega}$ en dicho punto de operación. Esto se expresa en:
+y se escoge un punto de operación $\boldsymbol{\bar{\omega}}$ para el sistema y se modela con pequeñas variaciones $\boldsymbol{\tilde{\omega}}$ en dicho punto de operación. Esto se expresa en:
 \begin{equation}
 	\begin{aligned}
-		& \omega = \omega(t+\Delta t) = \bar{\omega} + \tilde{\omega}\\
-		& \dot{\omega} = \tilde{\omega}
+		& \boldsymbol{\omega} = \boldsymbol{\omega}(t+\Delta t) = \boldsymbol{\bar{\omega}} + \boldsymbol{\tilde{\omega}}\\
+		& \boldsymbol{\dot{\omega}} = \boldsymbol{\tilde{\omega}}
 	\end{aligned}	 
 \end{equation}
 
-Tomando la \textbf{ecn. \eqref{eq:modelo_dinamico}} es posible considerar $T_{ext}$ como una constante al rededor del punto de control de un marco de tiempo $\Delta t$. Por lo tanto, $\dot{\omega}$ se puede expresar como una función de $\omega$, $T_c$ y $h_w$. De esta manera, es posible linealizar usando la expansión de Taylor de primer orden, obteniendo la siguiente expresión:
+Tomando la \textbf{ecn. \eqref{eq:modelo_dinamico}} es posible considerar $T_{ext}$ como una constante al rededor del punto de control de un marco de tiempo $\Delta t$. Por lo tanto, $\boldsymbol{\dot{\omega}}$ se puede expresar como una función de $\boldsymbol{\omega}$, $\boldsymbol{T_c}$ y $\boldsymbol{h_w}$. De esta manera, es posible linealizar usando la expansión de Taylor de primer orden, obteniendo la siguiente expresión:
 
 \begin{equation}\label{eq:modelo_dinamico_linealizado}
 	\dot{\omega_b}=I^{-1}\left[S(I\bar{\omega}-S(\bar{\omega})I+S(\bar{h_w})\right]\tilde{\omega}-I^{-1}S(\bar{\omega})\tilde{h_w}+I^{-1}\left(T_{RW}+T_{mgt}\right)
@@ -1488,14 +1498,14 @@ Siguiendo un procedimiento similar al anterior, se tiene que $dq$ es la orientac
  
 \begin{equation}
 	\begin{aligned}		
-		& \tilde{q} = \left[\begin{array}{c}				
+		& \boldsymbol{\tilde{q}} = \left[\begin{array}{c}				
 				\tilde{\epsilon_1}\\
 				\tilde{\epsilon_2}\\
 				\tilde{\epsilon_3} \\
 				\tilde{\eta}
 			\end{array}\right] =
 			\left[\begin{array}{c}
-				\tilde{g}\\				
+				\boldsymbol{\tilde{g}}\\				
 				\tilde{q_4}
 			\end{array}\right] =
 				\left[\begin{array}{c}

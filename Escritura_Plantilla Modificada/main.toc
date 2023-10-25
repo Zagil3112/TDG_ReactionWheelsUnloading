@@ -32,32 +32,32 @@
 \contentsline {subsection}{\numberline {C}Análisis de órbitas}{36}{subsection.7.3}%
 \contentsline {section}{\numberline {VIII}MODELO DINÁMICO}{38}{section.8}%
 \contentsline {subsection}{\numberline {A}PROPIEDADES INERCIALES}{44}{subsection.8.1}%
-\contentsline {subsection}{\numberline {B}MODELADO DE PERTURBACIONES}{46}{subsection.8.2}%
+\contentsline {subsection}{\numberline {B}MODELADO DE PERTURBACIONES}{45}{subsection.8.2}%
 \contentsline {subsubsection}{\numberline {1}Torque Gravitacional}{46}{subsubsection.8.2.1}%
 \contentsline {subsubsection}{\numberline {2}Torque Magnético}{47}{subsubsection.8.2.2}%
-\contentsline {subsubsection}{\numberline {3}Torque Aerodinámico}{47}{subsubsection.8.2.3}%
+\contentsline {subsubsection}{\numberline {3}Torque Aerodinámico}{48}{subsubsection.8.2.3}%
 \contentsline {subsubsection}{\numberline {4}Torque por radiación solar}{48}{subsubsection.8.2.4}%
 \contentsline {subsubsection}{\numberline {5}Perturbaciones totales}{49}{subsubsection.8.2.5}%
 \contentsline {subsection}{\numberline {C}MODELO DE RUEDAS DE REACCIÓN}{50}{subsection.8.3}%
-\contentsline {subsection}{\numberline {D}MODELO MAGNETORQUERS}{53}{subsection.8.4}%
-\contentsline {subsection}{\numberline {E}MODELO DE CAMPO MAGNÉTICO}{57}{subsection.8.5}%
-\contentsline {section}{\numberline {IX}DISEÑO CONTROLADORES}{61}{section.9}%
-\contentsline {subsubsection}{\numberline {1}Linealización y Espacio de Estados}{62}{subsubsection.9.0.1}%
-\contentsline {paragraph}{\numberline {a}Linealiazión de la ecuación dinámica}{63}{paragraph.9.0.1.1}%
-\contentsline {paragraph}{\numberline {b}Linealiazión de la ecuación cinemática}{64}{paragraph.9.0.1.2}%
-\contentsline {subsubsection}{\numberline {2}LQR}{65}{subsubsection.9.0.2}%
-\contentsline {paragraph}{\numberline {a}Diseño LQR}{66}{paragraph.9.0.2.1}%
-\contentsline {subsubsection}{\numberline {3}PID}{69}{subsubsection.9.0.3}%
-\contentsline {subsubsection}{\numberline {4}Índices de desempeño}{71}{subsubsection.9.0.4}%
-\contentsline {subsubsection}{\numberline {5}Resumen controladores}{72}{subsubsection.9.0.5}%
-\contentsline {section}{\numberline {X}RESULTADOS}{73}{section.10}%
-\contentsline {subsection}{\numberline {A}Fenómeno de Saturación}{73}{subsection.10.1}%
-\contentsline {subsection}{\numberline {B}Definición de perfiles de misión}{74}{subsection.10.2}%
-\contentsline {subsection}{\numberline {C}Perfil de misión 1: Detumbling}{77}{subsection.10.3}%
-\contentsline {subsection}{\numberline {D}Perfil de misión 2: Escalón}{79}{subsection.10.4}%
-\contentsline {subsection}{\numberline {E}Perfil de misión 3 : Apuntamiento hacia el Nadir}{81}{subsection.10.5}%
-\contentsline {section}{\numberline {XI}DISCUSIÓN}{83}{section.11}%
-\contentsline {section}{\numberline {XII}CONCLUSIONES}{84}{section.12}%
-\contentsline {section}{\numberline {XIII}RECOMENDACIONES}{86}{section.13}%
-\contentsline {section}{\numberline {XIII} REFERENCIAS}{87}{section.13}%
+\contentsline {subsection}{\numberline {D}MODELO MAGNETORQUERS}{55}{subsection.8.4}%
+\contentsline {subsection}{\numberline {E}MODELO DE CAMPO MAGNÉTICO}{58}{subsection.8.5}%
+\contentsline {section}{\numberline {IX}DISEÑO CONTROLADORES}{62}{section.9}%
+\contentsline {subsubsection}{\numberline {1}Linealización y Espacio de Estados}{63}{subsubsection.9.0.1}%
+\contentsline {paragraph}{\numberline {a}Linealiazión de la ecuación dinámica}{64}{paragraph.9.0.1.1}%
+\contentsline {paragraph}{\numberline {b}Linealiazión de la ecuación cinemática}{65}{paragraph.9.0.1.2}%
+\contentsline {subsubsection}{\numberline {2}LQR}{66}{subsubsection.9.0.2}%
+\contentsline {paragraph}{\numberline {a}Diseño LQR}{67}{paragraph.9.0.2.1}%
+\contentsline {subsubsection}{\numberline {3}PID}{70}{subsubsection.9.0.3}%
+\contentsline {subsubsection}{\numberline {4}Índices de desempeño}{72}{subsubsection.9.0.4}%
+\contentsline {subsubsection}{\numberline {5}Resumen controladores}{73}{subsubsection.9.0.5}%
+\contentsline {section}{\numberline {X}RESULTADOS}{74}{section.10}%
+\contentsline {subsection}{\numberline {A}Fenómeno de Saturación}{74}{subsection.10.1}%
+\contentsline {subsection}{\numberline {B}Definición de perfiles de misión}{75}{subsection.10.2}%
+\contentsline {subsection}{\numberline {C}Perfil de misión 1: Detumbling}{78}{subsection.10.3}%
+\contentsline {subsection}{\numberline {D}Perfil de misión 2: Escalón}{80}{subsection.10.4}%
+\contentsline {subsection}{\numberline {E}Perfil de misión 3 : Apuntamiento hacia el Nadir}{82}{subsection.10.5}%
+\contentsline {section}{\numberline {XI}DISCUSIÓN}{84}{section.11}%
+\contentsline {section}{\numberline {XII}CONCLUSIONES}{85}{section.12}%
+\contentsline {section}{\numberline {XIII}RECOMENDACIONES}{87}{section.13}%
+\contentsline {section}{\numberline {XIII} REFERENCIAS}{88}{section.13}%
 \contentsfinish 

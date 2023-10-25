@@ -20,30 +20,30 @@
 \contentsline {figure}{\numberline {19}{\ignorespaces Implementación modelo dinámico en Simulink.\relax }}{43}{figure.caption.19}%
 \contentsline {figure}{\numberline {20}{\ignorespaces Cálculo de matriz de inercia.\relax }}{44}{figure.caption.20}%
 \contentsline {figure}{\numberline {21}{\ignorespaces Módulo ADCS del EyasSat\relax }}{45}{figure.caption.22}%
-\contentsline {figure}{\numberline {22}{\ignorespaces CAD del EyasSat en el entorno 3D World de Simulink.\relax }}{45}{figure.caption.23}%
+\contentsline {figure}{\numberline {22}{\ignorespaces CAD del EyasSat en el entorno 3D World de Simulink.\relax }}{46}{figure.caption.23}%
 \contentsline {figure}{\numberline {23}{\ignorespaces Circuito de armadura de un motor DC.\relax }}{51}{figure.caption.25}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Diagrama de bloques del modelo de RW en Simulink.\relax }}{52}{figure.caption.26}%
-\contentsline {figure}{\numberline {25}{\ignorespaces Motor sin escobillas A-max 22.\relax }}{53}{figure.caption.27}%
-\contentsline {figure}{\numberline {26}{\ignorespaces Magnetorquers\relax }}{54}{figure.caption.29}%
-\contentsline {figure}{\numberline {27}{\ignorespaces Medición de inductancia de magnetorquers.\relax }}{55}{figure.caption.30}%
-\contentsline {figure}{\numberline {28}{\ignorespaces Cálculo de número de vueltas.\relax }}{56}{figure.caption.31}%
-\contentsline {figure}{\numberline {29}{\ignorespaces Diagrama de bloques Magnetorquer X.\relax }}{57}{figure.caption.33}%
-\contentsline {figure}{\numberline {30}{\ignorespaces Elementos orbitales.\relax }}{57}{figure.caption.34}%
-\contentsline {figure}{\numberline {31}{\ignorespaces Diagrama de flujo para cálculo de intensidades de campo para una órbita determinada.\relax }}{58}{figure.caption.35}%
-\contentsline {figure}{\numberline {32}{\ignorespaces Implementación del modelo de campo geomagnético en Simulink.\relax }}{59}{figure.caption.36}%
-\contentsline {figure}{\numberline {33}{\ignorespaces Control de lazo cerrado para el control de actitud y ley de control de saturación.\relax }}{61}{figure.caption.37}%
-\contentsline {figure}{\numberline {34}{\ignorespaces Control de lazo cerrado para el control de actitud y controlador en cascada.\relax }}{62}{figure.caption.38}%
-\contentsline {figure}{\numberline {35}{\ignorespaces LQR simplificado y controlador en cascada con valor de referencia $T_error$.\relax }}{68}{figure.caption.39}%
-\contentsline {figure}{\numberline {36}{\ignorespaces Controlador PID en cascada.\relax }}{68}{figure.caption.40}%
-\contentsline {figure}{\numberline {37}{\ignorespaces Sintonización PID en Control System Designer.\relax }}{69}{figure.caption.41}%
-\contentsline {figure}{\numberline {38}{\ignorespaces Herramienta PID Tuner para la sintonización controlador PID.\relax }}{69}{figure.caption.42}%
-\contentsline {figure}{\numberline {39}{\ignorespaces Implementación simplificada en Simulink del controlador de actitud y desaturación.\relax }}{70}{figure.caption.43}%
-\contentsline {figure}{\numberline {40}{\ignorespaces Modelo de desaturación según ley de control de $\Delta h$.\relax }}{70}{figure.caption.44}%
-\contentsline {figure}{\numberline {41}{\ignorespaces Implementación del cálculo de indices de desempeño.\relax }}{72}{figure.caption.46}%
-\contentsline {figure}{\numberline {42}{\ignorespaces Saturación en ruedas de reacción y su efecto en el Yaw y momento angular.\relax }}{74}{figure.caption.49}%
-\contentsline {figure}{\numberline {43}{\ignorespaces Desaturación de RW empleando magnetorquers.\relax }}{75}{figure.caption.50}%
-\contentsline {figure}{\numberline {44}{\ignorespaces Órbitas evaluadas en los diferentes perfiles de misión representadas en STK\textsuperscript {\tiny \textregistered }\relax }}{76}{figure.caption.51}%
-\contentsline {figure}{\numberline {45}{\ignorespaces Ángulo de Yaw, velocidad angular del S/C y momento angular de las RW para el perfil de misión de Detumbling\relax }}{78}{figure.caption.56}%
-\contentsline {figure}{\numberline {46}{\ignorespaces Ángulo de Yaw, velocidad angular del S/C y momento angular de las RW para el perfil de misión escalón.\relax }}{80}{figure.caption.60}%
-\contentsline {figure}{\numberline {47}{\ignorespaces Ángulo de Yaw, velocidad angular del S/C y momento angular de las RW para el perfil de misión apuntamiento Nadir.\relax }}{82}{figure.caption.64}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Diagrama de bloques del modelo de RW en Simulink.\relax }}{53}{figure.caption.26}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Motor sin escobillas A-max 22\cite {maxon2023}.\relax }}{53}{figure.caption.27}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Magnetorquers\relax }}{56}{figure.caption.29}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Medición de inductancia de magnetorquers.\relax }}{57}{figure.caption.30}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Cálculo de número de vueltas.\relax }}{57}{figure.caption.31}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Diagrama de bloques Magnetorquer X.\relax }}{59}{figure.caption.33}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Diagrama de flujo para cálculo de intensidades de campo para una órbita determinada.\relax }}{59}{figure.caption.34}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Elementos orbitales.\relax }}{60}{figure.caption.35}%
+\contentsline {figure}{\numberline {32}{\ignorespaces Implementación del modelo de campo geomagnético en Simulink.\relax }}{60}{figure.caption.36}%
+\contentsline {figure}{\numberline {33}{\ignorespaces Control de lazo cerrado para el control de actitud y ley de control de saturación.\relax }}{62}{figure.caption.37}%
+\contentsline {figure}{\numberline {34}{\ignorespaces Control de lazo cerrado para el control de actitud y controlador en cascada.\relax }}{63}{figure.caption.38}%
+\contentsline {figure}{\numberline {35}{\ignorespaces LQR simplificado y controlador en cascada con valor de referencia $T_error$.\relax }}{69}{figure.caption.39}%
+\contentsline {figure}{\numberline {36}{\ignorespaces Controlador PID en cascada.\relax }}{69}{figure.caption.40}%
+\contentsline {figure}{\numberline {37}{\ignorespaces Sintonización PID en Control System Designer.\relax }}{70}{figure.caption.41}%
+\contentsline {figure}{\numberline {38}{\ignorespaces Herramienta PID Tuner para la sintonización controlador PID.\relax }}{70}{figure.caption.42}%
+\contentsline {figure}{\numberline {39}{\ignorespaces Implementación simplificada en Simulink del controlador de actitud y desaturación.\relax }}{71}{figure.caption.43}%
+\contentsline {figure}{\numberline {40}{\ignorespaces Modelo de desaturación según ley de control de $\Delta h$.\relax }}{71}{figure.caption.44}%
+\contentsline {figure}{\numberline {41}{\ignorespaces Implementación del cálculo de indices de desempeño.\relax }}{73}{figure.caption.46}%
+\contentsline {figure}{\numberline {42}{\ignorespaces Saturación en ruedas de reacción y su efecto en el Yaw y momento angular.\relax }}{75}{figure.caption.49}%
+\contentsline {figure}{\numberline {43}{\ignorespaces Desaturación de RW empleando magnetorquers.\relax }}{76}{figure.caption.50}%
+\contentsline {figure}{\numberline {44}{\ignorespaces Órbitas evaluadas en los diferentes perfiles de misión representadas en STK\textsuperscript {\tiny \textregistered }\relax }}{77}{figure.caption.51}%
+\contentsline {figure}{\numberline {45}{\ignorespaces Ángulo de Yaw, velocidad angular del S/C y momento angular de las RW para el perfil de misión de Detumbling\relax }}{79}{figure.caption.56}%
+\contentsline {figure}{\numberline {46}{\ignorespaces Ángulo de Yaw, velocidad angular del S/C y momento angular de las RW para el perfil de misión escalón.\relax }}{81}{figure.caption.60}%
+\contentsline {figure}{\numberline {47}{\ignorespaces Ángulo de Yaw, velocidad angular del S/C y momento angular de las RW para el perfil de misión apuntamiento Nadir.\relax }}{83}{figure.caption.64}%
 \contentsfinish 
