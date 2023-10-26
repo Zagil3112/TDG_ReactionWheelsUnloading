@@ -24,21 +24,49 @@ Database file #1: refe.bib
 Warning--entry type for "Groenewald2014" isn't style-file defined
 --line 479 of file refe.bib
 Warning--entry type for "Steyn2011" isn't style-file defined
---line 507 of file refe.bib
+--line 499 of file refe.bib
 Warning--entry type for "Lan2013" isn't style-file defined
---line 515 of file refe.bib
+--line 507 of file refe.bib
 Warning--entry type for "Barnhart2005" isn't style-file defined
---line 533 of file refe.bib
-Warning--entry type for "Ritchey2004" isn't style-file defined
---line 547 of file refe.bib
+--line 525 of file refe.bib
+Repeated entry---line 543 of file refe.bib
+ : %@article{Venturini2018
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 550 of file refe.bib
+ : %@report{Ritchey2004
+ :                     ,
+I'm skipping whatever remains of this entry
 Warning--entry type for "Rycroft1997" isn't style-file defined
---line 566 of file refe.bib
+--line 569 of file refe.bib
 Warning--entry type for "Andresen2005" isn't style-file defined
---line 574 of file refe.bib
-Warning--entry type for "Karatas2006" isn't style-file defined
---line 582 of file refe.bib
+--line 577 of file refe.bib
+You're missing a field name---line 586 of file refe.bib
+ : 
+ : % author = {Soner Karataş},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 592 of file refe.bib
+ : %@mastersthesis{tes:Sorolla2019
+ :                                ,
+I'm skipping whatever remains of this entry
+You're missing a field name---line 603 of file refe.bib
+ : 
+ : % author={Karatacs, Soner},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 696 of file refe.bib
+ : 
+ : % title={Space Vehicle Design},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 705 of file refe.bib
+ : @book{Griffin2004
+ :                  ,
+I'm skipping whatever remains of this entry
 Warning--entry type for "Blanke2010" isn't style-file defined
---line 733 of file refe.bib
+--line 765 of file refe.bib
+Warning--I didn't find a database entry for "griffin2004space"
 -- IEEEtranN.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -48,54 +76,56 @@ Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
 Reallocating 'global_strs' (item size: 1) to 4000000 items.
 Too many commas in name 1 of "Blanke, M., & Larsen, M. B" for entry Blanke2010
 while executing---line 2673 of file ieeeudea.bst
-Warning--empty journal in Venturini2018
 Warning--empty journal in Giesselman2006
-Warning--empty journal in zapf2006robust
+Warning--empty author and editor in Griffin2004
+Warning--empty title in Griffin2004
+Warning--missing publisher in Griffin2004
+Warning--empty year in Griffin2004
 Too many commas in name 1 of "Blanke, M., & Larsen, M. B" for entry Blanke2010
 while executing---line 2687 of file ieeeudea.bst
 Too many commas in name 1 of "Blanke, M., & Larsen, M. B" for entry Blanke2010
 while executing---line 2687 of file ieeeudea.bst
 
 Done.
-You've used 34 entries,
+You've used 32 entries,
             4853 wiz_defined-function locations,
-            1165 strings with 14915 characters,
-and the built_in function-call counts, 21373 in all, are:
-= -- 1851
-> -- 629
-< -- 71
-+ -- 304
-- -- 160
-* -- 1130
-:= -- 3525
-add.period$ -- 68
-call.type$ -- 34
-change.case$ -- 39
-chr.to.int$ -- 139
-cite$ -- 37
-duplicate$ -- 1499
-empty$ -- 1727
-format.name$ -- 223
-if$ -- 4711
+            1153 strings with 14493 characters,
+and the built_in function-call counts, 20248 in all, are:
+= -- 1758
+> -- 599
+< -- 68
++ -- 291
+- -- 152
+* -- 1084
+:= -- 3330
+add.period$ -- 62
+call.type$ -- 32
+change.case$ -- 37
+chr.to.int$ -- 137
+cite$ -- 38
+duplicate$ -- 1422
+empty$ -- 1623
+format.name$ -- 209
+if$ -- 4466
 int.to.chr$ -- 1
-int.to.str$ -- 35
-missing$ -- 273
-newline$ -- 148
-num.names$ -- 102
-pop$ -- 813
+int.to.str$ -- 33
+missing$ -- 254
+newline$ -- 140
+num.names$ -- 93
+pop$ -- 755
 preamble$ -- 1
-purify$ -- 34
+purify$ -- 32
 quote$ -- 2
-skip$ -- 1601
+skip$ -- 1509
 stack$ -- 0
-substring$ -- 363
-swap$ -- 895
+substring$ -- 359
+swap$ -- 853
 text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 459
-warning$ -- 3
-while$ -- 84
+type$ -- 435
+warning$ -- 5
+while$ -- 78
 width$ -- 0
-write$ -- 393
-(There were 4 error messages)
+write$ -- 371
+(There were 11 error messages)

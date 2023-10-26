@@ -175,7 +175,7 @@ El Módulo ADCS del EyasSat \textbf{(Fig. \ref{fig:ADCS_eyassat})}, se compone d
 	\begin{center}
 		\includegraphics[scale=0.9]{imagenes/marco_teorico/eyassat_axes.PNG}\\
 	\end{center}
-	\caption{ Ejes coordenados del EyasSat\cite{Groenewald2014}}
+	\caption[Ejes coordenados del EyasSat]{ Ejes coordenados del EyasSat\cite{Groenewald2014}}
 	\label{fig:eyassat_axes}
 %	\footnotesize{Nota. Fuente }
 \end{figure}
@@ -190,7 +190,7 @@ Son motores de alto torque acoplados a rotores de gran inercia. Permiten reposic
 	\begin{center}
 		\includegraphics[scale=0.9]{imagenes/marco_teorico/rw.PNG}\\
 	\end{center}
-	\caption{ Efecto de RW en la velocidad $\omega$ de un satélite\cite{opc:Charles2019}.}
+	\caption[Efecto de RW en la velocidad $\omega$ de un satélite.]{ Efecto de RW en la velocidad $\omega$ de un satélite\cite{opc:Charles2019}.}
 	\label{fig:rw_diagram}
 %	\footnotesize{Nota. Fuente }
 \end{figure}
@@ -228,9 +228,9 @@ Tierra tal como se observa el la \textbf{Fig. \ref{fig:LVLH}}.
 	\begin{center}
 		\includegraphics[scale=0.7]{imagenes/marco_teorico/LVLH.PNG}\\
 	\end{center}
-	\caption{ Sistema de referencia basado en la horizontal local.}
+	\caption[Sistema de referencia basado en la horizontal local]{ Sistema de referencia basado en la horizontal local \cite{cornelisse1979rocket}.}
 	\label{fig:LVLH}
-	\footnotesize{Nota. Fuente \cite{cornelisse1979rocket}}
+%	\footnotesize{Nota. Fuente \cite{cornelisse1979rocket}}
 \end{figure}
 
 \paragraph{Marco de Referencia Orbital (ORF):} Es un marco no inercial donde el origen coincide con el CG del satélite. El eje $X_o$ apunta hacia el centro de la Tierra (nadir). El eje $Y_o$ apunta en la dirección de la velocidad tangencialmente a la órbita. El eje $Z_o$ completa el sistema usando la regla de la mano derecha, como se muestra en la \textbf{Fig. \ref{fig:marco_orbital}}.
@@ -239,7 +239,7 @@ Tierra tal como se observa el la \textbf{Fig. \ref{fig:LVLH}}.
 	\begin{center}
 		\includegraphics[scale=0.7]{imagenes/marco_teorico/marco_orbital.PNG}\\
 	\end{center}
-	\caption{ Marco Orbital\cite{Andresen2005}.}
+	\caption[Marco Orbital]{ Marco Orbital\cite{Andresen2005}.}
 	\label{fig:marco_orbital}
 %	\footnotesize{Nota. Fuente }
 \end{figure}
@@ -262,7 +262,7 @@ Tierra tal como se observa el la \textbf{Fig. \ref{fig:LVLH}}.
 	\begin{center}
 		\includegraphics[scale=0.9]{imagenes/marco_teorico/orbital_cuerpo.PNG}\\
 	\end{center}
-	\caption{ Marco de referencia centrado en el cuerpo y marco orbital \cite{Karatas2006}}
+	\caption[ Marco de referencia centrado en el cuerpo y marco orbital]{ Marco de referencia centrado en el cuerpo y marco orbital}
 	\label{fig:marco_orbital_cuerpo}
 %		\footnotesize{Nota. Fuente}
 \end{figure}
@@ -273,7 +273,7 @@ Tierra tal como se observa el la \textbf{Fig. \ref{fig:LVLH}}.
  	\begin{center}
  		\includegraphics[scale=0.7]{imagenes/marco_teorico/ECI.PNG}\\
  	\end{center}
- 	\caption{ Marco de referencia inercial centrado en la tierra (ECI) \cite{Andresen2005}.}
+ 	\caption[ Marco de referencia inercial centrado en la tierra (ECI)]{ Marco de referencia inercial centrado en la tierra (ECI) \cite{Andresen2005}.}
  	\label{fig:ECI}
 % 	\footnotesize{Nota. Fuente}
  \end{figure}
@@ -285,9 +285,9 @@ Cuando se requiere considerar la rotación de la tierra, se recurre a un marco c
 	\begin{center}
 		\includegraphics[scale=0.7]{imagenes/marco_teorico/ECEF.PNG}\\
 	\end{center}
-	\caption{ Marco de referencia fijo centrado en la tierra (ECEF)}
+	\caption[Marco de referencia fijo centrado en la tierra]{ Marco de referencia fijo centrado en la tierra (ECEF)\cite{Andresen2005}}
 	\label{fig:ECEF}
-	\footnotesize{Nota. Fuente \cite{Andresen2005}}
+%	\footnotesize{Nota. Fuente \cite{Andresen2005}}
 \end{figure}
 
 Estos marcos de coordenadas permiten describir la actitud del vehículo en términos de la orientación del BRF con respecto al ORF o ECI. Para ello se utiliza la representación de cuaterniones o ángulos de Euler en una matriz de cosenos directores (DCM) o matriz de transformación. Esta matriz permite transformar vectores de un sistema de referencia a otro como se verá en la siguiente sección.
@@ -358,7 +358,7 @@ La actitud de un vehículo puede representarse mediante los ángulos de roll ($\
 	\begin{center}
 		\includegraphics[scale=0.8]{imagenes/marco_teorico/angulos_euler.PNG}\\
 	\end{center}
-	\caption{ Ángulos de Euler : Roll-Pitch-Yaw \cite{tes:Sorolla2019} }
+	\caption[Ángulos de Euler : Roll-Pitch-Yaw]{ Ángulos de Euler : Roll-Pitch-Yaw \cite{tes:Sorolla2019} }
 	\label{fig:angulosEuler}
 %	\footnotesize{Nota. Fuente }
 \end{figure}
@@ -478,7 +478,7 @@ La órbita baja (LEO, por sus siglas en inglés) es una región del espacio que 
 	\begin{center}
 		\includegraphics[scale=1]{imagenes/marco_teorico/leo.jpg}\\
 	\end{center}
-	\caption{  Órbita baja (LEO)\cite{opc:LEO}}
+	\caption[Órbita baja (LEO)]{  Órbita baja (LEO)\cite{opc:LEO}}
 	\label{fig:leo}
 %		\footnotesize{Nota. Fuente }
 \end{figure}
@@ -1121,7 +1121,7 @@ Debido a que los manuales técnicos del EyasSat no especifican el modelo preciso
 	\begin{center}
 		\includegraphics[scale=0.5]{imagenes/modelo_dinamico/motorRW.jpg}\\
 	\end{center}
-	\caption{Motor sin escobillas A-max 22\cite{maxon2023}.}
+	\caption[Motor sin escobillas A-max 22]{Motor sin escobillas A-max 22\cite{maxon2023}.}
 	\label{fig:motorRW}
 %	\footnotesize{Nota. Fuente }
 \end{figure}
@@ -1614,7 +1614,7 @@ La matriz $Q$ establece que todos los estados se penalizan por igual excepto la 
 
 La matriz $\boldsymbol{K}$ de ganancias es calculada con la función \textit{lqr} de Matlab, donde sus valores propios están ubicados en la zona real negativa:
 \begin{equation}
-	E =
+	\boldsymbol{E} =
 	\begin{bmatrix}
 		-0.50 \\
 		-0.50 \\
@@ -1650,7 +1650,7 @@ Donde $\boldsymbol{K_1}$ es la submatriz de K, la cual corresponde a las compone
 	\begin{center}
 		\includegraphics[scale=0.6]{imagenes/controladores/lqr.PNG}\\
 	\end{center}
-	\caption{LQR simplificado y controlador en cascada con valor de referencia $T_error$.}
+	\caption{LQR simplificado y controlador en cascada con valor de referencia $\mathrm{T_{error}}$.}
 	\label{fig:lqr}	 	
 \end{figure}
 
@@ -1791,13 +1791,13 @@ Finalmente, se obtienen 4 diferentes estrategias de control al combinar los mét
 % Mostrar efecto de saturación 
 \subsection{Fenómeno de Saturación}
 
-En primer lugar, el fenómeno de saturación pudo ser evidenciado con el fin de visualizar cualitativa-mente el efecto de los magnetorquers en la desaturación. En la \textbf{Fig. \ref{fig:saturacion}} se muestra la respuesta del ADCS ante un escalón de $-20$ grados en $t=2000\,s$. Debido a que el satélite experimenta torques de perturbaciones $T_{ext} >0$ el torque que deben realizar las RW es negativo, por otro lado, como se sabe que $\tau = \dot{h}$, el momento angular empieza a aumentar con una pendiente negativa conforme pasa el tiempo. Finalmente, es evidente que a medida que las RW se acercan a su nivel de saturación, el error del \textit{Yaw} empieza a aumentar como se muestra en la gráfica superior de la \textbf{Fig. \ref{fig:saturacion}}.
+En primer lugar, el fenómeno de saturación pudo ser evidenciado con el fin de visualizar cualitativamente el efecto de los magnetorquers en la desaturación. En la \textbf{Fig. \ref{fig:saturacion}} se muestra la respuesta del ADCS con el controlador LQR ante un escalón de $-20$ grados en $t=2000\,s$. Debido a que el satélite experimenta torques de perturbaciones $T_{ext} >0$, el torque que deben realizar las RW es negativo. Por otro lado, como se sabe que $\tau = \dot{h}$, el momento angular empieza a aumentar con una pendiente negativa conforme pasa el tiempo. Finalmente, es evidente que a medida que las RW se acercan a su nivel de saturación, el error del \textit{Yaw} empieza a aumentar como se muestra en la gráfica superior de la \textbf{Fig. \ref{fig:saturacion}}.
 
 \begin{figure}[!h]
 	\begin{center}
 		\includegraphics[scale=0.55]{imagenes/resultados/Desaturation.PNG}\\
 	\end{center}
-	\caption{Saturación en ruedas de reacción y su efecto en el Yaw y momento angular.}
+	\caption{Saturación en ruedas de reacción para el controlador LQR y su efecto en el Yaw y momento angular.}
 	\label{fig:saturacion}	 	
 \end{figure}
 
@@ -1809,7 +1809,7 @@ En primer lugar, el fenómeno de saturación pudo ser evidenciado con el fin de 
 	\label{fig:desaturacion}	 	
 \end{figure}
 
-Una vez se tiene en cuenta el efecto de los magnetorquers y su correspondiente método de saturación, el ADCS puede mantener el ángulo de \textit{Yaw} sin incrementar el error, por su parte, las ruedas de reacción vuelven a apagarse una vez se realiza la maniobra alcanzando la actitud deseada.La desaturación se muestra en la \textbf{Fig. \ref{fig:desaturacion}}.
+Una vez se tiene en cuenta el efecto de los magnetorquers y su correspondiente método de saturación, el ADCS puede mantener el ángulo de \textit{Yaw} sin incrementar el error, por su parte, las ruedas de reacción vuelven a apagarse una vez se realiza la maniobra alcanzando la actitud deseada. La desaturación se muestra en la \textbf{Fig. \ref{fig:desaturacion}}.
 
 
 
@@ -1855,8 +1855,8 @@ Por otro lado, los perfiles de misión mencionados anteriormente se evalúan en 
 			&  \textbf{Elemento orbital} &  \textbf{Ecuatorial} & \textbf{ISS }& \textbf{Polar}\\ \hline
 			\noindent$RAAN$& Ascensión recta del nodo ascendente [deg] &75.84 & 75.84 & 75.84 \\
 			$\omega$& Argumento de perigeo [deg] & 180& 180 & 180 \\
-			$\nu$&Anomalía verdadera[deg] &16.3 & 16.3 &16.3\\
-			$i$&Inclinación[deg] & 0 & 57 &98\\
+			$\nu$&Anomalía verdadera [deg] &16.3 & 16.3 &16.3\\
+			$i$&Inclinación [deg] & 0 & 57 &98\\
 			$a$&Semi eje mayor [km] & 6978  & 6978&6978\\
 			$e$&Excentricidad &0.0004681 &0.0004681 & 0.0004681 \\ \hline			
 		\end{tabular}
@@ -2183,7 +2183,7 @@ A continuación se mostrarán los resultados de ángulo de \textit{Yaw}, velocid
 %La discusión es la interpretación crítica y el análisis de los resultados, que surgen de las preguntas de investigación.
 
 %Diseño de controladores 
-A pesar de que el controlador PID fue diseñado netamente a partir de un modelo no lineal, los controladores LQR que parten de una linealización de espacio de estados, presentan un desempeño equiparable al modelo no lineal, incluso cuando los estados se alejan del punto de control. No obstante, respecto a la función de costo del LQR, se halló que las matrices $\boldsymbol{R}$ y $\boldsymbol{Q}$ deben ser ajustadas según el perfil de misión que se quiera evaluar, ya que, su desempeño puede ser inferior al PID en algunos escenarios. En este sentido, se determinó que para los perfiles de misión de \textit{Detumbling} y apuntamiento hacia el Nadir, las matrices que mejor respuesta generan son aquellos donde se penalizan mas el cuaternion del eje $Z$ y el momento angular del eje $Z$. Sin embargo, para llegar a un estado de equilibrio mas rápido en el ángulo de \textit{Yaw}, es necesario establecer una flexibilidad en la velocidad angular. Por lo tanto, se tiene que los valores de dichas matrices deben ser:
+A pesar de que el controlador PID fue diseñado netamente a partir de un modelo no lineal, los controladores LQR que parten de una linealización de espacio de estados, presentan un desempeño equiparable al modelo no lineal, incluso cuando los estados se alejan del punto de control. No obstante, respecto a la función de costo del LQR, se halló que las matrices $\boldsymbol{R}$ y $\boldsymbol{Q}$ deben ser ajustadas según el perfil de misión que se quiera evaluar, ya que su desempeño puede ser inferior al PID en algunos escenarios. En este sentido, se determinó que para los perfiles de misión de \textit{Detumbling} y apuntamiento hacia el Nadir, las matrices que mejor respuesta generan son aquellos donde se penalizan mas el cuaternion del eje $Z$ y el momento angular del eje $Z$. Sin embargo, para llegar a un estado de equilibrio más rápido en el ángulo de \textit{Yaw}, es necesario establecer una flexibilidad en la velocidad angular. Por lo tanto, se tiene que los valores de dichas matrices deben ser los que se presentan en la \textbf{Tabla \ref{table:gananciasLQR}}:
 
 \begin{table}[!ht]
 	\caption{\MakeUppercase{Matrices Q y R para determinar función de costo en el LQR }}
@@ -2205,7 +2205,7 @@ No obstante, en estos escenarios cabe destacar que el PID presentó mejor desemp
 Así mismo, se resalta que en el escenario de apuntamiento de Nadir, el momento angular de las RW, se estabiliza en un valor tres veces mayor con el método de $k\Delta h$ respecto al método de desaturación del controlador cascada \textbf{(Fig. \ref{fig:nadir})}, donde el primero presenta mayores oscilaciones. Sin embargo, ambos valores de estabilización son del orden de $10^{-5}$. 
 
 %Escalon
-Por otro lado, donde mejor desempeño presentó el LQR fue en la respuesta escalón como se evidencia en la \textbf{Fig. \ref{fig:step}}. Es notorio que el PID presenta mayor sobre impulso en el ángulo de \textit{Yaw}. Para lograr estos resultados se optó por una matriz $\boldsymbol{Q}$ de estados mas homogénea pero fue necesario aumentar la acción de control disminuyendo el valor de la matriz $\boldsymbol{R}$ de la siguiente manera:  
+Por otro lado, donde mejor desempeño presentó el LQR fue en la respuesta escalón como se evidencia en la \textbf{Fig. \ref{fig:step}}. Es notorio que el PID presenta mayor sobre impulso en el ángulo de \textit{Yaw}. Para lograr estos resultados se optó por una matriz $\boldsymbol{Q}$ de estados más homogénea pero fue necesario aumentar la acción de control disminuyendo el valor de la matriz $\boldsymbol{R}$ de la siguiente manera:  
 \begin{equation}
 	\begin{gathered}
 		\boldsymbol{Q = I_{9x9}};		
@@ -2235,7 +2235,7 @@ Finalmente, se observa que el campo magnético de las diferentes órbitas no rep
 %Las recomendaciones son las futuras y posibles líneas de investigación que llevarán a resolver problemas relacionados con la presente investigación.
 
 % Ley de control basada en omega y cuaterniones 
-En primer lugar, aumentar el número de controladores podría complementar el estudio del desempeño de estrategias de control. Así mismo, se podría recurrir a leyes de control que contemplen las ecuaciones cinemáticas y dinámicas al mismo tiempo, es decir, usar como referencia no solo los cuaterniones sino también las velocidades angulares. En \cite{Blanke2010} las entradas del sistema tienen la forma de $\boldsymbol{u} =-\boldsymbol{K_pq_e} -\boldsymbol{K_{pd}\omega}$, donde se desea obtener una actitud $q_e$ con una velocidad $\omega$ usando las matrices de ganancias $\boldsymbol{K_p}$ y $\boldsymbol{K_{pd}}$. De esta manera un controlador del ADCS puede ser mas versátil para todo tipo de escenarios al permitir alcanzar una actitud determinada con un mayor margen de velocidades angulares. 
+En primer lugar, aumentar el número de controladores podría complementar el estudio del desempeño de estrategias de control. Así mismo, debe asegurarse que los controladores recurran a leyes de control que contemplen las ecuaciones cinemáticas y dinámicas al mismo tiempo, es decir, usar como referencia no solo los cuaterniones sino también las velocidades angulares como lo hace el LQR con su control por realimentación de estados. En \cite{Blanke2010} las entradas del sistema tienen la forma de $\boldsymbol{u} =-\boldsymbol{K_pq_e} -\boldsymbol{K_{pd}\omega}$, donde se desea obtener una actitud $q_e$ con una velocidad $\omega$ usando las matrices de ganancias $\boldsymbol{K_p}$ y $\boldsymbol{K_{pd}}$. De esta manera un controlador del ADCS puede ser mas versátil para todo tipo de escenarios al permitir alcanzar una actitud determinada con un mayor margen de velocidades angulares. 
 
 Por otro lado, se podría incluir un modelamiento astrodinámico de la trayectoria del CubeSat, donde se propaguen las coordenadas de la órbita según las condiciones iniciales y se modelen las perturbaciones según la posición y la actitud del satélite. Adicionalmente, con el fin de realizar una implementación en un banco de pruebas para el control de actitud en tierra, será necesario modelar las perturbaciones por fricción de los puntos de apoyo y/o de la estructura del sistema.
 
