@@ -157,8 +157,9 @@ J.~L. Junkins, M.~R. Akella, and R.~D. Robinett, ``Nonlinear adaptive control
   of spacecraft maneuvers,'' \emph{Journal of Guidance, Control, and Dynamics},
   vol.~20, pp. 1104--1110, 1997.
 
-\bibitem[Gri()]{Griffin2004}
-
+\bibitem[Griffin(2004)]{Griffin2004}
+M.~Griffin, \emph{Space vehicle design}.\hskip 1em plus 0.5em minus 0.4em\relax
+  American Institute of Aeronautics and Astronautics, 2004.
 
 \bibitem[Steyn and Auret(2011)]{Steyn2011}
 \BIBentryALTinterwordspacing
@@ -202,9 +203,10 @@ M.~Group, ``A-max 22 mm, Precious Metal Brushes CLL, 3.5 Watt, with
   terminals,'' 2023, [En línea]. Disponible en:
   \url{https://www.maxongroup.com/maxon/view/product/motor/dcmotor/amax/amax22/110137}.
 
-\bibitem[Blanke(2010)]{Blanke2010}
-.~L. M.~B. Blanke, M., ``Satellite Dynamics and Control in a Quaternion
-  Formulation,'' 2010.
+\bibitem[Blanke and Larsen(2010)]{Blanke2010}
+M.~Blanke and M.~Larsen, \emph{Satellite Dynamics and Control in a Quaternion
+  Formulation (2nd edition)}.\hskip 1em plus 0.5em minus 0.4em\relax Technical
+  University of Denmark, Department of Electrical Engineering, 2010.
 
 \bibitem[Ofodile et~al.(2019)Ofodile, Ehrpais, Slavinskis, and
   Anbarjafari]{Ofodile2019}
