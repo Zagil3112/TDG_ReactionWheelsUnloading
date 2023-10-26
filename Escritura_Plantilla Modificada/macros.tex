@@ -46,10 +46,12 @@ starfontserif % comment for sans glyphs
 \renewcommand\descriptionlabel[1]{$\bullet$\hspace{0.5em} \textbf{#1}}
 \setlist[description]{parsep=-5px}
 
-\usepackage{tocloft}
-\renewcommand{\cftfigfont}{Fig. }
-\renewcommand{\cfttabfont}{Tabla }
-\tocloftpagestyle{empty}
+%\usepackage{tocloft}
+%\renewcommand{\cftfigfont}{Fig. }
+%\renewcommand{\cfttabfont}{Tabla }
+%\tocloftpagestyle{empty}
+
+
 
 \usepackage{titletoc}
 \titlecontents{section}[0.1em]{\smallskip}{\enspace\thecontentslabel.\hspace{1em}} {\hspace*{}} {\titlerule*[1pc]{.}\contentspage}
@@ -57,6 +59,11 @@ starfontserif % comment for sans glyphs
 \titlecontents{subsubsection}[0.1em]{\smallskip}{\hspace{1cm}\enspace\thecontentslabel)\hspace{1em}} {\hspace*{}} {\titlerule*[1pc]{.}\contentspage}
 \titlecontents{paragraph}[0.1em]{\smallskip}{\hspace{1.5cm}\enspace\thecontentslabel)\hspace{1em}} {\hspace*{}} {\titlerule*[1pc]{.}\contentspage}
 
+\titlecontents{figure}[0.1em]{\smallskip}
+{Fig.\enspace\thecontentslabel.\hspace{2em}} {\hspace*{}} {\titlerule*[1pc]{.}\contentspage}
+
+\titlecontents{table}[0.1em]{\smallskip}
+{Table\enspace\thecontentslabel.\hspace{2em}} {\hspace*{}} {\titlerule*[1pc]{.}\contentspage}
 
 
 \setcounter{tocdepth}{5}
