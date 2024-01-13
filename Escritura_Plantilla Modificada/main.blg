@@ -12,8 +12,6 @@ A level-1 auxiliary file: referencias.aux
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: ieeeudea.bst
 Reallocating 'name_of_file' (item size: 1) to 5 items.
-Reallocating 'name_of_file' (item size: 1) to 11 items.
-A level-1 auxiliary file: anexos.aux
 original is an illegal style-file command---line 7 of file ieeeudea.bst
  :  original
  :           starting code base and algorithms obtained from the output of Patrick W. Daly's makebst package as well as from prior versions of
@@ -24,9 +22,18 @@ Reallocating 'wiz_functions' (item size: 4) to 6000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: refe.bib
 Warning--entry type for "Groenewald2014" isn't style-file defined
---line 473 of file refe.bib
+--line 479 of file refe.bib
 Warning--entry type for "Steyn2011" isn't style-file defined
---line 501 of file refe.bib
+--line 499 of file refe.bib
+Warning--entry type for "Lan2013" isn't style-file defined
+--line 507 of file refe.bib
+Warning--entry type for "Barnhart2005" isn't style-file defined
+--line 525 of file refe.bib
+Warning--entry type for "Rycroft1997" isn't style-file defined
+--line 553 of file refe.bib
+Warning--entry type for "Andresen2005" isn't style-file defined
+--line 561 of file refe.bib
+Warning--I didn't find a database entry for "griffin2004space"
 -- IEEEtranN.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -34,50 +41,48 @@ Warning--entry type for "Steyn2011" isn't style-file defined
 Reallocating 'glb_str_end' (item size: 4) to 20 items.
 Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
 Reallocating 'global_strs' (item size: 1) to 4000000 items.
-Warning--empty journal in Venturini2018
-Warning--missing publisher in Kaplan1976
-Warning--edition ordinal word "e*" may be too high (or improper) for conversion in man:manual
+Warning--empty journal in Giesselman2006
 
 Done.
-You've used 31 entries,
+You've used 32 entries,
             4853 wiz_defined-function locations,
-            1137 strings with 13644 characters,
-and the built_in function-call counts, 19227 in all, are:
-= -- 1816
-> -- 404
-< -- 71
-+ -- 200
-- -- 102
-* -- 959
-:= -- 3245
-add.period$ -- 61
-call.type$ -- 31
-change.case$ -- 48
-chr.to.int$ -- 115
-cite$ -- 34
-duplicate$ -- 1413
-empty$ -- 1546
-format.name$ -- 152
-if$ -- 4268
+            1156 strings with 14646 characters,
+and the built_in function-call counts, 20482 in all, are:
+= -- 1773
+> -- 615
+< -- 69
++ -- 296
+- -- 156
+* -- 1097
+:= -- 3383
+add.period$ -- 64
+call.type$ -- 32
+change.case$ -- 37
+chr.to.int$ -- 137
+cite$ -- 33
+duplicate$ -- 1433
+empty$ -- 1650
+format.name$ -- 217
+if$ -- 4522
 int.to.chr$ -- 1
-int.to.str$ -- 32
-missing$ -- 243
-newline$ -- 123
-num.names$ -- 94
-pop$ -- 635
+int.to.str$ -- 33
+missing$ -- 256
+newline$ -- 140
+num.names$ -- 96
+pop$ -- 757
 preamble$ -- 1
-purify$ -- 31
-quote$ -- 4
-skip$ -- 1484
+purify$ -- 32
+quote$ -- 2
+skip$ -- 1529
 stack$ -- 0
-substring$ -- 333
-swap$ -- 876
-text.length$ -- 16
+substring$ -- 357
+swap$ -- 863
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 437
-warning$ -- 3
-while$ -- 77
+type$ -- 427
+warning$ -- 1
+while$ -- 80
 width$ -- 0
-write$ -- 366
+write$ -- 374
 (There was 1 error message)

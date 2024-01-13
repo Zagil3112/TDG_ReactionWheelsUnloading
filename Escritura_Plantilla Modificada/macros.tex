@@ -23,11 +23,19 @@
 \usepackage{enumitem}
 \usepackage{tasks}
 \usepackage[verbose]{placeins}
+\usepackage{subcaption}
+\usepackage[
+starfontserif % comment for sans glyphs
+]{starfont}
+\DeclareSymbolFont{starfontsym}{OT1}{sts}{m}{n}
+\DeclareMathSymbol{\mathTerra}{\mathord}{starfontsym}{76}
 
-
-
+\usepackage{wasysym}
+\usepackage{textcomp}
+\usepackage{pstricks,pst-node}
 \usepackage[numbers]{natbib}
-
+%\usepackage[T1]{fontenc}
+%\usepackage[spanish, activeacute]{babel} 
 \setlength{\parindent}{1.25cm}%sangria
 \renewcommand{\baselinestretch}{1.5}%interlineado
 \setlength{\parskip}{0.1em}%espacio entre parrafos
@@ -38,10 +46,12 @@
 \renewcommand\descriptionlabel[1]{$\bullet$\hspace{0.5em} \textbf{#1}}
 \setlist[description]{parsep=-5px}
 
-\usepackage{tocloft}
-\renewcommand{\cftfigfont}{Fig. }
-\renewcommand{\cfttabfont}{Tabla }
-\tocloftpagestyle{empty}
+%\usepackage{tocloft}
+%\renewcommand{\cftfigfont}{Fig. }
+%\renewcommand{\cfttabfont}{Tabla }
+%\tocloftpagestyle{empty}
+
+
 
 \usepackage{titletoc}
 \titlecontents{section}[0.1em]{\smallskip}{\enspace\thecontentslabel.\hspace{1em}} {\hspace*{}} {\titlerule*[1pc]{.}\contentspage}
@@ -49,6 +59,11 @@
 \titlecontents{subsubsection}[0.1em]{\smallskip}{\hspace{1cm}\enspace\thecontentslabel)\hspace{1em}} {\hspace*{}} {\titlerule*[1pc]{.}\contentspage}
 \titlecontents{paragraph}[0.1em]{\smallskip}{\hspace{1.5cm}\enspace\thecontentslabel)\hspace{1em}} {\hspace*{}} {\titlerule*[1pc]{.}\contentspage}
 
+\titlecontents{figure}[0.1em]{\smallskip}
+{Fig.\enspace\thecontentslabel.\hspace{2em}} {\hspace*{}} {\titlerule*[1pc]{.}\contentspage}
+
+\titlecontents{table}[0.1em]{\smallskip}
+{Table\enspace\thecontentslabel.\hspace{2em}} {\hspace*{}} {\titlerule*[1pc]{.}\contentspage}
 
 
 \setcounter{tocdepth}{5}
@@ -79,5 +94,7 @@
 \renewcommand{\headrulewidth}{2pt}
 \lhead{\footnotesize\MakeUppercase{\smalltitulo }}\chead{}\rhead{{\color{white}Rufino}\thepage} %borrar los encabezados
 \cfoot{}
+
+
 
 

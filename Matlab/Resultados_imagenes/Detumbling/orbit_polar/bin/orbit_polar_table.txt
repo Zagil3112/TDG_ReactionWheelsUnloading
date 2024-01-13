@@ -1,0 +1,5 @@
+Controller "Error Ref" "Error DeltaH" "RW Power" "Mgt Power" Total
+LQR_PID_controller 60.8861 96.6344 322.7239 16.6672 496.9116
+PID_deltaH_controller 58.8194 96.3374 89.5885 16.6669 261.4121
+LQR_I_controller 61.0908 96.6574 328.4969 16.529 502.7741
+LQR_deltaH_controller 60.8602 96.3681 332.1114 16.6679 506.0077
